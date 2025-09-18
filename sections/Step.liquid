@@ -1,0 +1,202 @@
+<section class="how-to-use" style="background-color: {{ section.settings.bg_color }};">
+  <div class="container">
+    <h2 class="section-title" style="color: {{ section.settings.text_color }}; text-align: {{ section.settings.title_alignment }};">{{ section.settings.title }}</h2>
+
+    <div class="steps">
+      {% for block in section.blocks %}
+      <div class="step {% if block.settings.alignment == 'right' %}step-right{% endif %}" style="background: {{ section.settings.step_bg_color }};">
+        <div class="step-media">
+          {% if block.settings.video_url contains "youtube.com" or block.settings.video_url contains "vimeo.com" %}
+          <iframe width="100%" height="420" src="{{ block.settings.video_url }}" frameborder="0" allowfullscreen></iframe>
+          {% elsif block.settings.video_url %}
+          <video autoplay muted loop playsinline disablepictureinpicture controlslist="nodownload noplaybackrate nofullscreen">
+            <source src="{{ block.settings.video_url }}" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          {% elsif block.settings.image %}
+          <img src="{{ block.settings.image | image_url }}" alt="Step {{ forloop.index }}">
+          {% else %}
+          <p>No media available for this step.</p>
+          {% endif %}
+        </div>
+        <div class="step-text">
+          <div class="step-number" style="background: {{ section.settings.number_bg_color }}; color: {{ section.settings.number_text_color }};">{{ forloop.index }}</div>
+          <div class="step-content">
+            <h3 style="color: {{ section.settings.text_color }};">{{ block.settings.title }}</h3>
+            <p style="color: {{ section.settings.text_color }};">{{ block.settings.description }}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <style>
+    .how-to-use {
+      padding: 40px 20px;
+      border-radius: 10px;
+    }
+    .how-to-use .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .step {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 10px;
+      border-radius: 15px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .step.step-right {
+      flex-direction: row-reverse;
+    }
+    .step-media {
+      flex: 1.5;
+    }
+    .step-media video, .step-media img, .step-media iframe {
+      max-width: 100%;
+      max-height: 420px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .step-text {
+      flex: 1.5;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .step-number {
+      font-size: 20px;
+      font-weight: bold;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+    }
+  </style>
+</section>
+
+{% schema %}
+{
+  "name": "How to Use",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "How to Use"
+    },
+    {
+      "type": "select",
+      "id": "title_alignment",
+      "label": "Title Alignment",
+      "default": "left",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#f5f5f5"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "step_bg_color",
+      "label": "Step Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "number_bg_color",
+      "label": "Step Number Background Color",
+      "default": "#00493B"
+    },
+    {
+      "type": "color",
+      "id": "number_text_color",
+      "label": "Step Number Text Color",
+      "default": "#ffffff"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Step Image"
+        },
+        {
+          "type": "url",
+          "id": "video_url",
+          "label": "Step Video (Shopify/YouTube/Vimeo)"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Step Title",
+          "default": "Step Title Here"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Step Description",
+          "default": "Description of this step goes here."
+        },
+        {
+          "type": "select",
+          "id": "alignment",
+          "label": "Image Alignment",
+          "default": "left",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "How to Use",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

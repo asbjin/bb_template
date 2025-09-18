@@ -1,0 +1,38 @@
+import Image from "next/image";
+
+export default function VideoSection() {
+  return (
+    <div className="bg-white p-6 rounded-lg shadow-md max-w-md mx-auto">
+      <div className="relative">
+        {/* Vidéo */}
+        <video className="rounded-lg w-full" controls>
+          <source src="your-video.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+
+        {/* Badge en haut à droite */}
+        <div className="absolute top-2 right-2 w-14 h-14">
+          <Image
+            src="/your-badge-image.png"
+            alt="Badge"
+            width={56}
+            height={56}
+            className="rounded-full"
+          />
+        </div>
+      </div>
+
+      {/* Texte */}
+      <h2 className="text-xl font-bold mt-4">
+        Completely Skin Safe, Tested to Strict EU Standards
+      </h2>
+      <p className="text-gray-700 mt-2">
+        Our products are developed with meticulous care by leading
+        dermatologists to ensure they meet the{" "}
+        <strong className="font-bold">highest safety and efficacy standards</strong>. 
+        Each item is rigorously tested and fully compliant with strict EU regulations, 
+        making them <strong className="font-bold">completely safe for all skin types</strong>.
+      </p>
+    </div>
+  );
+}

@@ -1,0 +1,133 @@
+{%- if section.settings.text != blank -%}
+  <style>
+    #shopify-section-{{ section.id }} {
+      --scrolling-text-font-size: {% if section.settings.text_size == 'xsmall' %}1.125rem{% elsif section.settings.text_size == 'small' %}2.5rem{% elsif section.settings.text_size == 'medium' %}3.75rem{% elsif section.settings.text_size == 'large' %}5rem{% else %}7.5rem{% endif %};
+      --scrolling-text-color: {{ section.settings.text_color | default: '#000' }};
+      --scrolling-bg-color: {{ section.settings.background | default: 'transparent' }};
+      --scrolling-speed: {{ section.settings.scrolling_speed }}s;
+      --scrolling-gap: {{ section.settings.text_spacing }}px;
+    }
+
+    @media screen and (min-width: 700px) {
+      #shopify-section-{{ section.id }} {
+        --scrolling-text-font-size: {% if section.settings.text_size == 'xsmall' %}1.5rem{% elsif section.settings.text_size == 'small' %}3.75rem{% elsif section.settings.text_size == 'medium' %}5rem{% elsif section.settings.text_size == 'large' %}8.75rem{% else %}12.5rem{% endif %};
+      }
+    }
+
+    .scrolling-text-container {
+      overflow: hidden;
+      background: var(--scrolling-bg-color);
+      width: 100%;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+    }
+
+    .scrolling-text-content {
+      display: inline-flex;
+      color: var(--scrolling-text-color);
+      font-size: var(--scrolling-text-font-size);
+      text-transform: uppercase;
+      gap: var(--scrolling-gap);
+      animation: scroll-left var(--scrolling-speed) linear infinite;
+    }
+
+    @keyframes scroll-left {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-100%);
+      }
+    }
+
+    .scrolling-text--outline {
+      -webkit-text-stroke: 1px var(--scrolling-text-color);
+      color: transparent;
+    }
+  </style>
+
+  <div class="scrolling-text-container">
+    <div class="scrolling-text-content {% if section.settings.text_style == 'outline' %}scrolling-text--outline{% endif %}">
+      {%- for i in (1..10) -%}
+        <span aria-hidden="true">{{ section.settings.text }}</span>
+      {%- endfor -%}
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Scrolling text",
+  "tag": "section",
+  "class": "scrolling-text-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text",
+      "default": "Promotion text"
+    },
+    {
+      "type": "select",
+      "id": "text_size",
+      "label": "Text size",
+      "options": [
+        { "value": "xsmall", "label": "X-Small" },
+        { "value": "small", "label": "Small" },
+        { "value": "medium", "label": "Medium" },
+        { "value": "large", "label": "Large" },
+        { "value": "xlarge", "label": "X-Large" }
+      ],
+      "default": "large"
+    },
+    {
+      "type": "select",
+      "id": "text_style",
+      "label": "Text style",
+      "options": [
+        { "value": "outline", "label": "Outline" },
+        { "value": "fill", "label": "Fill" }
+      ],
+      "default": "fill"
+    },
+    {
+      "type": "range",
+      "id": "scrolling_speed",
+      "min": 10,
+      "max": 60,
+      "step": 1,
+      "unit": "s",
+      "label": "Scrolling speed (slower speed increases value)",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "text_spacing",
+      "min": 20,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "label": "Spacing between repeated texts",
+      "default": 50
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background color",
+      "default": "#ffffff"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Scrolling text"
+    }
+  ]
+}
+{% endschema %}

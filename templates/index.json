@@ -75,21 +75,13 @@
             "image": "shopify://shop_images/elle-1.svg",
             "link": ""
           }
-        },
-        "slide_LAEhbR": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/Grazia-Logo_svg_67e4ac22-c82d-4188-8a90-c8a457c517e1.png",
-            "link": ""
-          }
         }
       },
       "block_order": [
         "slide_tLNFDx",
         "slide_UhAmj8",
         "slide_HUPjwL",
-        "slide_G8Nkpi",
-        "slide_LAEhbR"
+        "slide_G8Nkpi"
       ],
       "name": "SS - Scrolling Logo Cloud",
       "settings": {
@@ -122,15 +114,15 @@
         "lazy": true
       }
     },
-    "ss_wave_2_FyKwL3": {
+    "ss_wave_2_ywQFik": {
       "type": "ss-wave-2",
       "name": "SS - Wave #2",
       "settings": {
-        "wave_height": 58,
+        "wave_height": 18,
         "wave_height_mobile": 28,
         "wave_animation": true,
         "wave_rotate": false,
-        "wave_color": "#fda900",
+        "wave_color": "#f4a300",
         "background_color": "#FFFFFF",
         "background_gradient": "",
         "border_color": "#000000",
@@ -145,16 +137,16 @@
         "border_thickness": 0
       }
     },
-    "ss_wave_2_KJ4D4X": {
+    "ss_wave_2_eHz3at": {
       "type": "ss-wave-2",
       "name": "SS - Wave #2",
       "settings": {
-        "wave_height": 58,
+        "wave_height": 18,
         "wave_height_mobile": 28,
         "wave_animation": true,
         "wave_rotate": true,
-        "wave_color": "#fda900",
-        "background_color": "#FFFFFF",
+        "wave_color": "#f4a300",
+        "background_color": "#ffffff",
         "background_gradient": "",
         "border_color": "#000000",
         "margin_top": 0,
@@ -210,6 +202,7 @@
         "slide_8CrkQ7": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_28_sept._2025_18_25_12.png",
             "rating": 5,
             "title": "Uno stimolante naturale del sistema immunitario",
             "content": "Tutti i miei colleghi si sono ammalati, ma io non ho avuto nulla. Di solito sono la prima a prendere i virus che circolano. Ma questa volta? Niente di niente. Di sicuro continuerò!"
@@ -218,6 +211,7 @@
         "slide_weq7hx": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/Gemini_Generated_Image_4j2el14j2el14j2e.png",
             "rating": 4,
             "title": "",
             "content": "La mia pancia era sempre gonfia, anche a digiuno. Avevo provato di tutto, senza successo. Da quando faccio questa cura, mi sento leggera, finalmente normale. Niente più fastidi, né tensioni... riscopro il comfort digestivo. È liberatorio."
@@ -226,6 +220,7 @@
         "slide_qPVFNX": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/Gemini_Generated_Image_ec80inec80inec80.png",
             "rating": 4,
             "title": "Via i parassiti, entra l'energia!",
             "content": "Non sapevo nemmeno di avere dei parassiti... Ma dopo qualche giorno ho espulso delle cose piuttosto strane. Oggi sento un vero cambiamento nel mio corpo: ho ritrovato molta energia!"
@@ -619,8 +614,8 @@
   "order": [
     "sp_hero_iyg6Hp",
     "logotesti_4WfnDB",
-    "ss_wave_2_FyKwL3",
-    "ss_wave_2_KJ4D4X",
+    "ss_wave_2_ywQFik",
+    "ss_wave_2_eHz3at",
     "sp_hero_UTCPdX",
     "testimonial_elite_PiaAmx",
     "ss_testimonial_8_rgDJid",

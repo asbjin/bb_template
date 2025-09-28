@@ -32,6 +32,7 @@
     },
     "ss_wave_2_eHz3at": {
       "type": "ss-wave-2",
+      "disabled": true,
       "name": "SS - Wave #2",
       "settings": {
         "wave_height": 18,
@@ -76,6 +77,7 @@
     },
     "ss_wave_2_ywQFik": {
       "type": "ss-wave-2",
+      "disabled": true,
       "name": "SS - Wave #2",
       "settings": {
         "wave_height": 18,
@@ -246,20 +248,20 @@
         "card_border_color": "#000000",
         "card_shadow_color": "#000000",
         "card_overlay_color": "#000000",
-        "title_color": "#FFFFFF",
-        "button_color": "#FFFFFF",
+        "title_color": "#ffffff",
+        "button_color": "#ffffff",
         "button_hover_color": "#000000",
         "button_bg_color": "",
         "button_bg_hover_color": "#ffffff",
-        "button_border_color": "#FFFFFF",
-        "button_border_hover_color": "#FFFFFF",
+        "button_border_color": "#ffffff",
+        "button_border_hover_color": "#ffffff",
         "arrow_color": "#000000",
-        "arrow_hover_color": "#FFFFFF",
-        "arrow_bg_color": "#FFFFFF",
+        "arrow_hover_color": "#ffffff",
+        "arrow_bg_color": "#ffffff",
         "arrow_bg_hover_color": "#000000",
         "arrow_border_color": "#000000",
         "arrow_border_hover_color": "#454545",
-        "background_color": "#FFFFFF",
+        "background_color": "#ffffff",
         "background_gradient": "",
         "border_color": "#000000",
         "margin_top": 0,
@@ -272,6 +274,13 @@
         "content_width": 120,
         "border_thickness": 0,
         "lazy": true
+      }
+    },
+    "ss_atc_button_3_pF7D8t": {
+      "type": "ss-atc-button-3",
+      "name": "SS - ATC Button #3",
+      "settings": {
+        "shake_type": "jiggle"
       }
     },
     "testimonial_elite_PiaAmx": {
@@ -425,7 +434,7 @@
         "open_first_collapsible_row": false,
         "image": "shopify://shop_images/ChatGPT_Image_28_sept._2025_22_15_20.png",
         "image_ratio": "adapt",
-        "desktop_layout": "image_second",
+        "desktop_layout": "image_first",
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -879,6 +888,7 @@
     "ss_wave_2_ywQFik",
     "logotesti_4WfnDB",
     "ss_slider_2_8Vhmqi",
+    "ss_atc_button_3_pF7D8t",
     "testimonial_elite_PiaAmx",
     "collapsible_content_jUWnke",
     "sp_faq_plus_yW4WQr",

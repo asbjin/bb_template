@@ -9,40 +9,25 @@
  */
 {
   "sections": {
-    "sp_hero_iyg6Hp": {
-      "type": "sp-hero",
+    "sp_image_standalone_UainYU": {
+      "type": "sp-image-standalone",
+      "name": "🚀SP - Image Standalone",
       "settings": {
-        "override_fonts": false,
-        "text_font": "system_ui_n4",
-        "headline_font": "system_ui_n4",
-        "text_size": 15,
-        "text_line_height": "inherit",
-        "text_color": "#ffffff",
-        "headline_size": 45,
-        "headline_line_height": "inherit",
-        "headline_color": "#ffffff",
-        "text_shadow": true,
-        "background_color": "",
-        "cover_background": "",
-        "cover_opacity": 25,
-        "box_alignment": "center",
-        "text_alignment": "center",
-        "max_width": 3000,
-        "padding_top": 320,
-        "padding_bottom": 25,
-        "padding_left": 30,
-        "padding_right": 10,
-        "element_spacing": 20,
-        "button_background_color": "linear-gradient(164deg, rgba(17, 17, 17, 1), rgba(51, 51, 51, 1) 100%)",
-        "button_text_color": "#ffffff",
-        "button_padding_tb": 10,
-        "button_padding_lr": 25,
-        "button_border_radius": 5,
-        "headline": "",
-        "content": "",
-        "hero_image": "shopify://shop_images/bann.png",
-        "cta": "",
-        "cta_link": ""
+        "background_color": "linear-gradient(164deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 100%)",
+        "max_width": 1000,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0,
+        "image": "shopify://shop_images/bann.png",
+        "media_aspect_ratio": "auto",
+        "desktop_image_width": 1100,
+        "mobile_image": "shopify://shop_images/bann.png",
+        "mobile_media_aspect_ratio": "auto",
+        "mobile_image_width": 800,
+        "link": "",
+        "media_radius": 0,
+        "media_shadow": true
       }
     },
     "logotesti_4WfnDB": {
@@ -83,14 +68,15 @@
         "slide_HUPjwL",
         "slide_G8Nkpi"
       ],
+      "disabled": true,
       "name": "SS - Scrolling Logo Cloud",
       "settings": {
-        "ss-title": "Apprezzato dalle",
+        "ss-title": "Floreva",
         "heading_custom": false,
         "heading_font": "assistant_n4",
-        "header_size": 32,
+        "header_size": 22,
         "header_align": "center",
-        "scrolling_velocity": 10,
+        "scrolling_velocity": 14,
         "pause_hover": false,
         "shadow": false,
         "sliders_mt": 16,
@@ -109,32 +95,9 @@
         "padding_top": 0,
         "padding_bottom": 0,
         "full_width": true,
-        "content_width": 90,
+        "content_width": 40,
         "border_thickness": 0,
         "lazy": true
-      }
-    },
-    "ss_wave_2_ywQFik": {
-      "type": "ss-wave-2",
-      "name": "SS - Wave #2",
-      "settings": {
-        "wave_height": 18,
-        "wave_height_mobile": 28,
-        "wave_animation": true,
-        "wave_rotate": false,
-        "wave_color": "#f4a300",
-        "background_color": "#FFFFFF",
-        "background_gradient": "",
-        "border_color": "#000000",
-        "margin_top": 0,
-        "margin_bottom": 0,
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "padding_horizontal": 0,
-        "padding_horizontal_mobile": 0,
-        "full_width": true,
-        "content_width": 120,
-        "border_thickness": 0
       }
     },
     "ss_wave_2_eHz3at": {
@@ -144,8 +107,8 @@
         "wave_height": 18,
         "wave_height_mobile": 28,
         "wave_animation": true,
-        "wave_rotate": true,
-        "wave_color": "#f4a300",
+        "wave_rotate": false,
+        "wave_color": "#ffe66f",
         "background_color": "#ffffff",
         "background_gradient": "",
         "border_color": "#000000",
@@ -160,40 +123,58 @@
         "border_thickness": 0
       }
     },
-    "sp_hero_UTCPdX": {
-      "type": "sp-hero",
+    "sp_image_standalone_JVDVtx": {
+      "type": "sp-image-standalone",
+      "name": "🚀SP - Image Standalone",
       "settings": {
-        "override_fonts": false,
-        "text_font": "system_ui_n4",
-        "headline_font": "system_ui_n4",
-        "text_size": 15,
-        "text_line_height": "inherit",
-        "text_color": "#ffffff",
-        "headline_size": 45,
-        "headline_line_height": "inherit",
-        "headline_color": "#ffffff",
-        "text_shadow": true,
-        "background_color": "",
-        "cover_background": "",
-        "cover_opacity": 25,
-        "box_alignment": "center",
-        "text_alignment": "center",
-        "max_width": 3000,
-        "padding_top": 150,
-        "padding_bottom": 25,
-        "padding_left": 30,
+        "background_color": "radial-gradient(rgba(255, 230, 111, 1) 70%, rgba(255, 255, 255, 1) 100%)",
+        "max_width": 1000,
+        "padding_top": 10,
+        "padding_bottom": 10,
+        "padding_left": 10,
         "padding_right": 10,
-        "element_spacing": 20,
-        "button_background_color": "linear-gradient(164deg, rgba(17, 17, 17, 1), rgba(51, 51, 51, 1) 100%)",
-        "button_text_color": "#ffffff",
-        "button_padding_tb": 10,
-        "button_padding_lr": 25,
-        "button_border_radius": 5,
-        "headline": "",
-        "content": "",
-        "hero_image": "shopify://shop_images/Design_sans_titre_6.png",
-        "cta": "",
-        "cta_link": ""
+        "image": "shopify://shop_images/Design_sans_titre_6.png",
+        "media_aspect_ratio": "auto",
+        "desktop_image_width": 1100,
+        "mobile_image": "shopify://shop_images/Design_sans_titre_6.png",
+        "mobile_media_aspect_ratio": "auto",
+        "mobile_image_width": 800,
+        "link": "",
+        "media_radius": 5,
+        "media_shadow": true
+      }
+    },
+    "ss_wave_2_ywQFik": {
+      "type": "ss-wave-2",
+      "name": "SS - Wave #2",
+      "settings": {
+        "wave_height": 18,
+        "wave_height_mobile": 28,
+        "wave_animation": true,
+        "wave_rotate": true,
+        "wave_color": "#ffe66f",
+        "background_color": "#ffffff",
+        "background_gradient": "",
+        "border_color": "#000000",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_horizontal": 0,
+        "padding_horizontal_mobile": 0,
+        "full_width": true,
+        "content_width": 120,
+        "border_thickness": 0
+      }
+    },
+    "custom_liquid_X7iq9m": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
       }
     },
     "testimonial_elite_PiaAmx": {
@@ -258,7 +239,7 @@
         "heading_size_mobile": 20,
         "stars": 4,
         "stars_size": 15,
-        "stars_color": "#FFD700",
+        "stars_color": "#ffd700",
         "rating": "<p><strong>4.7/5 </strong> Recensioni dei clienti</p>",
         "rating_size": 18,
         "rating_color": "#000000",
@@ -289,52 +270,42 @@
         "layout_background": "#ffffff"
       }
     },
-    "custom_liquid_Nn3TaD": {
-      "type": "custom-liquid",
-      "name": "t:sections.custom-liquid.presets.name",
-      "settings": {
-        "custom_liquid": "",
-        "color_scheme": "",
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
-    },
     "collapsible_content_jUWnke": {
       "type": "collapsible-content",
       "blocks": {
         "collapsible_row_RVm36q": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Rangée réductible",
+            "heading": "A chi è rivolta la cura",
             "icon": "check_mark",
-            "row_content": "",
+            "row_content": "<p>La cura disintossicante antiparassitaria è indicata per gli adulti che presentano i seguenti sintomi:</p><ul><li>stanchezza cronica, fisica ed emotiva,</li><li>disturbi digestivi (gonfiore, stitichezza, ecc.),</li><li>anemia e carenze,</li><li>perdita o aumento di peso anomalo,</li><li>disturbi della concentrazione e del sonno,</li><li>problemi della pelle,</li><li>digrignamento dei denti, gengive sanguinanti,</li><li>prurito cutaneo,</li><li>voglia di dolci la sera o fame eccessiva.</li></ul>",
             "page": ""
           }
         },
         "collapsible_row_g4RUgE": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Rangée réductible",
+            "heading": "come usare",
             "icon": "check_mark",
-            "row_content": "",
+            "row_content": "<p><strong>📅 Uso quotidiano:</strong></p><p>• Assumere 1 compressa con acqua, una o due volte al giorno</p><p>• Da consumare preferibilmente durante i pasti</p><p><strong>✅ Per ottenere risultati ottimali:</strong></p><p>• Utilizzare quotidianamente per almeno 30 giorni</p><p>• Gli effetti ottimali si osservano generalmente dopo 2-3 mesi</p><p><br/></p>",
             "page": ""
           }
         },
         "collapsible_row_y4bFUL": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Rangée réductible",
+            "heading": "Dettagli del prodotto",
             "icon": "check_mark",
-            "row_content": "",
+            "row_content": "<p>📦 Cosa contiene ogni flacone:</p><p>• 6.000 mg di olio di origano (estratto 20:1) per porzione</p><p>• 200 mg di olio di semi neri per porzione</p><p>• 165 mg di carvacrolo naturale</p><p>• 60 capsule per flacone</p><p>• Capsule facili da deglutire</p><p><strong>💪 Benefici:</strong></p><p>• Rafforza il sistema immunitario</p><p>• Favorisce una migliore digestione</p><p>• Aiuta ad eliminare le tossine</p><p>• Dona più energia</p><p><strong>🧪 Qualità garantita:</strong></p><p>• Senza agenti di riempimento o ingredienti artificiali</p><p>• Prodotto in uno stabilimento pulito e sicuro</p><p>• Testato per la purezza</p><p>• Più potente rispetto ad altre marche</p><p>• Capsule in gelatina vegetale e glicina</p><p><strong>🧊 Conservazione:</strong></p><p>• Conservare in un luogo fresco e asciutto</p><p>• Non necessita di refrigerazione</p><p><br/></p>",
             "page": ""
           }
         },
         "collapsible_row_9RHnYm": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Rangée réductible",
+            "heading": "vantaggi chiave",
             "icon": "check_mark",
-            "row_content": "",
+            "row_content": "<p><strong>🧼 Pulizia potente:</strong></p><p>• Aiuta a eliminare le tossine e le sostanze indesiderate dall'organismo</p><p><strong>⚡ Supporto alla perdita di peso:</strong></p><p>• Può contribuire alla perdita di peso migliorando la digestione e l'equilibrio intestinale</p><p><strong>🌿 Antibiotico naturale:</strong></p><p>• Agisce come un antibiotico naturale senza gli effetti collaterali dei farmaci chimici</p><p><strong>🔋 Maggiore energia:</strong></p><p>• Molte persone riferiscono un aumento di energia dopo alcune settimane di utilizzo</p><p><strong>🔥 Antinfiammatorio:</strong></p><p>• Aiuta a ridurre infiammazioni, dolori e gonfiori</p><p><br/></p>",
             "page": ""
           }
         }
@@ -348,54 +319,16 @@
       "name": "t:sections.collapsible_content.presets.name",
       "settings": {
         "caption": "",
-        "heading": "Contenu réductible",
+        "heading": "",
         "heading_size": "h1",
         "heading_alignment": "center",
         "layout": "none",
         "color_scheme": "",
         "container_color_scheme": "",
         "open_first_collapsible_row": false,
+        "image": "shopify://shop_images/ChatGPT_Image_28_sept._2025_22_15_20.png",
         "image_ratio": "adapt",
         "desktop_layout": "image_second",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "image_with_text_UkVe4h": {
-      "type": "image-with-text",
-      "blocks": {
-        "heading_nj6jwF": {
-          "type": "heading",
-          "settings": {
-            "heading": "Sostieni le tue difese naturali",
-            "heading_size": "h1"
-          }
-        },
-        "text_KTWnCf": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Il complesso <strong>ForevaPlus 2 in 1</strong> combina l'olio di origano e l'olio di cumino nero per <strong>potenziare il tuo sistema immunitario</strong>.</p><p></p><p>Grazie ai suoi potenti antiossidanti, tra cui il <strong>carvacrolo</strong> e il <strong>timochinone</strong>, ForevaPlus rafforza le tue difese naturali per una <strong>protezione stagionale</strong> e un <strong>benessere ottimale</strong>.</p>",
-            "text_style": "body"
-          }
-        }
-      },
-      "block_order": [
-        "heading_nj6jwF",
-        "text_KTWnCf"
-      ],
-      "name": "t:sections.image-with-text.presets.name",
-      "settings": {
-        "image": "shopify://shop_images/ChatGPT_Image_28_sept._2025_22_15_20.png",
-        "height": "adapt",
-        "desktop_image_width": "medium",
-        "layout": "image_first",
-        "desktop_content_position": "top",
-        "desktop_content_alignment": "left",
-        "content_layout": "no-overlap",
-        "section_color_scheme": "scheme-1",
-        "color_scheme": "",
-        "image_behavior": "none",
-        "mobile_content_alignment": "left",
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -456,7 +389,7 @@
         "headline_size": 40,
         "mobile_headline_size": 40,
         "headline_line_height": "inherit",
-        "text_color": "#111",
+        "text_color": "#111111",
         "link_color": "#005bd3",
         "show_on_device": "all",
         "section_background_color": "linear-gradient(319deg, rgba(226, 236, 253, 1) 13%, rgba(234, 253, 246, 1) 85%)",
@@ -474,7 +407,7 @@
         "container_radius": 0,
         "container_shadow": false,
         "container_border_size": 0,
-        "container_border_color": "#888",
+        "container_border_color": "#888888",
         "grid_gap": 10,
         "grid_display": "1fr",
         "vertical_alignment": "start",
@@ -482,7 +415,7 @@
         "media_radius": 5,
         "media_shadow": true,
         "media_border_size": 0,
-        "media_border_color": "#888",
+        "media_border_color": "#888888",
         "question_size": 18,
         "question_color": "#111111",
         "answer_color": "#555555",
@@ -491,7 +424,7 @@
         "faq_shadow": true,
         "faq_radius": 5,
         "faq_border_size": 0,
-        "faq_border_color": "#888",
+        "faq_border_color": "#888888",
         "active_background_color": "linear-gradient(164deg, #FFF 0%, #FFF 100%)",
         "inactive_background_color": "linear-gradient(164deg, #F0F0F0 0%, #F0F0F0 100%)",
         "faq_indicator": "plus_minus",
@@ -659,31 +592,31 @@
         "button_padding_horizontal": 16,
         "button_radius": 8,
         "button_border_thickness": 0,
-        "button_color": "#FFFFFF",
-        "button_hover_color": "#FFFFFF",
+        "button_color": "#ffffff",
+        "button_hover_color": "#ffffff",
         "button_bg_color": "#000000",
         "button_bg_hover_color": "#000000",
         "button_border_color": "#000000",
         "button_border_hover_color": "#000000",
-        "card_bg_color": "#FFFFFF",
+        "card_bg_color": "#ffffff",
         "card_border_color": "#000000",
-        "card_shadow_color": "#00B67A",
+        "card_shadow_color": "#00b67a",
         "card_heading_color": "#000000",
         "card_text_color": "#000000",
         "card_author_date_text_color": "#000000",
         "arrow_color": "#000000",
         "arrow_hover_color": "#000000",
-        "arrow_bg_color": "#FFFFFF",
-        "arrow_bg_hover_color": "#FFFFFF",
-        "arrow_border_color": "#FFFFFF",
-        "arrow_border_hover_color": "#FFFFFF",
+        "arrow_bg_color": "#ffffff",
+        "arrow_bg_hover_color": "#ffffff",
+        "arrow_border_color": "#ffffff",
+        "arrow_border_hover_color": "#ffffff",
         "dots_color": "#000000",
         "heading_color": "#000000",
         "rating_text_color": "#000000",
-        "stars_bg_color": "#00B67A",
-        "stars_color": "#FFFFFF",
+        "stars_bg_color": "#00b67a",
+        "stars_color": "#ffffff",
         "text_color": "#000000",
-        "background_color": "#FFFFFF",
+        "background_color": "#ffffff",
         "background_gradient": "linear-gradient(180deg, rgba(206, 239, 199, 1), rgba(255, 255, 255, 1) 100%)",
         "border_color": "#000000",
         "margin_top": 0,
@@ -807,33 +740,53 @@
         "header_before_gradient": "I nostri clienti",
         "header_gradient": "adorano",
         "header": "il prodotto",
-        "header_color": "#0B1128",
+        "header_color": "#0b1128",
         "header_font_size": 42,
         "header_mob_font_size": 28,
         "review_font_size": 16,
-        "review_font_color": "#0B1128",
+        "review_font_color": "#0b1128",
         "gradient_color_1": "#2e7d32",
         "gradient_color_2": "#f4a300",
         "gradient_color_3": "#f4a300",
-        "blur_color": "#B8B1DC",
+        "blur_color": "#b8b1dc",
         "background-color": "#ffffff",
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "sp_image_standalone_zf8NWQ": {
+      "type": "sp-image-standalone",
+      "name": "🚀SP - Image Standalone",
+      "settings": {
+        "background_color": "linear-gradient(164deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1))",
+        "max_width": 1000,
+        "padding_top": 25,
+        "padding_bottom": 25,
+        "padding_left": 10,
+        "padding_right": 10,
+        "image": "shopify://shop_images/4_d5e8bab2-34a7-4ce4-875d-a4f2fc4ca680.webp",
+        "media_aspect_ratio": "16 / 9",
+        "desktop_image_width": 1100,
+        "mobile_media_aspect_ratio": "16 / 9",
+        "mobile_image_width": 800,
+        "link": "",
+        "media_radius": 5,
+        "media_shadow": true
+      }
     }
   },
   "order": [
-    "sp_hero_iyg6Hp",
+    "sp_image_standalone_UainYU",
     "logotesti_4WfnDB",
-    "ss_wave_2_ywQFik",
     "ss_wave_2_eHz3at",
-    "sp_hero_UTCPdX",
+    "sp_image_standalone_JVDVtx",
+    "ss_wave_2_ywQFik",
+    "custom_liquid_X7iq9m",
     "testimonial_elite_PiaAmx",
-    "custom_liquid_Nn3TaD",
     "collapsible_content_jUWnke",
-    "image_with_text_UkVe4h",
     "sp_faq_plus_yW4WQr",
     "ss_testimonial_8_rgDJid",
-    "ss_glow_testimonial_4VNCwz"
+    "ss_glow_testimonial_4VNCwz",
+    "sp_image_standalone_zf8NWQ"
   ]
 }

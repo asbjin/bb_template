@@ -1,1 +1,629 @@
-{"sections":{"sp_hero_iyg6Hp":{"type":"sp-hero","settings":{"override_fonts":false,"text_font":"sans-serif","headline_font":"sans-serif","text_size":15,"text_line_height":"inherit","text_color":"#ffffff","headline_size":45,"headline_line_height":"inherit","headline_color":"#ffffff","text_shadow":true,"background_color":"linear-gradient(164deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1))","cover_background":"linear-gradient(164deg, rgba(17, 17, 17, 1), rgba(85, 85, 85, 1) 100%)","cover_opacity":25,"box_alignment":"center","text_alignment":"center","max_width":3000,"padding_top":25,"padding_bottom":25,"padding_left":10,"padding_right":10,"element_spacing":20,"button_background_color":"linear-gradient(164deg, rgba(17, 17, 17, 1), rgba(51, 51, 51, 1) 100%)","button_text_color":"#fff","button_padding_tb":10,"button_padding_lr":25,"button_border_radius":5,"headline":"Rediscover the Beauty of Feeling Your Best","content":"","hero_image":"shopify:\/\/shop_images\/Design-sans-titre-_13.webp","cta":"","cta_link":""}},"featured_product_9UUmJY":{"type":"featured-product","blocks":{"custom_liquid_kMdqVJ":{"type":"custom_liquid","disabled":true,"settings":{"custom_liquid":"<div class=\"product-info__liquid\">\n  <div class=\"oogalaboogla\" style=\"background: rgba(94, 23, 235, 0.05); padding: 5px 10px; display: flex; justify-content: center; align-items: center; border-radius: 10px;\">\n    <div style=\"font-size: 15px; text-align: center; line-height: 1; display: flex; align-items: center; gap: 8px; white-space: nowrap;\">\n      <span>\n        <strong>1 acheté = 1 offert<\/strong>\n      <\/span>\n    <\/div>\n  <\/div>\n<\/div>"}},"custom_liquid_QmTBEA":{"type":"custom_liquid","disabled":true,"settings":{"custom_liquid":"{% assign average_rating = 4.8 %}\n{% assign total_reviews = 962 %}\n\n<div class=\"rating-badge\" style=\"display: flex; align-items: center;\">\n  <div class=\"stars\" style=\"display: flex; gap: 1px;\">\n    {% for star in (1..5) %}\n      {% if star <= average_rating %}\n        <span style=\"color: #3383A1; font-size: 1.2em;\">&#9733;<\/span>\n      {% else %}\n        <span style=\"color: #e0e0e0; font-size: 1.2em;\">&#9734;<\/span>\n      {% endif %}\n    {% endfor %}\n  <\/div>\n  <div class=\"rating-text\" style=\"margin-left: 6px; font-size: 0.9em; color: #2e3e4e;\">\n    Excellent {{ average_rating }} | ({{ total_reviews }} Avis)\n  <\/div>\n<\/div>"}},"title_Dn4hDf":{"type":"title","settings":{"heading_size":"h1"}},"price_bF9icN":{"type":"price","settings":{}},"variant_picker_cbgHyz":{"type":"variant_picker","settings":{"picker_type":"button","swatch_shape":"circle"}},"quantity_selector_mi8emY":{"type":"quantity_selector","settings":{}},"custom_liquid_4arhBf":{"type":"custom_liquid","disabled":true,"settings":{"custom_liquid":"<div class=\"stock-warning-container\">\n  <div class=\"animated-dot\"><\/div>\n  <span class=\"stock-warning-text\">Stock en baisse<\/span> <!-- Traduction : Stock en baisse -->\n<\/div>\n\n<style>\n  \/* Stock warning container *\/\n  .stock-warning-container {\n    display: flex;\n    align-items: center;\n    gap: 10px;\n    font-family: 'Montserrat', sans-serif;\n  }\n\n  \/* Animated dot *\/\n  .animated-dot {\n    width: 12px;\n    height: 12px;\n    background-color: #FF0000; \/* Red color *\/\n    border-radius: 50%;\n    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);\n    animation: pulse 1.5s infinite;\n  }\n\n  \/* Warning text *\/\n  .stock-warning-text {\n    color: #FF0000; \/* Red color to match the dot *\/\n    font-weight: 700;\n    font-size: 16px;\n  }\n\n  \/* Dot animation (pulsing effect) *\/\n  @keyframes pulse {\n    0% {\n      transform: scale(1);\n      box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);\n    }\n    50% {\n      transform: scale(1.3);\n      box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);\n    }\n    100% {\n      transform: scale(1);\n      box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);\n    }\n  }\n<\/style>"}},"buy_buttons_tyjMQC":{"type":"buy_buttons","settings":{"show_dynamic_checkout":true,"show_gift_card_recipient":true}},"custom_liquid_QRaegc":{"type":"custom_liquid","disabled":true,"settings":{"custom_liquid":"<div class=\"product-guarantee\" style=\"margin-top: 20px; text-align: center;\">\n  <span class=\"icon-and-text\" style=\"display: flex; align-items: center; justify-content: center; gap: 10px;\">\n    <svg aria-hidden=\"true\" focusable=\"false\" role=\"presentation\" class=\"icon icon-shield\" viewBox=\"0 0 64 64\" width=\"24\" height=\"24\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n      <defs>\n        <style>.a{fill:none;stroke:#000;stroke-width:2px}<\/style>\n      <\/defs>\n      <path class=\"a\" d=\"M21.18 31.69L28.54 39l15.91-15.88\"><\/path>\n      <path class=\"a\" d=\"M53 12.54v15.24a31.41 31.41 0 0 1-3.7 14.95A25.46 25.46 0 0 1 32 56a25.46 25.46 0 0 1-17.3-13.27A31.41 31.41 0 0 1 11 27.78V12.54C24.88 13.67 32 8 32 8s7.12 5.67 21 4.54z\"><\/path>\n    <\/svg>\n    <span style=\"font-size: 14px; font-weight: 500; color: #333;\">\n      PAIEMENT SECURISE\n    <\/span>\n  <\/span>\n<\/div>"}}},"block_order":["custom_liquid_kMdqVJ","custom_liquid_QmTBEA","title_Dn4hDf","price_bF9icN","variant_picker_cbgHyz","quantity_selector_mi8emY","custom_liquid_4arhBf","buy_buttons_tyjMQC","custom_liquid_QRaegc"],"settings":{"product":"bioactive-grow-serum","color_scheme":"","secondary_background":false,"media_size":"medium","constrain_to_viewport":true,"media_fit":"contain","media_position":"left","image_zoom":"lightbox","hide_variants":false,"enable_video_looping":false,"padding_top":20,"padding_bottom":0}}},"order":["sp_hero_iyg6Hp","featured_product_9UUmJY"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "sp_hero_iyg6Hp": {
+      "type": "sp-hero",
+      "settings": {
+        "override_fonts": false,
+        "text_font": "system_ui_n4",
+        "headline_font": "system_ui_n4",
+        "text_size": 15,
+        "text_line_height": "inherit",
+        "text_color": "#ffffff",
+        "headline_size": 45,
+        "headline_line_height": "inherit",
+        "headline_color": "#ffffff",
+        "text_shadow": true,
+        "background_color": "",
+        "cover_background": "",
+        "cover_opacity": 25,
+        "box_alignment": "center",
+        "text_alignment": "center",
+        "max_width": 3000,
+        "padding_top": 320,
+        "padding_bottom": 25,
+        "padding_left": 30,
+        "padding_right": 10,
+        "element_spacing": 20,
+        "button_background_color": "linear-gradient(164deg, rgba(17, 17, 17, 1), rgba(51, 51, 51, 1) 100%)",
+        "button_text_color": "#ffffff",
+        "button_padding_tb": 10,
+        "button_padding_lr": 25,
+        "button_border_radius": 5,
+        "headline": "",
+        "content": "",
+        "hero_image": "shopify://shop_images/bann.png",
+        "cta": "",
+        "cta_link": ""
+      }
+    },
+    "logotesti_4WfnDB": {
+      "type": "LOGOTESTI",
+      "blocks": {
+        "slide_tLNFDx": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Grazia-Logo_svg.png",
+            "link": ""
+          }
+        },
+        "slide_UhAmj8": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/donna_moderna_v1.png",
+            "link": ""
+          }
+        },
+        "slide_HUPjwL": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Marie_Claire_Magazine_logo_svg.png",
+            "link": ""
+          }
+        },
+        "slide_G8Nkpi": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/elle-1.svg",
+            "link": ""
+          }
+        },
+        "slide_LAEhbR": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Grazia-Logo_svg_67e4ac22-c82d-4188-8a90-c8a457c517e1.png",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_tLNFDx",
+        "slide_UhAmj8",
+        "slide_HUPjwL",
+        "slide_G8Nkpi",
+        "slide_LAEhbR"
+      ],
+      "name": "SS - Scrolling Logo Cloud",
+      "settings": {
+        "ss-title": "Apprezzato dalle",
+        "heading_custom": false,
+        "heading_font": "assistant_n4",
+        "header_size": 32,
+        "header_align": "center",
+        "scrolling_velocity": 10,
+        "pause_hover": false,
+        "shadow": false,
+        "sliders_mt": 16,
+        "logo_padding_top": 0,
+        "logo_padding_bottom": 0,
+        "slider_gap": 30,
+        "slider_gap_mobile": 30,
+        "slider_direction": "left",
+        "icon_width": 100,
+        "header_color": "#121212",
+        "border_color": "#ffffff",
+        "background-color": "#ffffff",
+        "slider-background-color": "#ffffff",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "full_width": true,
+        "content_width": 90,
+        "border_thickness": 0,
+        "lazy": true
+      }
+    },
+    "ss_wave_2_FyKwL3": {
+      "type": "ss-wave-2",
+      "name": "SS - Wave #2",
+      "settings": {
+        "wave_height": 58,
+        "wave_height_mobile": 28,
+        "wave_animation": true,
+        "wave_rotate": false,
+        "wave_color": "#fda900",
+        "background_color": "#FFFFFF",
+        "background_gradient": "",
+        "border_color": "#000000",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_horizontal": 0,
+        "padding_horizontal_mobile": 0,
+        "full_width": true,
+        "content_width": 120,
+        "border_thickness": 0
+      }
+    },
+    "ss_wave_2_KJ4D4X": {
+      "type": "ss-wave-2",
+      "name": "SS - Wave #2",
+      "settings": {
+        "wave_height": 58,
+        "wave_height_mobile": 28,
+        "wave_animation": true,
+        "wave_rotate": true,
+        "wave_color": "#fda900",
+        "background_color": "#FFFFFF",
+        "background_gradient": "",
+        "border_color": "#000000",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_horizontal": 0,
+        "padding_horizontal_mobile": 0,
+        "full_width": true,
+        "content_width": 120,
+        "border_thickness": 0
+      }
+    },
+    "sp_hero_UTCPdX": {
+      "type": "sp-hero",
+      "settings": {
+        "override_fonts": false,
+        "text_font": "system_ui_n4",
+        "headline_font": "system_ui_n4",
+        "text_size": 15,
+        "text_line_height": "inherit",
+        "text_color": "#ffffff",
+        "headline_size": 45,
+        "headline_line_height": "inherit",
+        "headline_color": "#ffffff",
+        "text_shadow": true,
+        "background_color": "",
+        "cover_background": "",
+        "cover_opacity": 25,
+        "box_alignment": "center",
+        "text_alignment": "center",
+        "max_width": 3000,
+        "padding_top": 150,
+        "padding_bottom": 25,
+        "padding_left": 30,
+        "padding_right": 10,
+        "element_spacing": 20,
+        "button_background_color": "linear-gradient(164deg, rgba(17, 17, 17, 1), rgba(51, 51, 51, 1) 100%)",
+        "button_text_color": "#ffffff",
+        "button_padding_tb": 10,
+        "button_padding_lr": 25,
+        "button_border_radius": 5,
+        "headline": "",
+        "content": "",
+        "hero_image": "shopify://shop_images/Design_sans_titre_6.png",
+        "cta": "",
+        "cta_link": ""
+      }
+    },
+    "testimonial_elite_PiaAmx": {
+      "type": "testimonial-elite",
+      "blocks": {
+        "slide_8CrkQ7": {
+          "type": "slide",
+          "settings": {
+            "rating": 5,
+            "title": "Uno stimolante naturale del sistema immunitario",
+            "content": "Tutti i miei colleghi si sono ammalati, ma io non ho avuto nulla. Di solito sono la prima a prendere i virus che circolano. Ma questa volta? Niente di niente. Di sicuro continuerò!"
+          }
+        },
+        "slide_weq7hx": {
+          "type": "slide",
+          "settings": {
+            "rating": 4,
+            "title": "",
+            "content": "La mia pancia era sempre gonfia, anche a digiuno. Avevo provato di tutto, senza successo. Da quando faccio questa cura, mi sento leggera, finalmente normale. Niente più fastidi, né tensioni... riscopro il comfort digestivo. È liberatorio."
+          }
+        },
+        "slide_qPVFNX": {
+          "type": "slide",
+          "settings": {
+            "rating": 4,
+            "title": "Via i parassiti, entra l'energia!",
+            "content": "Non sapevo nemmeno di avere dei parassiti... Ma dopo qualche giorno ho espulso delle cose piuttosto strane. Oggi sento un vero cambiamento nel mio corpo: ho ritrovato molta energia!"
+          }
+        },
+        "slide_CfmLai": {
+          "type": "slide",
+          "settings": {
+            "rating": 4,
+            "title": "",
+            "content": "Per anni ho avuto quel peso nello stomaco. Disagio, gas, a volte anche vergogna. Oggi respiro, la mia pancia è tornata calma. Non ci penso più, ed è questo il vero lusso. Mi sento libero"
+          }
+        },
+        "slide_bWNhCq": {
+          "type": "slide",
+          "settings": {
+            "rating": 5,
+            "title": "Mi ha davvero aiutato a digerire meglio.",
+            "content": "Per anni ho sofferto di problemi di digestione, gonfiore costante e fastidi. Da alcune settimane tutto si è calmato: il mio stomaco sta molto meglio!"
+          }
+        }
+      },
+      "block_order": [
+        "slide_8CrkQ7",
+        "slide_weq7hx",
+        "slide_qPVFNX",
+        "slide_CfmLai",
+        "slide_bWNhCq"
+      ],
+      "name": "PC - Testimonial #1 Elite",
+      "settings": {
+        "heading": "<p><strong>Unisciti alla nostra community</strong></p>",
+        "heading_size": 24,
+        "heading_color": "#000000",
+        "heading_size_mobile": 20,
+        "stars": 4,
+        "stars_size": 15,
+        "stars_color": "#FFD700",
+        "rating": "<p><strong>4.7/5 </strong> Recensioni dei clienti</p>",
+        "rating_size": 18,
+        "rating_color": "#000000",
+        "rating_size_mobile": 16,
+        "image_border_radius": 10,
+        "image_border_width": 1,
+        "image_border_style": "solid",
+        "image_border_color": "#f3f3f3",
+        "item_stars_color": "#00b67a",
+        "item_title_size": 18,
+        "item_title_weight": "bold",
+        "item_title_color": "#000000",
+        "item_title_size_mobile": 16,
+        "item_text_size": 16,
+        "item_text_color": "#333333",
+        "item_text_size_mobile": 14,
+        "item_background": "#ffffff",
+        "item_border_width": 1,
+        "item_border_style": "solid",
+        "item_border_color": "#f3f3f3",
+        "item_border_radius": 10,
+        "enable_navigation_top": true,
+        "enable_navigation_bottom": true,
+        "navigation_color": "#333333",
+        "navigation_background": "#ffffff",
+        "layout_margin_top": 6,
+        "layout_margin_bottom": 8,
+        "layout_background": "#ffffff"
+      }
+    },
+    "ss_testimonial_8_rgDJid": {
+      "type": "ss-testimonial-8",
+      "blocks": {
+        "slide_J6htcn": {
+          "type": "slide",
+          "settings": {
+            "stars_count": 4.5,
+            "heading": "I love it! 😍",
+            "text": "I was initially hesitant to switch from my usual brand to this new one, but I'm so glad I did! This product has exceeded my expectations. It's not only affordable but also incredibly efficient. The quality is top-notch, and it's user-friendly.",
+            "author_date": "Cathrine"
+          }
+        },
+        "slide_JQjCCL": {
+          "type": "slide",
+          "settings": {
+            "stars_count": 5,
+            "heading": "I love it! 😍",
+            "text": "I was initially hesitant to switch from my usual brand to this new one, but I'm so glad I did! This product has exceeded my expectations. It's not only affordable but also incredibly efficient. The quality is top-notch, and it's user-friendly.",
+            "author_date": "Cathrine"
+          }
+        },
+        "slide_AKwaBT": {
+          "type": "slide",
+          "settings": {
+            "stars_count": 5,
+            "heading": "I love it! 😍",
+            "text": "I was initially hesitant to switch from my usual brand to this new one, but I'm so glad I did! This product has exceeded my expectations. It's not only affordable but also incredibly efficient. The quality is top-notch, and it's user-friendly.",
+            "author_date": "Cathrine"
+          }
+        },
+        "slide_nWbrDp": {
+          "type": "slide",
+          "settings": {
+            "stars_count": 5,
+            "heading": "I love it! 😍",
+            "text": "I was initially hesitant to switch from my usual brand to this new one, but I'm so glad I did! This product has exceeded my expectations. It's not only affordable but also incredibly efficient. The quality is top-notch, and it's user-friendly.",
+            "author_date": "Cathrine"
+          }
+        },
+        "slide_b9chQk": {
+          "type": "slide",
+          "settings": {
+            "stars_count": 5,
+            "heading": "I love it! 😍",
+            "text": "I was initially hesitant to switch from my usual brand to this new one, but I'm so glad I did! This product has exceeded my expectations. It's not only affordable but also incredibly efficient. The quality is top-notch, and it's user-friendly.",
+            "author_date": "Cathrine"
+          }
+        },
+        "slide_eF4VmH": {
+          "type": "slide",
+          "settings": {
+            "stars_count": 5,
+            "heading": "I love it! 😍",
+            "text": "I was initially hesitant to switch from my usual brand to this new one, but I'm so glad I did! This product has exceeded my expectations. It's not only affordable but also incredibly efficient. The quality is top-notch, and it's user-friendly.",
+            "author_date": "Cathrine"
+          }
+        }
+      },
+      "block_order": [
+        "slide_J6htcn",
+        "slide_JQjCCL",
+        "slide_AKwaBT",
+        "slide_nWbrDp",
+        "slide_b9chQk",
+        "slide_eF4VmH"
+      ],
+      "name": "SS - Testimonial #8",
+      "settings": {
+        "heading": "Our customers tell it better than we do!",
+        "heading_custom": false,
+        "heading_font": "josefin_sans_n4",
+        "heading_size": 40,
+        "heading_size_mobile": 24,
+        "heading_height": 130,
+        "heading_align": "center",
+        "rating_text": "Excellent",
+        "rating_text_custom": false,
+        "rating_text_font": "josefin_sans_n4",
+        "rating_text_size": 24,
+        "rating_text_size_mobile": 20,
+        "rating_text_height": 130,
+        "rating_text_mt": 16,
+        "rating": 4.7,
+        "rating_hide": false,
+        "rating_text_hide": false,
+        "rating_align": "center",
+        "stars_count": 5,
+        "stars_size": 28,
+        "stars_size_mobile": 24,
+        "stars_align": "center",
+        "text": "<p>based on <strong>1 067</strong> reviews</p>",
+        "text_custom": false,
+        "text_font": "josefin_sans_n4",
+        "text_size": 20,
+        "text_size_mobile": 16,
+        "text_height": 130,
+        "text_align": "center",
+        "text_mt": 16,
+        "slider_width": 80,
+        "slider_view": 3,
+        "slider_view_mobile": 1.2,
+        "slider_gap": 20,
+        "slider_gap_mobile": 20,
+        "slider_mt": 36,
+        "card_padding_vertical": 32,
+        "card_padding_vertical_mobile": 24,
+        "card_padding_horizontal": 40,
+        "card_padding_horizontal_mobile": 24,
+        "card_radius": 16,
+        "card_border_thickness": 0,
+        "card_shadow": true,
+        "card_heading_custom": false,
+        "card_heading_font": "josefin_sans_n4",
+        "card_heading_size": 24,
+        "card_heading_size_mobile": 20,
+        "card_heading_height": 130,
+        "card_heading_align": "center",
+        "card_heading_mt": 16,
+        "card_text_custom": false,
+        "card_text_font": "josefin_sans_n4",
+        "card_text_size": 14,
+        "card_text_size_mobile": 14,
+        "card_text_height": 150,
+        "card_text_align": "center",
+        "card_text_mt": 16,
+        "card_text_more": "View More",
+        "card_text_less": "View Less",
+        "card_count_words": 20,
+        "card_author_date_text_custom": false,
+        "card_author_date_text_font": "josefin_sans_n4",
+        "card_author_date_text_size": 16,
+        "card_author_date_text_size_mobile": 16,
+        "card_author_date_text_height": 130,
+        "card_author_date_text_align": "center",
+        "card_author_date_text_mt": 16,
+        "arrow_size": 50,
+        "arrow_size_mobile": 50,
+        "arrow_icon_size": 28,
+        "arrow_icon_size_mobile": 28,
+        "arrow_border_thickness": 0,
+        "arrow_show_desktop": true,
+        "arrow_show_mobile": true,
+        "dots_size": 12,
+        "dots_size_mobile": 12,
+        "dots_show_desktop": false,
+        "dots_show_mobile": false,
+        "button": "View All",
+        "button_url": "",
+        "button_custom": false,
+        "button_font": "josefin_sans_n4",
+        "button_size": 16,
+        "button_size_mobile": 14,
+        "button_height": 100,
+        "button_align": "center",
+        "button_mt": 16,
+        "button_padding_vertical": 20,
+        "button_padding_horizontal": 16,
+        "button_radius": 8,
+        "button_border_thickness": 0,
+        "button_color": "#FFFFFF",
+        "button_hover_color": "#FFFFFF",
+        "button_bg_color": "#000000",
+        "button_bg_hover_color": "#000000",
+        "button_border_color": "#000000",
+        "button_border_hover_color": "#000000",
+        "card_bg_color": "#FFFFFF",
+        "card_border_color": "#000000",
+        "card_shadow_color": "#00B67A",
+        "card_heading_color": "#000000",
+        "card_text_color": "#000000",
+        "card_author_date_text_color": "#000000",
+        "arrow_color": "#000000",
+        "arrow_hover_color": "#000000",
+        "arrow_bg_color": "#FFFFFF",
+        "arrow_bg_hover_color": "#FFFFFF",
+        "arrow_border_color": "#FFFFFF",
+        "arrow_border_hover_color": "#FFFFFF",
+        "dots_color": "#000000",
+        "heading_color": "#000000",
+        "rating_text_color": "#000000",
+        "stars_bg_color": "#00B67A",
+        "stars_color": "#FFFFFF",
+        "text_color": "#000000",
+        "background_color": "#FFFFFF",
+        "background_gradient": "linear-gradient(180deg, rgba(206, 239, 199, 1), rgba(255, 255, 255, 1) 100%)",
+        "border_color": "#000000",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "padding_horizontal": 5,
+        "padding_horizontal_mobile": 1.5,
+        "full_width": true,
+        "content_width": 120,
+        "border_thickness": 0,
+        "lazy": true
+      }
+    },
+    "ss_glow_testimonial_4VNCwz": {
+      "type": "ss-glow-testimonial",
+      "blocks": {
+        "image_QX84jJ": {
+          "type": "Image",
+          "settings": {
+            "review_text": "Add awesome customer testimonial right here",
+            "review_rating": 5
+          }
+        },
+        "image_miL9N8": {
+          "type": "Image",
+          "settings": {
+            "review_text": "Add awesome customer testimonial right here",
+            "review_rating": 5
+          }
+        },
+        "image_cPNn7c": {
+          "type": "Image",
+          "settings": {
+            "review_text": "Add awesome customer testimonial right here",
+            "review_rating": 5
+          }
+        },
+        "image_pp7EXW": {
+          "type": "Image",
+          "settings": {
+            "review_text": "Add awesome customer testimonial right here",
+            "review_rating": 5
+          }
+        },
+        "image_E68gag": {
+          "type": "Image",
+          "settings": {
+            "review_text": "Add awesome customer testimonial right here",
+            "review_rating": 5
+          }
+        },
+        "image_a9GADV": {
+          "type": "Image",
+          "settings": {
+            "review_text": "Add awesome customer testimonial right here",
+            "review_rating": 5
+          }
+        },
+        "image_GLdJHE": {
+          "type": "Image",
+          "settings": {
+            "review_text": "Add awesome customer testimonial right here",
+            "review_rating": 5
+          }
+        },
+        "image_C7UhW9": {
+          "type": "Image",
+          "settings": {
+            "review_text": "Add awesome customer testimonial right here",
+            "review_rating": 5
+          }
+        },
+        "image_UKC6bU": {
+          "type": "Image",
+          "settings": {
+            "review_text": "Add awesome customer testimonial right here",
+            "review_rating": 5
+          }
+        },
+        "image_Y7MKhP": {
+          "type": "Image",
+          "settings": {
+            "review_text": "Add awesome customer testimonial right here",
+            "review_rating": 5
+          }
+        },
+        "image_ENRyA8": {
+          "type": "Image",
+          "settings": {
+            "review_text": "Add awesome customer testimonial right here",
+            "review_rating": 5
+          }
+        },
+        "image_zaRBwB": {
+          "type": "Image",
+          "settings": {
+            "review_text": "Add awesome customer testimonial right here",
+            "review_rating": 5
+          }
+        }
+      },
+      "block_order": [
+        "image_QX84jJ",
+        "image_miL9N8",
+        "image_cPNn7c",
+        "image_pp7EXW",
+        "image_E68gag",
+        "image_a9GADV",
+        "image_GLdJHE",
+        "image_C7UhW9",
+        "image_UKC6bU",
+        "image_Y7MKhP",
+        "image_ENRyA8",
+        "image_zaRBwB"
+      ],
+      "name": "SS - Glow Testimonial",
+      "settings": {
+        "animation_time": 30,
+        "loop_amount": 2,
+        "header_before_gradient": "I nostri clienti",
+        "header_gradient": "adorano",
+        "header": "il prodotto",
+        "header_color": "#0B1128",
+        "header_font_size": 42,
+        "header_mob_font_size": 28,
+        "review_font_size": 16,
+        "review_font_color": "#0B1128",
+        "gradient_color_1": "#2e7d32",
+        "gradient_color_2": "#f4a300",
+        "gradient_color_3": "#f4a300",
+        "blur_color": "#B8B1DC",
+        "background-color": "#ffffff",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "sp_hero_iyg6Hp",
+    "logotesti_4WfnDB",
+    "ss_wave_2_FyKwL3",
+    "ss_wave_2_KJ4D4X",
+    "sp_hero_UTCPdX",
+    "testimonial_elite_PiaAmx",
+    "ss_testimonial_8_rgDJid",
+    "ss_glow_testimonial_4VNCwz"
+  ]
+}

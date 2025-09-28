@@ -30,76 +30,6 @@
         "media_shadow": true
       }
     },
-    "logotesti_4WfnDB": {
-      "type": "LOGOTESTI",
-      "blocks": {
-        "slide_tLNFDx": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/Grazia-Logo_svg.png",
-            "link": ""
-          }
-        },
-        "slide_UhAmj8": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/donna_moderna_v1.png",
-            "link": ""
-          }
-        },
-        "slide_HUPjwL": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/Marie_Claire_Magazine_logo_svg.png",
-            "link": ""
-          }
-        },
-        "slide_G8Nkpi": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/elle-1.svg",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "slide_tLNFDx",
-        "slide_UhAmj8",
-        "slide_HUPjwL",
-        "slide_G8Nkpi"
-      ],
-      "disabled": true,
-      "name": "SS - Scrolling Logo Cloud",
-      "settings": {
-        "ss-title": "Floreva",
-        "heading_custom": false,
-        "heading_font": "assistant_n4",
-        "header_size": 22,
-        "header_align": "center",
-        "scrolling_velocity": 14,
-        "pause_hover": false,
-        "shadow": false,
-        "sliders_mt": 16,
-        "logo_padding_top": 0,
-        "logo_padding_bottom": 0,
-        "slider_gap": 30,
-        "slider_gap_mobile": 30,
-        "slider_direction": "left",
-        "icon_width": 100,
-        "header_color": "#121212",
-        "border_color": "#ffffff",
-        "background-color": "#ffffff",
-        "slider-background-color": "#ffffff",
-        "margin_top": 0,
-        "margin_bottom": 0,
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "full_width": true,
-        "content_width": 40,
-        "border_thickness": 0,
-        "lazy": true
-      }
-    },
     "ss_wave_2_eHz3at": {
       "type": "ss-wave-2",
       "name": "SS - Wave #2",
@@ -167,14 +97,181 @@
         "border_thickness": 0
       }
     },
-    "custom_liquid_X7iq9m": {
-      "type": "custom-liquid",
-      "name": "t:sections.custom-liquid.presets.name",
+    "logotesti_4WfnDB": {
+      "type": "LOGOTESTI",
+      "blocks": {
+        "slide_tLNFDx": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Grazia-Logo_svg.png",
+            "link": ""
+          }
+        },
+        "slide_UhAmj8": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/donna_moderna_v1.png",
+            "link": ""
+          }
+        },
+        "slide_HUPjwL": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Marie_Claire_Magazine_logo_svg.png",
+            "link": ""
+          }
+        },
+        "slide_G8Nkpi": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/elle-1.svg",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_tLNFDx",
+        "slide_UhAmj8",
+        "slide_HUPjwL",
+        "slide_G8Nkpi"
+      ],
+      "name": "SS - Scrolling Logo Cloud",
       "settings": {
-        "custom_liquid": "",
-        "color_scheme": "",
-        "padding_top": 40,
-        "padding_bottom": 52
+        "ss-title": "Floreva",
+        "heading_custom": false,
+        "heading_font": "assistant_n4",
+        "header_size": 22,
+        "header_align": "center",
+        "scrolling_velocity": 14,
+        "pause_hover": false,
+        "shadow": false,
+        "sliders_mt": 16,
+        "logo_padding_top": 0,
+        "logo_padding_bottom": 0,
+        "slider_gap": 30,
+        "slider_gap_mobile": 30,
+        "slider_direction": "left",
+        "icon_width": 100,
+        "header_color": "#121212",
+        "border_color": "#ffffff",
+        "background-color": "#ffffff",
+        "slider-background-color": "#ffffff",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "full_width": true,
+        "content_width": 40,
+        "border_thickness": 0,
+        "lazy": true
+      }
+    },
+    "ss_slider_2_8Vhmqi": {
+      "type": "ss-slider-2",
+      "blocks": {
+        "slide_d7KAgB": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/3.webp",
+            "title": "",
+            "button": "",
+            "url": ""
+          }
+        },
+        "slide_qKTiAt": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_28_sept._2025_22_15_20.png",
+            "title": "",
+            "button": "",
+            "url": ""
+          }
+        },
+        "slide_T9gKVL": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/1_24e2a074-86fc-4acd-ac56-c8b98fe073a3.webp",
+            "title": "",
+            "button": "",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_d7KAgB",
+        "slide_qKTiAt",
+        "slide_T9gKVL"
+      ],
+      "name": "SS - Slider #2",
+      "settings": {
+        "slider_view": 4,
+        "slider_view_mobile": 1.1,
+        "slider_rotate": 0,
+        "card_padding_vertical": 0,
+        "card_padding_vertical_mobile": 16,
+        "card_padding_horizontal": 40,
+        "card_padding_horizontal_mobile": 30,
+        "card_radius": 0,
+        "card_border_thickness": 0,
+        "card_shadow": true,
+        "card_ratio": "square",
+        "card_ratio_mobile": "square",
+        "card_overlay": 0,
+        "content_horizontal_position": "center",
+        "content_horizontal_position_mobile": "center",
+        "content_vertical_position": "end",
+        "content_vertical_position_mobile": "end",
+        "title_custom": false,
+        "title_font": "josefin_sans_n4",
+        "title_size": 28,
+        "title_size_mobile": 28,
+        "title_height": 100,
+        "button_custom": false,
+        "button_font": "josefin_sans_n4",
+        "button_size": 14,
+        "button_size_mobile": 14,
+        "button_height": 100,
+        "button_mt": 16,
+        "button_padding_vertical": 12,
+        "button_padding_horizontal": 20,
+        "button_radius": 0,
+        "button_border_thickness": 1,
+        "arrow_size": 50,
+        "arrow_size_mobile": 32,
+        "arrow_icon_size": 20,
+        "arrow_icon_size_mobile": 12,
+        "arrow_border_thickness": 0,
+        "arrow_show_desktop": true,
+        "arrow_show_mobile": true,
+        "card_border_color": "#000000",
+        "card_shadow_color": "#000000",
+        "card_overlay_color": "#000000",
+        "title_color": "#FFFFFF",
+        "button_color": "#FFFFFF",
+        "button_hover_color": "#000000",
+        "button_bg_color": "",
+        "button_bg_hover_color": "#ffffff",
+        "button_border_color": "#FFFFFF",
+        "button_border_hover_color": "#FFFFFF",
+        "arrow_color": "#000000",
+        "arrow_hover_color": "#FFFFFF",
+        "arrow_bg_color": "#FFFFFF",
+        "arrow_bg_hover_color": "#000000",
+        "arrow_border_color": "#000000",
+        "arrow_border_hover_color": "#454545",
+        "background_color": "#FFFFFF",
+        "background_gradient": "",
+        "border_color": "#000000",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_horizontal": 0,
+        "padding_horizontal_mobile": 0,
+        "full_width": true,
+        "content_width": 120,
+        "border_thickness": 0,
+        "lazy": true
       }
     },
     "testimonial_elite_PiaAmx": {
@@ -425,8 +522,8 @@
         "faq_radius": 5,
         "faq_border_size": 0,
         "faq_border_color": "#888888",
-        "active_background_color": "linear-gradient(164deg, #FFF 0%, #FFF 100%)",
-        "inactive_background_color": "linear-gradient(164deg, #F0F0F0 0%, #F0F0F0 100%)",
+        "active_background_color": "linear-gradient(164deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 100%)",
+        "inactive_background_color": "linear-gradient(164deg, rgba(240, 240, 240, 1), rgba(240, 240, 240, 1) 100%)",
         "faq_indicator": "plus_minus",
         "headline_alignment": "center",
         "headline": "<strong>Check out our FAQ</strong>",
@@ -777,11 +874,11 @@
   },
   "order": [
     "sp_image_standalone_UainYU",
-    "logotesti_4WfnDB",
     "ss_wave_2_eHz3at",
     "sp_image_standalone_JVDVtx",
     "ss_wave_2_ywQFik",
-    "custom_liquid_X7iq9m",
+    "logotesti_4WfnDB",
+    "ss_slider_2_8Vhmqi",
     "testimonial_elite_PiaAmx",
     "collapsible_content_jUWnke",
     "sp_faq_plus_yW4WQr",

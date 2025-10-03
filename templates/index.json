@@ -469,8 +469,8 @@
         "question_Kzheng": {
           "type": "question",
           "settings": {
-            "question": "<b>How does the FAQ section work?</b>",
-            "answer": "<p>Its simple really. You just add the questions as blocks and then you edit the question and answer.</p>",
+            "question": "3. È davvero naturale?",
+            "answer": "<h3><strong>È davvero naturale al 100%?</strong></h3><p>Assolutamente sì! OregaPlus contiene SOLO:</p><p><strong>Olio di origano selvatico</strong> (Origanum vulgare): 150 mg di olio ultraconcentrato all'80% di carvacrolo</p><p><strong>Olio di nigella</strong> (Nigella sativa): spremuto a freddo, qualità premium</p><p><strong>Capsula vegetale</strong>: senza gelatina animale</p><p><strong>Tutto qui!</strong> Nessun additivo, nessun conservante, nessun eccipiente dubbio</p><p>Il nostro impegno: se non riesci a pronunciare un ingrediente, significa che non è presente nei nostri prodotti.</p>",
             "link": "",
             "video_inline": true,
             "video_autoplay": false,

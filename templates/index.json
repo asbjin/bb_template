@@ -864,7 +864,7 @@
       "type": "sp-image-standalone",
       "name": "🚀SP - Image Standalone",
       "settings": {
-        "background_color": "linear-gradient(164deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1))",
+        "background_color": "linear-gradient(164deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 100%)",
         "max_width": 1000,
         "padding_top": 25,
         "padding_bottom": 25,
@@ -907,11 +907,11 @@
     "ss_slider_2_8Vhmqi",
     "ss_atc_button_3_pF7D8t",
     "testimonial_elite_PiaAmx",
+    "17595225339695d568",
     "collapsible_content_jUWnke",
     "sp_faq_plus_yW4WQr",
     "ss_testimonial_8_rgDJid",
     "ss_glow_testimonial_4VNCwz",
-    "sp_image_standalone_zf8NWQ",
-    "17595225339695d568"
+    "sp_image_standalone_zf8NWQ"
   ]
 }

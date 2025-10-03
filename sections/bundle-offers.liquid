@@ -1,0 +1,75 @@
+{% schema %}
+{
+  "name": "Bundle Offers",
+  "settings": []
+}
+{% endschema %}
+
+<div class="bundle-offers">
+  <h2 style="text-align:center; margin-bottom:20px;">Offre spéciale Florevia</h2>
+
+  <div style="text-align:center; font-size:20px; margin-bottom:20px;">
+    Offre valable aujourd'hui seulement ⏳ : <span id="countdown"></span>
+  </div>
+
+  <div class="bundle-grid">
+    <div class="bundle-item">
+      <h3>Florevia — Programme 30 jours</h3>
+      <p><span class="price">39,95 €</span> <span class="compare">49,95 €</span></p>
+      <a href="/products/florevia-programme-30-jours" class="btn">Acheter maintenant</a>
+    </div>
+
+    <div class="bundle-item highlight">
+      <h3>Florevia — 90 jours (2+1 offert)</h3>
+      <p><span class="price">69,95 €</span> <span class="compare">99,90 €</span></p>
+      <p class="tag">⭐ Le plus choisi</p>
+      <a href="/products/florevia-90-jours-2-1-offert" class="btn">Acheter maintenant</a>
+    </div>
+
+    <div class="bundle-item best">
+      <h3>Florevia — 180 jours (4+2 offerts)</h3>
+      <p><span class="price">119,95 €</span> <span class="compare">199,80 €</span></p>
+      <p class="tag">🔥 La plus rentable</p>
+      <a href="/products/florevia-180-jours-4-2-offerts" class="btn">Acheter maintenant</a>
+    </div>
+  </div>
+</div>
+
+<style>
+.bundle-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+.bundle-item { border: 1px solid #ddd; padding: 20px; border-radius: 12px; background: #fff; text-align:center; }
+.bundle-item .compare { text-decoration: line-through; color: grey; margin-left: 5px; }
+.bundle-item.highlight { border: 2px solid orange; background: #fff9f0; }
+.bundle-item.best { border: 2px solid green; background: #f9fff9; }
+.bundle-item .btn { display: inline-block; background: #ffeb00; padding: 12px 24px; border-radius: 8px; font-weight: bold; text-decoration: none; margin-top: 10px; }
+.bundle-item .tag { color: #ff6600; font-weight: bold; margin-top: 5px; }
+</style>
+
+<script>
+function startTimer(duration, display) {
+    var timer = duration, hours, minutes, seconds;
+    setInterval(function () {
+        hours = parseInt(timer / 3600, 10)
+        minutes = parseInt((timer % 3600) / 60, 10)
+        seconds = parseInt(timer % 60, 10);
+
+        hours = hours < 10 ? "0" + hours : hours;
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = hours + "h " + minutes + "m " + seconds + "s";
+
+        if (--timer < 0) {
+            timer = duration; // reset chaque jour
+        }
+    }, 1000);
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    var twentyFourHours = 24 * 60 * 60, 
+        display = document.querySelector('#countdown');
+    if(display){
+        startTimer(twentyFourHours, display);
+    }
+});
+</script>

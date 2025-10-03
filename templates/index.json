@@ -376,6 +376,33 @@
         "layout_background": "#ffffff"
       }
     },
+    "17595225339695d568": {
+      "type": "apps",
+      "blocks": {
+        "kaching_bundles_app_block_KCLgEF": {
+          "type": "shopify://apps/kaching-bundles/blocks/app-block/6c637362-a106-4a32-94ac-94dcfd68cdb8",
+          "settings": {
+            "product": "florevia-programme-30-jours"
+          }
+        }
+      },
+      "block_order": [
+        "kaching_bundles_app_block_KCLgEF"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "custom_liquid_WACbxF": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div style=\"text-align:center; font-size:20px; margin:20px 0;\">\n  Offre valable aujourd'hui seulement ⏳ : <span id=\"countdown\"></span>\n</div>\n\n<script>\nfunction startTimer(duration, display) {\n    var timer = duration, hours, minutes, seconds;\n    setInterval(function () {\n        hours = parseInt(timer / 3600, 10);\n        minutes = parseInt((timer % 3600) / 60, 10);\n        seconds = parseInt(timer % 60, 10);\n\n        hours = hours < 10 ? \"0\" + hours : hours;\n        minutes = minutes < 10 ? \"0\" + minutes : minutes;\n        seconds = seconds < 10 ? \"0\" + seconds : seconds;\n\n        display.textContent = hours + \"h \" + minutes + \"m \" + seconds + \"s\";\n\n        if (--timer < 0) {\n            timer = duration; // reset chaque jour\n        }\n    }, 1000);\n}\n\ndocument.addEventListener(\"DOMContentLoaded\", function () {\n    var twentyFourHours = 24 * 60 * 60, \n        display = document.querySelector('#countdown');\n    if(display){\n        startTimer(twentyFourHours, display);\n    }\n});\n</script>",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
     "collapsible_content_jUWnke": {
       "type": "collapsible-content",
       "blocks": {
@@ -879,23 +906,6 @@
         "media_radius": 5,
         "media_shadow": true
       }
-    },
-    "17595225339695d568": {
-      "type": "apps",
-      "blocks": {
-        "kaching_bundles_app_block_KCLgEF": {
-          "type": "shopify://apps/kaching-bundles/blocks/app-block/6c637362-a106-4a32-94ac-94dcfd68cdb8",
-          "settings": {
-            "product": "florevia-programme-30-jours"
-          }
-        }
-      },
-      "block_order": [
-        "kaching_bundles_app_block_KCLgEF"
-      ],
-      "settings": {
-        "include_margins": true
-      }
     }
   },
   "order": [
@@ -908,6 +918,7 @@
     "ss_atc_button_3_pF7D8t",
     "testimonial_elite_PiaAmx",
     "17595225339695d568",
+    "custom_liquid_WACbxF",
     "collapsible_content_jUWnke",
     "sp_faq_plus_yW4WQr",
     "ss_testimonial_8_rgDJid",

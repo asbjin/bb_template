@@ -879,6 +879,23 @@
         "media_radius": 5,
         "media_shadow": true
       }
+    },
+    "17595225339695d568": {
+      "type": "apps",
+      "blocks": {
+        "kaching_bundles_app_block_KCLgEF": {
+          "type": "shopify://apps/kaching-bundles/blocks/app-block/6c637362-a106-4a32-94ac-94dcfd68cdb8",
+          "settings": {
+            "product": "florevia-programme-30-jours"
+          }
+        }
+      },
+      "block_order": [
+        "kaching_bundles_app_block_KCLgEF"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
@@ -894,6 +911,7 @@
     "sp_faq_plus_yW4WQr",
     "ss_testimonial_8_rgDJid",
     "ss_glow_testimonial_4VNCwz",
-    "sp_image_standalone_zf8NWQ"
+    "sp_image_standalone_zf8NWQ",
+    "17595225339695d568"
   ]
 }

@@ -532,28 +532,11 @@
     "featured_product_xBrNF9": {
       "type": "featured-product",
       "blocks": {
-        "text_4K3BJG": {
-          "type": "text",
-          "settings": {
-            "text": "{{ section.settings.product.vendor }}",
-            "text_style": "uppercase"
-          }
-        },
-        "title_MxQUCG": {
-          "type": "title",
-          "settings": {
-            "heading_size": "h1"
-          }
-        },
         "kaching_bundles_app_block_7P3Cb6": {
           "type": "shopify://apps/kaching-bundles/blocks/app-block/6c637362-a106-4a32-94ac-94dcfd68cdb8",
           "settings": {
             "product": "{{section.settings.product}}"
           }
-        },
-        "price_tMwgPi": {
-          "type": "price",
-          "settings": {}
         },
         "variant_picker_BrLPQA": {
           "type": "variant_picker",
@@ -562,33 +545,18 @@
             "swatch_shape": "circle"
           }
         },
-        "quantity_selector_Dyt7WD": {
-          "type": "quantity_selector",
-          "settings": {}
-        },
         "buy_buttons_inTCUR": {
           "type": "buy_buttons",
           "settings": {
             "show_dynamic_checkout": false,
             "show_gift_card_recipient": false
           }
-        },
-        "share_LEc9KA": {
-          "type": "share",
-          "settings": {
-            "share_label": "Condividi"
-          }
         }
       },
       "block_order": [
-        "text_4K3BJG",
-        "title_MxQUCG",
         "kaching_bundles_app_block_7P3Cb6",
-        "price_tMwgPi",
         "variant_picker_BrLPQA",
-        "quantity_selector_Dyt7WD",
-        "buy_buttons_inTCUR",
-        "share_LEc9KA"
+        "buy_buttons_inTCUR"
       ],
       "name": "t:sections.featured-product.presets.name",
       "settings": {

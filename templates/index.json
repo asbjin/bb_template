@@ -502,6 +502,16 @@
         "lazy": true
       }
     },
+    "custom_liquid_WACbxF": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div class=\"urgent-offer\">\n  <h2>OFFRE VALABLE AUJOURD’HUI SEULEMENT !</h2>\n\n  <div id=\"countdown\" class=\"countdown\"></div>\n\n  <a href=\"#bundles\" class=\"cta-btn\">Acheter maintenant</a>\n</div>\n\n<style>\n.urgent-offer { text-align:center; margin:30px 0; font-family: Arial, sans-serif; }\n.urgent-offer h2 { font-size:28px; font-weight:900; margin-bottom:20px; }\n\n/* Timer horizontal */\n.countdown {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  gap: 15px;\n  font-size: 32px;\n  font-weight: 700;\n}\n.countdown div {\n  text-align: center;\n}\n.countdown span {\n  display: block;\n  font-size: 14px;\n  font-weight: 400;\n  margin-top: 5px;\n  color: #555;\n}\n\n/* Bouton */\n.cta-btn {\n  display:inline-block; \n  background:#ffeb00; \n  padding:15px 40px; \n  font-size:18px; \n  border-radius:8px; \n  font-weight:700; \n  text-decoration:none; \n  color:#000; \n  margin:20px 0;\n}\n</style>\n\n<script>\nfunction startTimer(duration, display) {\n    var timer = duration, hours, minutes, seconds;\n    setInterval(function () {\n        hours = parseInt(timer / 3600, 10);\n        minutes = parseInt((timer % 3600) / 60, 10);\n        seconds = parseInt(timer % 60, 10);\n\n        hours = hours < 10 ? \"0\" + hours : hours;\n        minutes = minutes < 10 ? \"0\" + minutes : minutes;\n        seconds = seconds < 10 ? \"0\" + seconds : seconds;\n\n        display.innerHTML = `\n            <div>${hours}<span>Heures</span></div> :\n            <div>${minutes}<span>Minutes</span></div> :\n            <div>${seconds}<span>Secondes</span></div>\n        `;\n\n        if (--timer < 0) { timer = duration; }\n    }, 1000);\n}\n\ndocument.addEventListener(\"DOMContentLoaded\", function () {\n    var twentyFourHours = 24 * 60 * 60, \n        display = document.querySelector('#countdown');\n    if(display){\n        startTimer(twentyFourHours, display);\n    }\n});\n</script>",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
     "17595225339695d568": {
       "type": "apps",
       "blocks": {
@@ -519,14 +529,74 @@
         "include_margins": true
       }
     },
-    "custom_liquid_WACbxF": {
-      "type": "custom-liquid",
-      "name": "t:sections.custom-liquid.presets.name",
+    "featured_product_xBrNF9": {
+      "type": "featured-product",
+      "blocks": {
+        "text_4K3BJG": {
+          "type": "text",
+          "settings": {
+            "text": "{{ section.settings.product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title_MxQUCG": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "price_tMwgPi": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker_BrLPQA": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector_Dyt7WD": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons_inTCUR": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "share_LEc9KA": {
+          "type": "share",
+          "settings": {
+            "share_label": "Condividi"
+          }
+        }
+      },
+      "block_order": [
+        "text_4K3BJG",
+        "title_MxQUCG",
+        "price_tMwgPi",
+        "variant_picker_BrLPQA",
+        "quantity_selector_Dyt7WD",
+        "buy_buttons_inTCUR",
+        "share_LEc9KA"
+      ],
+      "name": "t:sections.featured-product.presets.name",
       "settings": {
-        "custom_liquid": "<div class=\"urgent-offer\">\n  <h2>OFFRE VALABLE AUJOURD’HUI SEULEMENT !</h2>\n\n  <div id=\"countdown\" class=\"countdown\"></div>\n\n  <a href=\"#bundles\" class=\"cta-btn\">Acheter maintenant</a>\n</div>\n\n<style>\n.urgent-offer { text-align:center; margin:30px 0; font-family: Arial, sans-serif; }\n.urgent-offer h2 { font-size:28px; font-weight:900; margin-bottom:20px; }\n\n/* Timer horizontal */\n.countdown {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  gap: 15px;\n  font-size: 32px;\n  font-weight: 700;\n}\n.countdown div {\n  text-align: center;\n}\n.countdown span {\n  display: block;\n  font-size: 14px;\n  font-weight: 400;\n  margin-top: 5px;\n  color: #555;\n}\n\n/* Bouton */\n.cta-btn {\n  display:inline-block; \n  background:#ffeb00; \n  padding:15px 40px; \n  font-size:18px; \n  border-radius:8px; \n  font-weight:700; \n  text-decoration:none; \n  color:#000; \n  margin:20px 0;\n}\n</style>\n\n<script>\nfunction startTimer(duration, display) {\n    var timer = duration, hours, minutes, seconds;\n    setInterval(function () {\n        hours = parseInt(timer / 3600, 10);\n        minutes = parseInt((timer % 3600) / 60, 10);\n        seconds = parseInt(timer % 60, 10);\n\n        hours = hours < 10 ? \"0\" + hours : hours;\n        minutes = minutes < 10 ? \"0\" + minutes : minutes;\n        seconds = seconds < 10 ? \"0\" + seconds : seconds;\n\n        display.innerHTML = `\n            <div>${hours}<span>Heures</span></div> :\n            <div>${minutes}<span>Minutes</span></div> :\n            <div>${seconds}<span>Secondes</span></div>\n        `;\n\n        if (--timer < 0) { timer = duration; }\n    }, 1000);\n}\n\ndocument.addEventListener(\"DOMContentLoaded\", function () {\n    var twentyFourHours = 24 * 60 * 60, \n        display = document.querySelector('#countdown');\n    if(display){\n        startTimer(twentyFourHours, display);\n    }\n});\n</script>",
+        "product": "florevia-programme-30-jours",
         "color_scheme": "",
-        "padding_top": 40,
-        "padding_bottom": 52
+        "secondary_background": false,
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "ss_feature_1_b9rkKB": {
@@ -1018,76 +1088,6 @@
         "border_thickness": 0,
         "lazy": true
       }
-    },
-    "featured_product_7PDMGh": {
-      "type": "featured-product",
-      "blocks": {
-        "text_9LhVPa": {
-          "type": "text",
-          "settings": {
-            "text": "{{ section.settings.product.vendor }}",
-            "text_style": "uppercase"
-          }
-        },
-        "title_J9WD98": {
-          "type": "title",
-          "settings": {
-            "heading_size": "h1"
-          }
-        },
-        "price_9VTgQD": {
-          "type": "price",
-          "settings": {}
-        },
-        "variant_picker_LnJqW3": {
-          "type": "variant_picker",
-          "settings": {
-            "picker_type": "button",
-            "swatch_shape": "circle"
-          }
-        },
-        "quantity_selector_zzqCdT": {
-          "type": "quantity_selector",
-          "settings": {}
-        },
-        "buy_buttons_bymLLN": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_dynamic_checkout": true,
-            "show_gift_card_recipient": true
-          }
-        },
-        "share_HAHXnq": {
-          "type": "share",
-          "settings": {
-            "share_label": "Condividi"
-          }
-        }
-      },
-      "block_order": [
-        "text_9LhVPa",
-        "title_J9WD98",
-        "price_9VTgQD",
-        "variant_picker_LnJqW3",
-        "quantity_selector_zzqCdT",
-        "buy_buttons_bymLLN",
-        "share_HAHXnq"
-      ],
-      "name": "t:sections.featured-product.presets.name",
-      "settings": {
-        "product": "florevia-programme-30-jours",
-        "color_scheme": "",
-        "secondary_background": false,
-        "media_size": "medium",
-        "constrain_to_viewport": true,
-        "media_fit": "contain",
-        "media_position": "left",
-        "image_zoom": "lightbox",
-        "hide_variants": false,
-        "enable_video_looping": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
     }
   },
   "order": [
@@ -1100,13 +1100,13 @@
     "testimonial_elite_PiaAmx",
     "ss_slider_2_8Vhmqi",
     "ss_hero_6_Etpjq3",
-    "17595225339695d568",
     "custom_liquid_WACbxF",
+    "17595225339695d568",
+    "featured_product_xBrNF9",
     "ss_feature_1_b9rkKB",
     "sp_hero_charlotte_qniE6z",
     "sp_hero_charlotte_rdBQf4",
     "collapsible_content_jUWnke",
-    "ss_testimonial_8_rgDJid",
-    "featured_product_7PDMGh"
+    "ss_testimonial_8_rgDJid"
   ]
 }

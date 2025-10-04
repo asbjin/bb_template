@@ -1018,6 +1018,76 @@
         "border_thickness": 0,
         "lazy": true
       }
+    },
+    "featured_product_7PDMGh": {
+      "type": "featured-product",
+      "blocks": {
+        "text_9LhVPa": {
+          "type": "text",
+          "settings": {
+            "text": "{{ section.settings.product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title_J9WD98": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "price_9VTgQD": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker_LnJqW3": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector_zzqCdT": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons_bymLLN": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "share_HAHXnq": {
+          "type": "share",
+          "settings": {
+            "share_label": "Condividi"
+          }
+        }
+      },
+      "block_order": [
+        "text_9LhVPa",
+        "title_J9WD98",
+        "price_9VTgQD",
+        "variant_picker_LnJqW3",
+        "quantity_selector_zzqCdT",
+        "buy_buttons_bymLLN",
+        "share_HAHXnq"
+      ],
+      "name": "t:sections.featured-product.presets.name",
+      "settings": {
+        "product": "florevia-programme-30-jours",
+        "color_scheme": "",
+        "secondary_background": false,
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -1036,6 +1106,7 @@
     "sp_hero_charlotte_qniE6z",
     "sp_hero_charlotte_rdBQf4",
     "collapsible_content_jUWnke",
-    "ss_testimonial_8_rgDJid"
+    "ss_testimonial_8_rgDJid",
+    "featured_product_7PDMGh"
   ]
 }

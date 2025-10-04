@@ -545,6 +545,12 @@
             "heading_size": "h1"
           }
         },
+        "kaching_bundles_app_block_7P3Cb6": {
+          "type": "shopify://apps/kaching-bundles/blocks/app-block/6c637362-a106-4a32-94ac-94dcfd68cdb8",
+          "settings": {
+            "product": "{{section.settings.product}}"
+          }
+        },
         "price_tMwgPi": {
           "type": "price",
           "settings": {}
@@ -577,6 +583,7 @@
       "block_order": [
         "text_4K3BJG",
         "title_MxQUCG",
+        "kaching_bundles_app_block_7P3Cb6",
         "price_tMwgPi",
         "variant_picker_BrLPQA",
         "quantity_selector_Dyt7WD",

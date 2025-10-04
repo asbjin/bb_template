@@ -58,7 +58,7 @@
       "type": "sp-image-standalone",
       "name": "🚀SP - Image Standalone",
       "settings": {
-        "background_color": "radial-gradient(rgba(255, 230, 111, 1) 70%, rgba(255, 255, 255, 1) 100%)",
+        "background_color": "radial-gradient(rgba(255, 255, 255, 1) 70%, rgba(255, 255, 255, 1) 100%)",
         "max_width": 1000,
         "padding_top": 10,
         "padding_bottom": 10,
@@ -97,75 +97,6 @@
         "full_width": true,
         "content_width": 120,
         "border_thickness": 0
-      }
-    },
-    "logotesti_4WfnDB": {
-      "type": "LOGOTESTI",
-      "blocks": {
-        "slide_tLNFDx": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/Grazia-Logo_svg.png",
-            "link": ""
-          }
-        },
-        "slide_UhAmj8": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/donna_moderna_v1.png",
-            "link": ""
-          }
-        },
-        "slide_HUPjwL": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/Marie_Claire_Magazine_logo_svg.png",
-            "link": ""
-          }
-        },
-        "slide_G8Nkpi": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/elle-1.svg",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "slide_tLNFDx",
-        "slide_UhAmj8",
-        "slide_HUPjwL",
-        "slide_G8Nkpi"
-      ],
-      "name": "SS - Scrolling Logo Cloud",
-      "settings": {
-        "ss-title": "Floreva",
-        "heading_custom": false,
-        "heading_font": "assistant_n4",
-        "header_size": 22,
-        "header_align": "center",
-        "scrolling_velocity": 14,
-        "pause_hover": false,
-        "shadow": false,
-        "sliders_mt": 16,
-        "logo_padding_top": 0,
-        "logo_padding_bottom": 0,
-        "slider_gap": 30,
-        "slider_gap_mobile": 30,
-        "slider_direction": "left",
-        "icon_width": 100,
-        "header_color": "#121212",
-        "border_color": "#ffffff",
-        "background-color": "#ffffff",
-        "slider-background-color": "#ffffff",
-        "margin_top": 0,
-        "margin_bottom": 0,
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "full_width": true,
-        "content_width": 40,
-        "border_thickness": 0,
-        "lazy": true
       }
     },
     "ss_atc_button_3_pF7D8t": {
@@ -376,6 +307,185 @@
         "lazy": true
       }
     },
+    "ss_hero_6_Etpjq3": {
+      "type": "ss-hero-6",
+      "blocks": {
+        "badge_CFMQRy": {
+          "type": "badge",
+          "settings": {
+            "text": "Senza glutine",
+            "text_color": "#000000",
+            "bg_color": "#f5f5f5",
+            "border_color": "#8b8b8b"
+          }
+        },
+        "badge_MQcwCq": {
+          "type": "badge",
+          "settings": {
+            "text": "Testato",
+            "text_color": "#000000",
+            "bg_color": "#f5f5f5",
+            "border_color": "#8b8b8b"
+          }
+        },
+        "badge_WcMwU3": {
+          "type": "badge",
+          "settings": {
+            "text": "Bestseller",
+            "text_color": "#000000",
+            "bg_color": "#f5f5f5",
+            "border_color": "#8b8b8b"
+          }
+        },
+        "feature_rYKFdg": {
+          "type": "feature",
+          "settings": {
+            "text": "✅ Elimina parassiti e virus"
+          }
+        },
+        "feature_C3fEFk": {
+          "type": "feature",
+          "settings": {
+            "text": "✅ Allevia gonfiore e costipazione"
+          }
+        },
+        "feature_qpjbcK": {
+          "type": "feature",
+          "settings": {
+            "text": "✅ Migliora la digestione"
+          }
+        },
+        "feature_PqAFpk": {
+          "type": "feature",
+          "settings": {
+            "text": "✅ Rafforza istantaneamente il sistema immunitario"
+          }
+        }
+      },
+      "block_order": [
+        "badge_CFMQRy",
+        "badge_MQcwCq",
+        "badge_WcMwU3",
+        "feature_rYKFdg",
+        "feature_C3fEFk",
+        "feature_qpjbcK",
+        "feature_PqAFpk"
+      ],
+      "name": "SS - Hero #6",
+      "settings": {
+        "heading": "<h1><strong>Floreva - Il booster di energia e salute</strong></h1>",
+        "heading_custom": false,
+        "heading_font": "sans_serif_n4",
+        "heading_size": 36,
+        "heading_size_mobile": 23,
+        "heading_height": 130,
+        "heading_mt": 10,
+        "heading_align": "center",
+        "heading_align_mobile": "center",
+        "text": "",
+        "text_custom": false,
+        "text_font": "josefin_sans_n4",
+        "text_size": 24,
+        "text_size_mobile": 18,
+        "text_height": 160,
+        "text_mt": 12,
+        "text_align": "left",
+        "text_align_mobile": "left",
+        "feature_text_custom": true,
+        "feature_text_font": "josefin_sans_n4",
+        "feature_text_size": 20,
+        "feature_text_size_mobile": 18,
+        "feature_text_height": 160,
+        "feature_text_mt": 28,
+        "feature_text_space": 12,
+        "feature_text_align": "left",
+        "feature_text_align_mobile": "left",
+        "button": "",
+        "button_url": "",
+        "button_custom": false,
+        "button_font": "josefin_sans_n4",
+        "button_size": 18,
+        "button_size_mobile": 18,
+        "button_height": 100,
+        "button_mt": 28,
+        "button_padding_vertical": 16,
+        "button_padding_vertical_mobile": 16,
+        "button_padding_horizontal": 50,
+        "button_padding_horizontal_mobile": 50,
+        "button_radius": 12,
+        "button_border_thickness": 0,
+        "button_align": "left",
+        "button_align_mobile": "center",
+        "button_icon": true,
+        "button_gap": 28,
+        "button_shadow": true,
+        "stars_count": 0,
+        "stars_size": 20,
+        "stars_size_mobile": 20,
+        "stars_mt": 16,
+        "rate_text": "",
+        "rate_text_custom": false,
+        "rate_text_font": "josefin_sans_n4",
+        "rate_text_size": 14,
+        "rate_text_size_mobile": 14,
+        "rate_text_height": 100,
+        "rate_text_align": "center",
+        "rate_text_align_mobile": "center",
+        "badge_custom": true,
+        "badge_font": "josefin_sans_n4",
+        "badge_size": 14,
+        "badge_size_mobile": 14,
+        "badge_height": 100,
+        "badge_padding_vertical": 4,
+        "badge_padding_vertical_mobile": 10,
+        "badge_padding_horizontal": 24,
+        "badge_padding_horizontal_mobile": 24,
+        "badge_radius": 24,
+        "badge_border_thickness": 3,
+        "badge_align": "start",
+        "badge_align_mobile": "center",
+        "badge_mt_mobile": 10,
+        "image": "shopify://shop_images/logo_floreva.png",
+        "image_radius": 0,
+        "image_border_thickness": 0,
+        "image_blur_desktop": true,
+        "absolute_image_width": 400,
+        "absolute_image_radius": 0,
+        "absolute_image_border_thickness": 0,
+        "button_color": "#FFFFFF",
+        "button_hover_color": "#FFFFFF",
+        "button_other_color": "#FF75B8",
+        "button_hover_other_color": "#FF75B8",
+        "button_bg_color": "#000000",
+        "button_bg_hover_color": "#000000",
+        "button_border_color": "#000000",
+        "button_border_hover_color": "#000000",
+        "button_shadow_color": "#f6dc5b",
+        "heading_color": "#000000",
+        "text_color": "#000000",
+        "feature_text_color": "#000000",
+        "stars_color": "#000000",
+        "rate_text_color": "#000000",
+        "image_border_color": "#000000",
+        "image_blur_color": "#FFDAEC",
+        "absolute_image_border_color": "#000000",
+        "background_color": "#FFFFFF",
+        "background_gradient": "",
+        "border_color": "#000000",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 100,
+        "padding_top_mobile": 0,
+        "padding_bottom": 100,
+        "padding_bottom_mobile": 0,
+        "padding_horizontal": 5,
+        "padding_horizontal_mobile": 1.5,
+        "full_width": false,
+        "content_width": 120,
+        "border_thickness": 0,
+        "lazy": true
+      }
+    },
     "17595225339695d568": {
       "type": "apps",
       "blocks": {
@@ -496,6 +606,92 @@
         "lazy": true
       }
     },
+    "sp_hero_charlotte_qniE6z": {
+      "type": "sp-hero-charlotte",
+      "blocks": {
+        "heading_VxAmQm": {
+          "type": "heading",
+          "settings": {
+            "heading_text": "OLIO DI ORIGANO",
+            "heading_tag": "h2"
+          }
+        },
+        "divider_mUbkUM": {
+          "type": "divider",
+          "settings": {
+            "divider_color": "#fff"
+          }
+        },
+        "text_7YRFjw": {
+          "type": "text",
+          "settings": {
+            "section_text": "<p>Un potente estratto concentrato in carvacrolo, noto per combattere i microbi nocivi e rafforzare le difese dell'organismo.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_VxAmQm",
+        "divider_mUbkUM",
+        "text_7YRFjw"
+      ],
+      "name": "🚀SP - Hero-Charlotte-01",
+      "settings": {
+        "background_image": "shopify://shop_images/huile_ori.webp",
+        "overlay_off": false,
+        "text_align": "center",
+        "inherit_fonts": false,
+        "text_color": "#ffffff",
+        "section_height": true,
+        "section_padding_top": 50,
+        "section_padding_bottom": 50,
+        "section_padding_top_mobile": 50,
+        "section_padding_bottom_mobile": 50,
+        "custom_css": ""
+      }
+    },
+    "sp_hero_charlotte_rdBQf4": {
+      "type": "sp-hero-charlotte",
+      "blocks": {
+        "heading_mfmtdb": {
+          "type": "heading",
+          "settings": {
+            "heading_text": "OLIO DI NIGELLA",
+            "heading_tag": "h2"
+          }
+        },
+        "divider_4w4fbL": {
+          "type": "divider",
+          "settings": {
+            "divider_color": "#fff"
+          }
+        },
+        "text_GBqWV4": {
+          "type": "text",
+          "settings": {
+            "section_text": "<p>Un prezioso olio curativo utilizzato da generazioni, apprezzato per la sua forza e la sua capacità di migliorare il benessere, la resilienza e la vitalità.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_mfmtdb",
+        "divider_4w4fbL",
+        "text_GBqWV4"
+      ],
+      "name": "🚀SP - Hero-Charlotte-01",
+      "settings": {
+        "background_image": "shopify://shop_images/huile_nigelle.webp",
+        "overlay_off": false,
+        "text_align": "center",
+        "inherit_fonts": false,
+        "text_color": "#ffffff",
+        "section_height": true,
+        "section_padding_top": 50,
+        "section_padding_bottom": 50,
+        "section_padding_top_mobile": 50,
+        "section_padding_bottom_mobile": 50,
+        "custom_css": ""
+      }
+    },
     "collapsible_content_jUWnke": {
       "type": "collapsible-content",
       "blocks": {
@@ -577,7 +773,7 @@
         "question_iHRHp9": {
           "type": "question",
           "settings": {
-            "question": "Quanto tempo ci vorrà perché il mio ventre si sgonfi?",
+            "question": "In quanto tempo si vedono i risultati?",
             "answer": "<p>I primi risultati sono spesso spettacolari:</p><p><strong>3-7 giorni</strong>: diminuzione dei gas e del gonfiore</p><p><strong>10-15 giorni</strong>: addome visibilmente più piatto, soprattutto al mattino</p><p><strong>30 giorni</strong>: digestione normalizzata, niente più “pancia da donna incinta” dopo i pasti</p><p><strong>90 giorni</strong>: riequilibrio completo, ritrovata energia</p><p>⚠️ <strong>Importante</strong>: ogni corpo è unico. Alcune persone vedono i risultati già dopo 48 ore, altre hanno bisogno di 2-3 settimane. Più lo squilibrio è antico, più bisogna essere pazienti.</p>",
             "link": "",
             "video_inline": true,
@@ -589,8 +785,32 @@
         "question_Kzheng": {
           "type": "question",
           "settings": {
-            "question": "3. È davvero naturale?",
-            "answer": "<h3><strong>È davvero naturale al 100%?</strong></h3><p>Assolutamente sì! OregaPlus contiene SOLO:</p><p><strong>Olio di origano selvatico</strong> (Origanum vulgare): 150 mg di olio ultraconcentrato all'80% di carvacrolo</p><p><strong>Olio di nigella</strong> (Nigella sativa): spremuto a freddo, qualità premium</p><p><strong>Capsula vegetale</strong>: senza gelatina animale</p><p><strong>Tutto qui!</strong> Nessun additivo, nessun conservante, nessun eccipiente dubbio</p><p>Il nostro impegno: se non riesci a pronunciare un ingrediente, significa che non è presente nei nostri prodotti.</p>",
+            "question": "Funziona davvero contro i parassiti?",
+            "answer": "<p>Sì! La formula 2-in-1 a base di olio di origano e cumino nero possiede forti proprietà antiparassitarie e sostiene la salute intestinale. I nostri clienti sentono rapidamente gli effetti: meno stanchezza, migliore digestione e una vera sensazione di protezione naturale.<br/><br/></p>",
+            "link": "",
+            "video_inline": true,
+            "video_autoplay": false,
+            "video_loop": true,
+            "video_muted": true
+          }
+        },
+        "question_qYGYkE": {
+          "type": "question",
+          "settings": {
+            "question": "È davvero naturale?",
+            "answer": "<p>Assolutamente! Il prodotto contiene UNICAMENTE:</p><ul><li><strong>Olio di origano selvatico</strong>: 150-6000mg di olio ultra-concentrato all'80% di carvacrolo</li><li><strong>Olio di nigella</strong>: Spremuto a freddo, qualità premium (200mg)</li><li><strong>Capsula vegetale</strong>: Senza gelatina animale </li></ul>",
+            "link": "",
+            "video_inline": true,
+            "video_autoplay": false,
+            "video_loop": true,
+            "video_muted": true
+          }
+        },
+        "question_LkPUeU": {
+          "type": "question",
+          "settings": {
+            "question": "Ci sono effetti collaterali?",
+            "answer": "<p>Notevolmente ben tollerato. Occasionalmente, i primi giorni:</p><ul><li>Leggeri mal di testa (segno di detox)</li><li>Feci più frequenti (pulizia in corso!)</li><li>Molto raramente: leggere nausee</li><li>Adatto agli stomaci sensibili perché senza additivi artificiali</li></ul>",
             "link": "",
             "video_inline": true,
             "video_autoplay": false,
@@ -602,7 +822,9 @@
       "block_order": [
         "question_9VJggh",
         "question_iHRHp9",
-        "question_Kzheng"
+        "question_Kzheng",
+        "question_qYGYkE",
+        "question_LkPUeU"
       ],
       "name": "🚀SP - FAQ Plus",
       "settings": {
@@ -856,149 +1078,6 @@
         "border_thickness": 0,
         "lazy": true
       }
-    },
-    "ss_glow_testimonial_4VNCwz": {
-      "type": "ss-glow-testimonial",
-      "blocks": {
-        "image_QX84jJ": {
-          "type": "Image",
-          "settings": {
-            "review_text": "Add awesome customer testimonial right here",
-            "review_rating": 5
-          }
-        },
-        "image_miL9N8": {
-          "type": "Image",
-          "settings": {
-            "review_text": "Add awesome customer testimonial right here",
-            "review_rating": 5
-          }
-        },
-        "image_cPNn7c": {
-          "type": "Image",
-          "settings": {
-            "review_text": "Add awesome customer testimonial right here",
-            "review_rating": 5
-          }
-        },
-        "image_pp7EXW": {
-          "type": "Image",
-          "settings": {
-            "review_text": "Add awesome customer testimonial right here",
-            "review_rating": 5
-          }
-        },
-        "image_E68gag": {
-          "type": "Image",
-          "settings": {
-            "review_text": "Add awesome customer testimonial right here",
-            "review_rating": 5
-          }
-        },
-        "image_a9GADV": {
-          "type": "Image",
-          "settings": {
-            "review_text": "Add awesome customer testimonial right here",
-            "review_rating": 5
-          }
-        },
-        "image_GLdJHE": {
-          "type": "Image",
-          "settings": {
-            "review_text": "Add awesome customer testimonial right here",
-            "review_rating": 5
-          }
-        },
-        "image_C7UhW9": {
-          "type": "Image",
-          "settings": {
-            "review_text": "Add awesome customer testimonial right here",
-            "review_rating": 5
-          }
-        },
-        "image_UKC6bU": {
-          "type": "Image",
-          "settings": {
-            "review_text": "Add awesome customer testimonial right here",
-            "review_rating": 5
-          }
-        },
-        "image_Y7MKhP": {
-          "type": "Image",
-          "settings": {
-            "review_text": "Add awesome customer testimonial right here",
-            "review_rating": 5
-          }
-        },
-        "image_ENRyA8": {
-          "type": "Image",
-          "settings": {
-            "review_text": "Add awesome customer testimonial right here",
-            "review_rating": 5
-          }
-        },
-        "image_zaRBwB": {
-          "type": "Image",
-          "settings": {
-            "review_text": "Add awesome customer testimonial right here",
-            "review_rating": 5
-          }
-        }
-      },
-      "block_order": [
-        "image_QX84jJ",
-        "image_miL9N8",
-        "image_cPNn7c",
-        "image_pp7EXW",
-        "image_E68gag",
-        "image_a9GADV",
-        "image_GLdJHE",
-        "image_C7UhW9",
-        "image_UKC6bU",
-        "image_Y7MKhP",
-        "image_ENRyA8",
-        "image_zaRBwB"
-      ],
-      "name": "SS - Glow Testimonial",
-      "settings": {
-        "animation_time": 30,
-        "loop_amount": 2,
-        "header_before_gradient": "I nostri clienti",
-        "header_gradient": "adorano",
-        "header": "il prodotto",
-        "header_color": "#0b1128",
-        "header_font_size": 42,
-        "header_mob_font_size": 28,
-        "review_font_size": 16,
-        "review_font_color": "#0b1128",
-        "gradient_color_1": "#2e7d32",
-        "gradient_color_2": "#f4a300",
-        "gradient_color_3": "#f4a300",
-        "blur_color": "#b8b1dc",
-        "background-color": "#ffffff",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "sp_image_standalone_zf8NWQ": {
-      "type": "sp-image-standalone",
-      "name": "🚀SP - Image Standalone",
-      "settings": {
-        "background_color": "linear-gradient(164deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 100%)",
-        "max_width": 1000,
-        "padding_top": 25,
-        "padding_bottom": 25,
-        "padding_left": 10,
-        "padding_right": 10,
-        "image": "shopify://shop_images/4_d5e8bab2-34a7-4ce4-875d-a4f2fc4ca680.webp",
-        "media_aspect_ratio": "16 / 9",
-        "desktop_image_width": 1100,
-        "mobile_media_aspect_ratio": "16 / 9",
-        "mobile_image_width": 800,
-        "link": "",
-        "media_radius": 5,
-        "media_shadow": true
-      }
     }
   },
   "order": [
@@ -1006,17 +1085,17 @@
     "ss_wave_2_eHz3at",
     "sp_image_standalone_JVDVtx",
     "ss_wave_2_ywQFik",
-    "logotesti_4WfnDB",
     "ss_atc_button_3_pF7D8t",
     "testimonial_elite_PiaAmx",
     "ss_slider_2_8Vhmqi",
+    "ss_hero_6_Etpjq3",
     "17595225339695d568",
     "custom_liquid_WACbxF",
     "ss_feature_1_b9rkKB",
+    "sp_hero_charlotte_qniE6z",
+    "sp_hero_charlotte_rdBQf4",
     "collapsible_content_jUWnke",
     "sp_faq_plus_yW4WQr",
-    "ss_testimonial_8_rgDJid",
-    "ss_glow_testimonial_4VNCwz",
-    "sp_image_standalone_zf8NWQ"
+    "ss_testimonial_8_rgDJid"
   ]
 }

@@ -418,8 +418,8 @@
         "image_TdfDx9": {
           "type": "image",
           "settings": {
-            "feature_title": "Garanzia del miglior prezzo",
-            "feature_text": "Denaro sicuro quando ordini da noi",
+            "feature_title": "Prezzo Garantito",
+            "feature_text": "Risparmi sempre quando ordini",
             "feature_url": "",
             "hide_image": false
           }
@@ -427,8 +427,8 @@
         "image_gqUiKV": {
           "type": "image",
           "settings": {
-            "feature_title": "Hassle-free exchange",
-            "feature_text": "Receive a slip for exchanges",
+            "feature_title": "Cambio Facile",
+            "feature_text": "Ricevi subito un tagliando per i cambi",
             "feature_url": "",
             "hide_image": false
           }
@@ -436,8 +436,9 @@
         "image_Y4MVC7": {
           "type": "image",
           "settings": {
-            "feature_title": "5.0 Google Reviews",
-            "feature_text": "Customer satisfaction #1 priority",
+            "feature_title": "Supporto 7/7",
+            "feature_text": "Disponibile 7 giorni su 7",
+            "feature_image": "shopify://shop_images/3447661.png",
             "feature_url": "",
             "hide_image": false
           }
@@ -454,7 +455,7 @@
         "feature_row": 4,
         "feature_row_mobile": 2,
         "feature_gap": 30,
-        "feature_gap_mobile": 2,
+        "feature_gap_mobile": 14,
         "feature_padding_vertical": 0,
         "feature_padding_horizontal": 0,
         "feature_radius": 16,
@@ -477,7 +478,7 @@
         "feature_bg": "#FFFFFF",
         "feature_border_color": "#000000",
         "feature_shadow_color": "#000000",
-        "feature_heading_color": "#000000",
+        "feature_heading_color": "#007e40",
         "feature_text_color": "#000000",
         "feature_icon_color": "#000000",
         "background_color": "#FFFFFF",

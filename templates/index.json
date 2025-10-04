@@ -454,10 +454,10 @@
         "absolute_image_width": 400,
         "absolute_image_radius": 0,
         "absolute_image_border_thickness": 0,
-        "button_color": "#FFFFFF",
-        "button_hover_color": "#FFFFFF",
-        "button_other_color": "#FF75B8",
-        "button_hover_other_color": "#FF75B8",
+        "button_color": "#ffffff",
+        "button_hover_color": "#ffffff",
+        "button_other_color": "#ff75b8",
+        "button_hover_other_color": "#ff75b8",
         "button_bg_color": "#000000",
         "button_bg_hover_color": "#000000",
         "button_border_color": "#000000",
@@ -469,9 +469,9 @@
         "stars_color": "#000000",
         "rate_text_color": "#000000",
         "image_border_color": "#000000",
-        "image_blur_color": "#FFDAEC",
+        "image_blur_color": "#ffdaec",
         "absolute_image_border_color": "#000000",
-        "background_color": "#FFFFFF",
+        "background_color": "#ffffff",
         "background_gradient": "",
         "border_color": "#000000",
         "margin_top": 0,
@@ -513,6 +513,76 @@
         "color_scheme": "",
         "padding_top": 40,
         "padding_bottom": 52
+      }
+    },
+    "featured_product_cDWPTV": {
+      "type": "featured-product",
+      "blocks": {
+        "text_46XQMK": {
+          "type": "text",
+          "settings": {
+            "text": "{{ section.settings.product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title_e7N4yj": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "price_EbrMKq": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker_jHDE7j": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector_XEbD6t": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons_k9EFfD": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false
+          }
+        },
+        "share_wkW8ec": {
+          "type": "share",
+          "settings": {
+            "share_label": "Condividi"
+          }
+        }
+      },
+      "block_order": [
+        "text_46XQMK",
+        "title_e7N4yj",
+        "price_EbrMKq",
+        "variant_picker_jHDE7j",
+        "quantity_selector_XEbD6t",
+        "buy_buttons_k9EFfD",
+        "share_wkW8ec"
+      ],
+      "name": "t:sections.featured-product.presets.name",
+      "settings": {
+        "product": "florevia-programme-30-jours",
+        "color_scheme": "",
+        "secondary_background": false,
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "ss_feature_1_b9rkKB": {
@@ -587,13 +657,13 @@
         "feature_text_mt": 4,
         "feature_icon_size": 42,
         "feature_icon_size_mobile": 42,
-        "feature_bg": "#FFFFFF",
+        "feature_bg": "#ffffff",
         "feature_border_color": "#000000",
         "feature_shadow_color": "#000000",
         "feature_heading_color": "#007e40",
         "feature_text_color": "#000000",
         "feature_icon_color": "#000000",
-        "background_color": "#FFFFFF",
+        "background_color": "#ffffff",
         "background_gradient": "",
         "border_color": "#000000",
         "margin_top": 0,
@@ -621,7 +691,7 @@
         "divider_mUbkUM": {
           "type": "divider",
           "settings": {
-            "divider_color": "#fff"
+            "divider_color": "#ffffff"
           }
         },
         "text_7YRFjw": {
@@ -664,7 +734,7 @@
         "divider_4w4fbL": {
           "type": "divider",
           "settings": {
-            "divider_color": "#fff"
+            "divider_color": "#ffffff"
           }
         },
         "text_GBqWV4": {
@@ -1017,6 +1087,7 @@
     "ss_hero_6_Etpjq3",
     "17595225339695d568",
     "custom_liquid_WACbxF",
+    "featured_product_cDWPTV",
     "ss_feature_1_b9rkKB",
     "sp_hero_charlotte_qniE6z",
     "sp_hero_charlotte_rdBQf4",

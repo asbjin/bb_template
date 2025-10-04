@@ -519,7 +519,8 @@
         "buy_buttons_inTCUR"
       ],
       "custom_css": [
-        ".featured-product .product__view-details,.featured-product .link.underlined-link[href*=\"/products/\"] {display: none !important;}"
+        ".featured-product .product__view-details,.featured-product .link.underlined-link[href*=\"/products/\"] {display: none !important;}",
+        " /* Cache le 0/1 (compteur) dans la section Produit en vedette */.slider-counter.caption {display: none !important;}"
       ],
       "name": "t:sections.featured-product.presets.name",
       "settings": {

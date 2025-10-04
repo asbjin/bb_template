@@ -54,19 +54,6 @@
         "border_thickness": 0
       }
     },
-    "barredefilante_MMRbDn": {
-      "type": "barredefilante",
-      "name": "Scrolling text",
-      "settings": {
-        "text": "Floreva | Non coprire i sintomi, tratta la causa.",
-        "text_size": "xsmall",
-        "text_style": "fill",
-        "scrolling_speed": 48,
-        "text_spacing": 120,
-        "text_color": "#000000",
-        "background": "#ffffff"
-      }
-    },
     "sp_image_standalone_JVDVtx": {
       "type": "sp-image-standalone",
       "name": "🚀SP - Image Standalone",
@@ -80,7 +67,7 @@
         "image": "shopify://shop_images/Design_sans_titre_6.png",
         "media_aspect_ratio": "auto",
         "desktop_image_width": 1100,
-        "mobile_image": "shopify://shop_images/Design_sans_titre_6.png",
+        "mobile_image": "shopify://shop_images/ChatGPT_Image_27_sept._2025_09_20_55.png",
         "mobile_media_aspect_ratio": "auto",
         "mobile_image_width": 800,
         "link": "",
@@ -1041,7 +1028,6 @@
   "order": [
     "sp_image_standalone_UainYU",
     "ss_wave_2_eHz3at",
-    "barredefilante_MMRbDn",
     "sp_image_standalone_JVDVtx",
     "ss_wave_2_ywQFik",
     "ss_atc_button_3_pF7D8t",

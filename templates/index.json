@@ -56,6 +56,7 @@
     },
     "barredefilante_MMRbDn": {
       "type": "barredefilante",
+      "disabled": true,
       "name": "Scrolling text",
       "settings": {
         "text": "Floreva | Non coprire i sintomi, tratta la causa.",
@@ -63,8 +64,8 @@
         "text_style": "fill",
         "scrolling_speed": 48,
         "text_spacing": 120,
-        "text_color": "#000000",
-        "background": "#ffffff"
+        "text_color": "#ffd700",
+        "background": "#007e40"
       }
     },
     "sp_image_standalone_JVDVtx": {
@@ -80,7 +81,7 @@
         "image": "shopify://shop_images/Design_sans_titre_6.png",
         "media_aspect_ratio": "auto",
         "desktop_image_width": 1100,
-        "mobile_image": "shopify://shop_images/Design_sans_titre_6.png",
+        "mobile_image": "shopify://shop_images/ChatGPT_Image_27_sept._2025_09_20_55.png",
         "mobile_media_aspect_ratio": "auto",
         "mobile_image_width": 800,
         "link": "",
@@ -502,49 +503,31 @@
         "lazy": true
       }
     },
-    "featured_product_xBrNF9": {
-      "type": "featured-product",
+    "17595225339695d568": {
+      "type": "apps",
       "blocks": {
-        "kaching_bundles_app_block_7P3Cb6": {
+        "kaching_bundles_app_block_KCLgEF": {
           "type": "shopify://apps/kaching-bundles/blocks/app-block/6c637362-a106-4a32-94ac-94dcfd68cdb8",
           "settings": {
-            "product": "{{section.settings.product}}"
-          }
-        },
-        "variant_picker_BrLPQA": {
-          "type": "variant_picker",
-          "settings": {
-            "picker_type": "button",
-            "swatch_shape": "circle"
-          }
-        },
-        "buy_buttons_inTCUR": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_dynamic_checkout": false,
-            "show_gift_card_recipient": false
+            "product": "florevia-programme-30-jours"
           }
         }
       },
       "block_order": [
-        "kaching_bundles_app_block_7P3Cb6",
-        "variant_picker_BrLPQA",
-        "buy_buttons_inTCUR"
+        "kaching_bundles_app_block_KCLgEF"
       ],
-      "name": "t:sections.featured-product.presets.name",
       "settings": {
-        "product": "florevia-programme-30-jours",
+        "include_margins": true
+      }
+    },
+    "custom_liquid_WACbxF": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div class=\"urgent-offer\">\n  <h2>OFFRE VALABLE AUJOURD’HUI SEULEMENT !</h2>\n\n  <div id=\"countdown\" class=\"countdown\"></div>\n\n  <a href=\"#bundles\" class=\"cta-btn\">Acheter maintenant</a>\n</div>\n\n<style>\n.urgent-offer { text-align:center; margin:30px 0; font-family: Arial, sans-serif; }\n.urgent-offer h2 { font-size:28px; font-weight:900; margin-bottom:20px; }\n\n/* Timer horizontal */\n.countdown {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  gap: 15px;\n  font-size: 32px;\n  font-weight: 700;\n}\n.countdown div {\n  text-align: center;\n}\n.countdown span {\n  display: block;\n  font-size: 14px;\n  font-weight: 400;\n  margin-top: 5px;\n  color: #555;\n}\n\n/* Bouton */\n.cta-btn {\n  display:inline-block; \n  background:#ffeb00; \n  padding:15px 40px; \n  font-size:18px; \n  border-radius:8px; \n  font-weight:700; \n  text-decoration:none; \n  color:#000; \n  margin:20px 0;\n}\n</style>\n\n<script>\nfunction startTimer(duration, display) {\n    var timer = duration, hours, minutes, seconds;\n    setInterval(function () {\n        hours = parseInt(timer / 3600, 10);\n        minutes = parseInt((timer % 3600) / 60, 10);\n        seconds = parseInt(timer % 60, 10);\n\n        hours = hours < 10 ? \"0\" + hours : hours;\n        minutes = minutes < 10 ? \"0\" + minutes : minutes;\n        seconds = seconds < 10 ? \"0\" + seconds : seconds;\n\n        display.innerHTML = `\n            <div>${hours}<span>Heures</span></div> :\n            <div>${minutes}<span>Minutes</span></div> :\n            <div>${seconds}<span>Secondes</span></div>\n        `;\n\n        if (--timer < 0) { timer = duration; }\n    }, 1000);\n}\n\ndocument.addEventListener(\"DOMContentLoaded\", function () {\n    var twentyFourHours = 24 * 60 * 60, \n        display = document.querySelector('#countdown');\n    if(display){\n        startTimer(twentyFourHours, display);\n    }\n});\n</script>",
         "color_scheme": "",
-        "secondary_background": false,
-        "media_size": "medium",
-        "constrain_to_viewport": true,
-        "media_fit": "contain",
-        "media_position": "left",
-        "image_zoom": "lightbox",
-        "hide_variants": false,
-        "enable_video_looping": false,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 40,
+        "padding_bottom": 52
       }
     },
     "ss_feature_1_b9rkKB": {
@@ -638,6 +621,29 @@
         "content_width": 120,
         "border_thickness": 0,
         "lazy": true
+      }
+    },
+    "ss_wave_2_UpHbdN": {
+      "type": "ss-wave-2",
+      "name": "SS - Wave #2",
+      "settings": {
+        "wave_height": 120,
+        "wave_height_mobile": 80,
+        "wave_animation": true,
+        "wave_rotate": false,
+        "wave_color": "#ffd700",
+        "background_color": "#FFFFFF",
+        "background_gradient": "",
+        "border_color": "#000000",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_horizontal": 0,
+        "padding_horizontal_mobile": 0,
+        "full_width": true,
+        "content_width": 120,
+        "border_thickness": 0
       }
     },
     "sp_hero_charlotte_qniE6z": {
@@ -1048,8 +1054,10 @@
     "testimonial_elite_PiaAmx",
     "ss_slider_2_8Vhmqi",
     "ss_hero_6_Etpjq3",
-    "featured_product_xBrNF9",
+    "17595225339695d568",
+    "custom_liquid_WACbxF",
     "ss_feature_1_b9rkKB",
+    "ss_wave_2_UpHbdN",
     "sp_hero_charlotte_qniE6z",
     "sp_hero_charlotte_rdBQf4",
     "collapsible_content_jUWnke",

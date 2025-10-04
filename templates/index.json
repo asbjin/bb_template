@@ -54,16 +54,29 @@
         "border_thickness": 0
       }
     },
+    "barredefilante_MMRbDn": {
+      "type": "barredefilante",
+      "name": "Scrolling text",
+      "settings": {
+        "text": "Floreva | Non coprire i sintomi, tratta la causa.",
+        "text_size": "xsmall",
+        "text_style": "fill",
+        "scrolling_speed": 48,
+        "text_spacing": 120,
+        "text_color": "#000000",
+        "background": "#ffffff"
+      }
+    },
     "sp_image_standalone_JVDVtx": {
       "type": "sp-image-standalone",
       "name": "🚀SP - Image Standalone",
       "settings": {
         "background_color": "radial-gradient(rgba(255, 255, 255, 1) 70%, rgba(255, 255, 255, 1) 100%)",
         "max_width": 1000,
-        "padding_top": 10,
-        "padding_bottom": 10,
-        "padding_left": 10,
-        "padding_right": 10,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0,
         "image": "shopify://shop_images/Design_sans_titre_6.png",
         "media_aspect_ratio": "auto",
         "desktop_image_width": 1100,
@@ -447,7 +460,8 @@
         "badge_align": "start",
         "badge_align_mobile": "center",
         "badge_mt_mobile": 10,
-        "image": "shopify://shop_images/logo_floreva.png",
+        "image": "shopify://shop_images/ChatGPT_Image_27_sept._2025_09_20_55.png",
+        "image_mobile": "shopify://shop_images/logo_floreva.png",
         "image_radius": 0,
         "image_border_thickness": 0,
         "image_blur_desktop": true,
@@ -469,7 +483,7 @@
         "stars_color": "#000000",
         "rate_text_color": "#000000",
         "image_border_color": "#000000",
-        "image_blur_color": "#ffdaec",
+        "image_blur_color": "rgba(0,0,0,0)",
         "absolute_image_border_color": "#000000",
         "background_color": "#ffffff",
         "background_gradient": "",
@@ -513,76 +527,6 @@
         "color_scheme": "",
         "padding_top": 40,
         "padding_bottom": 52
-      }
-    },
-    "featured_product_cDWPTV": {
-      "type": "featured-product",
-      "blocks": {
-        "text_46XQMK": {
-          "type": "text",
-          "settings": {
-            "text": "{{ section.settings.product.vendor }}",
-            "text_style": "uppercase"
-          }
-        },
-        "title_e7N4yj": {
-          "type": "title",
-          "settings": {
-            "heading_size": "h1"
-          }
-        },
-        "price_EbrMKq": {
-          "type": "price",
-          "settings": {}
-        },
-        "variant_picker_jHDE7j": {
-          "type": "variant_picker",
-          "settings": {
-            "picker_type": "button",
-            "swatch_shape": "circle"
-          }
-        },
-        "quantity_selector_XEbD6t": {
-          "type": "quantity_selector",
-          "settings": {}
-        },
-        "buy_buttons_k9EFfD": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_dynamic_checkout": false,
-            "show_gift_card_recipient": false
-          }
-        },
-        "share_wkW8ec": {
-          "type": "share",
-          "settings": {
-            "share_label": "Condividi"
-          }
-        }
-      },
-      "block_order": [
-        "text_46XQMK",
-        "title_e7N4yj",
-        "price_EbrMKq",
-        "variant_picker_jHDE7j",
-        "quantity_selector_XEbD6t",
-        "buy_buttons_k9EFfD",
-        "share_wkW8ec"
-      ],
-      "name": "t:sections.featured-product.presets.name",
-      "settings": {
-        "product": "florevia-programme-30-jours",
-        "color_scheme": "",
-        "secondary_background": false,
-        "media_size": "medium",
-        "constrain_to_viewport": true,
-        "media_fit": "contain",
-        "media_position": "left",
-        "image_zoom": "lightbox",
-        "hide_variants": false,
-        "enable_video_looping": false,
-        "padding_top": 36,
-        "padding_bottom": 36
       }
     },
     "ss_feature_1_b9rkKB": {
@@ -1079,6 +1023,7 @@
   "order": [
     "sp_image_standalone_UainYU",
     "ss_wave_2_eHz3at",
+    "barredefilante_MMRbDn",
     "sp_image_standalone_JVDVtx",
     "ss_wave_2_ywQFik",
     "ss_atc_button_3_pF7D8t",
@@ -1087,7 +1032,6 @@
     "ss_hero_6_Etpjq3",
     "17595225339695d568",
     "custom_liquid_WACbxF",
-    "featured_product_cDWPTV",
     "ss_feature_1_b9rkKB",
     "sp_hero_charlotte_qniE6z",
     "sp_hero_charlotte_rdBQf4",

@@ -139,6 +139,7 @@
         "slide_CfmLai": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/avatar4.png",
             "rating": 4,
             "title": "",
             "content": "Per anni ho avuto quel peso nello stomaco. Disagio, gas, a volte anche vergogna. Oggi respiro, la mia pancia è tornata calma. Non ci penso più, ed è questo il vero lusso. Mi sento libero"
@@ -147,6 +148,7 @@
         "slide_bWNhCq": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/WhatsApp_Image_2025-10-01_a_22.17.58_a2568e9c.jpg",
             "rating": 5,
             "title": "Mi ha davvero aiutato a digerire meglio.",
             "content": "Per anni ho sofferto di problemi di digestione, gonfiore costante e fastidi. Da alcune settimane tutto si è calmato: il mio stomaco sta molto meglio!"
@@ -170,7 +172,7 @@
         "stars_size": 15,
         "stars_color": "#ffd700",
         "rating": "<p><strong>4.7/5 </strong> Recensioni dei clienti</p>",
-        "rating_size": 18,
+        "rating_size": 23,
         "rating_color": "#000000",
         "rating_size_mobile": 16,
         "image_border_radius": 10,
@@ -194,8 +196,8 @@
         "enable_navigation_bottom": true,
         "navigation_color": "#333333",
         "navigation_background": "#ffffff",
-        "layout_margin_top": 6,
-        "layout_margin_bottom": 8,
+        "layout_margin_top": 0,
+        "layout_margin_bottom": 0,
         "layout_background": "#ffffff"
       }
     },
@@ -704,6 +706,51 @@
             "page": ""
           }
         },
+        "collapsible_row_pVrYBq": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "In quanto tempo si vedono i risultati?",
+            "icon": "check_mark",
+            "row_content": "<p>I primi risultati sono spesso spettacolari:</p><p><strong>3-7 giorni</strong>: diminuzione dei gas e del gonfiore</p><p><strong>10-15 giorni</strong>: addome visibilmente più piatto, soprattutto al mattino</p><p><strong>30 giorni</strong>: digestione normalizzata, niente più “pancia da donna incinta” dopo i pasti</p><p><strong>90 giorni</strong>: riequilibrio completo, ritrovata energia</p><p>⚠️ <strong>Importante</strong>: ogni corpo è unico. Alcune persone vedono i risultati già dopo 48 ore, altre hanno bisogno di 2-3 settimane. Più lo squilibrio è antico, più bisogna essere pazienti.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_NGLUJH": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Funziona anche se ho già provato tutto?",
+            "icon": "check_mark",
+            "row_content": "<p>Sì, e non solo un po'. I nostri clienti ne avvertono rapidamente gli effetti: meno stanchezza, migliore digestione e una vera sensazione di protezione naturale. Non è magia, è scienza: l'origano e il cumino nero sono noti per rafforzare le difese naturali e sostenere efficacemente l'organismo.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_yxDqW6": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Ci sono effetti collaterali?",
+            "icon": "check_mark",
+            "row_content": "<p>Notevolmente ben tollerato. Occasionalmente, i primi giorni:</p><ul><li>Leggeri mal di testa (segno di detox)</li><li>Feci più frequenti (pulizia in corso!)</li><li>Molto raramente: leggere nausee</li><li>Adatto agli stomaci sensibili perché senza additivi artificiali</li></ul>",
+            "page": ""
+          }
+        },
+        "collapsible_row_89KWgU": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "È davvero naturale?",
+            "icon": "check_mark",
+            "row_content": "<p>Assolutamente! Il prodotto contiene UNICAMENTE:</p><ul><li><strong>Olio di origano selvatico</strong>: 150-6000mg di olio ultra-concentrato all'80% di carvacrolo</li><li><strong>Olio di nigella</strong>: Spremuto a freddo, qualità premium (200mg)</li><li><strong>Capsula vegetale</strong>: Senza gelatina animale </li></ul>",
+            "page": ""
+          }
+        },
+        "collapsible_row_zWB6cW": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Funziona davvero contro i parassiti?",
+            "icon": "check_mark",
+            "row_content": "<p>Sì! La formula 2-in-1 a base di olio di origano e cumino nero possiede forti proprietà antiparassitarie e sostiene la salute intestinale. I nostri clienti sentono rapidamente gli effetti: meno stanchezza, migliore digestione e una vera sensazione di protezione naturale.<br/><br/></p>",
+            "page": ""
+          }
+        },
         "collapsible_row_g4RUgE": {
           "type": "collapsible_row",
           "settings": {
@@ -734,6 +781,11 @@
       },
       "block_order": [
         "collapsible_row_RVm36q",
+        "collapsible_row_pVrYBq",
+        "collapsible_row_NGLUJH",
+        "collapsible_row_yxDqW6",
+        "collapsible_row_89KWgU",
+        "collapsible_row_zWB6cW",
         "collapsible_row_g4RUgE",
         "collapsible_row_y4bFUL",
         "collapsible_row_9RHnYm"
@@ -753,132 +805,6 @@
         "desktop_layout": "image_first",
         "padding_top": 36,
         "padding_bottom": 36
-      }
-    },
-    "sp_faq_plus_yW4WQr": {
-      "type": "sp-faq-plus",
-      "blocks": {
-        "question_9VJggh": {
-          "type": "question",
-          "settings": {
-            "question": "Funziona anche se ho già provato tutto?",
-            "answer": "<p>Sì, e non solo un po'. I nostri clienti ne avvertono rapidamente gli effetti: meno stanchezza, migliore digestione e una vera sensazione di protezione naturale. Non è magia, è scienza: l'origano e il cumino nero sono noti per rafforzare le difese naturali e sostenere efficacemente l'organismo.</p>",
-            "link": "",
-            "video_inline": true,
-            "video_autoplay": false,
-            "video_loop": true,
-            "video_muted": true
-          }
-        },
-        "question_iHRHp9": {
-          "type": "question",
-          "settings": {
-            "question": "In quanto tempo si vedono i risultati?",
-            "answer": "<p>I primi risultati sono spesso spettacolari:</p><p><strong>3-7 giorni</strong>: diminuzione dei gas e del gonfiore</p><p><strong>10-15 giorni</strong>: addome visibilmente più piatto, soprattutto al mattino</p><p><strong>30 giorni</strong>: digestione normalizzata, niente più “pancia da donna incinta” dopo i pasti</p><p><strong>90 giorni</strong>: riequilibrio completo, ritrovata energia</p><p>⚠️ <strong>Importante</strong>: ogni corpo è unico. Alcune persone vedono i risultati già dopo 48 ore, altre hanno bisogno di 2-3 settimane. Più lo squilibrio è antico, più bisogna essere pazienti.</p>",
-            "link": "",
-            "video_inline": true,
-            "video_autoplay": false,
-            "video_loop": true,
-            "video_muted": true
-          }
-        },
-        "question_Kzheng": {
-          "type": "question",
-          "settings": {
-            "question": "Funziona davvero contro i parassiti?",
-            "answer": "<p>Sì! La formula 2-in-1 a base di olio di origano e cumino nero possiede forti proprietà antiparassitarie e sostiene la salute intestinale. I nostri clienti sentono rapidamente gli effetti: meno stanchezza, migliore digestione e una vera sensazione di protezione naturale.<br/><br/></p>",
-            "link": "",
-            "video_inline": true,
-            "video_autoplay": false,
-            "video_loop": true,
-            "video_muted": true
-          }
-        },
-        "question_qYGYkE": {
-          "type": "question",
-          "settings": {
-            "question": "È davvero naturale?",
-            "answer": "<p>Assolutamente! Il prodotto contiene UNICAMENTE:</p><ul><li><strong>Olio di origano selvatico</strong>: 150-6000mg di olio ultra-concentrato all'80% di carvacrolo</li><li><strong>Olio di nigella</strong>: Spremuto a freddo, qualità premium (200mg)</li><li><strong>Capsula vegetale</strong>: Senza gelatina animale </li></ul>",
-            "link": "",
-            "video_inline": true,
-            "video_autoplay": false,
-            "video_loop": true,
-            "video_muted": true
-          }
-        },
-        "question_LkPUeU": {
-          "type": "question",
-          "settings": {
-            "question": "Ci sono effetti collaterali?",
-            "answer": "<p>Notevolmente ben tollerato. Occasionalmente, i primi giorni:</p><ul><li>Leggeri mal di testa (segno di detox)</li><li>Feci più frequenti (pulizia in corso!)</li><li>Molto raramente: leggere nausee</li><li>Adatto agli stomaci sensibili perché senza additivi artificiali</li></ul>",
-            "link": "",
-            "video_inline": true,
-            "video_autoplay": false,
-            "video_loop": true,
-            "video_muted": true
-          }
-        }
-      },
-      "block_order": [
-        "question_9VJggh",
-        "question_iHRHp9",
-        "question_Kzheng",
-        "question_qYGYkE",
-        "question_LkPUeU"
-      ],
-      "name": "🚀SP - FAQ Plus",
-      "settings": {
-        "override_fonts": false,
-        "headline_font": "system_ui_n4",
-        "text_font": "system_ui_n4",
-        "text_size": 15,
-        "mobile_text_size": 15,
-        "text_line_height": "inherit",
-        "headline_size": 40,
-        "mobile_headline_size": 40,
-        "headline_line_height": "inherit",
-        "text_color": "#111111",
-        "link_color": "#005bd3",
-        "show_on_device": "all",
-        "section_background_color": "linear-gradient(319deg, rgba(226, 236, 253, 1) 13%, rgba(234, 253, 246, 1) 85%)",
-        "section_padding_top_bottom": 25,
-        "mobile_section_padding_top_bottom": 25,
-        "section_padding_left_right": 25,
-        "mobile_section_padding_left_right": 25,
-        "container_background_color": "",
-        "container_max_width": 1000,
-        "container_padding_top_bottom": 10,
-        "mobile_container_padding_top_bottom": 10,
-        "container_padding_left_right": 10,
-        "mobile_container_padding_left_right": 10,
-        "element_spacing": 15,
-        "container_radius": 0,
-        "container_shadow": false,
-        "container_border_size": 0,
-        "container_border_color": "#888888",
-        "grid_gap": 10,
-        "grid_display": "1fr",
-        "vertical_alignment": "start",
-        "media_aspect_ratio": "4 / 3",
-        "media_radius": 5,
-        "media_shadow": true,
-        "media_border_size": 0,
-        "media_border_color": "#888888",
-        "question_size": 18,
-        "question_color": "#111111",
-        "answer_color": "#555555",
-        "faq_spacing": 10,
-        "faq_gap": 10,
-        "faq_shadow": true,
-        "faq_radius": 5,
-        "faq_border_size": 0,
-        "faq_border_color": "#888888",
-        "active_background_color": "linear-gradient(164deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 100%)",
-        "inactive_background_color": "linear-gradient(164deg, rgba(240, 240, 240, 1), rgba(240, 240, 240, 1) 100%)",
-        "faq_indicator": "plus_minus",
-        "headline_alignment": "center",
-        "headline": "<strong>Consulta le nostre FAQ</strong>",
-        "text": "Ottieni risposte alle tue domande sui nostri prodotti e servizi."
       }
     },
     "ss_testimonial_8_rgDJid": {
@@ -1095,7 +1021,6 @@
     "sp_hero_charlotte_qniE6z",
     "sp_hero_charlotte_rdBQf4",
     "collapsible_content_jUWnke",
-    "sp_faq_plus_yW4WQr",
     "ss_testimonial_8_rgDJid"
   ]
 }

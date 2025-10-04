@@ -168,6 +168,106 @@
         "lazy": true
       }
     },
+    "ss_atc_button_3_pF7D8t": {
+      "type": "ss-atc-button-3",
+      "name": "SS - ATC Button #3",
+      "settings": {
+        "shake_type": "jiggle"
+      }
+    },
+    "testimonial_elite_PiaAmx": {
+      "type": "testimonial-elite",
+      "blocks": {
+        "slide_8CrkQ7": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_28_sept._2025_18_25_12.png",
+            "rating": 5,
+            "title": "Uno stimolante naturale del sistema immunitario",
+            "content": "Tutti i miei colleghi si sono ammalati, ma io non ho avuto nulla. Di solito sono la prima a prendere i virus che circolano. Ma questa volta? Niente di niente. Di sicuro continuerò!"
+          }
+        },
+        "slide_weq7hx": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Gemini_Generated_Image_4j2el14j2el14j2e.png",
+            "rating": 4,
+            "title": "",
+            "content": "La mia pancia era sempre gonfia, anche a digiuno. Avevo provato di tutto, senza successo. Da quando faccio questa cura, mi sento leggera, finalmente normale. Niente più fastidi, né tensioni... riscopro il comfort digestivo. È liberatorio."
+          }
+        },
+        "slide_qPVFNX": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Gemini_Generated_Image_ec80inec80inec80.png",
+            "rating": 4,
+            "title": "Via i parassiti, entra l'energia!",
+            "content": "Non sapevo nemmeno di avere dei parassiti... Ma dopo qualche giorno ho espulso delle cose piuttosto strane. Oggi sento un vero cambiamento nel mio corpo: ho ritrovato molta energia!"
+          }
+        },
+        "slide_CfmLai": {
+          "type": "slide",
+          "settings": {
+            "rating": 4,
+            "title": "",
+            "content": "Per anni ho avuto quel peso nello stomaco. Disagio, gas, a volte anche vergogna. Oggi respiro, la mia pancia è tornata calma. Non ci penso più, ed è questo il vero lusso. Mi sento libero"
+          }
+        },
+        "slide_bWNhCq": {
+          "type": "slide",
+          "settings": {
+            "rating": 5,
+            "title": "Mi ha davvero aiutato a digerire meglio.",
+            "content": "Per anni ho sofferto di problemi di digestione, gonfiore costante e fastidi. Da alcune settimane tutto si è calmato: il mio stomaco sta molto meglio!"
+          }
+        }
+      },
+      "block_order": [
+        "slide_8CrkQ7",
+        "slide_weq7hx",
+        "slide_qPVFNX",
+        "slide_CfmLai",
+        "slide_bWNhCq"
+      ],
+      "name": "PC - Testimonial #1 Elite",
+      "settings": {
+        "heading": "<p><strong>Unisciti alla nostra community</strong></p>",
+        "heading_size": 24,
+        "heading_color": "#000000",
+        "heading_size_mobile": 20,
+        "stars": 4,
+        "stars_size": 15,
+        "stars_color": "#ffd700",
+        "rating": "<p><strong>4.7/5 </strong> Recensioni dei clienti</p>",
+        "rating_size": 18,
+        "rating_color": "#000000",
+        "rating_size_mobile": 16,
+        "image_border_radius": 10,
+        "image_border_width": 1,
+        "image_border_style": "solid",
+        "image_border_color": "#f3f3f3",
+        "item_stars_color": "#00b67a",
+        "item_title_size": 18,
+        "item_title_weight": "bold",
+        "item_title_color": "#000000",
+        "item_title_size_mobile": 16,
+        "item_text_size": 16,
+        "item_text_color": "#333333",
+        "item_text_size_mobile": 14,
+        "item_background": "#ffffff",
+        "item_border_width": 1,
+        "item_border_style": "solid",
+        "item_border_color": "#f3f3f3",
+        "item_border_radius": 10,
+        "enable_navigation_top": true,
+        "enable_navigation_bottom": true,
+        "navigation_color": "#333333",
+        "navigation_background": "#ffffff",
+        "layout_margin_top": 6,
+        "layout_margin_bottom": 8,
+        "layout_background": "#ffffff"
+      }
+    },
     "ss_slider_2_8Vhmqi": {
       "type": "ss-slider-2",
       "blocks": {
@@ -276,106 +376,6 @@
         "lazy": true
       }
     },
-    "ss_atc_button_3_pF7D8t": {
-      "type": "ss-atc-button-3",
-      "name": "SS - ATC Button #3",
-      "settings": {
-        "shake_type": "jiggle"
-      }
-    },
-    "testimonial_elite_PiaAmx": {
-      "type": "testimonial-elite",
-      "blocks": {
-        "slide_8CrkQ7": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_28_sept._2025_18_25_12.png",
-            "rating": 5,
-            "title": "Uno stimolante naturale del sistema immunitario",
-            "content": "Tutti i miei colleghi si sono ammalati, ma io non ho avuto nulla. Di solito sono la prima a prendere i virus che circolano. Ma questa volta? Niente di niente. Di sicuro continuerò!"
-          }
-        },
-        "slide_weq7hx": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/Gemini_Generated_Image_4j2el14j2el14j2e.png",
-            "rating": 4,
-            "title": "",
-            "content": "La mia pancia era sempre gonfia, anche a digiuno. Avevo provato di tutto, senza successo. Da quando faccio questa cura, mi sento leggera, finalmente normale. Niente più fastidi, né tensioni... riscopro il comfort digestivo. È liberatorio."
-          }
-        },
-        "slide_qPVFNX": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/Gemini_Generated_Image_ec80inec80inec80.png",
-            "rating": 4,
-            "title": "Via i parassiti, entra l'energia!",
-            "content": "Non sapevo nemmeno di avere dei parassiti... Ma dopo qualche giorno ho espulso delle cose piuttosto strane. Oggi sento un vero cambiamento nel mio corpo: ho ritrovato molta energia!"
-          }
-        },
-        "slide_CfmLai": {
-          "type": "slide",
-          "settings": {
-            "rating": 4,
-            "title": "",
-            "content": "Per anni ho avuto quel peso nello stomaco. Disagio, gas, a volte anche vergogna. Oggi respiro, la mia pancia è tornata calma. Non ci penso più, ed è questo il vero lusso. Mi sento libero"
-          }
-        },
-        "slide_bWNhCq": {
-          "type": "slide",
-          "settings": {
-            "rating": 5,
-            "title": "Mi ha davvero aiutato a digerire meglio.",
-            "content": "Per anni ho sofferto di problemi di digestione, gonfiore costante e fastidi. Da alcune settimane tutto si è calmato: il mio stomaco sta molto meglio!"
-          }
-        }
-      },
-      "block_order": [
-        "slide_8CrkQ7",
-        "slide_weq7hx",
-        "slide_qPVFNX",
-        "slide_CfmLai",
-        "slide_bWNhCq"
-      ],
-      "name": "PC - Testimonial #1 Elite",
-      "settings": {
-        "heading": "<p><strong>Unisciti alla nostra community</strong></p>",
-        "heading_size": 24,
-        "heading_color": "#000000",
-        "heading_size_mobile": 20,
-        "stars": 4,
-        "stars_size": 15,
-        "stars_color": "#ffd700",
-        "rating": "<p><strong>4.7/5 </strong> Recensioni dei clienti</p>",
-        "rating_size": 18,
-        "rating_color": "#000000",
-        "rating_size_mobile": 16,
-        "image_border_radius": 10,
-        "image_border_width": 1,
-        "image_border_style": "solid",
-        "image_border_color": "#f3f3f3",
-        "item_stars_color": "#00b67a",
-        "item_title_size": 18,
-        "item_title_weight": "bold",
-        "item_title_color": "#000000",
-        "item_title_size_mobile": 16,
-        "item_text_size": 16,
-        "item_text_color": "#333333",
-        "item_text_size_mobile": 14,
-        "item_background": "#ffffff",
-        "item_border_width": 1,
-        "item_border_style": "solid",
-        "item_border_color": "#f3f3f3",
-        "item_border_radius": 10,
-        "enable_navigation_top": true,
-        "enable_navigation_bottom": true,
-        "navigation_color": "#333333",
-        "navigation_background": "#ffffff",
-        "layout_margin_top": 6,
-        "layout_margin_bottom": 8,
-        "layout_background": "#ffffff"
-      }
-    },
     "17595225339695d568": {
       "type": "apps",
       "blocks": {
@@ -401,6 +401,98 @@
         "color_scheme": "",
         "padding_top": 40,
         "padding_bottom": 52
+      }
+    },
+    "ss_feature_1_b9rkKB": {
+      "type": "ss-feature-1",
+      "blocks": {
+        "image_xVR6xb": {
+          "type": "image",
+          "settings": {
+            "feature_title": "Consegna gratuita",
+            "feature_text": "Spedizione in 24 ore",
+            "feature_url": "",
+            "hide_image": false
+          }
+        },
+        "image_TdfDx9": {
+          "type": "image",
+          "settings": {
+            "feature_title": "Garanzia del miglior prezzo",
+            "feature_text": "Denaro sicuro quando ordini da noi",
+            "feature_url": "",
+            "hide_image": false
+          }
+        },
+        "image_gqUiKV": {
+          "type": "image",
+          "settings": {
+            "feature_title": "Hassle-free exchange",
+            "feature_text": "Receive a slip for exchanges",
+            "feature_url": "",
+            "hide_image": false
+          }
+        },
+        "image_Y4MVC7": {
+          "type": "image",
+          "settings": {
+            "feature_title": "5.0 Google Reviews",
+            "feature_text": "Customer satisfaction #1 priority",
+            "feature_url": "",
+            "hide_image": false
+          }
+        }
+      },
+      "block_order": [
+        "image_xVR6xb",
+        "image_TdfDx9",
+        "image_gqUiKV",
+        "image_Y4MVC7"
+      ],
+      "name": "SS - Feature #1",
+      "settings": {
+        "feature_row": 4,
+        "feature_row_mobile": 2,
+        "feature_gap": 30,
+        "feature_gap_mobile": 2,
+        "feature_padding_vertical": 0,
+        "feature_padding_horizontal": 0,
+        "feature_radius": 16,
+        "feature_border_thickness": 0,
+        "feature_shadow": false,
+        "feature_heading_custom": false,
+        "feature_heading_font": "josefin_sans_n4",
+        "feature_heading_size": 14,
+        "feature_heading_size_mobile": 12,
+        "feature_heading_height": 130,
+        "feature_heading_mt": 8,
+        "feature_text_custom": false,
+        "feature_text_font": "josefin_sans_n4",
+        "feature_text_size": 12,
+        "feature_text_size_mobile": 12,
+        "feature_text_height": 130,
+        "feature_text_mt": 4,
+        "feature_icon_size": 42,
+        "feature_icon_size_mobile": 42,
+        "feature_bg": "#FFFFFF",
+        "feature_border_color": "#000000",
+        "feature_shadow_color": "#000000",
+        "feature_heading_color": "#000000",
+        "feature_text_color": "#000000",
+        "feature_icon_color": "#000000",
+        "background_color": "#FFFFFF",
+        "background_gradient": "",
+        "border_color": "#000000",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 16,
+        "padding_bottom": 16,
+        "padding_horizontal": 5,
+        "padding_horizontal_mobile": 1.5,
+        "full_width": false,
+        "content_width": 120,
+        "border_thickness": 0,
+        "lazy": true
       }
     },
     "collapsible_content_jUWnke": {
@@ -914,11 +1006,12 @@
     "sp_image_standalone_JVDVtx",
     "ss_wave_2_ywQFik",
     "logotesti_4WfnDB",
-    "ss_slider_2_8Vhmqi",
     "ss_atc_button_3_pF7D8t",
     "testimonial_elite_PiaAmx",
+    "ss_slider_2_8Vhmqi",
     "17595225339695d568",
     "custom_liquid_WACbxF",
+    "ss_feature_1_b9rkKB",
     "collapsible_content_jUWnke",
     "sp_faq_plus_yW4WQr",
     "ss_testimonial_8_rgDJid",

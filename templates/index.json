@@ -56,6 +56,7 @@
     },
     "sp_image_standalone_JVDVtx": {
       "type": "sp-image-standalone",
+      "disabled": true,
       "name": "🚀SP - Image Standalone",
       "settings": {
         "background_color": "radial-gradient(rgba(255, 255, 255, 1) 70%, rgba(255, 255, 255, 1) 100%)",
@@ -68,6 +69,27 @@
         "media_aspect_ratio": "auto",
         "desktop_image_width": 1100,
         "mobile_image": "shopify://shop_images/ChatGPT_Image_27_sept._2025_09_20_55.png",
+        "mobile_media_aspect_ratio": "auto",
+        "mobile_image_width": 800,
+        "link": "",
+        "media_radius": 5,
+        "media_shadow": true
+      }
+    },
+    "sp_image_standalone_MEWiXV": {
+      "type": "sp-image-standalone",
+      "name": "🚀SP - Image Standalone",
+      "settings": {
+        "background_color": "radial-gradient(rgba(255, 255, 255, 1) 70%, rgba(255, 255, 255, 1) 100%)",
+        "max_width": 1000,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0,
+        "image": "shopify://shop_images/ChatGPT_Image_27_sept._2025_09_20_55.png",
+        "media_aspect_ratio": "auto",
+        "desktop_image_width": 1100,
+        "mobile_image": "shopify://shop_images/floreva_benef.png",
         "mobile_media_aspect_ratio": "auto",
         "mobile_image_width": 800,
         "link": "",
@@ -230,12 +252,32 @@
             "button": "",
             "url": ""
           }
+        },
+        "slide_yqeajM": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Complement_alimentaire_FLOREVA_et_bien-etre.png",
+            "title": "",
+            "button": "",
+            "url": ""
+          }
+        },
+        "slide_wGKBdC": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_27_sept._2025_09_20_55.png",
+            "title": "",
+            "button": "",
+            "url": ""
+          }
         }
       },
       "block_order": [
         "slide_d7KAgB",
         "slide_qKTiAt",
-        "slide_T9gKVL"
+        "slide_T9gKVL",
+        "slide_yqeajM",
+        "slide_wGKBdC"
       ],
       "name": "SS - Slider #2",
       "settings": {
@@ -249,7 +291,7 @@
         "card_radius": 0,
         "card_border_thickness": 0,
         "card_shadow": true,
-        "card_ratio": "square",
+        "card_ratio": "portrait",
         "card_ratio_mobile": "square",
         "card_overlay": 0,
         "content_horizontal_position": "center",
@@ -877,22 +919,22 @@
         "text_color": "#000000",
         "icon_color": "#000000",
         "list_text_color": "#000000",
-        "button_color": "#FFFFFF",
+        "button_color": "#ffffff",
         "button_hover_color": "#dad0ff",
-        "button_bg_color": "#16142B",
-        "button_bg_hover_color": "#16142B",
-        "button_border_color": "#16142B",
-        "button_border_hover_color": "#16142B",
-        "table_border_color": "#2D2B43",
-        "table_active_border_color": "#DAD0FF",
-        "table_heading_color": "#1A192E",
-        "table_heading_active_color": "#FFFFFF",
+        "button_bg_color": "#16142b",
+        "button_bg_hover_color": "#16142b",
+        "button_border_color": "#16142b",
+        "button_border_hover_color": "#16142b",
+        "table_border_color": "#2d2b43",
+        "table_active_border_color": "#dad0ff",
+        "table_heading_color": "#1a192e",
+        "table_heading_active_color": "#ffffff",
         "table_heading_bg_active_color": "#007e40",
         "table_column_active_bg_color": "#007e40",
-        "table_row_heading_color": "#1A192E",
-        "table_row_text_color": "#1A192E",
-        "table_row_active_text_color": "#FFFFFF",
-        "background_color": "#F6F3FF",
+        "table_row_heading_color": "#1a192e",
+        "table_row_text_color": "#1a192e",
+        "table_row_active_text_color": "#ffffff",
+        "background_color": "#f6f3ff",
         "background_gradient": "",
         "border_color": "#000000",
         "margin_top": 0,
@@ -905,6 +947,116 @@
         "content_width": 130,
         "border_thickness": 0,
         "lazy": true
+      }
+    },
+    "chronologie_3JDHqa": {
+      "type": "Chronologie",
+      "blocks": {
+        "chronologie_tqEFFf": {
+          "type": "chronologie",
+          "settings": {
+            "heading": "Step 1: Planning",
+            "content": "<p>Begin with thorough planning and research. Establish clear goals and objectives for your project to ensure success.</p>"
+          }
+        },
+        "chronologie_QCk7gy": {
+          "type": "chronologie",
+          "settings": {
+            "heading": "Step 2: Development",
+            "content": "<p>Execute your plan with precision. Focus on quality and attention to detail throughout the development phase.</p>"
+          }
+        },
+        "chronologie_mFzT9i": {
+          "type": "chronologie",
+          "settings": {
+            "heading": "Step 3: Delivery",
+            "content": "<p>Complete the final steps and deliver outstanding results. Review and refine to exceed expectations.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "chronologie_tqEFFf",
+        "chronologie_QCk7gy",
+        "chronologie_mFzT9i"
+      ],
+      "name": "Chronologie #3",
+      "settings": {
+        "heading": "Lorem headingsum",
+        "heading_size": 40,
+        "heading_weight": "400",
+        "heading_font": "josefin_sans_n4",
+        "heading_color": "#284634",
+        "heading_size_mobile": 28,
+        "subheading": "Lorem subheadingsum dolor sit amet consectur adiscing concordea",
+        "subheading_size": 18,
+        "subheading_weight": "400",
+        "subheading_font": "josefin_sans_n4",
+        "subheading_color": "#a6a690",
+        "subheading_size_mobile": 16,
+        "block_heading_size": 24,
+        "block_heading_weight": "400",
+        "block_heading_font": "josefin_sans_n4",
+        "block_heading_color": "#284634",
+        "block_heading_size_mobile": 20,
+        "block_content_size": 16,
+        "block_content_weight": "400",
+        "block_content_font": "josefin_sans_n4",
+        "block_content_color": "",
+        "block_content_size_mobile": 14,
+        "num_line_background": "#ffffff",
+        "num_line_color": "#497e5a",
+        "layout_background": "",
+        "margin_top": 0,
+        "layout_margin_bottom": 0
+      }
+    },
+    "image_banner_custom_RKdwgK": {
+      "type": "image-banner-custom",
+      "blocks": {
+        "heading_wHcd3t": {
+          "type": "heading",
+          "settings": {
+            "heading": "Immagine banner",
+            "heading_size": "h1"
+          }
+        },
+        "text_LjtKYD": {
+          "type": "text",
+          "settings": {
+            "text": "Fornisci ai clienti dettagli sulle immagini del banner o sul contenuto del modello.",
+            "text_style": "body"
+          }
+        },
+        "buttons_NkrzRX": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Etichetta pulsante",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "Etichetta pulsante",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_wHcd3t",
+        "text_LjtKYD",
+        "buttons_NkrzRX"
+      ],
+      "name": "Image Banner Custom",
+      "settings": {
+        "image_overlay_opacity": 0,
+        "color_scheme": "",
+        "image_link": "",
+        "image_behavior": "none",
+        "desktop_image_height": "medium",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "mobile_image_height": "medium",
+        "mobile_content_alignment": "center",
+        "show_text_below": true
       }
     },
     "collapsible_content_jUWnke": {
@@ -1223,6 +1375,7 @@
     "sp_image_standalone_UainYU",
     "ss_wave_2_eHz3at",
     "sp_image_standalone_JVDVtx",
+    "sp_image_standalone_MEWiXV",
     "ss_wave_2_ywQFik",
     "ss_atc_button_3_pF7D8t",
     "testimonial_elite_PiaAmx",
@@ -1233,6 +1386,8 @@
     "sp_hero_charlotte_qniE6z",
     "sp_hero_charlotte_rdBQf4",
     "ss_comparison_table_6_pVYEmz",
+    "chronologie_3JDHqa",
+    "image_banner_custom_RKdwgK",
     "collapsible_content_jUWnke",
     "ss_testimonial_8_rgDJid"
   ]

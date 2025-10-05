@@ -24,22 +24,14 @@
         "text_eGrnta": {
           "type": "text",
           "settings": {
-            "heading": "Customer Service",
-            "subtext": "<p><strong>Mail:</strong> <br/></p><p><strong>Hours:</strong> 24/7 – Available every day,</p><p> at any time.</p>"
-          }
-        },
-        "link_list_WFziVd": {
-          "type": "link_list",
-          "settings": {
-            "heading": "Quick links",
-            "menu": "footer"
+            "heading": "Servizio clienti",
+            "subtext": "<p>E-mail: florevaitaly@gmail.com</p><p>Orario: 24/7 – Disponibile tutti i giorni.</p>"
           }
         }
       },
       "block_order": [
         "link_list_VPyamx",
-        "text_eGrnta",
-        "link_list_WFziVd"
+        "text_eGrnta"
       ],
       "settings": {
         "color_scheme": "scheme-2",

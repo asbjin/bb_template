@@ -563,7 +563,8 @@
       "custom_css": [
         ".featured-product .product__view-details,.featured-product .link.underlined-link[href*=\"/products/\"] {display: none !important;}",
         " /* Cache le 0/1 (compteur) dans la section Produit en vedette */.slider-counter.caption {display: none !important;}",
-        " /* Cacher l'image du produit en vedette */.product__media.media.media--transparent {display: none !important;}"
+        " /* Cacher l'image du produit en vedette */.product__media.media.media--transparent {display: none !important;}",
+        "span.product__media-icon.motion-reduce.quick-add-hidden.product__media-icon--lightbox {display: none !important;}"
       ],
       "name": "t:sections.featured-product.presets.name",
       "settings": {

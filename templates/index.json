@@ -1010,55 +1010,6 @@
         "layout_margin_bottom": 0
       }
     },
-    "image_banner_custom_RKdwgK": {
-      "type": "image-banner-custom",
-      "blocks": {
-        "heading_wHcd3t": {
-          "type": "heading",
-          "settings": {
-            "heading": "Immagine banner",
-            "heading_size": "h1"
-          }
-        },
-        "text_LjtKYD": {
-          "type": "text",
-          "settings": {
-            "text": "Fornisci ai clienti dettagli sulle immagini del banner o sul contenuto del modello.",
-            "text_style": "body"
-          }
-        },
-        "buttons_NkrzRX": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Etichetta pulsante",
-            "button_link_1": "",
-            "button_style_secondary_1": false,
-            "button_label_2": "Etichetta pulsante",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_wHcd3t",
-        "text_LjtKYD",
-        "buttons_NkrzRX"
-      ],
-      "name": "Image Banner Custom",
-      "settings": {
-        "image_overlay_opacity": 0,
-        "color_scheme": "",
-        "image_link": "",
-        "image_behavior": "none",
-        "desktop_image_height": "medium",
-        "desktop_content_position": "middle-center",
-        "show_text_box": true,
-        "desktop_content_alignment": "center",
-        "mobile_image_height": "medium",
-        "mobile_content_alignment": "center",
-        "show_text_below": true
-      }
-    },
     "collapsible_content_jUWnke": {
       "type": "collapsible-content",
       "blocks": {
@@ -1387,7 +1338,6 @@
     "sp_hero_charlotte_rdBQf4",
     "ss_comparison_table_6_pVYEmz",
     "chronologie_3JDHqa",
-    "image_banner_custom_RKdwgK",
     "collapsible_content_jUWnke",
     "ss_testimonial_8_rgDJid"
   ]

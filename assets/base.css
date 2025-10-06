@@ -3698,16 +3698,18 @@ ul.has-submenu.list-menu.submenu-open ul.list-menu>li {
     display: none!important;
 }
 
-/* --- Bouton "Acquista ora" plus clair et sans contour --- */
+/* --- Bouton "Acquista ora" : vert flashy et sans contour --- */
 .product-form__submit,
 .shopify-section .button,
 .shopify-payment-button__button--unbranded {
-  background-color: #3E7A59 !important; /* Vert plus clair et attrayant */
+  background-color: #2ECC71 !important; /* vert plus lumineux et attrayant */
   color: #ffffff !important;
-  border: none !important; /* Supprime le contour orange */
-  border-radius: 10px !important; /* arrondi doux et moderne */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* léger relief pour attirer l’œil */
-  font-weight: 600;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border-radius: 10px !important;
+  font-weight: 700 !important;
+  text-transform: none !important;
   transition: all 0.25s ease-in-out;
 }
 
@@ -3715,8 +3717,18 @@ ul.has-submenu.list-menu.submenu-open ul.list-menu>li {
 .product-form__submit:hover,
 .shopify-section .button:hover,
 .shopify-payment-button__button--unbranded:hover {
-  background-color: #49A372 !important; /* vert plus vif et lumineux au hover */
-  transform: scale(1.02);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  background-color: #27AE60 !important; /* vert un peu plus profond au survol */
+  transform: scale(1.03);
+  box-shadow: 0 6px 14px rgba(46, 204, 113, 0.4);
 }
+
+/* Supprime tout contour orange ou doré (focus state Shopify) */
+.product-form__submit:focus,
+.shopify-section .button:focus,
+.shopify-payment-button__button--unbranded:focus {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
 

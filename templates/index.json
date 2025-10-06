@@ -965,7 +965,7 @@
         "chronologie_QCk7gy": {
           "type": "chronologie",
           "settings": {
-            "image": "shopify://shop_images/step2.png",
+            "image": "shopify://shop_images/step2_gemini.png",
             "heading": "Step 2 – 90 Giorni: Stabilità e benessere profondo",
             "content": "<p>In questa fase, i risultati diventano stabili e visibili.</p><ul><li>Aiuta a eliminare parassiti, tossine e batteri nocivi<br/></li><li>Rafforza il sistema immunitario e riduce la stanchezza<br/></li><li>Migliora la qualità del sonno e la vitalità generale</li></ul>"
           }
@@ -984,7 +984,6 @@
         "chronologie_QCk7gy",
         "chronologie_mFzT9i"
       ],
-      "custom_css": [],
       "name": "Chronologie #3",
       "settings": {
         "heading": "🌿 Il tuo percorso con FLOREVA",

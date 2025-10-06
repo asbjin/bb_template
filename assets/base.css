@@ -3697,3 +3697,19 @@ ul.has-submenu.list-menu.submenu-open ul.list-menu>li {
 .header__search {
     display: none!important;
 }
+
+/* Couleur du bouton "Ajouter au panier" (Produit en vedette) */
+.product-form__submit,
+.shopify-section .button,
+.shopify-payment-button__button--unbranded {
+  background-color: #2f4637 !important; /* Mets ici ta couleur (ex : vert Floreva) */
+  color: #fff !important; /* Couleur du texte */
+  border-radius: 8px; /* arrondi du bouton */
+}
+
+/* Couleur du bouton au survol */
+.product-form__submit:hover,
+.shopify-section .button:hover,
+.shopify-payment-button__button--unbranded:hover {
+  background-color: #3a6b4d !important; /* un vert légèrement plus clair */
+}

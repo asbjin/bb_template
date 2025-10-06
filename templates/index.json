@@ -957,6 +957,7 @@
         "chronologie_tqEFFf": {
           "type": "chronologie",
           "settings": {
+            "image": "shopify://shop_images/step1.png",
             "heading": "Step 1 – 30 Giorni: Riequilibrio e primi benefici",
             "content": "<p>Durante il primo mese, FLOREVA avvia un profondo processo di riequilibrio interno.</p><ul><li>Riduce gonfiore e pesantezza addominale<br/></li><li>Migliora la digestione e l’assorbimento dei nutrienti<br/></li><li>Dona un senso di leggerezza e comfort quotidiano</li></ul>"
           }

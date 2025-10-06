@@ -229,7 +229,7 @@
         "slide_d7KAgB": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/3.webp",
+            "image": "shopify://shop_images/image3.png",
             "title": "",
             "button": "",
             "url": ""
@@ -238,7 +238,7 @@
         "slide_qKTiAt": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_28_sept._2025_22_15_20.png",
+            "image": "shopify://shop_images/image1.png",
             "title": "",
             "button": "",
             "url": ""
@@ -247,7 +247,7 @@
         "slide_T9gKVL": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/1_24e2a074-86fc-4acd-ac56-c8b98fe073a3.webp",
+            "image": "shopify://shop_images/image2.png",
             "title": "",
             "button": "",
             "url": ""
@@ -265,7 +265,34 @@
         "slide_wGKBdC": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_27_sept._2025_09_20_55.png",
+            "image": "shopify://shop_images/image7.png",
+            "title": "",
+            "button": "",
+            "url": ""
+          }
+        },
+        "slide_8ERA66": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/image5.png",
+            "title": "",
+            "button": "",
+            "url": ""
+          }
+        },
+        "slide_hhzaRi": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/image4.png",
+            "title": "",
+            "button": "",
+            "url": ""
+          }
+        },
+        "slide_WMAJkG": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/image6.png",
             "title": "",
             "button": "",
             "url": ""
@@ -277,7 +304,10 @@
         "slide_qKTiAt",
         "slide_T9gKVL",
         "slide_yqeajM",
-        "slide_wGKBdC"
+        "slide_wGKBdC",
+        "slide_8ERA66",
+        "slide_hhzaRi",
+        "slide_WMAJkG"
       ],
       "name": "SS - Slider #2",
       "settings": {

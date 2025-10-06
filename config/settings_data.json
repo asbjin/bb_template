@@ -136,7 +136,7 @@
     "enable_atc_slide_out": true,
     "desktop_sticky_position": "bottom",
     "mobile_sticky_position": "bottom",
-    "atc_button_background_color": "#e8c872",
+    "atc_button_background_color": "#007e40",
     "atc_button_text_border_color": "#ffffff",
     "sticky_atc_title_font_style": "bold",
     "sticky_atc_price_font_style": "bold",

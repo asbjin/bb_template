@@ -3702,7 +3702,7 @@ ul.has-submenu.list-menu.submenu-open ul.list-menu>li {
 .product-form__submit,
 .shopify-section .button,
 .shopify-payment-button__button--unbranded {
-  background-color: #2ECC71 !important; /* vert plus lumineux et attrayant */
+  background-color:rgb(14, 204, 14) !important; /* vert plus lumineux et attrayant */
   color: #ffffff !important;
   border: none !important;
   outline: none !important;

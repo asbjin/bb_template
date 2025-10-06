@@ -957,22 +957,22 @@
         "chronologie_tqEFFf": {
           "type": "chronologie",
           "settings": {
-            "heading": "Step 1: Planning",
-            "content": "<p>Begin with thorough planning and research. Establish clear goals and objectives for your project to ensure success.</p>"
+            "heading": "Step 1 – 30 Giorni: Riequilibrio e primi benefici",
+            "content": "<p>Durante il primo mese, FLOREVA avvia un profondo processo di riequilibrio interno.</p><ul><li>Riduce gonfiore e pesantezza addominale<br/></li><li>Migliora la digestione e l’assorbimento dei nutrienti<br/></li><li>Dona un senso di leggerezza e comfort quotidiano</li></ul>"
           }
         },
         "chronologie_QCk7gy": {
           "type": "chronologie",
           "settings": {
-            "heading": "Step 2: Development",
-            "content": "<p>Execute your plan with precision. Focus on quality and attention to detail throughout the development phase.</p>"
+            "heading": "Step 2 – 90 Giorni: Stabilità e benessere profondo",
+            "content": "<p>In questa fase, i risultati diventano stabili e visibili.</p><ul><li>Aiuta a eliminare parassiti, tossine e batteri nocivi<br/></li><li>Rafforza il sistema immunitario e riduce la stanchezza<br/></li><li>Migliora la qualità del sonno e la vitalità generale</li></ul>"
           }
         },
         "chronologie_mFzT9i": {
           "type": "chronologie",
           "settings": {
-            "heading": "Step 3: Delivery",
-            "content": "<p>Complete the final steps and deliver outstanding results. Review and refine to exceed expectations.</p>"
+            "heading": "Step 3 – 180 Giorni: Trasformazione e risultati duraturi",
+            "content": "<p>Con sei mesi di uso costante, FLOREVA agisce in profondità per un benessere totale.</p><ul><li>Stabilizza i risultati e previene ricadute<br/></li><li>Purifica completamente il corpo e sostiene l’equilibrio intestinale<br/></li><li>Migliora l’umore e dona serenità mentale</li></ul>"
           }
         }
       },
@@ -983,13 +983,13 @@
       ],
       "name": "Chronologie #3",
       "settings": {
-        "heading": "Lorem headingsum",
+        "heading": "🌿 Il tuo percorso con FLOREVA",
         "heading_size": 40,
         "heading_weight": "400",
         "heading_font": "josefin_sans_n4",
         "heading_color": "#284634",
         "heading_size_mobile": 28,
-        "subheading": "Lorem subheadingsum dolor sit amet consectur adiscing concordea",
+        "subheading": "Scopri come FLOREVA Olio di Origano trasforma il tuo benessere giorno dopo giorno.Segui le tre fasi del programma e osserva come il tuo corpo ritrova equilibrio, energia e serenità in modo 100% naturale.",
         "subheading_size": 18,
         "subheading_weight": "400",
         "subheading_font": "josefin_sans_n4",

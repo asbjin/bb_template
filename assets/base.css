@@ -3722,11 +3722,36 @@ ul.has-submenu.list-menu.submenu-open ul.list-menu>li {
   box-shadow: 0 6px 14px rgba(46, 204, 113, 0.4);
 }
 
-/* Supprime tout contour orange ou doré (focus state Shopify) */
-.product-form__submit:focus,
-.shopify-section .button:focus,
-.shopify-payment-button__button--unbranded:focus {
+/* Supprime totalement le contour/rectangle doré/orange autour du bouton */
+.product-form__submit,
+.shopify-section .button,
+.shopify-payment-button__button--unbranded {
+  border: none !important;
   outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Désactive tout contour au focus ou clic */
+.product-form__submit:focus,
+.product-form__submit:focus-visible,
+.product-form__submit:active,
+.product-form__submit:focus-within,
+.shopify-section .button:focus,
+.shopify-section .button:focus-visible,
+.shopify-section .button:active,
+.shopify-payment-button__button--unbranded:focus,
+.shopify-payment-button__button--unbranded:focus-visible,
+.shopify-payment-button__button--unbranded:active {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Si le thème ajoute un pseudo-élément décoratif */
+.product-form__submit::after,
+.shopify-section .button::after,
+.shopify-payment-button__button--unbranded::after {
+  content: none !important;
   border: none !important;
   box-shadow: none !important;
 }

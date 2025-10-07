@@ -3756,15 +3756,27 @@ ul.has-submenu.list-menu.submenu-open ul.list-menu>li {
   box-shadow: none !important;
 }
 
-/* --- Fix pour les lettres coupées dans la barre d'annonce --- */
+/* --- Répare les lettres coupées dans la barre d'annonce --- */
 .announcement-bar,
-.announcement-bar__message,
-.header__announcement,
+.announcement-bar__inner,
+.announcement-bar__content,
+.banner__text,
 .shopify-section .announcement-bar {
-  line-height: 1.6em !important; /* augmente la hauteur de ligne */
-  padding-top: 6px !important;   /* espace supérieur */
-  padding-bottom: 6px !important; /* espace inférieur */
-  overflow: visible !important;  /* empêche la coupure */
+  line-height: 1.6em !important;
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+  min-height: 40px !important;
+  overflow: visible !important;
+  display: flex !important;
+  align-items: center !important; /* centre verticalement */
+}
+
+/* Supprime les contraintes de hauteur et les coupures */
+.announcement-bar *,
+.announcement-bar__inner *,
+.announcement-bar__content * {
+  overflow: visible !important;
+  line-height: normal !important;
 }
 
 

@@ -166,6 +166,19 @@
       padding-bottom: 0.6rem !important;
     }
 
+    /* Supprime la marge blanche au-dessus de la barre d'annonce */
+    body, 
+    .template-index .shopify-section:first-child,
+    #peakconversion__{{ section.id }} {
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+    }
+
+    /* Force la barre à coller complètement en haut */
+    #peakconversion__{{ section.id }} {
+      position: relative;
+      top: 0;
+    }
 </style>
 <div id="peakconversion__{{ section.id }}">
   <div

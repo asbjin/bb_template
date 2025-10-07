@@ -3756,27 +3756,34 @@ ul.has-submenu.list-menu.submenu-open ul.list-menu>li {
   box-shadow: none !important;
 }
 
-/* --- Répare les lettres coupées dans la barre d'annonce --- */
-.announcement-bar,
-.announcement-bar__inner,
-.announcement-bar__content,
-.banner__text,
-.shopify-section .announcement-bar {
-  line-height: 1.6em !important;
-  padding-top: 8px !important;
-  padding-bottom: 8px !important;
-  min-height: 40px !important;
-  overflow: visible !important;
+/* --- Correction spécifique : PC-ANNOUNCEMENT BAR --- */
+.pc-announcement-bar,
+.pc-announcement-bar *,
+.pc-banner-item,
+.pc-banner-item *,
+[id*="PC-ANNOUNCEMENT"],
+[id*="pc-announcement"],
+[class*="pc-announcement"],
+[class*="banner-item"],
+[class*="Banner Item"] {
+  line-height: 1.6em !important;       /* augmente la hauteur de ligne */
+  padding-top: 8px !important;         /* espace au-dessus du texte */
+  padding-bottom: 8px !important;      /* espace en dessous du texte */
+  min-height: 40px !important;         /* évite la coupure verticale */
+  overflow: visible !important;        /* empêche le texte d’être masqué */
   display: flex !important;
-  align-items: center !important; /* centre verticalement */
+  align-items: center !important;      /* centre le texte verticalement */
 }
 
-/* Supprime les contraintes de hauteur et les coupures */
-.announcement-bar *,
-.announcement-bar__inner *,
-.announcement-bar__content * {
+/* Corrige tout conteneur parent qui limite la hauteur */
+.pc-announcement-bar__inner,
+.pc-announcement-bar__content,
+.pc-banner-item__inner,
+.pc-banner-item__content {
+  height: auto !important;
+  max-height: none !important;
   overflow: visible !important;
-  line-height: normal !important;
 }
+
 
 

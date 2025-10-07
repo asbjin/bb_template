@@ -815,6 +815,13 @@
         "custom_css": ""
       }
     },
+    "sp_margin_adjuster_4jhP9E": {
+      "type": "sp-margin-adjuster",
+      "name": "SP-Margin-Adjuster",
+      "settings": {
+        "margin_top": 1
+      }
+    },
     "sp_hero_charlotte_rdBQf4": {
       "type": "sp-hero-charlotte",
       "blocks": {
@@ -1374,6 +1381,7 @@
     "ss_feature_1_b9rkKB",
     "chronologie_3JDHqa",
     "sp_hero_charlotte_qniE6z",
+    "sp_margin_adjuster_4jhP9E",
     "sp_hero_charlotte_rdBQf4",
     "ss_comparison_table_6_pVYEmz",
     "collapsible_content_jUWnke",

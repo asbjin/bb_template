@@ -91,12 +91,16 @@
     }
     #peakconversion__{{ section.id }} .ss-announcement-bar__message li {
 
-      line-height: 1;
+      line-height: 1.5 !important;       /* corrige la hauteur de ligne */
+      padding-top: 3px !important;       /* espace au-dessus */
+      padding-bottom: 3px !important;    /* espace en dessous */
       font-size: {{ section.settings.text_size }}px;
       font-weight: {{ section.settings.text_weight }};
-      display: inline-block;
+      display: inline-flex !important;   /* centre verticalement */
+      align-items: center !important;
       padding-right: 114px;
       position: relative;
+      overflow: visible !important;      /* empêche la coupure */
 
     }
     #peakconversion__{{ section.id }} .ss-announcement-bar__message li::after {
@@ -115,6 +119,11 @@
      peakconversion__{{ section.id }} #marq {
         max-height: 39px;
       }
+    /* Sécurité anti-coupure texte */
+    #peakconversion__{{ section.id }} .ss-announcement-bar__message,
+    #peakconversion__{{ section.id }} .ss-announcement-bar__message * {
+      overflow: visible !important;
+    }
   peakconversion__{{ section.id }} .ss-announcement-bar__message li {
         padding-right: 55px;
       }
@@ -129,6 +138,30 @@
     #peakconversion__{{ section.id }} .ss-announcement-bar-{{ section.id }} #orig.reverse {
       animation: marquesina-reverse-{{ section.id }} var(--animation-duration-{{section.id}}, 45s) infinite normal linear 2s !important;
     }
+
+    /* --- Correctif final : lettres descendantes visibles --- */
+    #peakconversion__{{ section.id }} .ss-announcement-bar__message {
+      overflow: visible !important;
+      line-height: 1.5 !important; /* espace suffisant pour les lettres descendantes */
+      padding-top: 4px !important;
+      padding-bottom: 4px !important;
+    }
+
+    #peakconversion__{{ section.id }} .ss-announcement-bar__message li {
+      line-height: 1.5 !important; /* corrige aussi les <li> */
+      vertical-align: middle !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      overflow: visible !important;
+    }
+
+    #peakconversion__{{ section.id }} .announcement-bar__link {
+      line-height: 1.5 !important;
+      overflow: visible !important;
+      display: flex !important;
+      align-items: center !important;
+    }
+
 </style>
 <div id="peakconversion__{{ section.id }}">
   <div

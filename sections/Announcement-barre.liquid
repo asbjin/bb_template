@@ -23,7 +23,7 @@
   }
     #peakconversion__{{ section.id }} .ss-announcement-bar,
     #peakconversion__{{ section.id }} .ss-announcement-bar__message {
-      overflow: hidden;
+      overflow: visible;
     }
     #peakconversion__{{ section.id }} .ss-announcement-bar:hover {
       opacity:0.90;
@@ -34,7 +34,8 @@
       padding: {{ padding }}rem 0rem;
       text-decoration: none;
       color: {{ section.settings.text_color }};
-      line-height:0;
+      line-height:1.5;
+      vertical-align: middle;
       font-size: {{ section.settings.text_size }}px; ;
       font-weight: {{ section.settings.text_weight }};
     }

@@ -3756,34 +3756,6 @@ ul.has-submenu.list-menu.submenu-open ul.list-menu>li {
   box-shadow: none !important;
 }
 
-/* --- Correction spécifique : PC-ANNOUNCEMENT BAR --- */
-.pc-announcement-bar,
-.pc-announcement-bar *,
-.pc-banner-item,
-.pc-banner-item *,
-[id*="PC-ANNOUNCEMENT"],
-[id*="pc-announcement"],
-[class*="pc-announcement"],
-[class*="banner-item"],
-[class*="Banner Item"] {
-  line-height: 1.6em !important;       /* augmente la hauteur de ligne */
-  padding-top: 8px !important;         /* espace au-dessus du texte */
-  padding-bottom: 8px !important;      /* espace en dessous du texte */
-  min-height: 40px !important;         /* évite la coupure verticale */
-  overflow: visible !important;        /* empêche le texte d’être masqué */
-  display: flex !important;
-  align-items: center !important;      /* centre le texte verticalement */
-}
-
-/* Corrige tout conteneur parent qui limite la hauteur */
-.pc-announcement-bar__inner,
-.pc-announcement-bar__content,
-.pc-banner-item__inner,
-.pc-banner-item__content {
-  height: auto !important;
-  max-height: none !important;
-  overflow: visible !important;
-}
 
 
 

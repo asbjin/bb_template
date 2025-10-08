@@ -311,7 +311,7 @@
       ],
       "name": "SS - Slider #2",
       "settings": {
-        "slider_view": 4,
+        "slider_view": 2,
         "slider_view_mobile": 1.1,
         "slider_rotate": 0,
         "card_padding_vertical": 0,

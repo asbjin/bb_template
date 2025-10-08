@@ -321,7 +321,7 @@
         "card_radius": 0,
         "card_border_thickness": 0,
         "card_shadow": true,
-        "card_ratio": "portrait",
+        "card_ratio": "square",
         "card_ratio_mobile": "square",
         "card_overlay": 0,
         "content_horizontal_position": "center",

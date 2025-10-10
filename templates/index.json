@@ -605,7 +605,7 @@
       ],
       "name": "t:sections.featured-product.presets.name",
       "settings": {
-        "product": "floreva-programma-30-giorni",
+        "product": "floreva",
         "color_scheme": "",
         "secondary_background": false,
         "media_size": "large",

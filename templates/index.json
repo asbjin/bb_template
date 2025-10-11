@@ -93,7 +93,7 @@
         "mobile_media_aspect_ratio": "auto",
         "mobile_image_width": 800,
         "link": "",
-        "media_radius": 5,
+        "media_radius": 0,
         "media_shadow": true
       }
     },

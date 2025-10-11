@@ -1171,8 +1171,8 @@
         "image": "shopify://shop_images/ChatGPT_Image_12_oct._2025_01_03_35.png",
         "image_ratio": "adapt",
         "desktop_layout": "image_first",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "1760108312671951de": {

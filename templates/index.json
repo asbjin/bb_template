@@ -1158,10 +1158,7 @@
         "collapsible_row_y4bFUL",
         "collapsible_row_9RHnYm"
       ],
-      "custom_css": [
-        "& {margin-top: 0 !important; margin-bottom: 0 !important; padding: 0 !important; width: 100vw !important; position: relative !important; left: 50% !important; right: 50% !important; margin-left: -50vw !important; margin-right: -50vw !important;}",
-        "img {width: 100% !important; height: auto !important; object-fit: cover !important; display: block !important;}"
-      ],
+      "custom_css": [],
       "name": "t:sections.collapsible_content.presets.name",
       "settings": {
         "caption": "",

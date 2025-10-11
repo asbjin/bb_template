@@ -60,6 +60,41 @@
                   style="padding-bottom: {{ 1 | divided_by: section.settings.image.aspect_ratio | times: 100 }}%;"
                 {% endif %}
               >
+              <style>
+              .section-{{ section.id }} .collapsible-content__media {
+                width: 100vw !important;
+                max-width: 100vw !important;
+                margin: 0 calc(-50vw + 50%) !important;
+                padding: 0 !important;
+              }
+
+              .section-{{ section.id }} .collapsible-content__media img {
+                width: 100% !important;
+                max-width: 100vw !important;
+                height: auto !important;
+                object-fit: cover !important;
+                display: block !important;
+                margin: 0 auto !important;
+                padding: 0 !important;
+              }
+
+              .section-{{ section.id }} {
+                padding: 0 !important;
+                margin: 0 !important;
+              }
+
+              .section-{{ section.id }} .collapsible-content__wrapper {
+                padding: 0 !important;
+                margin: 0 !important;
+              }
+
+              .section-{{ section.id }} .grid__item {
+                margin: 0 !important;
+                padding: 0 !important;
+              }
+            </style>
+
+
                 {%- liquid
                   assign padding_multiplier = 1
                   if section.settings.layout == 'section'

@@ -2,16 +2,31 @@
 {{ 'collapsible-content.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
+  /* Supprime les marges internes */
   .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
   }
 
-  @media screen and (min-width: 750px) {
-    .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
-    }
+  /* Force l'image à s'étendre bord à bord */
+  .section-{{ section.id }} .collapsible-content__media img {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    object-fit: cover !important;
+    position: relative !important;
+    left: 50% !important;
+    right: 50% !important;
+    margin-left: -50vw !important;
+    display: block !important;
+  }
+
+  /* Supprime le centrage horizontal automatique du conteneur */
+  .section-{{ section.id }} .collapsible-content__media {
+    margin: 0 !important;
+    padding: 0 !important;
   }
 {%- endstyle -%}
 

@@ -98,29 +98,6 @@
           {%- endif -%}
         </div>
       {%- endform -%}
-      <script>
-        document.addEventListener('DOMContentLoaded', function() {
-          const productForm = document.querySelector('product-form form');
-          if (!productForm) return;
-
-          productForm.addEventListener('submit', function(e) {
-            e.preventDefault(); // Empêche la redirection checkout par défaut
-
-            const formData = new FormData(productForm);
-            fetch('/cart/add.js', {
-              method: 'POST',
-              body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-              // Redirige vers le panier après ajout
-              window.location.href = '/cart';
-            })
-            .catch(err => console.error('Erreur ajout panier:', err));
-          });
-        });
-      </script>
-
     </product-form>
   {%- else -%}
     <div class="product-form">

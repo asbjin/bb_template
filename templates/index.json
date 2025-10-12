@@ -434,6 +434,12 @@
           "settings": {
             "text": "✅ Rafforza istantaneamente il sistema immunitario"
           }
+        },
+        "feature_BkCKBW": {
+          "type": "feature",
+          "settings": {
+            "text": "✅ Purifica la pelle dall’interno, per un viso sano e senza acne"
+          }
         }
       },
       "block_order": [
@@ -443,7 +449,8 @@
         "feature_rYKFdg",
         "feature_C3fEFk",
         "feature_qpjbcK",
-        "feature_PqAFpk"
+        "feature_PqAFpk",
+        "feature_BkCKBW"
       ],
       "name": "SS - Hero #6",
       "settings": {

@@ -485,7 +485,43 @@
     <script src="{{ 'product-modal.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'media-gallery.js' | asset_url }}" defer="defer"></script>
   {% endif %}
-  
+  <script>
+    (function () {
+      document.addEventListener('DOMContentLoaded', function () {
+        // ID exact du formulaire de cette section
+        var form = document.getElementById('product-form-{{ section.id }}')
+                  || document.querySelector('#ProductInfo-{{ section.id }} form.form');
+        if (!form) return;
+
+        // Évite double-binding si tu sauvegardes plusieurs fois
+        if (form.dataset.redirectOnAdd === 'true') return;
+        form.dataset.redirectOnAdd = 'true';
+
+        // Intercepte la soumission AVANT le handler du thème (capture: true)
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+
+          var fd = new FormData(form);
+
+          // récupère la quantité si l’input est présent
+          var qty = document.getElementById('Quantity-{{ section.id }}');
+          if (qty && qty.value) fd.set('quantity', qty.value);
+
+          fetch('/cart/add.js', {
+            method: 'POST',
+            headers: { 'Accept': 'application/json' },
+            body: fd
+          })
+          .then(function (r) { return r.json(); })
+          .catch(function () { /* on s’en fiche, on envoie au panier quand même */ })
+          .finally(function () {
+            window.location.href = '{{ routes.cart_url }}'; // -> /cart
+          });
+        }, true);
+      });
+    })();
+  </script>
+
 </product-info>
 
 {% schema %}

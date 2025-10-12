@@ -62,7 +62,8 @@ if (!customElements.get('product-form')) {
               this.error = true;
               return;
             } else if (!this.cart) {              
-              window.location = window.routes.cart_url || '/cart';
+              //window.location = window.routes.cart_url;
+              window.location = '/checkout';
               return;
             }
 

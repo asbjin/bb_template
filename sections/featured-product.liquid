@@ -485,41 +485,7 @@
     <script src="{{ 'product-modal.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'media-gallery.js' | asset_url }}" defer="defer"></script>
   {% endif %}
-  <script>
-document.addEventListener("DOMContentLoaded", function() {
-  const form = document.querySelector('.product-form');
-  const addToCartButton = document.querySelector('.product-form__submit');
-
-  if (form && addToCartButton) {
-    addToCartButton.addEventListener('click', function(e) {
-      e.preventDefault();
-
-      const variantInput = form.querySelector('[name="id"]');
-      const quantityInput = form.querySelector('[name="quantity"]');
-      const variantId = variantInput ? variantInput.value : null;
-      const quantity = quantityInput ? parseInt(quantityInput.value) || 1 : 1;
-
-      if (!variantId) return;
-
-      fetch('/cart/add.js', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ id: variantId, quantity: quantity })
-      })
-      .then(response => response.json())
-      .then(data => {
-        if (data && data.id) {
-          window.location.href = '/cart';
-        } else {
-          console.error('Erreur lors de l’ajout au panier', data);
-        }
-      })
-      .catch(err => console.error('Erreur réseau', err));
-    });
-  }
-});
-</script>
-
+  
 </product-info>
 
 {% schema %}

@@ -72,7 +72,7 @@
           -%}
           <button
             id="ProductSubmitButton-{{ section_id }}"
-            type="{% if redirect_to_cart %}button{% else %}submit{% endif %}"
+            type="submit"
             name="add"
             class="product-form__submit button button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
             {% if product.selected_or_first_available_variant.available == false
@@ -149,34 +149,3 @@
     <script src="{{ 'pickup-availability.js' | asset_url }}" defer="defer"></script>
   {%- endif -%}
 </div>
-{% if redirect_to_cart %}
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  var btn = document.getElementById('ProductSubmitButton-{{ section_id }}');
-  if (!btn) return;
-  var form = btn.closest('form');
-  if (!form) return;
-
-  btn.addEventListener('click', function (e) {
-    e.preventDefault();
-
-    var fd = new FormData(form);
-
-    // quantité si présente
-    var q = form.querySelector('input[name="quantity"]');
-    if (q && q.value) fd.set('quantity', q.value);
-
-    // /cart/add.js accepte FormData (id, quantity, selling_plan, properties…)
-    fetch('/cart/add.js', {
-      method: 'POST',
-      headers: { 'Accept': 'application/json' },
-      body: fd
-    })
-    .catch(function(){ /* même en cas d’erreur on tente la redirection */ })
-    .finally(function(){
-      window.location.href = '{{ routes.cart_url }}'; // /cart
-    });
-  });
-});
-</script>
-{% endif %}

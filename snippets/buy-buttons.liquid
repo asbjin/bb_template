@@ -148,39 +148,39 @@
 
     <script src="{{ 'pickup-availability.js' | asset_url }}" defer="defer"></script>
   {%- endif -%}
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-    const dynamicCheckoutButton = document.querySelector('.shopify-payment-button__button');
-
-    if (dynamicCheckoutButton) {
-      dynamicCheckoutButton.addEventListener('click', function(e) {
-        e.preventDefault();
-
-        // Récupère le variant ID depuis le formulaire
-        const form = dynamicCheckoutButton.closest('form');
-        const variantInput = form.querySelector('[name="id"]');
-        const variantId = variantInput ? variantInput.value : null;
-
-        if (!variantId) return;
-
-        // Ajoute le produit au panier
-        fetch('/cart/add.js', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ id: variantId, quantity: 1 })
-        })
-        .then(response => {
-          if (response.ok) {
-            // Redirige vers la page panier
-            window.location.href = '/cart';
-          } else {
-            console.error('Erreur lors de l’ajout au panier');
-          }
-        })
-        .catch(error => console.error('Erreur réseau :', error));
-      });
-    }
-  });
-  </script>
-
 </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const dynamicCheckoutButton = document.querySelector('.shopify-payment-button__button');
+
+  if (dynamicCheckoutButton) {
+    dynamicCheckoutButton.addEventListener('click', function(e) {
+      e.preventDefault();
+
+      // Récupère le variant ID depuis le formulaire
+      const form = dynamicCheckoutButton.closest('form');
+      const variantInput = form.querySelector('[name="id"]');
+      const variantId = variantInput ? variantInput.value : null;
+
+      if (!variantId) return;
+
+      // Ajoute le produit au panier
+      fetch('/cart/add.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id: variantId, quantity: 1 })
+      })
+      .then(response => {
+        if (response.ok) {
+          // Redirige vers la page panier
+          window.location.href = '/cart';
+        } else {
+          console.error('Erreur lors de l’ajout au panier');
+        }
+      })
+      .catch(error => console.error('Erreur réseau :', error));
+    });
+  }
+});
+</script>

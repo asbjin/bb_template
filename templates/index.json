@@ -235,6 +235,15 @@
             "url": ""
           }
         },
+        "slide_qKTiAt": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_13_oct._2025_23_17_35.png",
+            "title": "",
+            "button": "",
+            "url": ""
+          }
+        },
         "slide_HzhqdH": {
           "type": "slide",
           "settings": {
@@ -248,15 +257,6 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/Untitled_design_2.png",
-            "title": "",
-            "button": "",
-            "url": ""
-          }
-        },
-        "slide_qKTiAt": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_13_oct._2025_23_17_35.png",
             "title": "",
             "button": "",
             "url": ""
@@ -319,9 +319,9 @@
       },
       "block_order": [
         "slide_d7KAgB",
+        "slide_qKTiAt",
         "slide_HzhqdH",
         "slide_wLQykV",
-        "slide_qKTiAt",
         "slide_T9gKVL",
         "slide_yqeajM",
         "slide_wGKBdC",

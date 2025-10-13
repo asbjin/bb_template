@@ -230,8 +230,8 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/images.jpg",
-            "title": "New Slide",
-            "button": "Learn more",
+            "title": "",
+            "button": "",
             "url": ""
           }
         },

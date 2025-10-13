@@ -226,6 +226,15 @@
     "ss_slider_2_8Vhmqi": {
       "type": "ss-slider-2",
       "blocks": {
+        "slide_HzhqdH": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/images.jpg",
+            "title": "New Slide",
+            "button": "Learn more",
+            "url": ""
+          }
+        },
         "slide_d7KAgB": {
           "type": "slide",
           "settings": {
@@ -300,6 +309,7 @@
         }
       },
       "block_order": [
+        "slide_HzhqdH",
         "slide_d7KAgB",
         "slide_qKTiAt",
         "slide_T9gKVL",

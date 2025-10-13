@@ -235,6 +235,15 @@
             "url": ""
           }
         },
+        "slide_wLQykV": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/114531-gonflement.jpg",
+            "title": "",
+            "button": "",
+            "url": ""
+          }
+        },
         "slide_d7KAgB": {
           "type": "slide",
           "settings": {
@@ -310,6 +319,7 @@
       },
       "block_order": [
         "slide_HzhqdH",
+        "slide_wLQykV",
         "slide_d7KAgB",
         "slide_qKTiAt",
         "slide_T9gKVL",

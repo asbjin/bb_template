@@ -1,0 +1,244 @@
+{% comment %}
+  Floreva — Sezione Premium: "Coaching con Specialista"
+  Mobile-first, accenti dorati, CTA WhatsApp/Calendly, testi in ITA.
+{% endcomment %}
+<section class="flv-coach" style="--green: {{ section.settings.color_primary }}; --gold: {{ section.settings.color_gold }}; --ink:#1A1A1A; --bg:#FFFFFF;">
+  <div class="flv-wrap">
+
+    <!-- HERO -->
+    <header class="flv-hero">
+      {% if section.settings.hero_icon != blank %}
+        <img class="flv-hero-icon" src="{{ section.settings.hero_icon | image_url: width: 160 }}" alt="" loading="lazy">
+      {% endif %}
+      <h2 class="flv-title">{{ section.settings.title }}</h2>
+      <p class="flv-sub">{{ section.settings.subtitle }}</p>
+
+      <div class="flv-cta">
+        {% if section.settings.bundle_url != blank %}
+          <a class="flv-btn flv-btn--solid" href="{{ section.settings.bundle_url }}">{{ section.settings.cta_bundle }}</a>
+        {% endif %}
+        {% if section.settings.whatsapp_url != blank %}
+          <a class="flv-btn flv-btn--gold" href="{{ section.settings.whatsapp_url }}" target="_blank" rel="noopener nofollow">{{ section.settings.cta_whatsapp }}</a>
+        {% endif %}
+        {% if section.settings.calendly_url != blank %}
+          <a class="flv-link" href="{{ section.settings.calendly_url }}" target="_blank" rel="noopener nofollow">{{ section.settings.cta_calendly }}</a>
+        {% endif %}
+      </div>
+    </header>
+
+    <!-- PERCHE' E' DIVERSO -->
+    <section class="flv-block flv-points">
+      <h3 class="flv-h3">{{ section.settings.usp_title }}</h3>
+      <ul class="flv-list">
+        <li>💬 <strong>Sempre a portata di mano:</strong> scrivici quando hai bisogno — niente orari rigidi.</li>
+        <li>🧭 <strong>Consigli personalizzati:</strong> routine, alimentazione di base e stile di vita in base al tuo profilo.</li>
+        <li>📈 <strong>Focus risultati:</strong> mini-check regolari per ottimizzare abitudini e progressi.</li>
+      </ul>
+    </section>
+
+    <!-- COME FUNZIONA -->
+    <section class="flv-block flv-steps">
+      <h3 class="flv-h3">{{ section.settings.steps_title }}</h3>
+      <div class="flv-grid flv-grid--3">
+        {% for block in section.blocks %}
+          {% if block.type == 'step' %}
+            <article class="flv-card">
+              {% if block.settings.icon != blank %}
+                <img class="flv-ico" src="{{ block.settings.icon | image_url: width: 128 }}" alt="" loading="lazy">
+              {% endif %}
+              <h4 class="flv-h4">{{ block.settings.heading }}</h4>
+              <p class="flv-p">{{ block.settings.text }}</p>
+            </article>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </section>
+
+    <!-- COSA E' INCLUSO -->
+    <section class="flv-block flv-includes">
+      <h3 class="flv-h3">{{ section.settings.includes_title }}</h3>
+      <div class="flv-grid flv-grid--2">
+        {% for block in section.blocks %}
+          {% if block.type == 'service' %}
+            <article class="flv-card">
+              {% if block.settings.icon != blank %}
+                <img class="flv-ico" src="{{ block.settings.icon | image_url: width: 128 }}" alt="" loading="lazy">
+              {% endif %}
+              <h4 class="flv-h4">{{ block.settings.heading }}</h4>
+              <p class="flv-p">{{ block.settings.text }}</p>
+            </article>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </section>
+
+    <!-- ROADMAP 3 MESI -->
+    <section class="flv-block flv-roadmap">
+      <h3 class="flv-h3">{{ section.settings.roadmap_title }}</h3>
+      <div class="flv-road">
+        <div class="flv-stage">
+          <div class="flv-badge">1</div>
+          <h5>Mese 1 — Reset & Routine</h5>
+          <p>Kick-off, routine base, primi aggiustamenti (idratazione, timing pasti, gestione gonfiore).</p>
+        </div>
+        <div class="flv-stage">
+          <div class="flv-badge">2</div>
+          <h5>Mese 2 — Ottimizzazione</h5>
+          <p>Adattamento dosi, focus pelle/acne, combinazioni alimentari e lifestyle.</p>
+        </div>
+        <div class="flv-stage">
+          <div class="flv-badge">3</div>
+          <h5>Mese 3 — Consolidamento</h5>
+          <p>Stabilizzazione abitudini, piano di mantenimento, checklist finale.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- OFFERTA -->
+    <section class="flv-offer">
+      <div class="flv-offer-inner">
+        <p class="flv-offer-kicker">IN OMAGGIO per 3 mesi</p>
+        <h3 class="flv-h3">Coaching con Specialista — valore {{ section.settings.value_anchor }}</h3>
+        <p class="flv-p">Riservato ai bundle 90/180 giorni. Posti limitati ogni mese per garantire qualità del supporto.</p>
+        <div class="flv-cta">
+          {% if section.settings.bundle_url != blank %}
+            <a class="flv-btn flv-btn--solid" href="{{ section.settings.bundle_url }}">{{ section.settings.cta_bundle }}</a>
+          {% endif %}
+          {% if section.settings.whatsapp_url != blank %}
+            <a class="flv-btn flv-btn--gold" href="{{ section.settings.whatsapp_url }}" target="_blank" rel="noopener nofollow">{{ section.settings.cta_whatsapp }}</a>
+          {% endif %}
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="flv-block flv-faq">
+      <h3 class="flv-h3">{{ section.settings.faq_title }}</h3>
+      {% for block in section.blocks %}
+        {% if block.type == 'faq' %}
+          <details class="flv-qa">
+            <summary>{{ block.settings.q }}</summary>
+            <div class="flv-a">{{ block.settings.a }}</div>
+          </details>
+        {% endif %}
+      {% endfor %}
+      <p class="flv-disclaimer">{{ section.settings.disclaimer }}</p>
+    </section>
+
+  </div>
+
+  <style>
+    /* ====== MOBILE FIRST / PREMIUM ====== */
+    .flv-coach{background:var(--bg);color:var(--ink);}
+    .flv-wrap{max-width:{{ section.settings.max_width }};margin:0 auto;padding:20px 16px;}
+    .flv-title{font-size:28px;line-height:1.2;margin:8px 0 6px;}
+    .flv-sub{font-size:16px;opacity:.9;margin:0 auto 8px;}
+    .flv-hero{background:linear-gradient(180deg, rgba(215,169,75,.08), transparent);border:1px solid rgba(215,169,75,.35);border-radius:18px;padding:16px;box-shadow:0 6px 24px rgba(215,169,75,.12);}
+    .flv-hero-icon{width:72px;height:72px;object-fit:contain; display:block; margin-bottom:8px; filter:drop-shadow(0 1px 0 rgba(0,0,0,.05));}
+    .flv-cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+    .flv-btn{display:inline-block;padding:12px 16px;border-radius:14px;text-decoration:none;font-weight:700}
+    .flv-btn--solid{background:var(--green);color:#fff;box-shadow:0 6px 20px rgba(0,126,64,.25)}
+    .flv-btn--gold{background:linear-gradient(180deg, var(--gold), #C99638);color:#1A1A1A}
+    .flv-link{color:var(--green);font-weight:700;text-decoration:underline}
+
+    .flv-block{margin-top:22px}
+    .flv-h3{font-size:20px;margin:0 0 8px}
+    .flv-h4{font-size:17px;margin:6px 0}
+    .flv-p{font-size:15px;margin:0}
+    .flv-list{padding-left:18px;margin:0}
+    .flv-list li{margin:6px 0}
+
+    .flv-grid{display:grid;gap:12px}
+    .flv-grid--3{grid-template-columns:1fr}
+    .flv-grid--2{grid-template-columns:1fr}
+    .flv-card{background:#FAFAFA;border:1px solid #EEE;border-radius:16px;padding:14px}
+    .flv-ico{width:56px;height:56px;object-fit:contain}
+
+    .flv-road{display:flex;gap:10px;flex-direction:column}
+    .flv-stage{position:relative;background:#fff;border:1px solid #EEE;border-radius:14px;padding:12px 12px 12px 48px;box-shadow:0 8px 24px rgba(0,0,0,.04)}
+    .flv-badge{position:absolute;left:10px;top:10px;width:28px;height:28px;border-radius:50%;background:var(--gold);color:#1A1A1A;font-weight:800;display:grid;place-items:center}
+    
+    .flv-offer{margin-top:24px}
+    .flv-offer-inner{border-radius:18px;padding:16px;background:linear-gradient(180deg, rgba(215,169,75,.18), rgba(215,169,75,.06));border:1px solid rgba(215,169,75,.45)}
+    .flv-offer-kicker{font-weight:800;letter-spacing:.2px;color:#1A1A1A;margin:0 0 4px}
+
+    .flv-qa{border:1px solid #EEE;border-radius:12px;padding:10px 12px;background:#fff}
+    .flv-qa + .flv-qa{margin-top:8px}
+    .flv-qa summary{cursor:pointer;font-weight:700}
+    .flv-disclaimer{font-size:12px;opacity:.8;margin-top:10px}
+
+    /* ====== DESKTOP ENHANCEMENTS ====== */
+    @media (min-width: 768px){
+      .flv-title{font-size:34px}
+      .flv-sub{font-size:18px;max-width:680px}
+      .flv-grid--3{grid-template-columns:repeat(3,1fr)}
+      .flv-grid--2{grid-template-columns:repeat(2,1fr)}
+      .flv-road{flex-direction:row}
+      .flv-stage{flex:1}
+    }
+  </style>
+</section>
+
+{% schema %}
+{
+  "name": "Coaching",
+  "settings": [
+    { "type": "color", "id": "color_primary", "label": "Colore primario (verde)", "default": "#007E40" },
+    { "type": "color", "id": "color_gold", "label": "Accento dorato", "default": "#D7A94B" },
+    { "type": "image_picker", "id": "hero_icon", "label": "Icona hero (PNG/SVG trasparente)" },
+
+    { "type": "text", "id": "title", "label": "Titolo", "default": "Coaching con Specialista — IN OMAGGIO per 3 mesi" },
+    { "type": "textarea", "id": "subtitle", "label": "Sottotitolo", "default": "Il percorso su misura per pelle/acne, digestione e benessere naturale, pensato per aiutarti a ottenere risultati reali con Floreva. Modalità principale: coaching tramite messaggi (rapido, discreto, quando ti serve)." },
+
+    { "type": "url", "id": "bundle_url", "label": "Link pagina bundle" },
+    { "type": "text", "id": "cta_bundle", "label": "Testo CTA bundle", "default": "Attiva il bundle" },
+
+    { "type": "url", "id": "whatsapp_url", "label": "Link WhatsApp" },
+    { "type": "text", "id": "cta_whatsapp", "label": "Testo CTA WhatsApp", "default": "Scrivici su WhatsApp" },
+
+    { "type": "url", "id": "calendly_url", "label": "Link Calendly (opzionale)" },
+    { "type": "text", "id": "cta_calendly", "label": "Testo link Calendly", "default": "Prenota il kick-off (30’)" },
+
+    { "type": "text", "id": "usp_title", "label": "Titolo sezione Perché diverso", "default": "Perché è diverso" },
+    { "type": "text", "id": "steps_title", "label": "Titolo sezione Come funziona", "default": "Come funziona (1-2-3)" },
+    { "type": "text", "id": "includes_title", "label": "Titolo sezione Cosa è incluso", "default": "Cosa è incluso (3 mesi)" },
+    { "type": "text", "id": "roadmap_title", "label": "Titolo sezione Roadmap", "default": "Roadmap dei 3 mesi" },
+
+    { "type": "text", "id": "value_anchor", "label": "Valore ancorato (es. €149)", "default": "€149" },
+    { "type": "text", "id": "faq_title", "label": "Titolo FAQ", "default": "Domande frequenti" },
+    { "type": "textarea", "id": "disclaimer", "label": "Disclaimer legale", "default": "Il coaching non sostituisce il parere medico." },
+
+    { "type": "text", "id": "max_width", "label": "Larghezza massima contenitore", "default": "760px" }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step (Come funziona)",
+      "settings": [
+        { "type": "image_picker", "id": "icon", "label": "Icona" },
+        { "type": "text", "id": "heading", "label": "Titolo", "default": "Attiva il bundle idoneo" },
+        { "type": "textarea", "id": "text", "label": "Testo", "default": "90 o 180 giorni, sblocchi il coaching in omaggio." }
+      ]
+    },
+    {
+      "type": "service",
+      "name": "Servizio incluso",
+      "settings": [
+        { "type": "image_picker", "id": "icon", "label": "Icona" },
+        { "type": "text", "id": "heading", "label": "Titolo", "default": "Check-up iniziale (chat o call 20-30’)" },
+        { "type": "textarea", "id": "text", "label": "Testo", "default": "Obiettivi, diario iniziale, piano di partenza personalizzato." }
+      ]
+    },
+    {
+      "type": "faq",
+      "name": "FAQ",
+      "settings": [
+        { "type": "text", "id": "q", "label": "Domanda", "default": "La modalità è solo video?" },
+        { "type": "textarea", "id": "a", "label": "Risposta", "default": "La modalità principale è tramite messaggi; possiamo fare brevi call se utile." }
+      ]
+    }
+  ],
+  "max_blocks": 30,
+  "presets": [{ "name": "Coaching con Specialista (Premium)" }]
+}
+{% endschema %}

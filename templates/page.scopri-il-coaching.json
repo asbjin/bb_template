@@ -20,16 +20,16 @@
     "coaching_ewX6CG": {
       "type": "coaching",
       "blocks": {
-        "faq_JikCEc": {
-          "type": "faq",
+        "service_t7tjEp": {
+          "type": "service",
           "settings": {
-            "q": "La modalità è solo video?",
-            "a": "La modalità principale è tramite messaggi; possiamo fare brevi call se utile."
+            "heading": "Check-up iniziale (chat o call 20-30’)",
+            "text": "Obiettivi, diario iniziale, piano di partenza personalizzato."
           }
         }
       },
       "block_order": [
-        "faq_JikCEc"
+        "service_t7tjEp"
       ],
       "name": "Coaching con Specialista (Premium)",
       "settings": {
@@ -52,10 +52,81 @@
         "disclaimer": "Il coaching non sostituisce il parere medico.",
         "max_width": "760px"
       }
+    },
+    "sp_faq_z4Vcpt": {
+      "type": "sp-faq",
+      "blocks": {
+        "question_e9cjPd": {
+          "type": "question",
+          "settings": {
+            "question": "<strong>How does the FAQ section work?</strong>",
+            "answer": "<p>Its simple really. You just add the questions as blocks and then you edit the question and answer.</p>"
+          }
+        },
+        "question_cWLXix": {
+          "type": "question",
+          "settings": {
+            "question": "<b>How does the FAQ section work?</b>",
+            "answer": "<p>Its simple really. You just add the questions as blocks and then you edit the question and answer.</p>"
+          }
+        },
+        "question_RnKM84": {
+          "type": "question",
+          "settings": {
+            "question": "<b>How does the FAQ section work?</b>",
+            "answer": "<p>Its simple really. You just add the questions as blocks and then you edit the question and answer.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "question_e9cjPd",
+        "question_cWLXix",
+        "question_RnKM84"
+      ],
+      "name": "🚀SP - FAQ",
+      "settings": {
+        "override_fonts": false,
+        "headline_font": "system_ui_n4",
+        "text_font": "system_ui_n4",
+        "text_size": 15,
+        "mobile_text_size": 15,
+        "text_line_height": "inherit",
+        "headline_size": 40,
+        "mobile_headline_size": 40,
+        "headline_line_height": "inherit",
+        "text_color": "#111",
+        "link_color": "#005bd3",
+        "show_on_device": "all",
+        "section_background_color": "linear-gradient(319deg, rgba(226, 236, 253, 1) 13%, rgba(234, 253, 246, 1) 85%)",
+        "section_padding_top_bottom": 25,
+        "mobile_section_padding_top_bottom": 25,
+        "section_padding_left_right": 25,
+        "mobile_section_padding_left_right": 25,
+        "container_background_color": "",
+        "container_max_width": 1000,
+        "container_padding_top_bottom": 10,
+        "mobile_container_padding_top_bottom": 10,
+        "container_padding_left_right": 10,
+        "mobile_container_padding_left_right": 10,
+        "element_spacing": 15,
+        "container_radius": 0,
+        "container_shadow": false,
+        "container_border_size": 0,
+        "container_border_color": "#888",
+        "question_text_size": 25,
+        "question_color": "#111111",
+        "answer_color": "#555555",
+        "text_alignment": "center",
+        "mobile_text_alignment": "center",
+        "headline": "<strong>Sample Headline</strong>",
+        "text": "Use this block to add a description. Leave blank to remove.",
+        "headline_spacing": 15
+      }
     }
   },
   "order": [
     "main",
-    "coaching_ewX6CG"
+    "coaching_ewX6CG",
+    "sp_faq_z4Vcpt"
   ]
 }

@@ -19,6 +19,18 @@
     },
     "coaching_ewX6CG": {
       "type": "coaching",
+      "blocks": {
+        "faq_JikCEc": {
+          "type": "faq",
+          "settings": {
+            "q": "La modalità è solo video?",
+            "a": "La modalità principale è tramite messaggi; possiamo fare brevi call se utile."
+          }
+        }
+      },
+      "block_order": [
+        "faq_JikCEc"
+      ],
       "name": "Coaching con Specialista (Premium)",
       "settings": {
         "color_primary": "#007E40",

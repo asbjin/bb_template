@@ -19,18 +19,6 @@
     },
     "coaching_ewX6CG": {
       "type": "coaching",
-      "blocks": {
-        "service_t7tjEp": {
-          "type": "service",
-          "settings": {
-            "heading": "Check-up iniziale (chat o call 20-30’)",
-            "text": "Obiettivi, diario iniziale, piano di partenza personalizzato."
-          }
-        }
-      },
-      "block_order": [
-        "service_t7tjEp"
-      ],
       "name": "Coaching con Specialista (Premium)",
       "settings": {
         "color_primary": "#007E40",
@@ -59,22 +47,22 @@
         "question_e9cjPd": {
           "type": "question",
           "settings": {
-            "question": "<strong>How does the FAQ section work?</strong>",
-            "answer": "<p>Its simple really. You just add the questions as blocks and then you edit the question and answer.</p>"
+            "question": "Il coaching include telefonate o videochiamate?",
+            "answer": "<p><br/>No. Il percorso è <strong>esclusivamente via messaggi</strong> (WhatsApp/Telegram/chat del sito). È più pratico, discreto e ti rispondiamo entro finestre dedicate.</p>"
           }
         },
         "question_cWLXix": {
           "type": "question",
           "settings": {
-            "question": "<b>How does the FAQ section work?</b>",
-            "answer": "<p>Its simple really. You just add the questions as blocks and then you edit the question and answer.</p>"
+            "question": "Posso ottenere il coaching con altri bundle (es. 30/90 giorni)?",
+            "answer": "<p><br/>No. Il coaching in omaggio di 3 mesi è <strong>riservato solo al bundle 180 giorni</strong>.</p>"
           }
         },
         "question_RnKM84": {
           "type": "question",
           "settings": {
-            "question": "<b>How does the FAQ section work?</b>",
-            "answer": "<p>Its simple really. You just add the questions as blocks and then you edit the question and answer.</p>"
+            "question": "Quanto velocemente rispondete ai messaggi?",
+            "answer": "<p>Negli orari lavorativi, <strong>di norma entro poche ore</strong>. Se arriva un picco di richieste, ti avvisiamo del tempo stimato.</p>"
           }
         }
       },

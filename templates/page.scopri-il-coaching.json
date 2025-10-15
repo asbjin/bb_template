@@ -11,13 +11,39 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "coaching_ewX6CG": {
+      "type": "coaching",
+      "name": "Coaching con Specialista (Premium)",
+      "settings": {
+        "color_primary": "#007E40",
+        "color_gold": "#D7A94B",
+        "title": "Coaching con Specialista — IN OMAGGIO per 3 mesi",
+        "subtitle": "Il percorso su misura per pelle/acne, digestione e benessere naturale, pensato per aiutarti a ottenere risultati reali con Floreva. Modalità principale: coaching tramite messaggi (rapido, discreto, quando ti serve).",
+        "bundle_url": "",
+        "cta_bundle": "Attiva il bundle",
+        "whatsapp_url": "",
+        "cta_whatsapp": "Scrivici su WhatsApp",
+        "calendly_url": "",
+        "cta_calendly": "Prenota il kick-off (30’)",
+        "usp_title": "Perché è diverso",
+        "steps_title": "Come funziona (1-2-3)",
+        "includes_title": "Cosa è incluso (3 mesi)",
+        "roadmap_title": "Roadmap dei 3 mesi",
+        "value_anchor": "€149",
+        "faq_title": "Domande frequenti",
+        "disclaimer": "Il coaching non sostituisce il parere medico.",
+        "max_width": "760px"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "coaching_ewX6CG"
   ]
 }

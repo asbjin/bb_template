@@ -14,9 +14,11 @@
         <span class="flv-chip">100% via messaggi</span>
       </div>
 
-      {% if section.settings.hero_icon != blank %}
-        <img class="flv-hero-icon" src="{{ section.settings.hero_icon | image_url: width: 192 }}" alt="" loading="lazy">
-      {% endif %}
+      {% assign fallback_url = 'Kaching-Bundles-ChatGPT_Image_15_oct._2025_23_52_00.png' | file_url %}
+<img class="flv-hero-icon"
+     src="{% if section.settings.hero_icon != blank %}{{ section.settings.hero_icon | image_url: width: 192 }}{% else %}{{ fallback_url }}{% endif %}"
+     alt="{{ section.settings.hero_alt | escape }}"
+     loading="lazy">
 
       <h2 class="flv-title">{{ section.settings.title }}</h2>
       <p class="flv-sub">{{ section.settings.subtitle }}</p>

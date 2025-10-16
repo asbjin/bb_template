@@ -62,6 +62,13 @@
             "text": "Diario sintomi, foto prima/dopo e indicatori per misurare i miglioramenti."
           }
         },
+        "service_pccY6e": {
+          "type": "service",
+          "settings": {
+            "heading": "E-mail di benvenuto & istruzioni",
+            "text": "Ti invieremo un’e-mail con come contattarci e il modulo di avvio del coaching."
+          }
+        },
         "service_dNdQ9w": {
           "type": "service",
           "settings": {
@@ -77,6 +84,7 @@
         "service_FEEKTW",
         "service_cVPqdc",
         "service_TpYkbq",
+        "service_pccY6e",
         "service_dNdQ9w"
       ],
       "name": "Coaching con Specialista (Premium)",

@@ -96,7 +96,7 @@
         "question_kNaMrN": {
           "type": "question",
           "settings": {
-            "question": "<b>How does the FAQ section work?</b>",
+            "question": "<strong>How does the FAQ section work?</strong>",
             "answer": "<p>Its simple really. You just add the questions as blocks and then you edit the question and answer.</p>"
           }
         },
@@ -145,11 +145,11 @@
         "text_line_height": "inherit",
         "headline_size": 40,
         "mobile_headline_size": 30,
-        "headline_line_height": "inherit",
+        "headline_line_height": "1.2",
         "text_color": "#111",
         "link_color": "#005bd3",
         "show_on_device": "all",
-        "section_background_color": "linear-gradient(319deg, rgba(226, 236, 253, 1) 13%, rgba(234, 253, 246, 1) 85%)",
+        "section_background_color": "linear-gradient(184deg, rgba(255, 255, 255, 1) 50%, rgba(234, 253, 246, 1) 85%)",
         "section_padding_top_bottom": 25,
         "mobile_section_padding_top_bottom": 25,
         "section_padding_left_right": 25,

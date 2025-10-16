@@ -48,14 +48,14 @@
           "type": "question",
           "settings": {
             "question": "Il coaching include telefonate o videochiamate?",
-            "answer": "<p><br/>No. Il percorso è <strong>esclusivamente via messaggi</strong> (WhatsApp/Telegram/chat del sito). È più pratico, discreto e ti rispondiamo entro finestre dedicate.</p>"
+            "answer": "<p>No. Il percorso è <strong>esclusivamente via messaggi</strong> (WhatsApp/Telegram/chat del sito). È più pratico, discreto e ti rispondiamo entro finestre dedicate.</p>"
           }
         },
         "question_cWLXix": {
           "type": "question",
           "settings": {
             "question": "Posso ottenere il coaching con altri bundle (es. 30/90 giorni)?",
-            "answer": "<p><br/>No. Il coaching in omaggio di 3 mesi è <strong>riservato solo al bundle 180 giorni</strong>.</p>"
+            "answer": "<p>No. Il coaching in omaggio di 3 mesi è <strong>riservato solo al bundle 180 giorni</strong>.</p>"
           }
         },
         "question_RnKM84": {
@@ -64,12 +64,76 @@
             "question": "Quanto velocemente rispondete ai messaggi?",
             "answer": "<p>Negli orari lavorativi, <strong>di norma entro poche ore</strong>. Se arriva un picco di richieste, ti avvisiamo del tempo stimato.</p>"
           }
+        },
+        "question_9iEjJM": {
+          "type": "question",
+          "settings": {
+            "question": "Come iniziano i 3 mesi di coaching?",
+            "answer": "<p>Dopo l’acquisto del bundle 180 giorni ricevi il <strong>link WhatsApp</strong>: scrivici “Kick-off” e ti invieremo il mini-questionario per partire.</p>"
+          }
+        },
+        "question_UtjUkh": {
+          "type": "question",
+          "settings": {
+            "question": "Quante verifiche sono incluse?",
+            "answer": "<p><strong>2 check al mese</strong> in chat (totale 6 in 3 mesi), oltre alla messaggistica continua (5g/7).</p>"
+          }
+        },
+        "question_mY9DrL": {
+          "type": "question",
+          "settings": {
+            "question": "Serve inviare foto o diari?",
+            "answer": "<p>Facoltativo ma consigliato per <strong>misurare i progressi</strong> (es. foto pelle, diario sintomi).</p>"
+          }
+        },
+        "question_BAak7b": {
+          "type": "question",
+          "settings": {
+            "question": "Il coaching è medico? Fate diagnosi o prescrizioni?",
+            "answer": "<p>No. <strong>Il coaching non sostituisce il parere medico</strong> e non forniamo diagnosi o terapie.</p>"
+          }
+        },
+        "question_kNaMrN": {
+          "type": "question",
+          "settings": {
+            "question": "<b>How does the FAQ section work?</b>",
+            "answer": "<p>Its simple really. You just add the questions as blocks and then you edit the question and answer.</p>"
+          }
+        },
+        "question_MnTiTh": {
+          "type": "question",
+          "settings": {
+            "question": "Posso trasferire o sospendere il coaching?",
+            "answer": "<p>Il coaching è legato al tuo ordine; <strong>non è trasferibile</strong>. In caso di ferie o imprevisti, concordiamo una <strong>pausa breve</strong> per non perdere continuità.</p>"
+          }
+        },
+        "question_MRhkfY": {
+          "type": "question",
+          "settings": {
+            "question": "E se non scrivo per un periodo?",
+            "answer": "<p>Ti mandiamo un <strong>gentile promemoria</strong> in chat. L’accesso resta attivo, ma i <strong>3 mesi non si estendono</strong>.</p>"
+          }
+        },
+        "question_pXYXEq": {
+          "type": "question",
+          "settings": {
+            "question": "Posso annullare il coaching dopo l’attivazione?",
+            "answer": "<p>Non rimborsabile come servizio in omaggio. Se hai dubbi, <strong>scrivici prima</strong> di attivarlo: ti aiutiamo a capire se è adatto a te.</p>"
+          }
         }
       },
       "block_order": [
         "question_e9cjPd",
         "question_cWLXix",
-        "question_RnKM84"
+        "question_RnKM84",
+        "question_9iEjJM",
+        "question_UtjUkh",
+        "question_mY9DrL",
+        "question_BAak7b",
+        "question_kNaMrN",
+        "question_MnTiTh",
+        "question_MRhkfY",
+        "question_pXYXEq"
       ],
       "name": "🚀SP - FAQ",
       "settings": {
@@ -77,10 +141,10 @@
         "headline_font": "system_ui_n4",
         "text_font": "system_ui_n4",
         "text_size": 15,
-        "mobile_text_size": 15,
+        "mobile_text_size": 14,
         "text_line_height": "inherit",
         "headline_size": 40,
-        "mobile_headline_size": 40,
+        "mobile_headline_size": 30,
         "headline_line_height": "inherit",
         "text_color": "#111",
         "link_color": "#005bd3",

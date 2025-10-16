@@ -3758,7 +3758,7 @@ ul.has-submenu.list-menu.submenu-open ul.list-menu>li {
 
 html { scroll-behavior: smooth; }
 #bundle-180,
-.kaching-bundles, [data-kaching-bundles], .kaching-bundle-wrapper { scroll-margin-top: 250px; }
+.kaching-bundles, [data-kaching-bundles], .kaching-bundle-wrapper { scroll-margin-top: 240px; }
 
 
 

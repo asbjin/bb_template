@@ -170,9 +170,9 @@
         "answer_color": "#555555",
         "text_alignment": "center",
         "mobile_text_alignment": "center",
-        "headline": "<strong>Sample Headline</strong>",
-        "text": "Use this block to add a description. Leave blank to remove.",
-        "headline_spacing": 15
+        "headline": "<strong>FAQ</strong>",
+        "text": "",
+        "headline_spacing": 10
       }
     }
   },

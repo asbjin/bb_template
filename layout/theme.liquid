@@ -373,5 +373,42 @@
     {%- if settings.cart_type == 'drawer' -%}
       <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
+
+    <script>
+      (function() {
+        const OFFSET = 180; // ajuste 160–240 selon ton header
+
+        function scrollWithOffset(el) {
+          const y = el.getBoundingClientRect().top + window.pageYOffset - OFFSET;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+
+        function targetEl() {
+          return document.querySelector('#bundle-180')
+              || document.querySelector('.kaching-bundles, [data-kaching-bundles], .kaching-bundle-wrapper');
+        }
+
+        function scrollWhenReady(tries = 0) {
+          const el = targetEl();
+          if (el && el.offsetHeight > 0) {
+            scrollWithOffset(el);
+          } else if (tries < 20) {
+            setTimeout(() => scrollWhenReady(tries + 1), 200); // attend le rendu de Kaching
+          }
+        }
+
+        // hash direct (#bundle-180) -> empêcher le scroll natif qui “saute” puis scroller avec offset
+        if (location.hash === '#bundle-180') {
+          window.history.replaceState(null, '', location.pathname + location.search);
+          window.addEventListener('load', scrollWhenReady);
+        }
+
+        // paramètre ?go=bundle180
+        if (new URLSearchParams(location.search).get('go') === 'bundle180') {
+          window.addEventListener('load', scrollWhenReady);
+        }
+      })();
+    </script>
+
   </body>
 </html>

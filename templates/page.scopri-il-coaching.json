@@ -39,6 +39,7 @@
         "service_UHyiUc": {
           "type": "service",
           "settings": {
+            "icon": "shopify://shop_images/ChatGPT_Image_16_oct._2025_20_54_06.png",
             "heading": "2 check mensili (solo messaggi)",
             "text": "Revisione progressi, Q&A e ottimizzazioni mirate ogni 2 settimane circa."
           }
@@ -46,6 +47,7 @@
         "service_FEEKTW": {
           "type": "service",
           "settings": {
+            "icon": "shopify://shop_images/ChatGPT_Image_16_oct._2025_20_56_00.png",
             "heading": "Supporto continuo via messaggi (5g/7)",
             "text": "Scrivici quando ti serve: risposta entro finestre dedicate negli orari lavorativi."
           }

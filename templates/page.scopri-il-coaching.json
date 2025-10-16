@@ -55,6 +55,7 @@
         "service_cVPqdc": {
           "type": "service",
           "settings": {
+            "icon": "shopify://shop_images/ChatGPT_Image_16_oct._2025_20_57_46.png",
             "heading": "Risorse pratiche",
             "text": "Mini-guide PDF, checklist e ricette semplici per facilitare la tua routine."
           }

@@ -3756,6 +3756,8 @@ ul.has-submenu.list-menu.submenu-open ul.list-menu>li {
   box-shadow: none !important;
 }
 
+html { scroll-behavior: smooth; }
+#bundle-180 { scroll-margin-top: 90px; } /* ajuste à la hauteur de ton header */
 
 
 

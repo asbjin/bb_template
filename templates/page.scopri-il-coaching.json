@@ -23,6 +23,7 @@
         "service_6TYbHQ": {
           "type": "service",
           "settings": {
+            "icon": "shopify://shop_images/Loupe.png",
             "heading": "Valutazione iniziale in chat",
             "text": "Obiettivi, breve anamnesi, diario sintomi e—se vuoi—foto pelle per partire nel modo giusto."
           }
@@ -30,6 +31,7 @@
         "service_LwCHF8": {
           "type": "service",
           "settings": {
+            "icon": "shopify://shop_images/coeur_feuille.png",
             "heading": "Piano personalizzato",
             "text": "Routine quotidiana, linee guida alimentari “tummy-friendly” e consigli stile di vita."
           }

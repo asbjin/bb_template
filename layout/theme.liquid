@@ -376,39 +376,50 @@
 
     <script>
       (function() {
-        const OFFSET = 240; // ajuste 160–240 selon ton header
-
-        function scrollWithOffset(el) {
-          const y = el.getBoundingClientRect().top + window.pageYOffset - OFFSET;
-          window.scrollTo({ top: y, behavior: 'smooth' });
+        // 1) Si on arrive avec l’ancre, neutralise le scroll natif
+        if (location.hash === '#bundle-180') {
+          try {
+            sessionStorage.setItem('go_bundle', '1');
+            history.replaceState(null, '', location.pathname + location.search); // retire le hash
+          } catch(e){}
         }
 
-        function targetEl() {
+        // 2) Détecte la demande via ?go=bundle180 (option sans hash)
+        const viaParam = new URLSearchParams(location.search).get('go') === 'bundle180';
+        const viaFlag  = sessionStorage.getItem('go_bundle') === '1';
+
+        if (!(viaParam || viaFlag)) return;
+
+        function headerOffset() {
+          const header = document.querySelector('.shopify-section-header, header, .header, .site-header');
+          const h = header ? header.offsetHeight : 120;
+          return h + 80; // marge extra pour voir PLUS que la première ligne
+        }
+
+        function findTarget() {
           return document.querySelector('#bundle-180')
               || document.querySelector('.kaching-bundles, [data-kaching-bundles], .kaching-bundle-wrapper');
         }
 
+        function scrollWithOffset(target) {
+          const y = target.getBoundingClientRect().top + window.pageYOffset - headerOffset();
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+
         function scrollWhenReady(tries = 0) {
-          const el = targetEl();
+          const el = findTarget();
           if (el && el.offsetHeight > 0) {
             scrollWithOffset(el);
-          } else if (tries < 20) {
-            setTimeout(() => scrollWhenReady(tries + 1), 200); // attend le rendu de Kaching
+            try { sessionStorage.removeItem('go_bundle'); } catch(e){}
+          } else if (tries < 25) {
+            setTimeout(() => scrollWhenReady(tries + 1), 200); // attend que Kaching se rende
           }
         }
 
-        // hash direct (#bundle-180) -> empêcher le scroll natif qui “saute” puis scroller avec offset
-        if (location.hash === '#bundle-180') {
-          window.history.replaceState(null, '', location.pathname + location.search);
-          window.addEventListener('load', scrollWhenReady);
-        }
-
-        // paramètre ?go=bundle180
-        if (new URLSearchParams(location.search).get('go') === 'bundle180') {
-          window.addEventListener('load', scrollWhenReady);
-        }
+        window.addEventListener('load', scrollWhenReady);
       })();
     </script>
+
 
   </body>
 </html>

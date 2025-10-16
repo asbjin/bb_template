@@ -63,6 +63,7 @@
         "service_TpYkbq": {
           "type": "service",
           "settings": {
+            "icon": "shopify://shop_images/ChatGPT_Image_16_oct._2025_20_59_54.png",
             "heading": "Monitoraggio dei risultati",
             "text": "Diario sintomi, foto prima/dopo e indicatori per misurare i miglioramenti."
           }
@@ -70,6 +71,7 @@
         "service_pccY6e": {
           "type": "service",
           "settings": {
+            "icon": "shopify://shop_images/ChatGPT_Image_16_oct._2025_21_01_06.png",
             "heading": "E-mail di benvenuto & istruzioni",
             "text": "Ti invieremo un’e-mail con come contattarci e il modulo di avvio del coaching."
           }
@@ -77,6 +79,7 @@
         "service_dNdQ9w": {
           "type": "service",
           "settings": {
+            "icon": "shopify://shop_images/ChatGPT_Image_16_oct._2025_21_03_17.png",
             "heading": "Privacy & limiti del servizio",
             "text": "Dati trattati con riservatezza. Il coaching non è medico né sostituisce pareri clinici."
           }

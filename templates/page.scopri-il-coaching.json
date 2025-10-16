@@ -146,7 +146,7 @@
         "text_color": "#111111",
         "link_color": "#005bd3",
         "show_on_device": "all",
-        "section_background_color": "linear-gradient(184deg, rgba(255, 255, 255, 1) 50%, rgba(234, 253, 246, 1) 85%)",
+        "section_background_color": "linear-gradient(180deg, rgba(255, 255, 255, 1) 50%, rgba(0, 126, 64, 0.84) 85%)",
         "section_padding_top_bottom": 25,
         "mobile_section_padding_top_bottom": 25,
         "section_padding_left_right": 25,

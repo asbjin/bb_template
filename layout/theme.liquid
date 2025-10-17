@@ -420,6 +420,74 @@
       })();
     </script>
 
+    <script>
+      (function(){
+        const ROOTS = ['.kaching-bundles','[data-kaching-bundles]','.kaching-bundle-wrapper'];
+
+        function parseMoney(str){
+          if(!str) return NaN;
+          const s = str.replace(/[^\d,.\-]/g,'').trim();
+          if((s.match(/\./g)||[]).length > 1 && s.includes(',')) return parseFloat(s.replace(/\./g,'').replace(',', '.'));
+          if((s.match(/,/g)||[]).length === 1 && !s.includes('.')) return parseFloat(s.replace(',', '.'));
+          return parseFloat(s.replace(/,/g,''));
+        }
+
+        function extractPrices(root){
+          const oldEl = root.querySelector('.kaching-old-price, .kb-old, .was-price, s, del, .compare');
+          const nowEl = root.querySelector('.kaching-total-price, .kb-total, .now-price, .price, .current');
+          let old = oldEl ? parseMoney(oldEl.textContent) : NaN;
+          let now = nowEl ? parseMoney(nowEl.textContent) : NaN;
+
+          if((!isFinite(old) || !isFinite(now))){
+            const saveEl = root.querySelector('.kaching-saving, .you-save, .risparmi, .economisez');
+            const totalEl = root.querySelector('.kaching-total-price, .price, .current');
+            const save = saveEl ? parseMoney(saveEl.textContent) : NaN;
+            const total = totalEl ? parseMoney(totalEl.textContent) : NaN;
+            if(isFinite(save) && isFinite(total)){ old = save + total; now = total; }
+          }
+          return {old, now};
+        }
+
+        function placeBadge(container, pct){
+          let anchor = container.querySelector('.kaching-bundle-title, h2, h3');
+          if(!anchor) anchor = container.firstElementChild || container;
+          let wrap = container.querySelector('.kach-badge-wrap');
+          if(!wrap){
+            wrap = document.createElement('div');
+            wrap.className = 'kach-badge-wrap';
+            anchor.parentNode.insertBefore(wrap, anchor.nextSibling);
+          }
+          let badge = wrap.querySelector('.kach-save-badge');
+          if(!badge){
+            badge = document.createElement('span');
+            badge.className = 'kach-save-badge';
+            wrap.appendChild(badge);
+          }
+          badge.textContent = `Risparmia ${pct}%`;
+        }
+
+        function scan(){
+          ROOTS.forEach(sel=>{
+            document.querySelectorAll(sel).forEach(bundle=>{
+              const cards = bundle.querySelectorAll('.kaching-bundle, [data-kaching-bundle], .kaching-bundle-card');
+              (cards.length ? cards : [bundle]).forEach(card=>{
+                const {old, now} = extractPrices(card);
+                if(isFinite(old) && isFinite(now) && now < old){
+                  const pct = Math.max(1, Math.min(99, Math.round((1 - (now/old)) * 100)));
+                  placeBadge(card, pct);
+                }
+              });
+            });
+          });
+        }
+
+        // attend que Kaching charge
+        const mo = new MutationObserver(scan);
+        mo.observe(document.documentElement, {childList:true, subtree:true});
+        window.addEventListener('load', scan);
+        setTimeout(scan, 1200);
+      })();
+    </script>
 
   </body>
 </html>

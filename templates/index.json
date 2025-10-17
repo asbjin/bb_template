@@ -591,6 +591,12 @@
     "featured_product_xBrNF9": {
       "type": "featured-product",
       "blocks": {
+        "custom_liquid_knTzEp": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<style>\n  /* Badge économie – style premium doré */\n  .kach-save-badge{\n    display:inline-flex; align-items:center; gap:6px;\n    padding:6px 10px; border-radius:999px;\n    background:linear-gradient(180deg,#F6E4B6,#EFD28B);\n    color:#111; font-weight:800; font-size:13px; line-height:1;\n    border:1px solid rgba(215,169,75,.6);\n    box-shadow:0 6px 18px rgba(215,169,75,.25);\n  }\n  .kach-badge-wrap{ margin:8px 0; }\n</style>\n\n<script>\n(function(){\n  // Log (tu le verras en console sur la VITRINE, pas l’admin Kaching)\n  console.log('[Kach%] landing init');\n\n  function parseMoney(str){\n    if(!str) return NaN;\n    const s = str.replace(/[^\\d,.\\-]/g,'').trim();\n    if((s.match(/\\./g)||[]).length>1 && s.includes(',')) return parseFloat(s.replace(/\\./g,'').replace(',','.'));\n    if(s.includes(',') && !s.includes('.')) return parseFloat(s.replace(',','.'));\n    return parseFloat(s.replace(/,/g,''));\n  }\n\n  function getPrices(card){\n    const oldEl = card.querySelector('del, s, .compare, [class*=\"compare\"]');\n    const nowEl = card.querySelector('.kaching-total-price, .price, .current, [class*=\"price\"]:not(.compare)');\n    let old = oldEl ? parseMoney(oldEl.textContent) : NaN;\n    let now = nowEl ? parseMoney(nowEl.textContent) : NaN;\n\n    if((!isFinite(old) || !isFinite(now))){\n      const saveEl = card.querySelector('.kaching-saving, .you-save, .risparmi, [class*=\"saving\"]');\n      const totalEl = card.querySelector('.kaching-total-price, .price, .current, [class*=\"price\"]');\n      const save = saveEl ? parseMoney(saveEl.textContent) : NaN;\n      const total = totalEl ? parseMoney(totalEl.textContent) : NaN;\n      if(isFinite(save) && isFinite(total)){ old = save + total; now = total; }\n    }\n    return {old, now};\n  }\n\n  function placeBadge(card, pct){\n    let header = card.querySelector('.kaching-bundle-title, h2, h3');\n    let wrap = card.querySelector('.kach-badge-wrap');\n    if(!wrap){\n      wrap = document.createElement('div');\n      wrap.className = 'kach-badge-wrap';\n      if(header){ header.insertAdjacentElement('afterend', wrap); }\n      else { card.prepend(wrap); }\n    }\n    let badge = wrap.querySelector('.kach-save-badge');\n    if(!badge){\n      badge = document.createElement('span');\n      badge.className = 'kach-save-badge';\n      wrap.appendChild(badge);\n    }\n    badge.textContent = `Risparmia ${pct}%`;\n  }\n\n  function scan(){\n    const container = document.querySelector('.kaching-bundles, [data-kaching-bundles], .kaching-bundle-wrapper');\n    if(!container) return;\n    let cards = container.querySelectorAll('.kaching-bundle, [data-kaching-bundle], .kaching-bundle-card');\n    if(!cards.length) cards = container.querySelectorAll(':scope > div');\n    cards.forEach(card=>{\n      const {old, now} = getPrices(card);\n      if(isFinite(old) && isFinite(now) && now < old){\n        let pct = Math.round((1 - now/old) * 100);\n        pct = Math.max(1, Math.min(99, pct));\n        placeBadge(card, pct);\n      }\n    });\n  }\n\n  // Kaching est async → observe le DOM + déclencheurs\n  const mo = new MutationObserver(scan);\n  mo.observe(document.documentElement, {childList:true, subtree:true});\n  window.addEventListener('load', scan);\n  setTimeout(scan, 1200);\n})();\n</script>"
+          }
+        },
         "kaching_bundles_app_block_7P3Cb6": {
           "type": "shopify://apps/kaching-bundles/blocks/app-block/6c637362-a106-4a32-94ac-94dcfd68cdb8",
           "settings": {
@@ -625,6 +631,7 @@
         }
       },
       "block_order": [
+        "custom_liquid_knTzEp",
         "kaching_bundles_app_block_7P3Cb6",
         "custom_liquid_W3CiJU",
         "variant_picker_BrLPQA",

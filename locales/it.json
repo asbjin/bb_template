@@ -545,5 +545,12 @@
       "expanded": "Modulo destinatario del buono regalo espanso",
       "collapsed": "Modulo destinatario del buono regalo compresso"
     }
+  },
+  "shopify": {
+    "checkout": {
+      "general": {
+        "page_title": "Pagamento"
+      }
+    }
   }
 }

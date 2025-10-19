@@ -265,7 +265,7 @@
         "slide_T9gKVL": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_7_oct._2025_10_00_35.png",
+            "image": "shopify://shop_images/ChatGPT_Image_19_oct._2025_17_16_12.png",
             "title": "",
             "button": "",
             "url": ""
@@ -341,7 +341,7 @@
         "card_radius": 0,
         "card_border_thickness": 0,
         "card_shadow": true,
-        "card_ratio": "square",
+        "card_ratio": "landscape",
         "card_ratio_mobile": "square",
         "card_overlay": 0,
         "content_horizontal_position": "center",

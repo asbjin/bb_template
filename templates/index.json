@@ -628,6 +628,12 @@
             "show_dynamic_checkout": false,
             "show_gift_card_recipient": false
           }
+        },
+        "custom_liquid_YLpWgx": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"floreva-payment-badges\" aria-label=\"Moyens de paiement acceptés\">\n  <img src=\"https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg\" alt=\"Visa\" loading=\"lazy\" decoding=\"async\">\n  <img src=\"https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg\" alt=\"Mastercard\" loading=\"lazy\" decoding=\"async\">\n  <img src=\"https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg\" alt=\"PayPal\" loading=\"lazy\" decoding=\"async\">\n  <img src=\"https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg\" alt=\"Apple Pay\" loading=\"lazy\" decoding=\"async\">\n  \n  <img src=\"https://upload.wikimedia.org/wikipedia/commons/3/30/American_Express_logo.svg\" alt=\"American Express\" class=\"si\" loading=\"lazy\" decoding=\"async\">\n</div>\n\n<style>\n.floreva-payment-badges{\n  display:flex; flex-wrap:wrap; gap:22px; align-items:center; \n  justify-content:center; margin-top:14px;\n}\n.floreva-payment-badges img{ height:28px; width:auto; opacity:.95 }\n.floreva-payment-badges img:hover{ opacity:1; transform:translateY(-1px) }\n@media (min-width:768px){\n  .floreva-payment-badges img{ height:32px }\n}\n/* simple-icons = monochrome → on harmonise la teinte (vert Floreva) si tu veux */\n.floreva-payment-badges img.si{\n  filter: none !important;\n}\n/* Si tu préfères du noir/gris premium, supprime la règle .si ci-dessus */\n</style>"
+          }
         }
       },
       "block_order": [
@@ -636,7 +642,8 @@
         "custom_liquid_W3CiJU",
         "variant_picker_BrLPQA",
         "custom_liquid_qACda9",
-        "buy_buttons_inTCUR"
+        "buy_buttons_inTCUR",
+        "custom_liquid_YLpWgx"
       ],
       "custom_css": [
         ".featured-product .product__view-details,.featured-product .link.underlined-link[href*=\"/products/\"] {display: none !important;}",

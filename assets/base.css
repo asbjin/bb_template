@@ -3772,4 +3772,92 @@ html { scroll-behavior: smooth; }
 .kach-badge-wrap{ margin:8px 0; }
 
 
+/* === Floreva Premium Bundles – Scope === */
+#floreva-bundles [data-kaching-bundles]{
+  --brand:#007E40; --brand-dark:#0A5E38; --gold:#C8A24F;
+  --bg:#FFFFFF; --muted:#F7F9F8; --muted2:#F1F6F4;
+  --text:#0E1B16; --sub:#37463F; --dim:#6B7A74; --line:#E7ECEA;
+}
+
+/* Cartes */
+#floreva-bundles [data-kaching-bundles] .kaching-bundle,
+#floreva-bundles [data-kaching-bundles] .kaching-bundle-card{
+  background:var(--bg);
+  border:1px solid var(--line);
+  border-radius:18px; padding:24px;
+  box-shadow:0 6px 24px rgba(0,0,0,.08);
+  margin-block:14px;
+}
+
+/* Titres & micro-copy */
+#floreva-bundles [data-kaching-bundles] .kb-title{ 
+  font-size:18px; font-weight:600; color:var(--text);
+}
+#floreva-bundles [data-kaching-bundles] .kb-sub{ 
+  font-size:14px; color:var(--sub); margin-top:6px;
+}
+#floreva-bundles [data-kaching-bundles] .kb-micro{ 
+  font-size:12px; color:var(--dim);
+}
+
+/* Prix */
+#floreva-bundles [data-kaching-bundles] .kb-price{
+  font-size:24px; font-weight:700; color:var(--text);
+}
+#floreva-bundles [data-kaching-bundles] .kb-compare{
+  font-size:14px; color:var(--dim); text-decoration:line-through; margin-left:6px;
+}
+#floreva-bundles [data-kaching-bundles] .kb-save{
+  font-size:13px; color:var(--brand-dark); margin-top:4px;
+}
+
+/* Badge ruban */
+#floreva-bundles [data-kaching-bundles] .kb-badge{
+  position:absolute; top:12px; right:12px;
+  background:var(--gold); color:#fff; font-weight:700;
+  font-size:12px; padding:6px 10px; border-radius:10px;
+  box-shadow:0 4px 12px rgba(0,0,0,.12);
+}
+
+/* Cartouche promesse (remplace le jaune vif) */
+#floreva-bundles [data-kaching-bundles] .kb-promise{
+  display:inline-block; background:#FFF8E6; color:#8C6A1D;
+  font-size:13px; padding:6px 10px; border-radius:8px; margin-top:8px;
+}
+
+/* Bloc “Incluso nel pacchetto” */
+#floreva-bundles [data-kaching-bundles] .kb-included{
+  background:var(--muted2); border:1px dashed #DDE6E2;
+  padding:12px; border-radius:12px; margin-top:12px;
+}
+#floreva-bundles [data-kaching-bundles] .kb-included li{
+  margin:6px 0; font-size:14px; color:var(--text);
+}
+
+/* CTA */
+#floreva-bundles [data-kaching-bundles] .kb-cta{
+  display:block; width:100%; margin-top:14px;
+  background:var(--brand); color:#fff; border:none;
+  border-radius:14px; padding:14px 18px; font-size:16px; font-weight:700;
+  box-shadow:0 4px 12px rgba(0,0,0,.12); cursor:pointer;
+}
+#floreva-bundles [data-kaching-bundles] .kb-cta:hover{
+  background:var(--brand-dark);
+}
+#floreva-bundles [data-kaching-bundles] .kb-cta-sub{
+  text-align:center; font-size:11px; color:var(--dim); margin-top:6px;
+}
+
+/* Images */
+#floreva-bundles [data-kaching-bundles] .kb-image{
+  max-height:84px; width:auto; filter: drop-shadow(0 4px 10px rgba(0,0,0,.12));
+}
+
+/* Bandeau de confiance sous la grille */
+#floreva-bundles .kb-trust{
+  display:flex; gap:16px; justify-content:center; align-items:center;
+  font-size:13px; color:var(--sub); margin-top:12px;
+}
+
+
 

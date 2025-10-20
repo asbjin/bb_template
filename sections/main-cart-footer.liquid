@@ -105,69 +105,89 @@
               </div>
             {%- else -%}
               <div class="cart__ctas" {{ block.shopify_attributes }}>
-                <!-- === F L O R E V A  -  B A R R A   S P E D I Z I O N E  +  T R U S T === -->
+                <!-- === Floreva | Shipping Progress + Trust (robuste) === -->
 
-<div class="shipping-progress" id="shipping-progress-bar">
+{%- comment -%} Total brut côté Liquid pour 1er calcul (en €) {%- endcomment -%}
+<span id="cart-total-data" data-total="{{ cart.total_price | divided_by: 100.0 }}"></span>
+
+<div class="shipping-progress" id="shipping-progress">
   <div class="shipping-progress__text" id="shipping-text">
     🚚 Ti mancano <strong>€49,00</strong> per ottenere la <strong>spedizione gratuita!</strong>
   </div>
-  <div class="shipping-progress__bar">
-    <div class="shipping-progress__fill" id="shipping-fill"></div>
-  </div>
+  <div class="shipping-progress__bar" id="shipping-bar"></div>
 </div>
 
-<!-- Icons of trust -->
 <div class="trust-icons">
-  🔒 Pagamento sicuro &nbsp;|&nbsp; 🚚 Consegna 24-48h &nbsp;|&nbsp; 🇮🇹 Made in Italy
+  🔒 Pagamento sicuro &nbsp;|&nbsp; 🚚 Consegna 24–48h &nbsp;|&nbsp; 🇮🇹 Made in Italy
 </div>
-
-<!-- Brand reassurance -->
 <p class="cart-brand-note">🌿 Prodotto 100% naturale – Formula brevettata Floreva</p>
 
-<!-- === / F L O R E V A  === -->
+<!-- === /Floreva === -->
 
-
-<!-- === J A V A S C R I P T  (progress bar dynamics) === -->
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-  const threshold = 20; // soglia spedizione gratuita (€)
-  const totalSelector = '.totals__total-value';
-  const text = document.getElementById('shipping-text');
-  const fill = document.getElementById('shipping-fill');
+(function(){
+  const THRESHOLD = 20;                       // Soglia spedizione gratuita
+  const barEl   = document.getElementById('shipping-bar');
+  const textEl  = document.getElementById('shipping-text');
 
-  function updateBar() {
-    const totalElement = document.querySelector(totalSelector);
-    if (!totalElement || !text || !fill) return;
+  if(!barEl || !textEl) return;
 
-    const raw = totalElement.innerText.replace(/[^\d.,]/g, '').trim();
-    const total = parseFloat(raw.replace('.', '').replace(',', '.')) || 0;
+  // Lit le total à partir du span data puis depuis l'UI (fallback)
+  function readTotal(){
+    const data = document.getElementById('cart-total-data');
+    if (data && data.dataset.total){
+      const v = parseFloat(data.dataset.total);
+      if (!isNaN(v)) return v;
+    }
+    const ui = document.querySelector('.totals__total-value');
+    if (ui){
+      // Nettoyage universel : "€1.234,56" -> 1234.56 | "€1,234.56" -> 1234.56
+      const raw = ui.textContent.replace(/\s/g,'').replace(/[^\d,.,,]/g,'');
+      let num = NaN;
+      const lastComma = raw.lastIndexOf(',');
+      const lastDot   = raw.lastIndexOf('.');
+      if (lastComma > lastDot) { // format EU
+        num = parseFloat(raw.replace(/\./g,'').replace(',', '.'));
+      } else {                   // format US/ISO
+        num = parseFloat(raw.replace(/,/g,''));
+      }
+      return isNaN(num) ? 0 : num;
+    }
+    return 0;
+  }
 
-    const percent = Math.min((total / threshold) * 100, 100);
-    fill.style.width = percent + '%';
+  function updateBar(){
+    const total = readTotal();
+    const pct   = Math.min((total / THRESHOLD) * 100, 100);
 
-    if (total >= threshold) {
-      text.innerHTML = "🎉 Hai ottenuto la <strong>spedizione gratuita!</strong>";
-      fill.style.backgroundColor = "#007E40"; // vert Floreva
+    // Pilote la barre via variables CSS (ultra-stable)
+    barEl.style.setProperty('--progress', pct + '%');
+    barEl.style.setProperty('--progress-color', total >= THRESHOLD ? '#007E40' : '#C8A24F');
+
+    if (total >= THRESHOLD){
+      textEl.innerHTML = '🎉 Hai ottenuto la <strong>spedizione gratuita!</strong>';
     } else {
-      const missing = (threshold - total).toFixed(2).replace('.', ',');
-      text.innerHTML = `🚚 Ti mancano <strong>€${missing}</strong> per ottenere la <strong>spedizione gratuita!</strong>`;
-      fill.style.backgroundColor = "#C8A24F"; // or Floreva
+      const missing = (THRESHOLD - total).toFixed(2).replace('.', ',');
+      textEl.innerHTML = `🚚 Ti mancano <strong>€${missing}</strong> per ottenere la <strong>spedizione gratuita!</strong>`;
     }
   }
 
-  // Mise à jour initiale
+  // 1) Initial
   updateBar();
 
-  // Observer pour changements AJAX Shopify
-  const observer = new MutationObserver(updateBar);
-  const target = document.querySelector(totalSelector)?.parentNode;
-  if (target) observer.observe(target, { childList: true, subtree: true });
-});
+  // 2) Observe les mutations AJAX de Shopify
+  const totalNode = document.querySelector('.totals__total-value');
+  if (totalNode){
+    const obs = new MutationObserver(updateBar);
+    obs.observe(totalNode.parentNode, {childList:true, subtree:true, characterData:true});
+  }
+
+  // 3) Sécurité : ré-évalue sur quelques événements fréquents
+  document.addEventListener('change',  e => { if (e.target && e.target.name==='updates[]') updateBar(); }, true);
+  document.addEventListener('cart:refresh', updateBar, true);
+})();
 </script>
 
-
-
-<!-- === / J A V A S C R I P T  === -->
                 <button
                   type="submit"
                   id="checkout"

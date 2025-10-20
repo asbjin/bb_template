@@ -105,6 +105,13 @@
               </div>
             {%- else -%}
               <div class="cart__ctas" {{ block.shopify_attributes }}>
+                <!-- === Floreva Express Alert === -->
+                <div class="express-alert">
+                  <p class="express-urgency">⚡ Spedizione prioritaria ancora per <strong>oggi</strong></p>
+                  <p class="express-stock">💚 Solo <strong>8 confezioni</strong> rimaste in magazzino</p>
+                  <p class="express-trust">✅ Pagamento sicuro e supporto clienti 7/7</p>
+                </div>
+                <!-- === /Floreva Express Alert === -->
                 <button
                   type="submit"
                   id="checkout"

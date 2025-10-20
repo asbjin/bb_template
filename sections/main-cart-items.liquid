@@ -33,6 +33,27 @@
         {{- 'general.continue_shopping' | t -}}
       </a>
     </div>
+    <!-- === Floreva Express Alert === -->
+                <div class="express-alert">
+                  <p class="express-urgency">
+                    ⚡ Spedizione prioritaria disponibile ancora per <span id="timer">07:00</span> minuti
+                  </p>
+                  <p class="express-stock">💚 Solo <strong>8 confezioni</strong> rimaste in magazzino</p>
+                  <p class="express-trust">✅ Pagamento sicuro e supporto clienti 7/7</p>
+                </div>
+                <script>
+                  let timer = 420; // 7 minuti
+                  const span = document.getElementById('timer');
+                  if (span) {
+                    const interval = setInterval(() => {
+                      const min = String(Math.floor(timer / 60)).padStart(2, '0');
+                      const sec = String(timer % 60).padStart(2, '0');
+                      span.textContent = `${min}:${sec}`;
+                      if (timer-- <= 0) clearInterval(interval);
+                    }, 1000);
+                  }
+                </script>
+                <!-- === /Floreva Express Alert === -->
 
     <div class="cart__warnings">
       <h1 class="cart__empty-text">{{ 'sections.cart.empty' | t }}</h1>

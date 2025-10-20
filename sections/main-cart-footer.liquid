@@ -130,32 +130,42 @@
 <!-- === J A V A S C R I P T  (progress bar dynamics) === -->
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  const threshold = 20; // soglia spedizione gratuita (€)
-  const totalElement = document.querySelector('.totals__total-value');
+  const threshold = 20; // soglia per spedizione gratuita
+  const totalSelector = '.totals__total-value';
   const text = document.getElementById('shipping-text');
   const fill = document.getElementById('shipping-fill');
 
-  if (!totalElement || !text || !fill) return;
+  function updateBar() {
+    const totalElement = document.querySelector(totalSelector);
+    if (!totalElement || !text || !fill) return;
 
-  // 🧮 Pulizia del valore numerico (gestisce , . e spazi)
-  const rawValue = totalElement.innerText.replace(/[^\d.,]/g, '').trim();
-  const total = parseFloat(rawValue.replace('.', '').replace(',', '.'));
+    // Pulizia e conversione del totale
+    const raw = totalElement.innerText.replace(/[^\d.,]/g, '').trim();
+    const total = parseFloat(raw.replace('.', '').replace(',', '.')) || 0;
 
-  // Calcolo percentuale di avanzamento
-  const percentage = Math.min((total / threshold) * 100, 100);
-  fill.style.width = `${percentage}%`;
+    const percent = Math.min((total / threshold) * 100, 100);
+    fill.style.width = percent + '%';
 
-  // Colore dinamico + testo
-  if (total >= threshold) {
-    text.innerHTML = "🎉 Hai ottenuto la <strong>spedizione gratuita!</strong>";
-    fill.style.backgroundColor = "#007E40"; // verde Floreva
-  } else {
-    const missing = (threshold - total).toFixed(2).replace('.', ',');
-    text.innerHTML = `🚚 Ti mancano <strong>€${missing}</strong> per ottenere la <strong>spedizione gratuita!</strong>`;
-    fill.style.backgroundColor = "#C8A24F"; // oro Floreva
+    if (total >= threshold) {
+      text.innerHTML = "🎉 Hai ottenuto la <strong>spedizione gratuita!</strong>";
+      fill.style.backgroundColor = "#007E40"; // verde Floreva
+    } else {
+      const missing = (threshold - total).toFixed(2).replace('.', ',');
+      text.innerHTML = `🚚 Ti mancano <strong>€${missing}</strong> per ottenere la <strong>spedizione gratuita!</strong>`;
+      fill.style.backgroundColor = "#C8A24F"; // oro Floreva
+    }
   }
+
+  // Aggiornamento iniziale
+  updateBar();
+
+  // 👀 Rileva modifiche al totale (AJAX/cart updates)
+  const observer = new MutationObserver(updateBar);
+  const target = document.querySelector(totalSelector)?.parentNode;
+  if (target) observer.observe(target, { childList: true, subtree: true });
 });
 </script>
+
 
 <!-- === / J A V A S C R I P T  === -->
                 <button

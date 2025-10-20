@@ -130,7 +130,7 @@
 <!-- === J A V A S C R I P T  (progress bar dynamics) === -->
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  const threshold = 20; // soglia per spedizione gratuita
+  const threshold = 20; // soglia spedizione gratuita (€)
   const totalSelector = '.totals__total-value';
   const text = document.getElementById('shipping-text');
   const fill = document.getElementById('shipping-fill');
@@ -139,7 +139,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const totalElement = document.querySelector(totalSelector);
     if (!totalElement || !text || !fill) return;
 
-    // Pulizia e conversione del totale
     const raw = totalElement.innerText.replace(/[^\d.,]/g, '').trim();
     const total = parseFloat(raw.replace('.', '').replace(',', '.')) || 0;
 
@@ -148,23 +147,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (total >= threshold) {
       text.innerHTML = "🎉 Hai ottenuto la <strong>spedizione gratuita!</strong>";
-      fill.style.backgroundColor = "#007E40"; // verde Floreva
+      fill.style.backgroundColor = "#007E40"; // vert Floreva
     } else {
       const missing = (threshold - total).toFixed(2).replace('.', ',');
       text.innerHTML = `🚚 Ti mancano <strong>€${missing}</strong> per ottenere la <strong>spedizione gratuita!</strong>`;
-      fill.style.backgroundColor = "#C8A24F"; // oro Floreva
+      fill.style.backgroundColor = "#C8A24F"; // or Floreva
     }
   }
 
-  // Aggiornamento iniziale
+  // Mise à jour initiale
   updateBar();
 
-  // 👀 Rileva modifiche al totale (AJAX/cart updates)
+  // Observer pour changements AJAX Shopify
   const observer = new MutationObserver(updateBar);
   const target = document.querySelector(totalSelector)?.parentNode;
   if (target) observer.observe(target, { childList: true, subtree: true });
 });
 </script>
+
 
 
 <!-- === / J A V A S C R I P T  === -->

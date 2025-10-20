@@ -137,19 +137,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (!totalElement || !text || !fill) return;
 
-  // Estrai il valore numerico dal testo (es: €35,99)
-  const total = parseFloat(totalElement.innerText.replace(/[^\d,]/g, '').replace(',', '.'));
+  // 🧮 Pulizia del valore numerico (gestisce , . e spazi)
+  const rawValue = totalElement.innerText.replace(/[^\d.,]/g, '').trim();
+  const total = parseFloat(rawValue.replace('.', '').replace(',', '.'));
 
+  // Calcolo percentuale di avanzamento
   const percentage = Math.min((total / threshold) * 100, 100);
   fill.style.width = `${percentage}%`;
 
+  // Colore dinamico + testo
   if (total >= threshold) {
     text.innerHTML = "🎉 Hai ottenuto la <strong>spedizione gratuita!</strong>";
-    fill.style.backgroundColor = "#007E40";
+    fill.style.backgroundColor = "#007E40"; // verde Floreva
   } else {
-    const missing = (threshold - total).toFixed(2);
+    const missing = (threshold - total).toFixed(2).replace('.', ',');
     text.innerHTML = `🚚 Ti mancano <strong>€${missing}</strong> per ottenere la <strong>spedizione gratuita!</strong>`;
-    fill.style.backgroundColor = "#C8A24F";
+    fill.style.backgroundColor = "#C8A24F"; // oro Floreva
   }
 });
 </script>

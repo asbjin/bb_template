@@ -3788,3 +3788,48 @@ html { scroll-behavior: smooth; }
 .express-trust { font-size: 12.5px; color: #37463F; }
 .express-stock strong { color: #007E40; }
 
+/* === Floreva Shipping Progress Bar === */
+.shipping-progress {
+  background: #F7F9F8;
+  border: 1px solid #E7ECEA;
+  border-radius: 10px;
+  padding: 10px 14px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+.shipping-progress__text {
+  font-size: 13px;
+  color: #0E1B16;
+  margin-bottom: 6px;
+}
+.shipping-progress__bar {
+  width: 100%;
+  height: 8px;
+  background: #E7ECEA;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.shipping-progress__fill {
+  height: 8px;
+  background: #C8A24F;
+  width: 0%;
+  border-radius: 6px;
+  transition: width 0.8s ease;
+}
+
+/* === Floreva Trust Icons === */
+.trust-icons {
+  text-align: center;
+  font-size: 12.5px;
+  color: #6B7A74;
+  margin-top: 14px;
+  margin-bottom: 4px;
+}
+
+/* === Floreva Brand Note === */
+.cart-brand-note {
+  text-align: center;
+  font-size: 12.5px;
+  color: #37463F;
+  margin-top: 6px;
+}

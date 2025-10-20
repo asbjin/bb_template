@@ -105,7 +105,56 @@
               </div>
             {%- else -%}
               <div class="cart__ctas" {{ block.shopify_attributes }}>
-                
+                <!-- === F L O R E V A  -  B A R R A   S P E D I Z I O N E  +  T R U S T === -->
+
+<div class="shipping-progress" id="shipping-progress-bar">
+  <div class="shipping-progress__text" id="shipping-text">
+    🚚 Ti mancano <strong>€49,00</strong> per ottenere la <strong>spedizione gratuita!</strong>
+  </div>
+  <div class="shipping-progress__bar">
+    <div class="shipping-progress__fill" id="shipping-fill"></div>
+  </div>
+</div>
+
+<!-- Icons of trust -->
+<div class="trust-icons">
+  🔒 Pagamento sicuro &nbsp;|&nbsp; 🚚 Consegna 24-48h &nbsp;|&nbsp; 🇮🇹 Made in Italy
+</div>
+
+<!-- Brand reassurance -->
+<p class="cart-brand-note">🌿 Prodotto 100% naturale – Formula brevettata Floreva</p>
+
+<!-- === / F L O R E V A  === -->
+
+
+<!-- === J A V A S C R I P T  (progress bar dynamics) === -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const threshold = 49; // soglia spedizione gratuita (€)
+  const totalElement = document.querySelector('.totals__total-value');
+  const text = document.getElementById('shipping-text');
+  const fill = document.getElementById('shipping-fill');
+
+  if (!totalElement || !text || !fill) return;
+
+  // Estrai il valore numerico dal testo (es: €35,99)
+  const total = parseFloat(totalElement.innerText.replace(/[^\d,]/g, '').replace(',', '.'));
+
+  const percentage = Math.min((total / threshold) * 100, 100);
+  fill.style.width = `${percentage}%`;
+
+  if (total >= threshold) {
+    text.innerHTML = "🎉 Hai ottenuto la <strong>spedizione gratuita!</strong>";
+    fill.style.backgroundColor = "#007E40";
+  } else {
+    const missing = (threshold - total).toFixed(2);
+    text.innerHTML = `🚚 Ti mancano <strong>€${missing}</strong> per ottenere la <strong>spedizione gratuita!</strong>`;
+    fill.style.backgroundColor = "#C8A24F";
+  }
+});
+</script>
+
+<!-- === / J A V A S C R I P T  === -->
                 <button
                   type="submit"
                   id="checkout"

@@ -122,71 +122,48 @@
 </div>
 <p class="cart-brand-note">🌿 Prodotto 100% naturale – Formula brevettata Floreva</p>
 
-<!-- === /Floreva === -->
-
 <script>
-(function(){
-  const THRESHOLD = 20;                       // Soglia spedizione gratuita
-  const barEl   = document.getElementById('shipping-bar');
-  const textEl  = document.getElementById('shipping-text');
+document.addEventListener('DOMContentLoaded', () => {
+  const THRESHOLD = 20;
+  const text = document.getElementById('shipping-text');
+  const bar = document.getElementById('shipping-bar');
+  const totalData = document.getElementById('cart-total-data');
 
-  if(!barEl || !textEl) return;
-
-  // Lit le total à partir du span data puis depuis l'UI (fallback)
-  function readTotal(){
-    const data = document.getElementById('cart-total-data');
-    if (data && data.dataset.total){
-      const v = parseFloat(data.dataset.total);
-      if (!isNaN(v)) return v;
+  function parseTotal() {
+    const el = document.querySelector('.totals__total-value');
+    if (!el) return 0;
+    const raw = el.innerText.replace(/[^\d.,]/g, '').trim();
+    const parts = raw.split(',');
+    if (parts.length > 1) {
+      return parseFloat(parts.join('.').replace(/\./g, '').replace(',', '.')) || 0;
     }
-    const ui = document.querySelector('.totals__total-value');
-    if (ui){
-      // Nettoyage universel : "€1.234,56" -> 1234.56 | "€1,234.56" -> 1234.56
-      const raw = ui.textContent.replace(/\s/g,'').replace(/[^\d,.,,]/g,'');
-      let num = NaN;
-      const lastComma = raw.lastIndexOf(',');
-      const lastDot   = raw.lastIndexOf('.');
-      if (lastComma > lastDot) { // format EU
-        num = parseFloat(raw.replace(/\./g,'').replace(',', '.'));
-      } else {                   // format US/ISO
-        num = parseFloat(raw.replace(/,/g,''));
-      }
-      return isNaN(num) ? 0 : num;
-    }
-    return 0;
+    return parseFloat(raw.replace(',', '.')) || 0;
   }
 
-  function updateBar(){
-    const total = readTotal();
-    const pct   = Math.min((total / THRESHOLD) * 100, 100);
+  function updateBar() {
+    let total = parseFloat(totalData.dataset.total) || parseTotal();
+    const percent = Math.min((total / THRESHOLD) * 100, 100);
+    bar.style.setProperty('--progress', percent + '%');
+    bar.style.setProperty('--progress-color', total >= THRESHOLD ? '#007E40' : '#C8A24F');
 
-    // Pilote la barre via variables CSS (ultra-stable)
-    barEl.style.setProperty('--progress', pct + '%');
-    barEl.style.setProperty('--progress-color', total >= THRESHOLD ? '#007E40' : '#C8A24F');
-
-    if (total >= THRESHOLD){
-      textEl.innerHTML = '🎉 Hai ottenuto la <strong>spedizione gratuita!</strong>';
+    if (total >= THRESHOLD) {
+      text.innerHTML = "🎉 Hai ottenuto la <strong>spedizione gratuita!</strong>";
     } else {
       const missing = (THRESHOLD - total).toFixed(2).replace('.', ',');
-      textEl.innerHTML = `🚚 Ti mancano <strong>€${missing}</strong> per ottenere la <strong>spedizione gratuita!</strong>`;
+      text.innerHTML = `🚚 Ti mancano <strong>€${missing}</strong> per ottenere la <strong>spedizione gratuita!</strong>`;
     }
   }
 
-  // 1) Initial
   updateBar();
 
-  // 2) Observe les mutations AJAX de Shopify
-  const totalNode = document.querySelector('.totals__total-value');
-  if (totalNode){
+  const target = document.querySelector('.totals__total-value');
+  if (target) {
     const obs = new MutationObserver(updateBar);
-    obs.observe(totalNode.parentNode, {childList:true, subtree:true, characterData:true});
+    obs.observe(target, { childList: true, subtree: true, characterData: true });
   }
-
-  // 3) Sécurité : ré-évalue sur quelques événements fréquents
-  document.addEventListener('change',  e => { if (e.target && e.target.name==='updates[]') updateBar(); }, true);
-  document.addEventListener('cart:refresh', updateBar, true);
-})();
+});
 </script>
+
 
                 <button
                   type="submit"

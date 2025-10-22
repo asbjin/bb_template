@@ -73,6 +73,10 @@
         "variant_picker_9cK7w6",
         "buy_buttons_x4gBwV"
       ],
+      "custom_css": [
+        "/* Dawn et thèmes dérivés */.product__view-details,.product .product__view-details,a.product__view-details,.product .animate-arrow {display: none !important; }",
+        "/* Si ça ne suffit pas, fallback générique pour le lien \"voir détails\" vers /products */.featured-product a[href*=\"/products\"],.product a[href*=\"/products\"]:has(svg.icon-arrow) {display: none !important; margin: 0 !important; padding: 0 !important;}"
+      ],
       "name": "t:sections.featured-product.presets.name",
       "settings": {
         "product": "floreva",

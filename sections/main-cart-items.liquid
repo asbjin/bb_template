@@ -408,33 +408,7 @@
                 {%- endfor -%}
               </tbody>
             </table>
-            {%- comment -%} Bouton unique en bas si un item Kaching est présent {%- endcomment -%}
-              <div class="bundle-remove-wrapper" style="text-align:center;margin-top:20px;">
-                <button
-                  type="button"
-                  id="remove-bundle"
-                  class="button button--secondary"
-                  style="background:#007E40;color:#fff;border:none;border-radius:10px;padding:12px 20px;cursor:pointer;font-weight:600;font-size:15px;"
-                >
-                  🗑 Rimuovi l’offerta
-                </button>
-                <p style="font-size:13px;color:#666;margin-top:6px;">
-                  Tutti i prodotti del pacchetto saranno rimossi.
-                </p>
-              </div>
-
-              <script>
-              document.addEventListener("DOMContentLoaded", function () {
-                const btn = document.getElementById("remove-bundle");
-                if (!btn) return;
-                btn.addEventListener("click", async () => {
-                  try {
-                    await fetch("/cart/clear.js", { method: "POST" });
-                    window.location.reload();
-                  } catch (err) { console.error("Errore nella rimozione del pacchetto:", err); }
-                });
-              });
-              </script>
+            
           {%- endif -%}
         </div>
       </div>

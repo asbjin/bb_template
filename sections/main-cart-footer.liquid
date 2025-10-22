@@ -108,64 +108,133 @@
               <div class="cart__ctas" {{ block.shopify_attributes }}>
                 <!-- === Floreva | Shipping Progress + Trust (robuste) === -->
 
-{%- comment -%} Total brut côté Liquid pour 1er calcul (en €) {%- endcomment -%}
-<span id="cart-total-data" data-total="{{ cart.total_price | divided_by: 100.0 }}"></span>
+                {%- comment -%} Total brut côté Liquid pour 1er calcul (en €) {%- endcomment -%}
+                <span id="cart-total-data" data-total="{{ cart.total_price | divided_by: 100.0 }}"></span>
 
-<div class="shipping-progress" id="shipping-progress">
-  <div class="shipping-progress__text" id="shipping-text">
-    🚚 Ti mancano <strong>€49,00</strong> per ottenere la <strong>spedizione gratuita!</strong>
-  </div>
-  <div class="shipping-progress__bar" id="shipping-bar"></div>
-</div>
+                <div class="shipping-progress" id="shipping-progress">
+                  <div class="shipping-progress__text" id="shipping-text">
+                    🚚 Ti mancano <strong>€49,00</strong> per ottenere la <strong>spedizione gratuita!</strong>
+                  </div>
+                  <div class="shipping-progress__bar" id="shipping-bar"></div>
+                </div>
 
-<div class="trust-icons">
-  🔒 Pagamento sicuro &nbsp;|&nbsp; 🚚 Consegna 24–48h &nbsp;|&nbsp; 🇮🇹 Formulato in laboratorio
-</div>
-<p class="cart-brand-note">🌿 Prodotto 100% naturale – Formula brevettata Floreva</p>
+                <div class="trust-icons">
+                  🔒 Pagamento sicuro &nbsp;|&nbsp; 🚚 Consegna 24–48h &nbsp;|&nbsp; 🇮🇹 Formulato in laboratorio
+                </div>
+                <p class="cart-brand-note">🌿 Prodotto 100% naturale – Formula brevettata Floreva</p>
 
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const THRESHOLD = 20;
-  const text = document.getElementById('shipping-text');
-  const bar = document.getElementById('shipping-bar');
-  const totalData = document.getElementById('cart-total-data');
+                <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                  const THRESHOLD = 20;
+                  const text = document.getElementById('shipping-text');
+                  const bar = document.getElementById('shipping-bar');
+                  const totalData = document.getElementById('cart-total-data');
 
-  function parseTotal() {
-    const el = document.querySelector('.totals__total-value');
-    if (!el) return 0;
-    const raw = el.innerText.replace(/[^\d.,]/g, '').trim();
-    const parts = raw.split(',');
-    if (parts.length > 1) {
-      return parseFloat(parts.join('.').replace(/\./g, '').replace(',', '.')) || 0;
-    }
-    return parseFloat(raw.replace(',', '.')) || 0;
-  }
+                  function parseTotal() {
+                    const el = document.querySelector('.totals__total-value');
+                    if (!el) return 0;
+                    const raw = el.innerText.replace(/[^\d.,]/g, '').trim();
+                    const parts = raw.split(',');
+                    if (parts.length > 1) {
+                      return parseFloat(parts.join('.').replace(/\./g, '').replace(',', '.')) || 0;
+                    }
+                    return parseFloat(raw.replace(',', '.')) || 0;
+                  }
 
-  function updateBar() {
-    let total = parseFloat(totalData.dataset.total) || parseTotal();
-    const percent = Math.min((total / THRESHOLD) * 100, 100);
-    bar.style.setProperty('--progress', percent + '%');
-    bar.style.setProperty('--progress-color', total >= THRESHOLD ? '#007E40' : '#C8A24F');
+                  function updateBar() {
+                    let total = parseFloat(totalData.dataset.total) || parseTotal();
+                    const percent = Math.min((total / THRESHOLD) * 100, 100);
+                    bar.style.setProperty('--progress', percent + '%');
+                    bar.style.setProperty('--progress-color', total >= THRESHOLD ? '#007E40' : '#C8A24F');
 
-    if (total >= THRESHOLD) {
-      text.innerHTML = "🎉 Hai ottenuto la <strong>spedizione gratuita!</strong>";
-    } else {
-      const missing = (THRESHOLD - total).toFixed(2).replace('.', ',');
-      text.innerHTML = `🚚 Ti mancano <strong>€${missing}</strong> per ottenere la <strong>spedizione gratuita!</strong>`;
-    }
-  }
+                    if (total >= THRESHOLD) {
+                      text.innerHTML = "🎉 Hai ottenuto la <strong>spedizione gratuita!</strong>";
+                    } else {
+                      const missing = (THRESHOLD - total).toFixed(2).replace('.', ',');
+                      text.innerHTML = `🚚 Ti mancano <strong>€${missing}</strong> per ottenere la <strong>spedizione gratuita!</strong>`;
+                    }
+                  }
 
-  updateBar();
+                  updateBar();
 
-  const target = document.querySelector('.totals__total-value');
-  if (target) {
-    const obs = new MutationObserver(updateBar);
-    obs.observe(target, { childList: true, subtree: true, characterData: true });
-  }
-});
-</script>
+                  const target = document.querySelector('.totals__total-value');
+                  if (target) {
+                    const obs = new MutationObserver(updateBar);
+                    obs.observe(target, { childList: true, subtree: true, characterData: true });
+                  }
+                });
+                </script>
 
+                <div class="bundle-remove-wrapper" style="text-align:center;margin-top:14px;margin-bottom:16px;">
+                  <button
+                    type="button"
+                    id="remove-bundle"
+                    class="bundle-remove-btn"
+                  >
+                    ✖ <span>Annulla pacchetto</span>
+                  </button>
 
+                  <p class="bundle-remove-note">
+                    Tutti i prodotti del pacchetto saranno rimossi.
+                  </p>
+                </div>
+
+                <style>
+                  .bundle-remove-btn {
+                    background: linear-gradient(145deg, #fafafa, #f2f2f2);
+                    color: #555;
+                    border: 1px solid #d7d7d7;
+                    border-radius: 50px;
+                    padding: 8px 22px;
+                    cursor: pointer;
+                    font-weight: 500;
+                    font-size: 14px;
+                    font-family: "Poppins", "Inter", sans-serif;
+                    letter-spacing: 0.3px;
+                    transition: all 0.25s ease-in-out;
+                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+                    backdrop-filter: blur(4px);
+                  }
+
+                  .bundle-remove-btn:hover {
+                    background: #ebebeb;
+                    color: #333;
+                    border-color: #ccc;
+                    transform: translateY(-1px);
+                    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+                  }
+
+                  .bundle-remove-btn:active {
+                    transform: translateY(0);
+                    opacity: 0.9;
+                  }
+
+                  .bundle-remove-btn span {
+                    font-weight: 600;
+                  }
+
+                  .bundle-remove-note {
+                    font-size: 12px;
+                    color: #8d8d8d;
+                    margin-top: 5px;
+                    font-style: italic;
+                  }
+                </style>
+
+                <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                  const btn = document.getElementById("remove-bundle");
+                  if (!btn) return;
+                  btn.addEventListener("click", async () => {
+                    try {
+                      await fetch("/cart/clear.js", { method: "POST" });
+                      window.location.reload();
+                    } catch (err) {
+                      console.error("Errore nella rimozione del pacchetto:", err);
+                    }
+                  });
+                });
+                </script>
                 <button
                   type="submit"
                   id="checkout"

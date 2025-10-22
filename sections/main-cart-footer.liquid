@@ -165,76 +165,85 @@
                 });
                 </script>
 
-                <div class="bundle-remove-wrapper" style="text-align:center;margin-top:14px;margin-bottom:16px;">
-                  <button
-                    type="button"
-                    id="remove-bundle"
-                    class="bundle-remove-btn"
-                  >
-                    ✖ <span>Annulla pacchetto</span>
-                  </button>
+                ✅ Code final (compact, élégant et responsive)
+<div class="bundle-remove-wrapper" style="text-align:center;margin-top:10px;margin-bottom:12px;">
+  <button type="button" id="remove-bundle" class="bundle-remove-btn">
+    ✖ <span>Annulla pacchetto</span>
+  </button>
 
-                  <p class="bundle-remove-note">
-                    Tutti i prodotti del pacchetto saranno rimossi.
-                  </p>
-                </div>
+  <p class="bundle-remove-note">
+    Tutti i prodotti del pacchetto saranno rimossi.
+  </p>
+</div>
 
-                <style>
-                  .bundle-remove-btn {
-                    background: linear-gradient(145deg, #fafafa, #f2f2f2);
-                    color: #555;
-                    border: 1px solid #d7d7d7;
-                    border-radius: 50px;
-                    padding: 8px 22px;
-                    cursor: pointer;
-                    font-weight: 500;
-                    font-size: 14px;
-                    font-family: "Poppins", "Inter", sans-serif;
-                    letter-spacing: 0.3px;
-                    transition: all 0.25s ease-in-out;
-                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-                    backdrop-filter: blur(4px);
-                  }
+<style>
+  .bundle-remove-btn {
+    background: linear-gradient(145deg, #f9f9f9, #efefef);
+    color: #444;
+    border: 1px solid #d0d0d0;
+    border-radius: 40px;
+    padding: 6px 18px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 13px;
+    font-family: "Poppins", "Inter", sans-serif;
+    letter-spacing: 0.2px;
+    transition: all 0.25s ease-in-out;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.04);
+  }
 
-                  .bundle-remove-btn:hover {
-                    background: #ebebeb;
-                    color: #333;
-                    border-color: #ccc;
-                    transform: translateY(-1px);
-                    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
-                  }
+  .bundle-remove-btn:hover {
+    background: #e9e9e9;
+    color: #222;
+    border-color: #c8c8c8;
+    transform: translateY(-1px);
+  }
 
-                  .bundle-remove-btn:active {
-                    transform: translateY(0);
-                    opacity: 0.9;
-                  }
+  .bundle-remove-btn:active {
+    transform: translateY(0);
+    opacity: 0.9;
+  }
 
-                  .bundle-remove-btn span {
-                    font-weight: 600;
-                  }
+  .bundle-remove-btn span {
+    font-weight: 600;
+  }
 
-                  .bundle-remove-note {
-                    font-size: 12px;
-                    color: #8d8d8d;
-                    margin-top: 5px;
-                    font-style: italic;
-                  }
-                </style>
+  .bundle-remove-note {
+    font-size: 11.5px;
+    color: #9a9a9a;
+    margin-top: 5px;
+    font-style: italic;
+  }
 
-                <script>
-                document.addEventListener("DOMContentLoaded", function () {
-                  const btn = document.getElementById("remove-bundle");
-                  if (!btn) return;
-                  btn.addEventListener("click", async () => {
-                    try {
-                      await fetch("/cart/clear.js", { method: "POST" });
-                      window.location.reload();
-                    } catch (err) {
-                      console.error("Errore nella rimozione del pacchetto:", err);
-                    }
-                  });
-                });
-                </script>
+  /* ✅ Adaptation mobile */
+  @media (max-width: 480px) {
+    .bundle-remove-btn {
+      padding: 6px 14px;
+      font-size: 12.5px;
+      border-radius: 30px;
+      box-shadow: none;
+    }
+    .bundle-remove-note {
+      font-size: 11px;
+      line-height: 1.3;
+    }
+  }
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const btn = document.getElementById("remove-bundle");
+  if (!btn) return;
+  btn.addEventListener("click", async () => {
+    try {
+      await fetch("/cart/clear.js", { method: "POST" });
+      window.location.reload();
+    } catch (err) {
+      console.error("Errore nella rimozione del pacchetto:", err);
+    }
+  });
+});
+</script>
                 <button
                   type="submit"
                   id="checkout"

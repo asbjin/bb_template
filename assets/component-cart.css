@@ -220,13 +220,3 @@ cart-items {
     gap: 1rem;
   }
 }
-
-.quantity__locked {
-  font-weight: 600;
-  color: #007E40;
-  background: #F7F9F8;
-  padding: 6px 12px;
-  border-radius: 6px;
-  display: inline-block;
-  text-align: center;
-}

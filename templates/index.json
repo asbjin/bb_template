@@ -457,6 +457,7 @@
         },
         "feature_BkCKBW": {
           "type": "feature",
+          "disabled": true,
           "settings": {
             "text": "✅ Purifica la pelle dall’interno, per un viso sano e senza acne"
           }

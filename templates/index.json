@@ -589,6 +589,27 @@
         "lazy": true
       }
     },
+    "sp_image_standalone_EG7cDx": {
+      "type": "sp-image-standalone",
+      "name": "🚀SP - Image Standalone",
+      "settings": {
+        "background_color": "linear-gradient(164deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 100%)",
+        "max_width": 1000,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0,
+        "image": "shopify://shop_images/ChatGPT_Image_24_oct._2025_02_05_53.png",
+        "media_aspect_ratio": "auto",
+        "desktop_image_width": 1100,
+        "mobile_image": "shopify://shop_images/ChatGPT_Image_24_oct._2025_02_05_53.png",
+        "mobile_media_aspect_ratio": "auto",
+        "mobile_image_width": 800,
+        "link": "",
+        "media_radius": 5,
+        "media_shadow": true
+      }
+    },
     "featured_product_xBrNF9": {
       "type": "featured-product",
       "blocks": {
@@ -1457,6 +1478,7 @@
     "testimonial_elite_PiaAmx",
     "ss_slider_2_8Vhmqi",
     "ss_hero_6_Etpjq3",
+    "sp_image_standalone_EG7cDx",
     "featured_product_xBrNF9",
     "ss_feature_1_b9rkKB",
     "custom_liquid_7QDzzq",

@@ -1,6 +1,6 @@
 {% comment %}
   Floreva — Sezione Premium: "Coaching con Specialista"
-  Requisiti: SOLO bundle 180 giorni, coaching 100% via messaggi (no call/video).
+  Requisiti: SOLO bundle 150 giorni, coaching 100% via messaggi (no call/video).
   Mobile-first, stile premium con accenti dorati. Nessuna FAQ qui: usa la sezione FAQ del tema.
 {% endcomment %}
 <section class="flv-coach" style="--green: {{ section.settings.color_primary }}; --gold: {{ section.settings.color_gold }}; --ink:#111; --bg:#fff;">
@@ -10,7 +10,7 @@
     <header class="flv-hero">
       <div class="flv-badges">
         <span class="flv-chip flv-chip--gold">IN OMAGGIO 3 mesi</span>
-        <span class="flv-chip">SOLO bundle 180 giorni</span>
+        <span class="flv-chip">SOLO bundle 150 giorni</span>
         <span class="flv-chip">100% via messaggi</span>
       </div>
 
@@ -66,8 +66,8 @@
 
         <div class="flv-step-panels">
           <article class="flv-panel">
-            <h4>Acquista il bundle 180 giorni</h4>
-            <p>Il coaching in omaggio è riservato <strong>solo</strong> al pack 180 giorni.</p>
+            <h4>Acquista il bundle 150 giorni</h4>
+            <p>Il coaching in omaggio è riservato <strong>solo</strong> al pack 150 giorni.</p>
             {% if section.settings.bundle_url != blank %}
               <a href="{{ section.settings.bundle_url }}" class="flv-link">Vai al bundle</a>
             {% endif %}
@@ -130,7 +130,7 @@
       <div class="flv-offer-inner">
         <p class="flv-offer-kicker">IN OMAGGIO per 3 mesi</p>
         <h3 class="flv-h3">Coaching con Specialista — valore {{ section.settings.value_anchor }}</h3>
-        <p class="flv-p">Riservato esclusivamente al <strong>bundle 180 giorni</strong>. Posti limitati ogni mese per garantire qualità del supporto.</p>
+        <p class="flv-p">Riservato esclusivamente al <strong>bundle 150 giorni</strong>. Posti limitati ogni mese per garantire qualità del supporto.</p>
         <div class="flv-cta">
           {% if section.settings.bundle_url != blank %}
             <a class="flv-btn flv-btn--solid" href="{{ section.settings.bundle_url }}">{{ section.settings.cta_bundle }}</a>
@@ -236,8 +236,8 @@
     { "type": "text", "id": "title", "label": "Titolo", "default": "Coaching con Specialista — IN OMAGGIO per 3 mesi" },
     { "type": "textarea", "id": "subtitle", "label": "Sottotitolo", "default": "Accompagnamento 100% via messaggi su pelle/acne, digestione ed energia per massimizzare i risultati con Floreva." },
 
-    { "type": "url", "id": "bundle_url", "label": "Link pagina bundle 180 giorni" },
-    { "type": "text", "id": "cta_bundle", "label": "Testo CTA bundle", "default": "Attiva il bundle 180 giorni" },
+    { "type": "url", "id": "bundle_url", "label": "Link pagina bundle 150 giorni" },
+    { "type": "text", "id": "cta_bundle", "label": "Testo CTA bundle", "default": "Attiva il bundle 150 giorni" },
 
     { "type": "url", "id": "whatsapp_url", "label": "Link WhatsApp (wa.me/...)" },
     { "type": "text", "id": "cta_whatsapp", "label": "Testo CTA WhatsApp", "default": "Scrivici su WhatsApp" },

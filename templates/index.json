@@ -11,6 +11,7 @@
   "sections": {
     "sp_image_standalone_UainYU": {
       "type": "sp-image-standalone",
+      "disabled": true,
       "name": "🚀SP - Image Standalone",
       "settings": {
         "background_color": "linear-gradient(164deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 100%)",
@@ -23,6 +24,27 @@
         "media_aspect_ratio": "auto",
         "desktop_image_width": 1100,
         "mobile_image": "shopify://shop_images/ChatGPT_Image_26_oct._2025_00_19_43.png",
+        "mobile_media_aspect_ratio": "auto",
+        "mobile_image_width": 800,
+        "link": "",
+        "media_radius": 0,
+        "media_shadow": true
+      }
+    },
+    "sp_image_standalone_ENFbyR": {
+      "type": "sp-image-standalone",
+      "name": "🚀SP - Image Standalone",
+      "settings": {
+        "background_color": "linear-gradient(164deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 100%)",
+        "max_width": 1000,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0,
+        "image": "shopify://shop_images/ADDIO_PROBLEMI_DI_DIGESTIONE_E_PARASSITI_1.png",
+        "media_aspect_ratio": "auto",
+        "desktop_image_width": 1100,
+        "mobile_image": "shopify://shop_images/ADDIO_PROBLEMI_DI_DIGESTIONE_E_PARASSITI_1.png",
         "mobile_media_aspect_ratio": "auto",
         "mobile_image_width": 800,
         "link": "",
@@ -1282,6 +1304,7 @@
   },
   "order": [
     "sp_image_standalone_UainYU",
+    "sp_image_standalone_ENFbyR",
     "ss_wave_2_eHz3at",
     "sp_image_standalone_JVDVtx",
     "sp_image_standalone_MEWiXV",

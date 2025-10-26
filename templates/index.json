@@ -156,7 +156,7 @@
         "slide_8CrkQ7": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_28_sept._2025_18_25_12.png",
+            "image": "shopify://shop_images/ChatGPT_Image_26_oct._2025_12_34_51.png",
             "rating": 5,
             "title": "La mia digestione è rinata!",
             "content": "Soffrivo di digestione lentissima e gonfiore dopo ogni pasto. Con Floreva mi sento leggera, il ventre è piatto e non mi sento più stanca dopo pranzo. È diventato il mio segreto quotidiano 🌿"
@@ -165,7 +165,7 @@
         "slide_weq7hx": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Gemini_Generated_Image_4j2el14j2el14j2e.png",
+            "image": "shopify://shop_images/ChatGPT_Image_26_oct._2025_12_16_25.png",
             "rating": 4,
             "title": "Mai più dipendente dai lassativi",
             "content": "Li prendevo da anni, non riuscivo a smettere. Con Floreva il mio intestino è tornato regolare in modo naturale. Finalmente libero da quella dipendenza, e mi sento benissimo!"
@@ -174,7 +174,7 @@
         "slide_qPVFNX": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Gemini_Generated_Image_ec80inec80inec80.png",
+            "image": "shopify://shop_images/ChatGPT_Image_26_oct._2025_12_18_20.png",
             "rating": 4,
             "title": "Un effetto “pulizia interna” immediato",
             "content": "Dopo pochi giorni ho notato una sensazione di leggerezza incredibile. Ho scoperto che il problema erano i parassiti intestinali... con Floreva tutto sparito!"
@@ -183,7 +183,7 @@
         "slide_CfmLai": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/avatar4.png",
+            "image": "shopify://shop_images/ChatGPT_Image_26_oct._2025_12_37_08.png",
             "rating": 4,
             "title": "Zero gonfiore, tanta energia",
             "content": "Non riuscivo più a digerire bene, mi sentivo sempre gonfia. Floreva ha rimesso in equilibrio il mio intestino e ora ho una carica pazzesca ogni mattina! ☀️"
@@ -192,10 +192,37 @@
         "slide_bWNhCq": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/WhatsApp_Image_2025-10-01_a_22.17.58_a2568e9c.jpg",
+            "image": "shopify://shop_images/ChatGPT_Image_26_oct._2025_12_27_04.png",
             "rating": 5,
             "title": "Addio lassativi per sempre!",
             "content": "Pensavo fosse impossibile regolarizzare il mio intestino senza aiuti chimici. Floreva è stata la mia svolta: naturale, efficace e senza effetti collaterali."
+          }
+        },
+        "slide_pAmTkH": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_26_oct._2025_11_27_40.png",
+            "rating": 5,
+            "title": "Parassiti scomparsi e digestione perfetta",
+            "content": "Avevo sintomi strani da mesi: gonfiore, pelle spenta, poca energia. Dopo 2 settimane con Floreva mi sento rinata dentro e fuori."
+          }
+        },
+        "slide_yaChrw": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_26_oct._2025_12_11_12.png",
+            "rating": 4,
+            "title": "Un equilibrio che non avevo mai provato",
+            "content": "Floreva mi ha aiutato a regolare tutto il sistema digestivo. Ora mi sento più “leggera” anche mentalmente. È incredibile come un prodotto naturale possa fare tanto."
+          }
+        },
+        "slide_Makqcf": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_26_oct._2025_11_57_08.png",
+            "rating": 5,
+            "title": "Il mio corpo ringrazia ogni giorno",
+            "content": "Da quando prendo Floreva, la mia pancia è piatta, niente più gonfiore o stanchezza. Lo consiglio a tutte le donne che vogliono sentirsi bene in modo naturale 💚"
           }
         }
       },
@@ -204,7 +231,10 @@
         "slide_weq7hx",
         "slide_qPVFNX",
         "slide_CfmLai",
-        "slide_bWNhCq"
+        "slide_bWNhCq",
+        "slide_pAmTkH",
+        "slide_yaChrw",
+        "slide_Makqcf"
       ],
       "name": "PC - Testimonial #1 Elite",
       "settings": {

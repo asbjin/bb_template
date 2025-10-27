@@ -323,6 +323,33 @@
             "url": ""
           }
         },
+        "slide_TdLdTq": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/WhatsApp_Image_2025-10-27_a_01.16.59_735af645.jpg",
+            "title": "",
+            "button": "",
+            "url": ""
+          }
+        },
+        "slide_67ekjQ": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/WhatsApp_Image_2025-10-27_a_01.16.59_a34e6c94.jpg",
+            "title": "",
+            "button": "",
+            "url": ""
+          }
+        },
+        "slide_hhzaRi": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_7_oct._2025_11_18_24.png",
+            "title": "",
+            "button": "",
+            "url": ""
+          }
+        },
         "slide_yqeajM": {
           "type": "slide",
           "settings": {
@@ -350,15 +377,6 @@
             "url": ""
           }
         },
-        "slide_hhzaRi": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_7_oct._2025_11_18_24.png",
-            "title": "",
-            "button": "",
-            "url": ""
-          }
-        },
         "slide_WMAJkG": {
           "type": "slide",
           "settings": {
@@ -375,10 +393,12 @@
         "slide_T9gKVL",
         "slide_HzhqdH",
         "slide_wLQykV",
+        "slide_TdLdTq",
+        "slide_67ekjQ",
+        "slide_hhzaRi",
         "slide_yqeajM",
         "slide_wGKBdC",
         "slide_8ERA66",
-        "slide_hhzaRi",
         "slide_WMAJkG"
       ],
       "name": "SS - Slider #2",

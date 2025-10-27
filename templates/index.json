@@ -316,6 +316,7 @@
         },
         "slide_wLQykV": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/18d0d5b0-16d8-4ddd-939d-a328dfe5e30a.jpg",
             "title": "",

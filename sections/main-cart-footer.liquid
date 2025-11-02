@@ -117,39 +117,58 @@
   </div>
 
   <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const THRESHOLD = 20;
-    const text = document.getElementById('shipping-text');
-    const bar = document.getElementById('shipping-bar');
-    const totalData = document.getElementById('cart-total-data');
-    function parseTotal() {
-      const el = document.querySelector('.totals__total-value');
-      if (!el) return 0;
-      const raw = el.innerText.replace(/[^\d.,]/g, '').trim();
-      const parts = raw.split(',');
-      if (parts.length > 1) return parseFloat(parts.join('.').replace(/\./g, '').replace(',', '.')) || 0;
-      return parseFloat(raw.replace(',', '.')) || 0;
+document.addEventListener('DOMContentLoaded', () => {
+  const THRESHOLD = 20;
+  const text = document.getElementById('shipping-text');
+  const bar = document.getElementById('shipping-bar');
+  
+  function parseTotal() {
+    // Chercher le prix dans le bloc fixe
+    const el = document.querySelector('.cart__payment-total');
+    if (!el) return 0;
+    
+    const raw = el.innerText.replace(/[^\d.,]/g, '').trim();
+    const parts = raw.split(',');
+    
+    if (parts.length > 1) {
+      return parseFloat(parts.join('.').replace(/\./g, '').replace(',', '.')) || 0;
     }
-    function updateBar() {
-      let total = parseFloat(totalData.dataset.total) || parseTotal();
-      const percent = Math.min((total / THRESHOLD) * 100, 100);
-      bar.style.setProperty('--progress', percent + '%');
-      bar.style.setProperty('--progress-color', total >= THRESHOLD ? '#007E40' : '#C8A24F');
-      if (total >= THRESHOLD) {
-        text.innerHTML = "🎉 Hai ottenuto la <strong>spedizione gratuita!</strong>";
-      } else {
-        const missing = (THRESHOLD - total).toFixed(2).replace('.', ',');
-        text.innerHTML = `🚚 Ti mancano <strong>€${missing}</strong> per ottenere la <strong>spedizione gratuita!</strong>`;
-      }
+    return parseFloat(raw.replace(',', '.')) || 0;
+  }
+  
+  function updateBar() {
+    let total = parseTotal();
+    const percent = Math.min((total / THRESHOLD) * 100, 100);
+    
+    bar.style.setProperty('--progress', percent + '%');
+    bar.style.setProperty('--progress-color', total >= THRESHOLD ? '#007E40' : '#C8A24F');
+    
+    if (total >= THRESHOLD) {
+      text.innerHTML = "🎉 Hai ottenuto la <strong>spedizione gratuita!</strong>";
+    } else {
+      const missing = (THRESHOLD - total).toFixed(2).replace('.', ',');
+      text.innerHTML = `🚚 Ti mancano <strong>€${missing}</strong> per ottenere la <strong>spedizione gratuita!</strong>`;
     }
-    updateBar();
-    const target = document.querySelector('.totals__total-value');
-    if (target) {
-      const obs = new MutationObserver(updateBar);
-      obs.observe(target, { childList: true, subtree: true, characterData: true });
-    }
-  });
-  </script>
+  }
+  
+  updateBar();
+  
+  // Observer pour détecter les changements
+  const target = document.querySelector('.cart__payment-total');
+  if (target) {
+    const obs = new MutationObserver(updateBar);
+    obs.observe(target, { 
+      childList: true, 
+      subtree: true, 
+      characterData: true 
+    });
+  }
+  
+  // Backup : écouter les événements du panier
+  document.addEventListener('cart:updated', updateBar);
+  document.addEventListener('cart:change', updateBar);
+});
+</script>
 
   <!-- === Nouvelle barre de paiement intégrée === -->
   <div class="cart__payment-bar">

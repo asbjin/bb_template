@@ -5012,3 +5012,15 @@ table.cart-items,
   display: grid !important;
   table-layout: auto !important;
 }
+
+/* === FLOREVA - Prix total réactif === */
+.cart__payment-bar .cart__payment-total.totals__total-value {
+  font-size: 17px !important;
+  font-weight: 700 !important;
+  color: #0E1B16 !important;
+}
+
+/* Forcer la mise à jour visuelle du prix */
+.cart__payment-total {
+  transition: all 0.2s ease !important;
+}

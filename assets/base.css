@@ -4902,23 +4902,24 @@ cart-remove-button svg,
 }
 
 /* === MASQUER "TOTALE STIMATO" === */
-.cart__footer .totals:not(:last-of-type),
-.cart__footer-wrapper .totals:first-of-type,
-.cart-footer__totals:first-of-type,
-#main-cart-footer .totals:not(.cart__payment-bar .totals) {
-  display: none !important;
-}
-
-/* Masquer tout sous-total avant le footer fixe */
-.cart__footer > .totals,
-.cart__blocks .totals {
+/* Masquer le bloc subtotal (Totale stimato) */
+.cart__blocks > .js-contents,
+.cart__blocks .totals:not(.cart__payment-bar .totals),
+div[class*="subtotal"],
+.cart__footer .totals:first-of-type {
   display: none !important;
 }
 
 /* Garder uniquement le total dans le bloc fixe */
-.cart__ctas .totals,
-.cart__payment-bar .totals {
+.cart__payment-bar .totals,
+.cart__payment-bar .cart__payment-info,
+.cart__ctas .totals {
   display: flex !important;
+}
+
+/* Masquer aussi les discounts en dehors du bloc fixe */
+.cart__blocks .discounts {
+  display: none !important;
 }
 
 /* === PANIER VIDE === */

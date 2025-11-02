@@ -28,7 +28,7 @@
 <cart-items class="gradient color-{{ section.settings.color_scheme }} isolate{% if cart == empty %} is-empty{% else %} section-{{ section.id }}-padding{% endif %}">
   <div class="page-width">
     <div class="title-wrapper-with-link">
-      <h1 class="title title--primary">{{ 'sections.cart.title' | t }}</h1>
+      {%- comment -%} <h1 class="title title--primary">{{ 'sections.cart.title' | t }}</h1> {%- endcomment -%}
       <a href="{{ routes.root_url }}" class="underlined-link">
         {{- 'general.continue_shopping' | t -}}
       </a>
@@ -38,8 +38,6 @@
                   <p class="express-urgency">
                     ⚡ Spedizione prioritaria disponibile ancora per <span id="timer">07:00</span> minuti
                   </p>
-                  <p class="express-stock">💚 Solo <strong>6 confezioni</strong> rimaste in magazzino</p>
-                  <p class="express-trust">✅ Pagamento sicuro e supporto clienti 7/7</p>
                 </div>
                 <script>
                   let timer = 420; // 7 minuti
@@ -89,7 +87,7 @@
                     class="cart-items__heading--wide cart-items__heading--quantity small-hide caption-with-letter-spacing"
                     colspan="1"
                     scope="col"
-                  >
+                  > 
                     {{ 'sections.cart.headings.quantity' | t }}
                   </th>
                   <th class="small-hide right caption-with-letter-spacing" colspan="1" scope="col">

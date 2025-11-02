@@ -107,106 +107,83 @@
             {%- else -%}
               <div class="cart__ctas" {{ block.shopify_attributes }}>
                 <!-- === Floreva | Shipping Progress + Trust (robuste) === -->
-  <span id="cart-total-data" data-total="{{ cart.total_price | divided_by: 100.0 }}"></span>
 
-  <div class="shipping-progress" id="shipping-progress">
-    <div class="shipping-progress__text" id="shipping-text">
-      🚚 Ti mancano <strong>€49,00</strong> per ottenere la <strong>spedizione gratuita!</strong>
-    </div>
-    <div class="shipping-progress__bar" id="shipping-bar"></div>
-  </div>
+                {%- comment -%} Total brut côté Liquid pour 1er calcul (en €) {%- endcomment -%}
+                <span id="cart-total-data" data-total="{{ cart.total_price | divided_by: 100.0 }}"></span>
 
-  <script>
-document.addEventListener('DOMContentLoaded', () => {
-  const THRESHOLD = 20;
-  const text = document.getElementById('shipping-text');
-  const bar = document.getElementById('shipping-bar');
-  
-  function parseTotal() {
-    // Chercher le prix dans le bloc fixe
-    const el = document.querySelector('.cart__payment-total');
-    if (!el) return 0;
-    
-    const raw = el.innerText.replace(/[^\d.,]/g, '').trim();
-    const parts = raw.split(',');
-    
-    if (parts.length > 1) {
-      return parseFloat(parts.join('.').replace(/\./g, '').replace(',', '.')) || 0;
-    }
-    return parseFloat(raw.replace(',', '.')) || 0;
-  }
-  
-  function updateBar() {
-    let total = parseTotal();
-    const percent = Math.min((total / THRESHOLD) * 100, 100);
-    
-    bar.style.setProperty('--progress', percent + '%');
-    bar.style.setProperty('--progress-color', total >= THRESHOLD ? '#007E40' : '#C8A24F');
-    
-    if (total >= THRESHOLD) {
-      text.innerHTML = "🎉 Hai ottenuto la <strong>spedizione gratuita!</strong>";
-    } else {
-      const missing = (THRESHOLD - total).toFixed(2).replace('.', ',');
-      text.innerHTML = `🚚 Ti mancano <strong>€${missing}</strong> per ottenere la <strong>spedizione gratuita!</strong>`;
-    }
-  }
-  
-  updateBar();
-  
-  // Observer pour détecter les changements
-  const target = document.querySelector('.cart__payment-total');
-  if (target) {
-    const obs = new MutationObserver(updateBar);
-    obs.observe(target, { 
-      childList: true, 
-      subtree: true, 
-      characterData: true 
-    });
-  }
-  
-  // Backup : écouter les événements du panier
-  document.addEventListener('cart:updated', updateBar);
-  document.addEventListener('cart:change', updateBar);
-});
-</script>
+                <div class="shipping-progress" id="shipping-progress">
+                  <div class="shipping-progress__text" id="shipping-text">
+                    🚚 Ti mancano <strong>€49,00</strong> per ottenere la <strong>spedizione gratuita!</strong>
+                  </div>
+                  <div class="shipping-progress__bar" id="shipping-bar"></div>
+                </div>
 
-  <!-- === Nouvelle barre de paiement intégrée === -->
-  <div class="cart__payment-bar">
-    <div class="cart__payment-info">
-  <span class="cart__payment-label">Totale</span>
-  <span class="cart__payment-total totals__total-value">{{ cart.total_price | money_with_currency }}</span>
-</div>
+                <div class="trust-icons">
+                  🔒 Pagamento sicuro &nbsp;|&nbsp; 🚚 Consegna 24–48h &nbsp;|&nbsp; 🇮🇹 Formulato in laboratorio
+                </div>
+                <p class="cart-brand-note">🌿 Prodotto 100% naturale – Formula brevettata Floreva</p>
 
-    <div class="cart__payment-buttons">
-      <div class="paypal-wrapper">
-        {{ content_for_additional_checkout_buttons }}
-      </div>
+                <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                  const THRESHOLD = 20;
+                  const text = document.getElementById('shipping-text');
+                  const bar = document.getElementById('shipping-bar');
+                  const totalData = document.getElementById('cart-total-data');
 
-      <button
-        type="submit"
-        id="checkout"
-        class="cart__checkout-button"
-        name="checkout"
-        {% if cart == empty %}disabled{% endif %}
-        form="cart"
-      >
-        {{ 'sections.cart.checkout' | t }}
-      </button>
-    </div>
-  </div>
-  <!-- Logos de paiement + sécurité -->
-<div class="cart__secure-payments">
-  <img src="https://cdn.brandfetch.io/idhem73aId/theme/dark/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B" alt="Visa">
-  <img src="https://cdn.brandfetch.io/idFw8DodCr/theme/dark/symbol.svg?c=1dxbfHSJFAPEGdCLU4o5B" alt="Mastercard">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/American_Express_logo_%282018%29.svg" alt="AMEX" height="36px" style="vertical-align:middle;">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Apple_Pay_logo.svg/768px-Apple_Pay_logo.svg.png?20170518220303" alt="Apple Pay">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Google_Pay_Logo.svg/768px-Google_Pay_Logo.svg.png?20221017164555" alt="Google Pay">
-  <img src="https://cdn.brandfetch.io/id-Wd4a4TS/theme/dark/id31tBizMM.svg?c=1dxbfHSJFAPEGdCLU4o5B" alt="PayPal">
-</div>
+                  function parseTotal() {
+                    const el = document.querySelector('.totals__total-value');
+                    if (!el) return 0;
+                    const raw = el.innerText.replace(/[^\d.,]/g, '').trim();
+                    const parts = raw.split(',');
+                    if (parts.length > 1) {
+                      return parseFloat(parts.join('.').replace(/\./g, '').replace(',', '.')) || 0;
+                    }
+                    return parseFloat(raw.replace(',', '.')) || 0;
+                  }
 
-<p class="cart__secure-note">
-  Pagamento sicuro con 3D Secure e crittografia SSL 🔒
-</p>
+                  function updateBar() {
+                    let total = parseFloat(totalData.dataset.total) || parseTotal();
+                    const percent = Math.min((total / THRESHOLD) * 100, 100);
+                    bar.style.setProperty('--progress', percent + '%');
+                    bar.style.setProperty('--progress-color', total >= THRESHOLD ? '#007E40' : '#C8A24F');
+
+                    if (total >= THRESHOLD) {
+                      text.innerHTML = "🎉 Hai ottenuto la <strong>spedizione gratuita!</strong>";
+                    } else {
+                      const missing = (THRESHOLD - total).toFixed(2).replace('.', ',');
+                      text.innerHTML = `🚚 Ti mancano <strong>€${missing}</strong> per ottenere la <strong>spedizione gratuita!</strong>`;
+                    }
+                  }
+
+                  updateBar();
+
+                  const target = document.querySelector('.totals__total-value');
+                  if (target) {
+                    const obs = new MutationObserver(updateBar);
+                    obs.observe(target, { childList: true, subtree: true, characterData: true });
+                  }
+                });
+                </script>
+
+                <button
+                  type="submit"
+                  id="checkout"
+                  class="cart__checkout-button button"
+                  name="checkout"
+                  {% if cart == empty %}
+                    disabled
+                  {% endif %}
+                  form="cart"
+                >
+                  {{ 'sections.cart.checkout' | t }}
+                </button>
+              </div>
+
+              {%- if additional_checkout_buttons -%}
+                <div class="cart__dynamic-checkout-buttons additional-checkout-buttons">
+                  {{ content_for_additional_checkout_buttons }}
+                </div>
+              {%- endif -%}
           {%- endcase -%}
         {% endfor %}
 

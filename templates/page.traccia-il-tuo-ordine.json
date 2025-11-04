@@ -11,13 +11,30 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "176221942507ebcf8b": {
+      "type": "apps",
+      "blocks": {
+        "parcel_panel_app_xqJLQd": {
+          "type": "shopify://apps/parcel-panel/blocks/app/fc785c3f-90e0-4c98-a20c-7cde9ba5e4b5",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "parcel_panel_app_xqJLQd"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "176221942507ebcf8b"
   ]
 }

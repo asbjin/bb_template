@@ -52,7 +52,7 @@
         "margin_top": 1,
         "margin_bottom": 1,
         "padding": 1.6,
-        "bg_color": "#1c1c1c",
+        "bg_color": "#007e40",
         "duration": 140,
         "reverse": true,
         "font": "poppins_n7"

@@ -487,6 +487,7 @@
     },
     "sp_image_standalone_EG7cDx": {
       "type": "sp-image-standalone",
+      "disabled": true,
       "name": "🚀SP - Image Standalone",
       "settings": {
         "background_color": "linear-gradient(164deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 100%)",

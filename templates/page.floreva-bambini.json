@@ -205,6 +205,53 @@
         "padding_top": 0,
         "padding_bottom": 0
       }
+    },
+    "sp_payment_icons_nBGbt4": {
+      "type": "sp-payment-icons",
+      "blocks": {
+        "image_qih9AE": {
+          "type": "image",
+          "settings": {
+            "alt_text": ""
+          }
+        },
+        "image_3DY6Gq": {
+          "type": "image",
+          "settings": {
+            "alt_text": ""
+          }
+        },
+        "image_epiXVH": {
+          "type": "image",
+          "settings": {
+            "alt_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_qih9AE",
+        "image_3DY6Gq",
+        "image_epiXVH"
+      ],
+      "name": "🚀SP - Payment Icons",
+      "settings": {
+        "background_color": "linear-gradient(164deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 100%)",
+        "max_width": 1000,
+        "icon_height": 30,
+        "icon_gap": 4,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 15,
+        "padding_right": 15,
+        "show_visa": true,
+        "show_mastercard": true,
+        "show_american_express": true,
+        "show_discover": false,
+        "show_paypal": true,
+        "show_apple_pay": true,
+        "show_google_pay": true,
+        "show_shop_pay": false
+      }
     }
   },
   "order": [
@@ -213,6 +260,7 @@
     "ss_slider_2_jz7ijt",
     "custom_liquid_bQC4Ub",
     "custom_liquid_AQ8NEq",
-    "featured_product_DAMykK"
+    "featured_product_DAMykK",
+    "sp_payment_icons_nBGbt4"
   ]
 }

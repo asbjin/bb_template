@@ -88,13 +88,29 @@
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-.videos-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
+.carousel-container {
+  position: relative;
   max-width: 900px;
   margin: 0 auto;
+}
+
+.carousel-wrapper {
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
 }
 
 .video-card {
@@ -125,6 +141,14 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.video-card.playing .video-thumbnail {
+  display: none;
 }
 
 .play-overlay {
@@ -133,10 +157,10 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 3;
   transition: opacity 0.3s ease;
 }
 
@@ -145,7 +169,7 @@
   pointer-events: none;
 }
 
-.play-button {
+.control-button {
   width: 80px;
   height: 80px;
   background: rgba(16, 185, 129, 0.95);
@@ -156,9 +180,10 @@
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 16px rgba(16, 185, 129, 0.5);
+  border: none;
 }
 
-.play-button:hover {
+.control-button:hover {
   background: #10b981;
   transform: scale(1.1);
 }
@@ -172,6 +197,104 @@
   margin-left: 5px;
 }
 
+.pause-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.video-card.playing .pause-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.pause-icon {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  justify-content: center;
+}
+
+.pause-bar {
+  width: 8px;
+  height: 28px;
+  background: white;
+  border-radius: 2px;
+}
+
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-nav:hover {
+  background: white;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-nav.prev {
+  left: -60px;
+}
+
+.carousel-nav.next {
+  right: -60px;
+}
+
+.nav-arrow {
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.nav-arrow.left {
+  border-width: 10px 15px 10px 0;
+  border-color: transparent #1a1a1a transparent transparent;
+}
+
+.nav-arrow.right {
+  border-width: 10px 0 10px 15px;
+  border-color: transparent transparent transparent #1a1a1a;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background: white;
+  transform: scale(1.3);
+}
+
 @media (max-width: 768px) {
   .floreva-mama-section {
     padding: 80px 20px 60px;
@@ -182,14 +305,19 @@
     margin-bottom: 30px;
   }
   
-  .videos-grid {
+  .carousel-slide {
+    flex-direction: column;
     gap: 15px;
   }
   
   .video-card {
-    width: 100%;
+    width: 90%;
     max-width: 350px;
     height: 550px;
+  }
+  
+  .carousel-nav {
+    display: none;
   }
   
   .wave-top svg,
@@ -211,87 +339,156 @@
     
     <h2 class="mama-title">{{ section.settings.title }}</h2>
     
-    <div class="videos-grid">
+    <div class="carousel-container">
       
-      {% if section.settings.video_1 != blank %}
-      <div class="video-card" data-video-id="1">
-        {% if section.settings.thumbnail_1 != blank %}
-          <img src="{{ section.settings.thumbnail_1 | image_url: width: 500 }}" alt="Video 1" class="video-thumbnail">
-        {% endif %}
-        <video class="video-element" loop playsinline>
-          <source src="{{ section.settings.video_1 }}" type="video/mp4">
-        </video>
-        <div class="play-overlay">
-          <div class="play-button">
-            <div class="play-icon"></div>
+      <button class="carousel-nav prev" type="button" aria-label="Precedente">
+        <div class="nav-arrow left"></div>
+      </button>
+      
+      <div class="carousel-wrapper">
+        <div class="carousel-track" id="carousel-track">
+          
+          {% comment %} Slide 1: Video 1 & 2 {% endcomment %}
+          {% if section.settings.video_1 != blank or section.settings.video_2 != blank %}
+          <div class="carousel-slide">
+            {% if section.settings.video_1 != blank %}
+            <div class="video-card" data-video-id="1">
+              {% if section.settings.thumbnail_1 != blank %}
+                <img src="{{ section.settings.thumbnail_1 | image_url: width: 500 }}" alt="Video 1" class="video-thumbnail">
+              {% endif %}
+              <video class="video-element" playsinline>
+                <source src="{{ section.settings.video_1 }}" type="video/mp4">
+              </video>
+              <div class="play-overlay">
+                <button class="control-button" type="button">
+                  <div class="play-icon"></div>
+                </button>
+              </div>
+              <div class="pause-overlay">
+                <button class="control-button" type="button">
+                  <div class="pause-icon">
+                    <div class="pause-bar"></div>
+                    <div class="pause-bar"></div>
+                  </div>
+                </button>
+              </div>
+            </div>
+            {% endif %}
+            
+            {% if section.settings.video_2 != blank %}
+            <div class="video-card" data-video-id="2">
+              {% if section.settings.thumbnail_2 != blank %}
+                <img src="{{ section.settings.thumbnail_2 | image_url: width: 500 }}" alt="Video 2" class="video-thumbnail">
+              {% endif %}
+              <video class="video-element" playsinline>
+                <source src="{{ section.settings.video_2 }}" type="video/mp4">
+              </video>
+              <div class="play-overlay">
+                <button class="control-button" type="button">
+                  <div class="play-icon"></div>
+                </button>
+              </div>
+              <div class="pause-overlay">
+                <button class="control-button" type="button">
+                  <div class="pause-icon">
+                    <div class="pause-bar"></div>
+                    <div class="pause-bar"></div>
+                  </div>
+                </button>
+              </div>
+            </div>
+            {% endif %}
           </div>
+          {% endif %}
+          
+          {% comment %} Slide 2: Video 3 & 4 {% endcomment %}
+          {% if section.settings.video_3 != blank or section.settings.video_4 != blank %}
+          <div class="carousel-slide">
+            {% if section.settings.video_3 != blank %}
+            <div class="video-card" data-video-id="3">
+              {% if section.settings.thumbnail_3 != blank %}
+                <img src="{{ section.settings.thumbnail_3 | image_url: width: 500 }}" alt="Video 3" class="video-thumbnail">
+              {% endif %}
+              <video class="video-element" playsinline>
+                <source src="{{ section.settings.video_3 }}" type="video/mp4">
+              </video>
+              <div class="play-overlay">
+                <button class="control-button" type="button">
+                  <div class="play-icon"></div>
+                </button>
+              </div>
+              <div class="pause-overlay">
+                <button class="control-button" type="button">
+                  <div class="pause-icon">
+                    <div class="pause-bar"></div>
+                    <div class="pause-bar"></div>
+                  </div>
+                </button>
+              </div>
+            </div>
+            {% endif %}
+            
+            {% if section.settings.video_4 != blank %}
+            <div class="video-card" data-video-id="4">
+              {% if section.settings.thumbnail_4 != blank %}
+                <img src="{{ section.settings.thumbnail_4 | image_url: width: 500 }}" alt="Video 4" class="video-thumbnail">
+              {% endif %}
+              <video class="video-element" playsinline>
+                <source src="{{ section.settings.video_4 }}" type="video/mp4">
+              </video>
+              <div class="play-overlay">
+                <button class="control-button" type="button">
+                  <div class="play-icon"></div>
+                </button>
+              </div>
+              <div class="pause-overlay">
+                <button class="control-button" type="button">
+                  <div class="pause-icon">
+                    <div class="pause-bar"></div>
+                    <div class="pause-bar"></div>
+                  </div>
+                </button>
+              </div>
+            </div>
+            {% endif %}
+          </div>
+          {% endif %}
+          
+          {% comment %} Slide 3: Video 5 {% endcomment %}
+          {% if section.settings.video_5 != blank %}
+          <div class="carousel-slide">
+            <div class="video-card" data-video-id="5">
+              {% if section.settings.thumbnail_5 != blank %}
+                <img src="{{ section.settings.thumbnail_5 | image_url: width: 500 }}" alt="Video 5" class="video-thumbnail">
+              {% endif %}
+              <video class="video-element" playsinline>
+                <source src="{{ section.settings.video_5 }}" type="video/mp4">
+              </video>
+              <div class="play-overlay">
+                <button class="control-button" type="button">
+                  <div class="play-icon"></div>
+                </button>
+              </div>
+              <div class="pause-overlay">
+                <button class="control-button" type="button">
+                  <div class="pause-icon">
+                    <div class="pause-bar"></div>
+                    <div class="pause-bar"></div>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+          {% endif %}
+          
         </div>
       </div>
-      {% endif %}
       
-      {% if section.settings.video_2 != blank %}
-      <div class="video-card" data-video-id="2">
-        {% if section.settings.thumbnail_2 != blank %}
-          <img src="{{ section.settings.thumbnail_2 | image_url: width: 500 }}" alt="Video 2" class="video-thumbnail">
-        {% endif %}
-        <video class="video-element" loop playsinline>
-          <source src="{{ section.settings.video_2 }}" type="video/mp4">
-        </video>
-        <div class="play-overlay">
-          <div class="play-button">
-            <div class="play-icon"></div>
-          </div>
-        </div>
-      </div>
-      {% endif %}
+      <button class="carousel-nav next" type="button" aria-label="Successivo">
+        <div class="nav-arrow right"></div>
+      </button>
       
-      {% if section.settings.video_3 != blank %}
-      <div class="video-card" data-video-id="3">
-        {% if section.settings.thumbnail_3 != blank %}
-          <img src="{{ section.settings.thumbnail_3 | image_url: width: 500 }}" alt="Video 3" class="video-thumbnail">
-        {% endif %}
-        <video class="video-element" loop playsinline>
-          <source src="{{ section.settings.video_3 }}" type="video/mp4">
-        </video>
-        <div class="play-overlay">
-          <div class="play-button">
-            <div class="play-icon"></div>
-          </div>
-        </div>
-      </div>
-      {% endif %}
-      
-      {% if section.settings.video_4 != blank %}
-      <div class="video-card" data-video-id="4">
-        {% if section.settings.thumbnail_4 != blank %}
-          <img src="{{ section.settings.thumbnail_4 | image_url: width: 500 }}" alt="Video 4" class="video-thumbnail">
-        {% endif %}
-        <video class="video-element" loop playsinline>
-          <source src="{{ section.settings.video_4 }}" type="video/mp4">
-        </video>
-        <div class="play-overlay">
-          <div class="play-button">
-            <div class="play-icon"></div>
-          </div>
-        </div>
-      </div>
-      {% endif %}
-      
-      {% if section.settings.video_5 != blank %}
-      <div class="video-card" data-video-id="5">
-        {% if section.settings.thumbnail_5 != blank %}
-          <img src="{{ section.settings.thumbnail_5 | image_url: width: 500 }}" alt="Video 5" class="video-thumbnail">
-        {% endif %}
-        <video class="video-element" loop playsinline>
-          <source src="{{ section.settings.video_5 }}" type="video/mp4">
-        </video>
-        <div class="play-overlay">
-          <div class="play-button">
-            <div class="play-icon"></div>
-          </div>
-        </div>
-      </div>
-      {% endif %}
+      <div class="carousel-dots" id="carousel-dots"></div>
       
     </div>
     
@@ -308,24 +505,82 @@
 <script>
 (function() {
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initVideos);
+    document.addEventListener('DOMContentLoaded', initCarousel);
   } else {
-    initVideos();
+    initCarousel();
   }
   
-  function initVideos() {
+  function initCarousel() {
+    const track = document.getElementById('carousel-track');
+    const slides = document.querySelectorAll('.carousel-slide');
+    const prevBtn = document.querySelector('.carousel-nav.prev');
+    const nextBtn = document.querySelector('.carousel-nav.next');
+    const dotsContainer = document.getElementById('carousel-dots');
+    
+    if (!track || slides.length === 0) return;
+    
+    let currentSlide = 0;
+    const totalSlides = slides.length;
+    
+    // Create dots
+    dotsContainer.innerHTML = '';
+    for (let i = 0; i < totalSlides; i++) {
+      const dot = document.createElement('div');
+      dot.classList.add('dot');
+      if (i === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => goToSlide(i));
+      dotsContainer.appendChild(dot);
+    }
+    
+    const dots = document.querySelectorAll('.dot');
+    
+    function updateCarousel() {
+      track.style.transform = `translateX(-${currentSlide * 100}%)`;
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentSlide);
+      });
+    }
+    
+    function goToSlide(index) {
+      // Pause all videos
+      document.querySelectorAll('.video-element').forEach(v => {
+        v.pause();
+        v.currentTime = 0;
+        v.closest('.video-card').classList.remove('playing');
+      });
+      
+      currentSlide = index;
+      updateCarousel();
+    }
+    
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      goToSlide(currentSlide);
+    }
+    
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      goToSlide(currentSlide);
+    }
+    
+    if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+    if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+    
+    // Video controls
     const videoCards = document.querySelectorAll('.video-card');
     
     videoCards.forEach(card => {
       const video = card.querySelector('.video-element');
-      const thumbnail = card.querySelector('.video-thumbnail');
       const playOverlay = card.querySelector('.play-overlay');
+      const pauseOverlay = card.querySelector('.pause-overlay');
+      const playBtn = playOverlay ? playOverlay.querySelector('.control-button') : null;
+      const pauseBtn = pauseOverlay ? pauseOverlay.querySelector('.control-button') : null;
       
       if (!video) return;
       
-      // Click on play button
-      if (playOverlay) {
-        playOverlay.addEventListener('click', function(e) {
+      // Play button click
+      if (playBtn) {
+        playBtn.addEventListener('click', function(e) {
           e.stopPropagation();
           
           // Pause all other videos
@@ -334,14 +589,11 @@
               v.pause();
               v.currentTime = 0;
               v.closest('.video-card').classList.remove('playing');
-              const otherThumb = v.closest('.video-card').querySelector('.video-thumbnail');
-              if (otherThumb) otherThumb.style.display = 'block';
             }
           });
           
           // Play this video
           card.classList.add('playing');
-          if (thumbnail) thumbnail.style.display = 'none';
           video.muted = false;
           video.play().catch(err => {
             console.log('Erreur de lecture:', err);
@@ -351,23 +603,24 @@
         });
       }
       
-      // Click on video to pause
-      video.addEventListener('click', function(e) {
-        e.stopPropagation();
-        if (!video.paused) {
+      // Pause button click
+      if (pauseBtn) {
+        pauseBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
           video.pause();
           card.classList.remove('playing');
-          if (thumbnail) thumbnail.style.display = 'block';
-        }
-      });
+        });
+      }
       
-      // When video ends
+      // When video ends - STOP (no loop)
       video.addEventListener('ended', function() {
         card.classList.remove('playing');
-        if (thumbnail) thumbnail.style.display = 'block';
         video.currentTime = 0;
       });
     });
+    
+    // Auto-advance carousel every 8 seconds
+    setInterval(nextSlide, 8000);
   }
 })();
 </script>
@@ -385,8 +638,7 @@
     {
       "type": "text",
       "id": "video_1",
-      "label": "Video 1 URL",
-      "info": "Incolla l'URL dalla sezione Files di Shopify"
+      "label": "Video 1 URL"
     },
     {
       "type": "image_picker",
@@ -396,8 +648,7 @@
     {
       "type": "text",
       "id": "video_2",
-      "label": "Video 2 URL",
-      "info": "Incolla l'URL dalla sezione Files di Shopify"
+      "label": "Video 2 URL"
     },
     {
       "type": "image_picker",
@@ -407,8 +658,7 @@
     {
       "type": "text",
       "id": "video_3",
-      "label": "Video 3 URL",
-      "info": "Incolla l'URL dalla sezione Files di Shopify"
+      "label": "Video 3 URL"
     },
     {
       "type": "image_picker",
@@ -418,8 +668,7 @@
     {
       "type": "text",
       "id": "video_4",
-      "label": "Video 4 URL",
-      "info": "Incolla l'URL dalla sezione Files di Shopify"
+      "label": "Video 4 URL"
     },
     {
       "type": "image_picker",
@@ -429,8 +678,7 @@
     {
       "type": "text",
       "id": "video_5",
-      "label": "Video 5 URL",
-      "info": "Incolla l'URL dalla sezione Files di Shopify"
+      "label": "Video 5 URL"
     },
     {
       "type": "image_picker",

@@ -155,6 +155,43 @@
         "padding_top": 0,
         "padding_bottom": 0
       }
+    },
+    "featured_product_DAMykK": {
+      "type": "featured-product",
+      "blocks": {
+        "kaching_bundles_app_block_dY9PFh": {
+          "type": "shopify://apps/kaching-bundles/blocks/app-block/6c637362-a106-4a32-94ac-94dcfd68cdb8",
+          "settings": {
+            "product": "floreva-bambini"
+          }
+        },
+        "buy_buttons_NgEx3x": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        }
+      },
+      "block_order": [
+        "kaching_bundles_app_block_dY9PFh",
+        "buy_buttons_NgEx3x"
+      ],
+      "name": "t:sections.featured-product.presets.name",
+      "settings": {
+        "product": "",
+        "color_scheme": "",
+        "secondary_background": false,
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
     }
   },
   "order": [
@@ -162,6 +199,7 @@
     "sp_image_standalone_MzH7A6",
     "ss_slider_2_jz7ijt",
     "custom_liquid_bQC4Ub",
-    "custom_liquid_AQ8NEq"
+    "custom_liquid_AQ8NEq",
+    "featured_product_DAMykK"
   ]
 }

@@ -48,25 +48,32 @@
   transform-origin: center;
 }
 
-/* 1ère vague : vert foncé Floreva (en bas) */
+/* 1 : vague vert foncé, un peu plus basse */
 .wave-layer-1 {
-  fill: #10b981;        /* vert principal */
+  fill: #06b6d4;               /* vert/bleu plus foncé */
   opacity: 1;
-  animation: wave-move-1 18s ease-in-out infinite;
+  transform: translateY(18px);
 }
 
-/* 2ème vague : vert plus clair, au milieu */
+/* 2 : vague vert moyen, un peu au-dessus */
 .wave-layer-2 {
-  fill: #34d399;        /* vert clair */
-  opacity: 0.8;
-  animation: wave-move-2 22s ease-in-out infinite;
+  fill: #10b981;               /* vert moyen */
+  opacity: 0.95;
+  transform: translateY(12px);
 }
 
-/* 3ème vague : celle qui DÉLIMITE la section → BLANCHE */
+/* 3 : nouvelle vague vert très clair, encore plus haut */
+.wave-layer-4 {
+  fill: #6ee7b7;               /* vert très clair */
+  opacity: 0.8;
+  transform: translateY(6px);
+}
+
+/* 4 : vague blanche qui délimite la section (tout en haut) */
 .wave-layer-3 {
-  fill: #ffffff;        /* blanc */
-  opacity: 1;           /* bien opaque pour faire une vraie frontière blanche */
-  animation: wave-move-3 26s ease-in-out infinite;
+  fill: #ffffff;               /* blanc pur pour la frontière */
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* animations douces (parallaxe) */
@@ -354,14 +361,21 @@
 <section class="floreva-mama-section">
   <div class="wave-top">
   <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+    <!-- 1 : vague vert foncé -->
     <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28C230,68.64,284,44.35,339.09,29.5,423.39,6.75,508.64,1.39,591.89,17.64c65.14,12.88,128.71,39.25,193.86,52.16,66.25,13.2,136.54,11,198.25-8.16,32.88-10.29,63.58-26.89,93-44.84V0Z"
           class="wave-layer wave-layer-1"></path>
+    <!-- 2 : vague vert moyen -->
     <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28C230,68.64,284,44.35,339.09,29.5,423.39,6.75,508.64,1.39,591.89,17.64c65.14,12.88,128.71,39.25,193.86,52.16,66.25,13.2,136.54,11,198.25-8.16,32.88-10.29,63.58-26.89,93-44.84V0Z"
           class="wave-layer wave-layer-2"></path>
+    <!-- 3 : nouvelle vague vert très clair -->
+    <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28C230,68.64,284,44.35,339.09,29.5,423.39,6.75,508.64,1.39,591.89,17.64c65.14,12.88,128.71,39.25,193.86,52.16,66.25,13.2,136.54,11,198.25-8.16,32.88-10.29,63.58-26.89,93-44.84V0Z"
+          class="wave-layer wave-layer-4"></path>
+    <!-- 4 : la vague BLANCHE qui délimite la section -->
     <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28C230,68.64,284,44.35,339.09,29.5,423.39,6.75,508.64,1.39,591.89,17.64c65.14,12.88,128.71,39.25,193.86,52.16,66.25,13.2,136.54,11,198.25-8.16,32.88-10.29,63.58-26.89,93-44.84V0Z"
           class="wave-layer wave-layer-3"></path>
   </svg>
 </div>
+
 
 
   <div class="mama-container">
@@ -500,9 +514,12 @@
     <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28C230,68.64,284,44.35,339.09,29.5,423.39,6.75,508.64,1.39,591.89,17.64c65.14,12.88,128.71,39.25,193.86,52.16,66.25,13.2,136.54,11,198.25-8.16,32.88-10.29,63.58-26.89,93-44.84V0Z"
           class="wave-layer wave-layer-2"></path>
     <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28C230,68.64,284,44.35,339.09,29.5,423.39,6.75,508.64,1.39,591.89,17.64c65.14,12.88,128.71,39.25,193.86,52.16,66.25,13.2,136.54,11,198.25-8.16,32.88-10.29,63.58-26.89,93-44.84V0Z"
+          class="wave-layer wave-layer-4"></path>
+    <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28C230,68.64,284,44.35,339.09,29.5,423.39,6.75,508.64,1.39,591.89,17.64c65.14,12.88,128.71,39.25,193.86,52.16,66.25,13.2,136.54,11,198.25-8.16,32.88-10.29,63.58-26.89,93-44.84V0Z"
           class="wave-layer wave-layer-3"></path>
   </svg>
 </div>
+
 
 </section>
 

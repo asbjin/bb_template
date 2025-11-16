@@ -133,13 +133,24 @@
         "full_width": true,
         "content_width": 120,
         "border_thickness": 0,
-        "lazy": true
+        "lazy": false
+      }
+    },
+    "custom_liquid_bQC4Ub": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<style>\n.floreva-scudiva-compact {\nbackground: white;\npadding: 24px 20px;\nfont-family: Inter, sans-serif;\nmax-width: 600px;\nmargin: 0 auto;\n}\n.fsc-badge {\nbackground: #007E40;\ncolor: white;\npadding: 8px 20px;\nborder-radius: 25px;\nfont-size: 13px;\nfont-weight: 600;\ndisplay: inline-block;\nmargin-bottom: 12px;\n}\n.fsc-rating {\ndisplay: flex;\nalign-items: center;\ngap: 8px;\njustify-content: center;\nmargin-bottom: 16px;\nfont-size: 13px;\n}\n.fsc-stars {\ncolor: #C8A24F;\nfont-size: 16px;\n}\n.fsc-rating-text {\ncolor: #666;\nfont-weight: 500;\n}\n.fsc-title {\nfont-family: Georgia, serif;\nfont-size: 32px;\nfont-weight: 700;\ncolor: #1a1a1a;\nmargin: 0 0 16px 0;\nline-height: 1.2;\ntext-align: center;\n}\n.fsc-benefits {\ndisplay: flex;\nflex-direction: column;\ngap: 8px;\n}\n.fsc-benefit {\ndisplay: flex;\nalign-items: center;\ngap: 10px;\nfont-size: 15px;\ncolor: #2d3436;\n}\n.fsc-check {\ncolor: #007E40;\nfont-size: 18px;\nflex-shrink: 0;\n}\n@media (max-width: 768px) {\n.floreva-scudiva-compact {\npadding: 20px 16px;\n}\n.fsc-title {\nfont-size: 26px;\n}\n.fsc-benefit {\nfont-size: 14px;\n}\n}\n</style>\n\n<div class=\"floreva-scudiva-compact\">\n\n<div style=\"text-align: center;\">\n<div class=\"fsc-badge\">\nUn Detox 100% Naturale, Approvato da Pediatri!\n</div>\n\n<div class=\"fsc-rating\">\n<span class=\"fsc-stars\">★★★★★</span>\n<span class=\"fsc-rating-text\">Valutato 4.9 da oltre 8000 clienti</span>\n</div>\n\n<h2 class=\"fsc-title\">\nFloreva Scudiva\n</h2>\n</div>\n\n<div class=\"fsc-benefits\">\n<div class=\"fsc-benefit\">\n<span class=\"fsc-check\">✓</span>\n<span>Elimina delicatamente i parassiti intestinali nascosti</span>\n</div>\n\n<div class=\"fsc-benefit\">\n<span class=\"fsc-check\">✓</span>\n<span>Aiuta i bambini a sentirsi più calmi ed equilibrati</span>\n</div>\n\n<div class=\"fsc-benefit\">\n<span class=\"fsc-check\">✓</span>\n<span>Prova senza rischi per 90 giorni</span>\n</div>\n</div>\n\n</div>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     }
   },
   "order": [
     "main",
     "sp_image_standalone_MzH7A6",
-    "ss_slider_2_jz7ijt"
+    "ss_slider_2_jz7ijt",
+    "custom_liquid_bQC4Ub"
   ]
 }

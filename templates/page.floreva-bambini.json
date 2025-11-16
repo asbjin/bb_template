@@ -262,6 +262,43 @@
         "padding_top": 0,
         "padding_bottom": 0
       }
+    },
+    "floreva_mama_approved_7Cpwqr": {
+      "type": "floreva-mama-approved",
+      "name": "Floreva Mama Approved",
+      "settings": {
+        "title": "APPROVATO DALLE MAMME!",
+        "thumbnail_1": "shopify://shop_images/ChatGPT_Image_16_nov._2025_17_19_54.png"
+      }
+    },
+    "sp_review_callout_pWLn4C": {
+      "type": "sp-review-callout",
+      "disabled": true,
+      "name": "🚀SP - Review Callout",
+      "settings": {
+        "text_font": "system_ui_n4",
+        "text_size_1": 15,
+        "text_size_2": 22,
+        "text_size_3": 16,
+        "headline_font": "system_ui_n4",
+        "headline_size": 50,
+        "background_color": "linear-gradient(164deg, rgba(17, 17, 17, 1), rgba(85, 85, 85, 1) 100%)",
+        "text_color": "#fff",
+        "headline_color": "#fff",
+        "highlight_color": "#0D8BF4",
+        "max_width": 1000,
+        "grid_gap": 20,
+        "padding_top": 25,
+        "padding_bottom": 25,
+        "padding_left": 10,
+        "padding_right": 10,
+        "review_count": "2,500+ Reviews",
+        "headline": "<strong>See what our customers are saying about our product.</strong>",
+        "review_hl_1": "<strong>Amazing app!!!</strong>",
+        "review_text_1": "This is an amazing app!!! It is really nice to have a lot of options to customize my shop.",
+        "review_hl_2": "<strong>Glad I found this app!</strong>",
+        "review_text_2": "This is an amazing app!!! It is really nice to have a lot of options to customize my shop."
+      }
     }
   },
   "order": [
@@ -272,6 +309,8 @@
     "custom_liquid_AQ8NEq",
     "featured_product_DAMykK",
     "sp_payment_icons_nBGbt4",
-    "custom_liquid_YQYBiE"
+    "custom_liquid_YQYBiE",
+    "floreva_mama_approved_7Cpwqr",
+    "sp_review_callout_pWLn4C"
   ]
 }

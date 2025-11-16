@@ -18,8 +18,9 @@
 .wave-top svg {
   position: relative;
   display: block;
-  width: calc(100% + 1.3px);
-  height: 60px;
+  width: calc(150% + 1.3px);
+  height: 80px;
+  animation: wave-movement-top 12s ease-in-out infinite;
 }
 
 .wave-bottom {
@@ -35,24 +36,36 @@
 .wave-bottom svg {
   position: relative;
   display: block;
-  width: calc(100% + 1.3px);
-  height: 60px;
+  width: calc(150% + 1.3px);
+  height: 80px;
+  animation: wave-movement-bottom 15s ease-in-out infinite;
 }
 
 .wave-shape {
   fill: #FFFFFF;
 }
 
-.wave-animate {
-  animation: wave-movement 8s ease-in-out infinite;
-}
-
-@keyframes wave-movement {
-  0%, 100% {
-    transform: translateX(0);
+@keyframes wave-movement-top {
+  0% {
+    transform: translateX(0) translateZ(0) scaleY(1);
   }
   50% {
-    transform: translateX(-25px);
+    transform: translateX(-25%) translateZ(0) scaleY(0.8);
+  }
+  100% {
+    transform: translateX(0) translateZ(0) scaleY(1);
+  }
+}
+
+@keyframes wave-movement-bottom {
+  0% {
+    transform: translateX(-25%) translateZ(0) scaleY(1);
+  }
+  50% {
+    transform: translateX(0) translateZ(0) scaleY(0.9);
+  }
+  100% {
+    transform: translateX(-25%) translateZ(0) scaleY(1);
   }
 }
 
@@ -97,6 +110,7 @@
   gap: 20px;
   justify-content: center;
   align-items: center;
+  padding: 10px;
 }
 
 .video-card {
@@ -115,16 +129,16 @@
   transform: scale(1.05);
 }
 
-.video-thumbnail {
+.video-element {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.video-iframe {
+.video-thumbnail {
   width: 100%;
   height: 100%;
-  border: none;
+  object-fit: cover;
 }
 
 .play-button {
@@ -142,6 +156,11 @@
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 16px rgba(16, 185, 129, 0.5);
+  z-index: 5;
+}
+
+.video-card.playing .play-button {
+  display: none;
 }
 
 .play-button:hover {
@@ -234,6 +253,7 @@
   
   .video-slide {
     flex-direction: column;
+    gap: 15px;
   }
   
   .video-card {
@@ -248,7 +268,7 @@
   
   .wave-top svg,
   .wave-bottom svg {
-    height: 40px;
+    height: 50px;
   }
 }
 </style>
@@ -257,7 +277,7 @@
   
   <div class="wave-top">
     <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-      <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="wave-shape wave-animate"></path>
+      <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="wave-shape"></path>
     </svg>
   </div>
 
@@ -274,17 +294,41 @@
       <div class="carousel-wrapper">
         <div class="carousel-track">
           
-          {% if section.settings.video_url_1 != blank %}
+          {% assign video_count = 0 %}
+          
+          {% if section.settings.video_1 != blank %}
+            {% assign video_count = video_count | plus: 1 %}
+          {% endif %}
+          {% if section.settings.video_2 != blank %}
+            {% assign video_count = video_count | plus: 1 %}
+          {% endif %}
+          {% if section.settings.video_3 != blank %}
+            {% assign video_count = video_count | plus: 1 %}
+          {% endif %}
+          {% if section.settings.video_4 != blank %}
+            {% assign video_count = video_count | plus: 1 %}
+          {% endif %}
+          {% if section.settings.video_5 != blank %}
+            {% assign video_count = video_count | plus: 1 %}
+          {% endif %}
+          
+          {% if section.settings.video_1 != blank or section.settings.video_2 != blank %}
           <div class="video-slide">
-            <div class="video-card" data-video="{{ section.settings.video_url_1 }}">
-              <img src="{{ section.settings.thumbnail_1 | default: 'https://via.placeholder.com/280x500/10b981/ffffff?text=Video+1' }}" alt="Video 1" class="video-thumbnail">
+            {% if section.settings.video_1 != blank %}
+            <div class="video-card" data-video-index="1">
+              <video class="video-element" loop muted playsinline poster="{{ section.settings.thumbnail_1 | image_url: width: 280 }}">
+                <source src="{{ section.settings.video_1 }}" type="video/mp4">
+              </video>
               <div class="play-button">
                 <div class="play-icon"></div>
               </div>
             </div>
-            {% if section.settings.video_url_2 != blank %}
-            <div class="video-card" data-video="{{ section.settings.video_url_2 }}">
-              <img src="{{ section.settings.thumbnail_2 | default: 'https://via.placeholder.com/280x500/06b6d4/ffffff?text=Video+2' }}" alt="Video 2" class="video-thumbnail">
+            {% endif %}
+            {% if section.settings.video_2 != blank %}
+            <div class="video-card" data-video-index="2">
+              <video class="video-element" loop muted playsinline poster="{{ section.settings.thumbnail_2 | image_url: width: 280 }}">
+                <source src="{{ section.settings.video_2 }}" type="video/mp4">
+              </video>
               <div class="play-button">
                 <div class="play-icon"></div>
               </div>
@@ -293,17 +337,23 @@
           </div>
           {% endif %}
           
-          {% if section.settings.video_url_3 != blank %}
+          {% if section.settings.video_3 != blank or section.settings.video_4 != blank %}
           <div class="video-slide">
-            <div class="video-card" data-video="{{ section.settings.video_url_3 }}">
-              <img src="{{ section.settings.thumbnail_3 | default: 'https://via.placeholder.com/280x500/10b981/ffffff?text=Video+3' }}" alt="Video 3" class="video-thumbnail">
+            {% if section.settings.video_3 != blank %}
+            <div class="video-card" data-video-index="3">
+              <video class="video-element" loop muted playsinline poster="{{ section.settings.thumbnail_3 | image_url: width: 280 }}">
+                <source src="{{ section.settings.video_3 }}" type="video/mp4">
+              </video>
               <div class="play-button">
                 <div class="play-icon"></div>
               </div>
             </div>
-            {% if section.settings.video_url_4 != blank %}
-            <div class="video-card" data-video="{{ section.settings.video_url_4 }}">
-              <img src="{{ section.settings.thumbnail_4 | default: 'https://via.placeholder.com/280x500/06b6d4/ffffff?text=Video+4' }}" alt="Video 4" class="video-thumbnail">
+            {% endif %}
+            {% if section.settings.video_4 != blank %}
+            <div class="video-card" data-video-index="4">
+              <video class="video-element" loop muted playsinline poster="{{ section.settings.thumbnail_4 | image_url: width: 280 }}">
+                <source src="{{ section.settings.video_4 }}" type="video/mp4">
+              </video>
               <div class="play-button">
                 <div class="play-icon"></div>
               </div>
@@ -312,10 +362,12 @@
           </div>
           {% endif %}
           
-          {% if section.settings.video_url_5 != blank %}
+          {% if section.settings.video_5 != blank %}
           <div class="video-slide">
-            <div class="video-card" data-video="{{ section.settings.video_url_5 }}">
-              <img src="{{ section.settings.thumbnail_5 | default: 'https://via.placeholder.com/280x500/10b981/ffffff?text=Video+5' }}" alt="Video 5" class="video-thumbnail">
+            <div class="video-card" data-video-index="5">
+              <video class="video-element" loop muted playsinline poster="{{ section.settings.thumbnail_5 | image_url: width: 280 }}">
+                <source src="{{ section.settings.video_5 }}" type="video/mp4">
+              </video>
               <div class="play-button">
                 <div class="play-icon"></div>
               </div>
@@ -338,7 +390,7 @@
 
   <div class="wave-bottom">
     <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-      <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="wave-shape wave-animate"></path>
+      <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="wave-shape"></path>
     </svg>
   </div>
 
@@ -403,39 +455,45 @@
     
     // Video play functionality
     videoCards.forEach(card => {
-      card.addEventListener('click', function() {
-        const videoUrl = this.getAttribute('data-video');
-        if (!videoUrl) return;
+      const playBtn = card.querySelector('.play-button');
+      const video = card.querySelector('.video-element');
+      
+      if (playBtn && video) {
+        playBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          
+          // Stop all other videos
+          document.querySelectorAll('.video-element').forEach(v => {
+            if (v !== video) {
+              v.pause();
+              v.currentTime = 0;
+              v.closest('.video-card').classList.remove('playing');
+            }
+          });
+          
+          // Play this video
+          card.classList.add('playing');
+          video.muted = false;
+          video.play();
+        });
         
-        // Convert URL to embed format
-        let embedUrl = videoUrl;
+        // Pause on click
+        video.addEventListener('click', function() {
+          if (!video.paused) {
+            video.pause();
+            card.classList.remove('playing');
+          }
+        });
         
-        // YouTube
-        if (videoUrl.includes('youtube.com') || videoUrl.includes('youtu.be')) {
-          const videoId = videoUrl.includes('youtu.be') 
-            ? videoUrl.split('youtu.be/')[1].split('?')[0]
-            : videoUrl.split('v=')[1].split('&')[0];
-          embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
-        }
-        
-        // Vimeo
-        if (videoUrl.includes('vimeo.com')) {
-          const videoId = videoUrl.split('vimeo.com/')[1].split('?')[0];
-          embedUrl = `https://player.vimeo.com/video/${videoId}?autoplay=1`;
-        }
-        
-        // TikTok (just open in new tab as embed is complex)
-        if (videoUrl.includes('tiktok.com')) {
-          window.open(videoUrl, '_blank');
-          return;
-        }
-        
-        // Replace thumbnail with iframe
-        this.innerHTML = `<iframe class="video-iframe" src="${embedUrl}" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
-      });
+        // Show play button when video ends
+        video.addEventListener('ended', function() {
+          card.classList.remove('playing');
+          video.currentTime = 0;
+        });
+      }
     });
     
-    // Auto-play carousel
+    // Auto-play carousel every 5 seconds
     setInterval(nextSlide, 5000);
   }
 })();
@@ -452,9 +510,10 @@
       "default": "APPROVATO DALLE MAMME!"
     },
     {
-      "type": "url",
-      "id": "video_url_1",
-      "label": "Video URL 1"
+      "type": "text",
+      "id": "video_1",
+      "label": "Video 1 URL",
+      "info": "Carica prima la video in Settings > Files, poi incolla l'URL qui"
     },
     {
       "type": "image_picker",
@@ -462,9 +521,10 @@
       "label": "Miniatura Video 1"
     },
     {
-      "type": "url",
-      "id": "video_url_2",
-      "label": "Video URL 2"
+      "type": "text",
+      "id": "video_2",
+      "label": "Video 2 URL",
+      "info": "Carica prima la video in Settings > Files, poi incolla l'URL qui"
     },
     {
       "type": "image_picker",
@@ -472,9 +532,10 @@
       "label": "Miniatura Video 2"
     },
     {
-      "type": "url",
-      "id": "video_url_3",
-      "label": "Video URL 3"
+      "type": "text",
+      "id": "video_3",
+      "label": "Video 3 URL",
+      "info": "Carica prima la video in Settings > Files, poi incolla l'URL qui"
     },
     {
       "type": "image_picker",
@@ -482,9 +543,10 @@
       "label": "Miniatura Video 3"
     },
     {
-      "type": "url",
-      "id": "video_url_4",
-      "label": "Video URL 4"
+      "type": "text",
+      "id": "video_4",
+      "label": "Video 4 URL",
+      "info": "Carica prima la video in Settings > Files, poi incolla l'URL qui"
     },
     {
       "type": "image_picker",
@@ -492,9 +554,10 @@
       "label": "Miniatura Video 4"
     },
     {
-      "type": "url",
-      "id": "video_url_5",
-      "label": "Video URL 5"
+      "type": "text",
+      "id": "video_5",
+      "label": "Video 5 URL",
+      "info": "Carica prima la video in Settings > Files, poi incolla l'URL qui"
     },
     {
       "type": "image_picker",

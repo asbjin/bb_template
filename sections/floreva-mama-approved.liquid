@@ -137,6 +137,7 @@
   pointer-events: none;
 }
 
+/* Bouton play/pause au centre */
 .vid-btn-wrapper {
   position: absolute;
   top: 50%;
@@ -168,15 +169,14 @@
   transform: scale(0.95);
 }
 
-.play-symbol {
-  width: 0;
-  height: 0;
-  border-left: 24px solid white;
-  border-top: 14px solid transparent;
-  border-bottom: 14px solid transparent;
-  margin-left: 4px;
+/* Icône PLAY en texte ▶ */
+.play-icon {
+  font-size: 32px;
+  color: #fff;
+  margin-left: 3px; /* léger décalage visuel comme les vrais icônes play */
 }
 
+/* Icone PAUSE (||) */
 .pause-symbol {
   display: none;
   gap: 6px;
@@ -189,7 +189,8 @@
   border-radius: 2px;
 }
 
-.vid-box.vid-playing .play-symbol {
+/* Quand la vidéo joue, on cache PLAY et on montre PAUSE */
+.vid-box.vid-playing .play-icon {
   display: none;
 }
 
@@ -197,6 +198,7 @@
   display: flex;
 }
 
+/* Boutons de slide gauche/droite */
 .arrow-btn {
   position: absolute;
   top: 50%;
@@ -215,6 +217,14 @@
   justify-content: center;
 }
 
+/* caractère flèche à l'intérieur du rond */
+.arrow-char {
+  font-size: 26px;
+  line-height: 1;
+  color: #1a1a1a;
+  font-weight: 700;
+}
+
 .arrow-btn:hover {
   background: white;
   transform: translateY(-50%) scale(1.1);
@@ -226,22 +236,6 @@
 
 .arrow-btn.btn-next {
   right: -60px;
-}
-
-.arrow-icon {
-  width: 0;
-  height: 0;
-  border-style: solid;
-}
-
-.arrow-icon.left-arrow {
-  border-width: 10px 15px 10px 0;
-  border-color: transparent #1a1a1a transparent transparent;
-}
-
-.arrow-icon.right-arrow {
-  border-width: 10px 0 10px 15px;
-  border-color: transparent transparent transparent #1a1a1a;
 }
 
 .dots-wrapper {
@@ -267,6 +261,7 @@
   transform: scale(1.3);
 }
 
+/* Mobile */
 @media (max-width: 768px) {
   .mama-title {
     font-size: 32px;
@@ -281,24 +276,26 @@
     max-width: 350px;
   }
 
-  /* Boutons de slide visibles et plus petits sur mobile */
   .arrow-btn {
     width: 40px;
     height: 40px;
     top: 50%;
     transform: translateY(-50%);
-    display: flex; /* IMPORTANT: on les ré-affiche */
+    display: flex;
+  }
+
+  .arrow-char {
+    font-size: 22px;
   }
 
   .arrow-btn.btn-prev {
-    left: 10px;   /* bien à l'intérieur du cadre */
+    left: 10px;
   }
 
   .arrow-btn.btn-next {
-    right: 10px;  /* bien à l'intérieur du cadre */
+    right: 10px;
   }
 }
-
 </style>
 
 <section class="floreva-mama-section">
@@ -312,8 +309,9 @@
     <h2 class="mama-title">{{ section.settings.title }}</h2>
 
     <div class="carousel-outer">
+      <!-- flèche gauche -->
       <button class="arrow-btn btn-prev" type="button">
-        <div class="arrow-icon left-arrow"></div>
+        <span class="arrow-char">&#10094;</span>
       </button>
 
       <div class="carousel-viewport">
@@ -330,7 +328,7 @@
               {% endif %}
               <div class="vid-btn-wrapper">
                 <button class="vid-btn" type="button">
-                  <div class="play-symbol"></div>
+                  <span class="play-icon">&#9654;</span>
                   <div class="pause-symbol">
                     <span></span><span></span>
                   </div>
@@ -351,7 +349,7 @@
               {% endif %}
               <div class="vid-btn-wrapper">
                 <button class="vid-btn" type="button">
-                  <div class="play-symbol"></div>
+                  <span class="play-icon">&#9654;</span>
                   <div class="pause-symbol">
                     <span></span><span></span>
                   </div>
@@ -372,7 +370,7 @@
               {% endif %}
               <div class="vid-btn-wrapper">
                 <button class="vid-btn" type="button">
-                  <div class="play-symbol"></div>
+                  <span class="play-icon">&#9654;</span>
                   <div class="pause-symbol">
                     <span></span><span></span>
                   </div>
@@ -393,7 +391,7 @@
               {% endif %}
               <div class="vid-btn-wrapper">
                 <button class="vid-btn" type="button">
-                  <div class="play-symbol"></div>
+                  <span class="play-icon">&#9654;</span>
                   <div class="pause-symbol">
                     <span></span><span></span>
                   </div>
@@ -414,7 +412,7 @@
               {% endif %}
               <div class="vid-btn-wrapper">
                 <button class="vid-btn" type="button">
-                  <div class="play-symbol"></div>
+                  <span class="play-icon">&#9654;</span>
                   <div class="pause-symbol">
                     <span></span><span></span>
                   </div>
@@ -427,8 +425,9 @@
         </div>
       </div>
 
+      <!-- flèche droite -->
       <button class="arrow-btn btn-next" type="button">
-        <div class="arrow-icon right-arrow"></div>
+        <span class="arrow-char">&#10095;</span>
       </button>
 
       <div class="dots-wrapper" id="dots"></div>
@@ -511,7 +510,7 @@
       }
     }
 
-    // Play / pause buttons
+    // Play / pause
     var vidBoxes = document.querySelectorAll('.vid-box');
     for (var i = 0; i < vidBoxes.length; i++) {
       (function(box) {
@@ -541,12 +540,12 @@
       })(vidBoxes[i]);
     }
 
-    // Auto-slide only if more than 1 slide
+    // Auto-slide
     if (total > 1) {
       setInterval(goNext, 8000);
     }
 
-    // Touch swipe (mobile)
+    // Swipe mobile
     if (viewport && total > 1) {
       var startX = 0;
       var isDragging = false;

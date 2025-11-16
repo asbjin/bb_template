@@ -33,6 +33,16 @@
   height: 80px;
 }
 
+/* ANIMATION visible sur tout le SVG */
+.wave-top svg {
+  animation: wave-top-slide 8s ease-in-out infinite;
+}
+
+.wave-bottom svg {
+  animation: wave-bottom-slide 10s ease-in-out infinite;
+}
+
+
 /* couches de vagues */
 .wave-layer {
   transform-origin: center;
@@ -76,6 +86,18 @@
   0%   { transform: translateX(0); }
   50%  { transform: translateX(-30px); }
   100% { transform: translateX(0); }
+}
+
+@keyframes wave-top-slide {
+  0%   { transform: translateX(0); }
+  50%  { transform: translateX(-120px); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes wave-bottom-slide {
+  0%   { transform: translateX(-80px); }
+  50%  { transform: translateX(80px); }
+  100% { transform: translateX(-80px); }
 }
 
 

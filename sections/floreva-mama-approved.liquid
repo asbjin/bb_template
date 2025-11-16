@@ -31,73 +31,80 @@
   position: relative;
   width: calc(150% + 1.3px);
   height: 80px;
-  animation: none; /* important : plus d'animation globale */
 }
 
-/* RETIRER les animations du SVG - on les met sur chaque path */
+/* ANIMATION visible sur tout le SVG */
+.wave-top svg {
+  animation: wave-top-slide 8s ease-in-out infinite;
+}
 
-/* couches de vagues avec animations INDIVIDUELLES qui se croisent */
+.wave-bottom svg {
+  animation: wave-bottom-slide 10s ease-in-out infinite;
+}
+
+
+/* couches de vagues */
 .wave-layer {
   transform-origin: center;
 }
 
-/* 1 : vague du bas, vert foncé */
+/* 1 : vague vert foncé, un peu plus basse */
 .wave-layer-1 {
-  fill: #06b6d4;
+  fill: #06b6d4;               /* vert/bleu plus foncé */
   opacity: 1;
-  transform-origin: center;
-  animation: wave-move-1 16s ease-in-out infinite;
+  transform: translateY(18px);
 }
 
-/* 2 : vague vert moyen, un peu plus haute */
+/* 2 : vague vert moyen, un peu au-dessus */
 .wave-layer-2 {
-  fill: #10b981;
+  fill: #10b981;               /* vert moyen */
   opacity: 0.95;
-  transform-origin: center;
-  animation: wave-move-2 20s ease-in-out infinite;
+  transform: translateY(12px);
 }
 
-/* 3 : vague vert très clair (celle que tu voulais ajouter) */
+/* 3 : nouvelle vague vert très clair, encore plus haut */
 .wave-layer-4 {
-  fill: #6ee7b7;
+  fill: #6ee7b7;               /* vert très clair */
   opacity: 0.8;
-  transform-origin: center;
-  animation: wave-move-4 24s ease-in-out infinite;
+  transform: translateY(6px);
 }
 
-/* 4 : vague BLANCHE qui délimite la section */
+/* 4 : vague blanche qui délimite la section (tout en haut) */
 .wave-layer-3 {
-  fill: #ffffff;
+  fill: #ffffff;               /* blanc pur pour la frontière */
   opacity: 1;
-  transform-origin: center;
-  animation: wave-move-3 28s ease-in-out infinite;
+  transform: translateY(0);
 }
 
-
-/* ANIMATIONS QUI SE CROISENT */
-
+/* animations douces (parallaxe) */
 @keyframes wave-move-1 {
-  0%   { transform: translateX(0)    translateY(22px); }
-  50%  { transform: translateX(-70px) translateY(24px); }
-  100% { transform: translateX(0)    translateY(22px); }
+  0%   { transform: translateX(0); }
+  50%  { transform: translateX(-20px); }
+  100% { transform: translateX(0); }
 }
 
 @keyframes wave-move-2 {
-  0%   { transform: translateX(-40px) translateY(16px); }
-  50%  { transform: translateX(40px)  translateY(18px); }
-  100% { transform: translateX(-40px) translateY(16px); }
-}
-
-@keyframes wave-move-4 {
-  0%   { transform: translateX(30px)  translateY(10px); }
-  50%  { transform: translateX(-60px) translateY(12px); }
-  100% { transform: translateX(30px)  translateY(10px); }
+  0%   { transform: translateX(0); }
+  50%  { transform: translateX(15px); }
+  100% { transform: translateX(0); }
 }
 
 @keyframes wave-move-3 {
-  0%   { transform: translateX(0)     translateY(0); }
-  50%  { transform: translateX(40px)  translateY(1px); }
-  100% { transform: translateX(0)     translateY(0); }
+  0%   { transform: translateX(0); }
+  50%  { transform: translateX(-30px); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes wave-top-slide {
+  0%   { transform: translateX(0); }
+  50%  { transform: translateX(-120px); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes wave-bottom-slide {
+  0%   { transform: translateX(-80px); }
+  50%  { transform: translateX(80px); }
+  100% { transform: translateX(-80px); }
 }
 
 
@@ -181,6 +188,7 @@
   pointer-events: none;
 }
 
+/* Bouton play/pause au centre */
 .vid-btn-wrapper {
   position: absolute;
   top: 50%;
@@ -195,6 +203,7 @@
   opacity: 0;
   pointer-events: none;
 }
+
 
 .vid-btn {
   width: 80px;
@@ -219,13 +228,15 @@
   transform: scale(0.95);
 }
 
+/* Icône PLAY en texte ▶ */
 .play-icon {
   font-size: 32px;
   color: #fff;
   line-height: 1;
-  transform: translateX(2px);
+  transform: translateX(2px); /* léger décalage vers la droite */
 }
 
+/* Icone PAUSE (||) */
 .pause-symbol {
   display: none;
   gap: 6px;
@@ -238,6 +249,7 @@
   border-radius: 2px;
 }
 
+/* Quand la vidéo joue, on cache PLAY et on montre PAUSE */
 .vid-box.vid-playing .play-icon {
   display: none;
 }
@@ -246,6 +258,7 @@
   display: flex;
 }
 
+/* Boutons de slide gauche/droite */
 .arrow-btn {
   position: absolute;
   top: 50%;
@@ -264,6 +277,7 @@
   justify-content: center;
 }
 
+/* caractère flèche à l'intérieur du rond */
 .arrow-char {
   font-size: 26px;
   line-height: 1;
@@ -307,6 +321,7 @@
   transform: scale(1.3);
 }
 
+/* Mobile */
 @media (max-width: 768px) {
   .mama-title {
     font-size: 32px;

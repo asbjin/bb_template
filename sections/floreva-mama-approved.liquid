@@ -31,6 +31,7 @@
   position: relative;
   width: calc(150% + 1.3px);
   height: 80px;
+  animation: none; /* important : plus d'animation globale */
 }
 
 /* RETIRER les animations du SVG - on les met sur chaque path */
@@ -40,67 +41,65 @@
   transform-origin: center;
 }
 
-/* 1 : vague vert foncé - bouge LENTEMENT vers la GAUCHE */
+/* 1 : vague du bas, vert foncé */
 .wave-layer-1 {
   fill: #06b6d4;
   opacity: 1;
-  transform: translateY(18px);
-  animation: wave-move-left-slow 12s ease-in-out infinite;
+  transform-origin: center;
+  animation: wave-move-1 16s ease-in-out infinite;
 }
 
-/* 2 : vague vert moyen - bouge RAPIDEMENT vers la DROITE */
+/* 2 : vague vert moyen, un peu plus haute */
 .wave-layer-2 {
   fill: #10b981;
   opacity: 0.95;
-  transform: translateY(12px);
-  animation: wave-move-right-fast 7s ease-in-out infinite;
+  transform-origin: center;
+  animation: wave-move-2 20s ease-in-out infinite;
 }
 
-/* 3 : vague vert clair - bouge MOYENNEMENT vers la GAUCHE */
+/* 3 : vague vert très clair (celle que tu voulais ajouter) */
 .wave-layer-4 {
   fill: #6ee7b7;
   opacity: 0.8;
-  transform: translateY(6px);
-  animation: wave-move-left-medium 9s ease-in-out infinite;
+  transform-origin: center;
+  animation: wave-move-4 24s ease-in-out infinite;
 }
 
-/* 4 : vague blanche - bouge LENTEMENT vers la DROITE */
+/* 4 : vague BLANCHE qui délimite la section */
 .wave-layer-3 {
   fill: #ffffff;
   opacity: 1;
-  transform: translateY(0);
-  animation: wave-move-right-slow 14s ease-in-out infinite;
+  transform-origin: center;
+  animation: wave-move-3 28s ease-in-out infinite;
 }
+
 
 /* ANIMATIONS QUI SE CROISENT */
 
-/* Gauche lent (grande amplitude) */
-@keyframes wave-move-left-slow {
-  0%   { transform: translateX(0) translateY(18px); }
-  50%  { transform: translateX(-85px) translateY(18px); }
-  100% { transform: translateX(0) translateY(18px); }
+@keyframes wave-move-1 {
+  0%   { transform: translateX(0)    translateY(22px); }
+  50%  { transform: translateX(-70px) translateY(24px); }
+  100% { transform: translateX(0)    translateY(22px); }
 }
 
-/* Droite rapide (petite amplitude) */
-@keyframes wave-move-right-fast {
-  0%   { transform: translateX(0) translateY(12px); }
-  50%  { transform: translateX(60px) translateY(12px); }
-  100% { transform: translateX(0) translateY(12px); }
+@keyframes wave-move-2 {
+  0%   { transform: translateX(-40px) translateY(16px); }
+  50%  { transform: translateX(40px)  translateY(18px); }
+  100% { transform: translateX(-40px) translateY(16px); }
 }
 
-/* Gauche moyen (amplitude moyenne) */
-@keyframes wave-move-left-medium {
-  0%   { transform: translateX(0) translateY(6px); }
-  50%  { transform: translateX(-120px) translateY(6px); }
-  100% { transform: translateX(0) translateY(6px); }
+@keyframes wave-move-4 {
+  0%   { transform: translateX(30px)  translateY(10px); }
+  50%  { transform: translateX(-60px) translateY(12px); }
+  100% { transform: translateX(30px)  translateY(10px); }
 }
 
-/* Droite lent (grande amplitude) */
-@keyframes wave-move-right-slow {
-  0%   { transform: translateX(0) translateY(0); }
-  50%  { transform: translateX(100px) translateY(0); }
-  100% { transform: translateX(0) translateY(0); }
+@keyframes wave-move-3 {
+  0%   { transform: translateX(0)     translateY(0); }
+  50%  { transform: translateX(40px)  translateY(1px); }
+  100% { transform: translateX(0)     translateY(0); }
 }
+
 
 .mama-container {
   max-width: 1200px;

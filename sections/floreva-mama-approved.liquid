@@ -144,7 +144,15 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 3;
+  opacity: 1;
+  transition: opacity 0.3s;
 }
+
+.vid-btn-wrapper.btn-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
 
 .vid-btn {
   width: 80px;
@@ -499,44 +507,83 @@
     if (btnPrev) btnPrev.onclick = goPrev;
     if (btnNext) btnNext.onclick = goNext;
 
+    // Stop all videos + remettre les boutons visibles
     function stopAll() {
       var allVidBoxes = document.querySelectorAll('.vid-box');
       for (var i = 0; i < allVidBoxes.length; i++) {
-        var vid = allVidBoxes[i].querySelector('video');
+        var box = allVidBoxes[i];
+        var vid = box.querySelector('video');
+        var wrapperBtn = box.querySelector('.vid-btn-wrapper');
+
         if (vid) {
           vid.pause();
           vid.currentTime = 0;
-          allVidBoxes[i].classList.remove('vid-playing');
+        }
+        box.classList.remove('vid-playing');
+
+        if (wrapperBtn) {
+          wrapperBtn.classList.remove('btn-hidden');
+        }
+        if (box._hideTimeout) {
+          clearTimeout(box._hideTimeout);
+          box._hideTimeout = null;
         }
       }
     }
 
-    // Play / pause
+    // Play / pause avec disparition du bouton après 1,5s
     var vidBoxes = document.querySelectorAll('.vid-box');
     for (var i = 0; i < vidBoxes.length; i++) {
       (function(box) {
         var vid = box.querySelector('video');
         var btn = box.querySelector('.vid-btn');
-        if (!vid || !btn) return;
+        var wrapperBtn = box.querySelector('.vid-btn-wrapper');
+        if (!vid || !btn || !wrapperBtn) return;
+
+        box._hideTimeout = null;
+
+        function scheduleHide() {
+          if (box._hideTimeout) {
+            clearTimeout(box._hideTimeout);
+          }
+          box._hideTimeout = setTimeout(function() {
+            if (!vid.paused) {
+              wrapperBtn.classList.add('btn-hidden');
+            }
+          }, 1500); // 1,5 seconde après le play
+        }
 
         btn.onclick = function() {
           if (vid.paused) {
+            // On (re)montre le bouton au moment du clic,
+            // puis on le fait disparaître après 1,5s
+            wrapperBtn.classList.remove('btn-hidden');
             stopAll();
             box.classList.add('vid-playing');
             vid.muted = false;
-            vid.play().catch(function() {
+            vid.play().then(scheduleHide).catch(function() {
               vid.muted = true;
-              vid.play();
+              vid.play().then(scheduleHide);
             });
           } else {
             vid.pause();
             box.classList.remove('vid-playing');
+            wrapperBtn.classList.remove('btn-hidden');
+            if (box._hideTimeout) {
+              clearTimeout(box._hideTimeout);
+              box._hideTimeout = null;
+            }
           }
         };
 
         vid.onended = function() {
           box.classList.remove('vid-playing');
           vid.currentTime = 0;
+          wrapperBtn.classList.remove('btn-hidden');
+          if (box._hideTimeout) {
+            clearTimeout(box._hideTimeout);
+            box._hideTimeout = null;
+          }
         };
       })(vidBoxes[i]);
     }
@@ -581,6 +628,7 @@
   }
 })();
 </script>
+
 
 {% schema %}
 {

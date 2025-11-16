@@ -48,24 +48,24 @@
   transform-origin: center;
 }
 
-/* couche principale (la plus basse) */
+/* 1ère vague : vert foncé Floreva (en bas) */
 .wave-layer-1 {
-  fill: #10b981;
+  fill: #10b981;        /* vert principal */
   opacity: 1;
   animation: wave-move-1 18s ease-in-out infinite;
 }
 
-/* 2e vague plus claire, un peu plus haute */
+/* 2ème vague : vert plus clair, au milieu */
 .wave-layer-2 {
-  fill: #34d399;
-  opacity: 0.55;
+  fill: #34d399;        /* vert clair */
+  opacity: 0.8;
   animation: wave-move-2 22s ease-in-out infinite;
 }
 
-/* 3e vague encore plus claire, encore plus haute */
+/* 3ème vague : celle qui DÉLIMITE la section → BLANCHE */
 .wave-layer-3 {
-  fill: #6ee7b7;
-  opacity: 0.35;
+  fill: #ffffff;        /* blanc */
+  opacity: 1;           /* bien opaque pour faire une vraie frontière blanche */
   animation: wave-move-3 26s ease-in-out infinite;
 }
 

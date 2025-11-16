@@ -271,17 +271,34 @@
   .mama-title {
     font-size: 32px;
   }
+
   .single-slide {
     padding: 10px;
   }
+
   .vid-box {
     width: 90%;
     max-width: 350px;
   }
+
+  /* Boutons de slide visibles et plus petits sur mobile */
   .arrow-btn {
-    display: none;
+    width: 40px;
+    height: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex; /* IMPORTANT: on les ré-affiche */
+  }
+
+  .arrow-btn.btn-prev {
+    left: 10px;   /* bien à l'intérieur du cadre */
+  }
+
+  .arrow-btn.btn-next {
+    right: 10px;  /* bien à l'intérieur du cadre */
   }
 }
+
 </style>
 
 <section class="floreva-mama-section">

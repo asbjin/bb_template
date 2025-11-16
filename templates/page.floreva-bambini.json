@@ -49,46 +49,10 @@
             "button": "",
             "url": ""
           }
-        },
-        "slide_CGTknK": {
-          "type": "slide",
-          "settings": {
-            "title": "New Slide",
-            "button": "Learn more",
-            "url": ""
-          }
-        },
-        "slide_AC6hWq": {
-          "type": "slide",
-          "settings": {
-            "title": "New Slide",
-            "button": "Learn more",
-            "url": ""
-          }
-        },
-        "slide_xKkDLh": {
-          "type": "slide",
-          "settings": {
-            "title": "New Slide",
-            "button": "Learn more",
-            "url": ""
-          }
-        },
-        "slide_cwHAXT": {
-          "type": "slide",
-          "settings": {
-            "title": "New Slide",
-            "button": "Learn more",
-            "url": ""
-          }
         }
       },
       "block_order": [
-        "slide_CB3CKN",
-        "slide_CGTknK",
-        "slide_AC6hWq",
-        "slide_xKkDLh",
-        "slide_cwHAXT"
+        "slide_CB3CKN"
       ],
       "name": "SS - Slider #2",
       "settings": {

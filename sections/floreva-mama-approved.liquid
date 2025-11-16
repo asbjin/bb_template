@@ -46,27 +46,15 @@
 }
 
 @keyframes wave-top-move {
-  0% {
-    transform: translateX(0) translateZ(0) scaleY(1);
-  }
-  50% {
-    transform: translateX(-25%) translateZ(0) scaleY(0.8);
-  }
-  100% {
-    transform: translateX(0) translateZ(0) scaleY(1);
-  }
+  0% { transform: translateX(0) scaleY(1); }
+  50% { transform: translateX(-25%) scaleY(0.8); }
+  100% { transform: translateX(0) scaleY(1); }
 }
 
 @keyframes wave-bottom-move {
-  0% {
-    transform: translateX(-25%) translateZ(0) scaleY(1);
-  }
-  50% {
-    transform: translateX(0) translateZ(0) scaleY(0.9);
-  }
-  100% {
-    transform: translateX(-25%) translateZ(0) scaleY(1);
-  }
+  0% { transform: translateX(-25%) scaleY(1); }
+  50% { transform: translateX(0) scaleY(0.9); }
+  100% { transform: translateX(-25%) scaleY(1); }
 }
 
 .mama-container {
@@ -101,15 +89,16 @@
 
 .carousel-track {
   display: flex;
-  transition: transform 0.5s ease;
+  transition: transform 0.5s ease-in-out;
+  will-change: transform;
 }
 
 .carousel-slide {
   min-width: 100%;
+  flex-shrink: 0;
   display: flex;
   gap: 20px;
   justify-content: center;
-  align-items: center;
   padding: 10px;
 }
 
@@ -119,17 +108,11 @@
   height: 500px;
   border-radius: 16px;
   overflow: hidden;
-  background: #1a1a1a;
+  background: #000;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-  cursor: pointer;
-  transition: transform 0.3s ease;
 }
 
-.video-card:hover {
-  transform: scale(1.05);
-}
-
-.video-element {
+.video-card video {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -137,58 +120,48 @@
 }
 
 .video-thumbnail {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
   z-index: 2;
-}
-
-.video-card.playing .video-thumbnail {
-  display: none;
-}
-
-.play-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 3;
-  transition: opacity 0.3s ease;
-}
-
-.video-card.playing .play-overlay {
-  opacity: 0;
   pointer-events: none;
 }
 
-.control-button {
+.video-card.is-playing .video-thumbnail {
+  display: none;
+}
+
+.video-controls {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
+
+.control-btn {
   width: 80px;
   height: 80px;
   background: rgba(16, 185, 129, 0.95);
+  border: none;
   border-radius: 50%;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 16px rgba(16, 185, 129, 0.5);
-  border: none;
 }
 
-.control-button:hover {
+.control-btn:hover {
   background: #10b981;
   transform: scale(1.1);
 }
 
-.play-icon {
+.play-triangle {
   width: 0;
   height: 0;
   border-left: 25px solid white;
@@ -197,27 +170,9 @@
   margin-left: 5px;
 }
 
-.pause-overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 4;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-}
-
-.video-card.playing .pause-overlay {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.pause-icon {
+.pause-bars {
   display: flex;
   gap: 6px;
-  align-items: center;
-  justify-content: center;
 }
 
 .pause-bar {
@@ -225,6 +180,14 @@
   height: 28px;
   background: white;
   border-radius: 2px;
+}
+
+.video-card:not(.is-playing) .pause-bars {
+  display: none;
+}
+
+.video-card.is-playing .play-triangle {
+  display: none;
 }
 
 .carousel-nav {
@@ -236,13 +199,13 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   cursor: pointer;
   z-index: 10;
   transition: all 0.3s ease;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .carousel-nav:hover {
@@ -288,6 +251,8 @@
   background: rgba(255, 255, 255, 0.4);
   cursor: pointer;
   transition: all 0.3s ease;
+  border: none;
+  padding: 0;
 }
 
 .dot.active {
@@ -296,33 +261,18 @@
 }
 
 @media (max-width: 768px) {
-  .floreva-mama-section {
-    padding: 80px 20px 60px;
-  }
-  
   .mama-title {
     font-size: 32px;
-    margin-bottom: 30px;
   }
-  
   .carousel-slide {
     flex-direction: column;
-    gap: 15px;
   }
-  
   .video-card {
     width: 90%;
     max-width: 350px;
-    height: 550px;
   }
-  
   .carousel-nav {
     display: none;
-  }
-  
-  .wave-top svg,
-  .wave-bottom svg {
-    height: 40px;
   }
 }
 </style>
@@ -341,32 +291,27 @@
     
     <div class="carousel-container">
       
-      <button class="carousel-nav prev" type="button" aria-label="Precedente">
+      <button class="carousel-nav prev" type="button">
         <div class="nav-arrow left"></div>
       </button>
       
       <div class="carousel-wrapper">
-        <div class="carousel-track" id="carousel-track">
+        <div class="carousel-track">
           
-          {% comment %} Slide 1: Video 1 & 2 {% endcomment %}
           {% if section.settings.video_1 != blank or section.settings.video_2 != blank %}
           <div class="carousel-slide">
             {% if section.settings.video_1 != blank %}
-            <div class="video-card" data-video-id="1">
-              {% if section.settings.thumbnail_1 != blank %}
-                <img src="{{ section.settings.thumbnail_1 | image_url: width: 500 }}" alt="Video 1" class="video-thumbnail">
-              {% endif %}
-              <video class="video-element" playsinline>
+            <div class="video-card">
+              <video playsinline preload="metadata">
                 <source src="{{ section.settings.video_1 }}" type="video/mp4">
               </video>
-              <div class="play-overlay">
-                <button class="control-button" type="button">
-                  <div class="play-icon"></div>
-                </button>
-              </div>
-              <div class="pause-overlay">
-                <button class="control-button" type="button">
-                  <div class="pause-icon">
+              {% if section.settings.thumbnail_1 != blank %}
+              <img src="{{ section.settings.thumbnail_1 | image_url: width: 500 }}" class="video-thumbnail" alt="">
+              {% endif %}
+              <div class="video-controls">
+                <button class="control-btn" type="button">
+                  <div class="play-triangle"></div>
+                  <div class="pause-bars">
                     <div class="pause-bar"></div>
                     <div class="pause-bar"></div>
                   </div>
@@ -376,21 +321,17 @@
             {% endif %}
             
             {% if section.settings.video_2 != blank %}
-            <div class="video-card" data-video-id="2">
-              {% if section.settings.thumbnail_2 != blank %}
-                <img src="{{ section.settings.thumbnail_2 | image_url: width: 500 }}" alt="Video 2" class="video-thumbnail">
-              {% endif %}
-              <video class="video-element" playsinline>
+            <div class="video-card">
+              <video playsinline preload="metadata">
                 <source src="{{ section.settings.video_2 }}" type="video/mp4">
               </video>
-              <div class="play-overlay">
-                <button class="control-button" type="button">
-                  <div class="play-icon"></div>
-                </button>
-              </div>
-              <div class="pause-overlay">
-                <button class="control-button" type="button">
-                  <div class="pause-icon">
+              {% if section.settings.thumbnail_2 != blank %}
+              <img src="{{ section.settings.thumbnail_2 | image_url: width: 500 }}" class="video-thumbnail" alt="">
+              {% endif %}
+              <div class="video-controls">
+                <button class="control-btn" type="button">
+                  <div class="play-triangle"></div>
+                  <div class="pause-bars">
                     <div class="pause-bar"></div>
                     <div class="pause-bar"></div>
                   </div>
@@ -401,25 +342,20 @@
           </div>
           {% endif %}
           
-          {% comment %} Slide 2: Video 3 & 4 {% endcomment %}
           {% if section.settings.video_3 != blank or section.settings.video_4 != blank %}
           <div class="carousel-slide">
             {% if section.settings.video_3 != blank %}
-            <div class="video-card" data-video-id="3">
-              {% if section.settings.thumbnail_3 != blank %}
-                <img src="{{ section.settings.thumbnail_3 | image_url: width: 500 }}" alt="Video 3" class="video-thumbnail">
-              {% endif %}
-              <video class="video-element" playsinline>
+            <div class="video-card">
+              <video playsinline preload="metadata">
                 <source src="{{ section.settings.video_3 }}" type="video/mp4">
               </video>
-              <div class="play-overlay">
-                <button class="control-button" type="button">
-                  <div class="play-icon"></div>
-                </button>
-              </div>
-              <div class="pause-overlay">
-                <button class="control-button" type="button">
-                  <div class="pause-icon">
+              {% if section.settings.thumbnail_3 != blank %}
+              <img src="{{ section.settings.thumbnail_3 | image_url: width: 500 }}" class="video-thumbnail" alt="">
+              {% endif %}
+              <div class="video-controls">
+                <button class="control-btn" type="button">
+                  <div class="play-triangle"></div>
+                  <div class="pause-bars">
                     <div class="pause-bar"></div>
                     <div class="pause-bar"></div>
                   </div>
@@ -429,21 +365,17 @@
             {% endif %}
             
             {% if section.settings.video_4 != blank %}
-            <div class="video-card" data-video-id="4">
-              {% if section.settings.thumbnail_4 != blank %}
-                <img src="{{ section.settings.thumbnail_4 | image_url: width: 500 }}" alt="Video 4" class="video-thumbnail">
-              {% endif %}
-              <video class="video-element" playsinline>
+            <div class="video-card">
+              <video playsinline preload="metadata">
                 <source src="{{ section.settings.video_4 }}" type="video/mp4">
               </video>
-              <div class="play-overlay">
-                <button class="control-button" type="button">
-                  <div class="play-icon"></div>
-                </button>
-              </div>
-              <div class="pause-overlay">
-                <button class="control-button" type="button">
-                  <div class="pause-icon">
+              {% if section.settings.thumbnail_4 != blank %}
+              <img src="{{ section.settings.thumbnail_4 | image_url: width: 500 }}" class="video-thumbnail" alt="">
+              {% endif %}
+              <div class="video-controls">
+                <button class="control-btn" type="button">
+                  <div class="play-triangle"></div>
+                  <div class="pause-bars">
                     <div class="pause-bar"></div>
                     <div class="pause-bar"></div>
                   </div>
@@ -454,24 +386,19 @@
           </div>
           {% endif %}
           
-          {% comment %} Slide 3: Video 5 {% endcomment %}
           {% if section.settings.video_5 != blank %}
           <div class="carousel-slide">
-            <div class="video-card" data-video-id="5">
-              {% if section.settings.thumbnail_5 != blank %}
-                <img src="{{ section.settings.thumbnail_5 | image_url: width: 500 }}" alt="Video 5" class="video-thumbnail">
-              {% endif %}
-              <video class="video-element" playsinline>
+            <div class="video-card">
+              <video playsinline preload="metadata">
                 <source src="{{ section.settings.video_5 }}" type="video/mp4">
               </video>
-              <div class="play-overlay">
-                <button class="control-button" type="button">
-                  <div class="play-icon"></div>
-                </button>
-              </div>
-              <div class="pause-overlay">
-                <button class="control-button" type="button">
-                  <div class="pause-icon">
+              {% if section.settings.thumbnail_5 != blank %}
+              <img src="{{ section.settings.thumbnail_5 | image_url: width: 500 }}" class="video-thumbnail" alt="">
+              {% endif %}
+              <div class="video-controls">
+                <button class="control-btn" type="button">
+                  <div class="play-triangle"></div>
+                  <div class="pause-bars">
                     <div class="pause-bar"></div>
                     <div class="pause-bar"></div>
                   </div>
@@ -484,11 +411,11 @@
         </div>
       </div>
       
-      <button class="carousel-nav next" type="button" aria-label="Successivo">
+      <button class="carousel-nav next" type="button">
         <div class="nav-arrow right"></div>
       </button>
       
-      <div class="carousel-dots" id="carousel-dots"></div>
+      <div class="carousel-dots"></div>
       
     </div>
     
@@ -504,51 +431,37 @@
 
 <script>
 (function() {
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initCarousel);
-  } else {
-    initCarousel();
-  }
-  
-  function initCarousel() {
-    const track = document.getElementById('carousel-track');
+  function init() {
+    const track = document.querySelector('.carousel-track');
     const slides = document.querySelectorAll('.carousel-slide');
     const prevBtn = document.querySelector('.carousel-nav.prev');
     const nextBtn = document.querySelector('.carousel-nav.next');
-    const dotsContainer = document.getElementById('carousel-dots');
+    const dotsContainer = document.querySelector('.carousel-dots');
     
-    if (!track || slides.length === 0) return;
+    if (!track || !slides.length) return;
     
     let currentSlide = 0;
     const totalSlides = slides.length;
     
     // Create dots
-    dotsContainer.innerHTML = '';
     for (let i = 0; i < totalSlides; i++) {
-      const dot = document.createElement('div');
-      dot.classList.add('dot');
+      const dot = document.createElement('button');
+      dot.className = 'dot';
+      dot.type = 'button';
       if (i === 0) dot.classList.add('active');
-      dot.addEventListener('click', () => goToSlide(i));
+      dot.onclick = () => goToSlide(i);
       dotsContainer.appendChild(dot);
     }
     
-    const dots = document.querySelectorAll('.dot');
+    const dots = dotsContainer.querySelectorAll('.dot');
     
     function updateCarousel() {
       track.style.transform = `translateX(-${currentSlide * 100}%)`;
-      dots.forEach((dot, index) => {
-        dot.classList.toggle('active', index === currentSlide);
-      });
+      dots.forEach((d, i) => d.classList.toggle('active', i === currentSlide));
     }
     
     function goToSlide(index) {
-      // Pause all videos
-      document.querySelectorAll('.video-element').forEach(v => {
-        v.pause();
-        v.currentTime = 0;
-        v.closest('.video-card').classList.remove('playing');
-      });
-      
+      stopAllVideos();
       currentSlide = index;
       updateCarousel();
     }
@@ -563,64 +476,55 @@
       goToSlide(currentSlide);
     }
     
-    if (prevBtn) prevBtn.addEventListener('click', prevSlide);
-    if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+    prevBtn.onclick = prevSlide;
+    nextBtn.onclick = nextSlide;
     
     // Video controls
-    const videoCards = document.querySelectorAll('.video-card');
+    function stopAllVideos() {
+      document.querySelectorAll('.video-card').forEach(card => {
+        const video = card.querySelector('video');
+        if (video) {
+          video.pause();
+          video.currentTime = 0;
+          card.classList.remove('is-playing');
+        }
+      });
+    }
     
-    videoCards.forEach(card => {
-      const video = card.querySelector('.video-element');
-      const playOverlay = card.querySelector('.play-overlay');
-      const pauseOverlay = card.querySelector('.pause-overlay');
-      const playBtn = playOverlay ? playOverlay.querySelector('.control-button') : null;
-      const pauseBtn = pauseOverlay ? pauseOverlay.querySelector('.control-button') : null;
+    document.querySelectorAll('.video-card').forEach(card => {
+      const video = card.querySelector('video');
+      const btn = card.querySelector('.control-btn');
       
-      if (!video) return;
+      if (!video || !btn) return;
       
-      // Play button click
-      if (playBtn) {
-        playBtn.addEventListener('click', function(e) {
-          e.stopPropagation();
-          
-          // Pause all other videos
-          document.querySelectorAll('.video-element').forEach(v => {
-            if (v !== video) {
-              v.pause();
-              v.currentTime = 0;
-              v.closest('.video-card').classList.remove('playing');
-            }
-          });
-          
-          // Play this video
-          card.classList.add('playing');
+      btn.onclick = function() {
+        if (video.paused) {
+          stopAllVideos();
+          card.classList.add('is-playing');
           video.muted = false;
-          video.play().catch(err => {
-            console.log('Erreur de lecture:', err);
+          video.play().catch(() => {
             video.muted = true;
             video.play();
           });
-        });
-      }
-      
-      // Pause button click
-      if (pauseBtn) {
-        pauseBtn.addEventListener('click', function(e) {
-          e.stopPropagation();
+        } else {
           video.pause();
-          card.classList.remove('playing');
-        });
-      }
+          card.classList.remove('is-playing');
+        }
+      };
       
-      // When video ends - STOP (no loop)
-      video.addEventListener('ended', function() {
-        card.classList.remove('playing');
+      video.onended = function() {
+        card.classList.remove('is-playing');
         video.currentTime = 0;
-      });
+      };
     });
     
-    // Auto-advance carousel every 8 seconds
     setInterval(nextSlide, 8000);
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
   }
 })();
 </script>

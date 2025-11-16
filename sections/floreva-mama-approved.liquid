@@ -76,27 +76,32 @@
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-.carousel-outer {
+/* CARROUSEL - VERSION ULTRA SIMPLE */
+.carousel-wrapper {
   position: relative;
   max-width: 900px;
   margin: 0 auto;
 }
 
-.carousel-viewport {
+.carousel-container {
   overflow: hidden;
   position: relative;
+  width: 100%;
 }
 
-.carousel-slides-wrapper {
+.carousel-inner {
   display: flex;
-  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-direction: row;
+  transition: transform 0.5s ease;
+  width: 100%;
 }
 
-.single-slide {
+.slide {
   min-width: 100%;
   width: 100%;
   flex-shrink: 0;
   display: flex;
+  flex-direction: row;
   gap: 20px;
   justify-content: center;
   align-items: center;
@@ -104,7 +109,7 @@
   box-sizing: border-box;
 }
 
-.vid-box {
+.video-item {
   position: relative;
   width: 280px;
   height: 500px;
@@ -112,41 +117,37 @@
   overflow: hidden;
   background: #000;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-  flex-shrink: 0;
 }
 
-.vid-box video {
+.video-item video {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
 }
 
-.vid-thumb {
+.video-poster {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: 2;
-  transition: opacity 0.3s;
+  z-index: 1;
 }
 
-.vid-box.vid-playing .vid-thumb {
-  opacity: 0;
-  pointer-events: none;
+.video-item.playing .video-poster {
+  display: none;
 }
 
-.vid-btn-wrapper {
+.video-control {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 3;
+  z-index: 2;
 }
 
-.vid-btn {
+.play-pause-btn {
   width: 80px;
   height: 80px;
   background: rgba(16, 185, 129, 0.95);
@@ -156,20 +157,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s;
   box-shadow: 0 4px 16px rgba(16, 185, 129, 0.5);
+  transition: transform 0.2s;
 }
 
-.vid-btn:hover {
-  background: #10b981;
+.play-pause-btn:hover {
   transform: scale(1.05);
+  background: #10b981;
 }
 
-.vid-btn:active {
-  transform: scale(0.95);
-}
-
-.play-symbol {
+.play-icon {
   width: 0;
   height: 0;
   border-left: 24px solid white;
@@ -178,27 +175,27 @@
   margin-left: 4px;
 }
 
-.pause-symbol {
+.pause-icon {
   display: none;
   gap: 6px;
 }
 
-.pause-symbol span {
+.pause-icon span {
   width: 7px;
   height: 26px;
   background: white;
   border-radius: 2px;
 }
 
-.vid-box.vid-playing .play-symbol {
+.video-item.playing .play-icon {
   display: none;
 }
 
-.vid-box.vid-playing .pause-symbol {
+.video-item.playing .pause-icon {
   display: flex;
 }
 
-.arrow-btn {
+.nav-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -208,51 +205,48 @@
   height: 50px;
   border-radius: 50%;
   cursor: pointer;
-  z-index: 10;
-  transition: all 0.3s;
+  z-index: 5;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-.arrow-btn:hover {
+.nav-btn:hover {
   background: white;
-  transform: translateY(-50%) scale(1.1);
 }
 
-.arrow-btn.btn-prev {
+.nav-btn.prev {
   left: -60px;
 }
 
-.arrow-btn.btn-next {
+.nav-btn.next {
   right: -60px;
 }
 
-.arrow-icon {
+.arrow-left {
   width: 0;
   height: 0;
-  border-style: solid;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 15px solid #1a1a1a;
+  margin: 0 auto;
 }
 
-.arrow-icon.left-arrow {
-  border-width: 10px 15px 10px 0;
-  border-color: transparent #1a1a1a transparent transparent;
+.arrow-right {
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 15px solid #1a1a1a;
+  margin: 0 auto;
 }
 
-.arrow-icon.right-arrow {
-  border-width: 10px 0 10px 15px;
-  border-color: transparent transparent transparent #1a1a1a;
-}
-
-.dots-wrapper {
+.dots {
   display: flex;
   justify-content: center;
   gap: 10px;
   margin-top: 30px;
 }
 
-.slide-dot {
+.dot {
   width: 12px;
   height: 12px;
   border-radius: 50%;
@@ -263,7 +257,7 @@
   transition: all 0.3s;
 }
 
-.slide-dot.dot-active {
+.dot.active {
   background: white;
   transform: scale(1.3);
 }
@@ -272,15 +266,14 @@
   .mama-title {
     font-size: 32px;
   }
-  .single-slide {
+  .slide {
     flex-direction: column;
-    padding: 10px;
   }
-  .vid-box {
+  .video-item {
     width: 90%;
     max-width: 350px;
   }
-  .arrow-btn {
+  .nav-btn {
     display: none;
   }
 }
@@ -298,131 +291,121 @@
     
     <h2 class="mama-title">{{ section.settings.title }}</h2>
     
-    <div class="carousel-outer">
+    <div class="carousel-wrapper">
       
-      <button class="arrow-btn btn-prev" type="button">
-        <div class="arrow-icon left-arrow"></div>
+      <button class="nav-btn prev" onclick="moveSlide(-1)">
+        <div class="arrow-left"></div>
       </button>
       
-      <div class="carousel-viewport">
-        <div class="carousel-slides-wrapper" id="slides-wrapper">
+      <div class="carousel-container">
+        <div class="carousel-inner" id="carouselInner">
+          
+          {% assign slide_count = 0 %}
           
           {% if section.settings.video_1 != blank or section.settings.video_2 != blank %}
-          <div class="single-slide">
+          <div class="slide">
             {% if section.settings.video_1 != blank %}
-            <div class="vid-box">
+            <div class="video-item" data-index="{{ slide_count }}">
               <video playsinline preload="metadata">
                 <source src="{{ section.settings.video_1 }}" type="video/mp4">
               </video>
               {% if section.settings.thumbnail_1 != blank %}
-              <img src="{{ section.settings.thumbnail_1 | image_url: width: 500 }}" class="vid-thumb" alt="">
+              <img src="{{ section.settings.thumbnail_1 | image_url: width: 500 }}" class="video-poster">
               {% endif %}
-              <div class="vid-btn-wrapper">
-                <button class="vid-btn" type="button">
-                  <div class="play-symbol"></div>
-                  <div class="pause-symbol">
-                    <span></span>
-                    <span></span>
-                  </div>
+              <div class="video-control">
+                <button class="play-pause-btn" onclick="toggleVideo(this)">
+                  <div class="play-icon"></div>
+                  <div class="pause-icon"><span></span><span></span></div>
                 </button>
               </div>
             </div>
             {% endif %}
             {% if section.settings.video_2 != blank %}
-            <div class="vid-box">
+            <div class="video-item" data-index="{{ slide_count }}">
               <video playsinline preload="metadata">
                 <source src="{{ section.settings.video_2 }}" type="video/mp4">
               </video>
               {% if section.settings.thumbnail_2 != blank %}
-              <img src="{{ section.settings.thumbnail_2 | image_url: width: 500 }}" class="vid-thumb" alt="">
+              <img src="{{ section.settings.thumbnail_2 | image_url: width: 500 }}" class="video-poster">
               {% endif %}
-              <div class="vid-btn-wrapper">
-                <button class="vid-btn" type="button">
-                  <div class="play-symbol"></div>
-                  <div class="pause-symbol">
-                    <span></span>
-                    <span></span>
-                  </div>
+              <div class="video-control">
+                <button class="play-pause-btn" onclick="toggleVideo(this)">
+                  <div class="play-icon"></div>
+                  <div class="pause-icon"><span></span><span></span></div>
                 </button>
               </div>
             </div>
             {% endif %}
           </div>
+          {% assign slide_count = slide_count | plus: 1 %}
           {% endif %}
           
           {% if section.settings.video_3 != blank or section.settings.video_4 != blank %}
-          <div class="single-slide">
+          <div class="slide">
             {% if section.settings.video_3 != blank %}
-            <div class="vid-box">
+            <div class="video-item" data-index="{{ slide_count }}">
               <video playsinline preload="metadata">
                 <source src="{{ section.settings.video_3 }}" type="video/mp4">
               </video>
               {% if section.settings.thumbnail_3 != blank %}
-              <img src="{{ section.settings.thumbnail_3 | image_url: width: 500 }}" class="vid-thumb" alt="">
+              <img src="{{ section.settings.thumbnail_3 | image_url: width: 500 }}" class="video-poster">
               {% endif %}
-              <div class="vid-btn-wrapper">
-                <button class="vid-btn" type="button">
-                  <div class="play-symbol"></div>
-                  <div class="pause-symbol">
-                    <span></span>
-                    <span></span>
-                  </div>
+              <div class="video-control">
+                <button class="play-pause-btn" onclick="toggleVideo(this)">
+                  <div class="play-icon"></div>
+                  <div class="pause-icon"><span></span><span></span></div>
                 </button>
               </div>
             </div>
             {% endif %}
             {% if section.settings.video_4 != blank %}
-            <div class="vid-box">
+            <div class="video-item" data-index="{{ slide_count }}">
               <video playsinline preload="metadata">
                 <source src="{{ section.settings.video_4 }}" type="video/mp4">
               </video>
               {% if section.settings.thumbnail_4 != blank %}
-              <img src="{{ section.settings.thumbnail_4 | image_url: width: 500 }}" class="vid-thumb" alt="">
+              <img src="{{ section.settings.thumbnail_4 | image_url: width: 500 }}" class="video-poster">
               {% endif %}
-              <div class="vid-btn-wrapper">
-                <button class="vid-btn" type="button">
-                  <div class="play-symbol"></div>
-                  <div class="pause-symbol">
-                    <span></span>
-                    <span></span>
-                  </div>
+              <div class="video-control">
+                <button class="play-pause-btn" onclick="toggleVideo(this)">
+                  <div class="play-icon"></div>
+                  <div class="pause-icon"><span></span><span></span></div>
                 </button>
               </div>
             </div>
             {% endif %}
           </div>
+          {% assign slide_count = slide_count | plus: 1 %}
           {% endif %}
           
           {% if section.settings.video_5 != blank %}
-          <div class="single-slide">
-            <div class="vid-box">
+          <div class="slide">
+            <div class="video-item" data-index="{{ slide_count }}">
               <video playsinline preload="metadata">
                 <source src="{{ section.settings.video_5 }}" type="video/mp4">
               </video>
               {% if section.settings.thumbnail_5 != blank %}
-              <img src="{{ section.settings.thumbnail_5 | image_url: width: 500 }}" class="vid-thumb" alt="">
+              <img src="{{ section.settings.thumbnail_5 | image_url: width: 500 }}" class="video-poster">
               {% endif %}
-              <div class="vid-btn-wrapper">
-                <button class="vid-btn" type="button">
-                  <div class="play-symbol"></div>
-                  <div class="pause-symbol">
-                    <span></span>
-                    <span></span>
-                  </div>
+              <div class="video-control">
+                <button class="play-pause-btn" onclick="toggleVideo(this)">
+                  <div class="play-icon"></div>
+                  <div class="pause-icon"><span></span><span></span></div>
                 </button>
               </div>
             </div>
           </div>
+          {% assign slide_count = slide_count | plus: 1 %}
           {% endif %}
           
         </div>
       </div>
       
-      <button class="arrow-btn btn-next" type="button">
-        <div class="arrow-icon right-arrow"></div>
+      <button class="nav-btn next" onclick="moveSlide(1)">
+        <div class="arrow-right"></div>
       </button>
       
-      <div class="dots-wrapper" id="dots"></div>
+      <div class="dots" id="dotsContainer"></div>
       
     </div>
     
@@ -437,109 +420,92 @@
 </section>
 
 <script>
-(function() {
-  function start() {
-    var wrapper = document.getElementById('slides-wrapper');
-    var allSlides = document.querySelectorAll('.single-slide');
-    var btnPrev = document.querySelector('.btn-prev');
-    var btnNext = document.querySelector('.btn-next');
-    var dotsBox = document.getElementById('dots');
-    
-    if (!wrapper || !allSlides.length) return;
-    
-    var current = 0;
-    var total = allSlides.length;
-    
-    for (var i = 0; i < total; i++) {
-      var dot = document.createElement('button');
-      dot.className = 'slide-dot';
-      dot.type = 'button';
-      if (i === 0) dot.className += ' dot-active';
-      dot.setAttribute('data-index', i);
-      dot.onclick = function() {
-        jumpTo(parseInt(this.getAttribute('data-index')));
-      };
-      dotsBox.appendChild(dot);
-    }
-    
-    var allDots = dotsBox.querySelectorAll('.slide-dot');
-    
-    function refresh() {
-      wrapper.style.transform = 'translateX(-' + (current * 100) + '%)';
-      for (var i = 0; i < allDots.length; i++) {
-        allDots[i].className = i === current ? 'slide-dot dot-active' : 'slide-dot';
-      }
-    }
-    
-    function jumpTo(idx) {
-      stopAll();
-      current = idx;
-      refresh();
-    }
-    
-    function goNext() {
-      current = (current + 1) % total;
-      jumpTo(current);
-    }
-    
-    function goPrev() {
-      current = (current - 1 + total) % total;
-      jumpTo(current);
-    }
-    
-    btnPrev.onclick = goPrev;
-    btnNext.onclick = goNext;
-    
-    function stopAll() {
-      var allVidBoxes = document.querySelectorAll('.vid-box');
-      for (var i = 0; i < allVidBoxes.length; i++) {
-        var vid = allVidBoxes[i].querySelector('video');
-        if (vid) {
-          vid.pause();
-          vid.currentTime = 0;
-          allVidBoxes[i].classList.remove('vid-playing');
-        }
-      }
-    }
-    
-    var vidBoxes = document.querySelectorAll('.vid-box');
-    for (var i = 0; i < vidBoxes.length; i++) {
-      (function(box) {
-        var vid = box.querySelector('video');
-        var btn = box.querySelector('.vid-btn');
-        if (!vid || !btn) return;
-        
-        btn.onclick = function() {
-          if (vid.paused) {
-            stopAll();
-            box.classList.add('vid-playing');
-            vid.muted = false;
-            vid.play().catch(function() {
-              vid.muted = true;
-              vid.play();
-            });
-          } else {
-            vid.pause();
-            box.classList.remove('vid-playing');
-          }
-        };
-        
-        vid.onended = function() {
-          box.classList.remove('vid-playing');
-          vid.currentTime = 0;
-        };
-      })(vidBoxes[i]);
-    }
-    
-    setInterval(goNext, 8000);
+var currentSlideIndex = 0;
+var totalSlides = document.querySelectorAll('.slide').length;
+var carouselInner = document.getElementById('carouselInner');
+var dotsContainer = document.getElementById('dotsContainer');
+
+// Create dots
+for (var i = 0; i < totalSlides; i++) {
+  var dot = document.createElement('button');
+  dot.className = 'dot';
+  if (i === 0) dot.className += ' active';
+  dot.onclick = (function(index) {
+    return function() { goToSlide(index); };
+  })(i);
+  dotsContainer.appendChild(dot);
+}
+
+function updateSlide() {
+  carouselInner.style.transform = 'translateX(-' + (currentSlideIndex * 100) + '%)';
+  var dots = dotsContainer.querySelectorAll('.dot');
+  for (var i = 0; i < dots.length; i++) {
+    dots[i].className = i === currentSlideIndex ? 'dot active' : 'dot';
   }
+}
+
+function moveSlide(direction) {
+  stopAllVideos();
+  currentSlideIndex += direction;
+  if (currentSlideIndex < 0) currentSlideIndex = totalSlides - 1;
+  if (currentSlideIndex >= totalSlides) currentSlideIndex = 0;
+  updateSlide();
+}
+
+function goToSlide(index) {
+  stopAllVideos();
+  currentSlideIndex = index;
+  updateSlide();
+}
+
+function stopAllVideos() {
+  var videos = document.querySelectorAll('.video-item');
+  for (var i = 0; i < videos.length; i++) {
+    var video = videos[i].querySelector('video');
+    if (video) {
+      video.pause();
+      video.currentTime = 0;
+      videos[i].classList.remove('playing');
+    }
+  }
+}
+
+function toggleVideo(btn) {
+  var videoItem = btn.closest('.video-item');
+  var video = videoItem.querySelector('video');
   
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', start);
+  if (video.paused) {
+    stopAllVideos();
+    videoItem.classList.add('playing');
+    video.muted = false;
+    video.play().catch(function() {
+      video.muted = true;
+      video.play();
+    });
   } else {
-    start();
+    video.pause();
+    videoItem.classList.remove('playing');
   }
-})();
+}
+
+// Video ended event
+var allVideos = document.querySelectorAll('.video-item');
+for (var i = 0; i < allVideos.length; i++) {
+  var vid = allVideos[i].querySelector('video');
+  if (vid) {
+    vid.onended = (function(item) {
+      return function() {
+        item.classList.remove('playing');
+        this.currentTime = 0;
+      };
+    })(allVideos[i]);
+  }
+}
+
+// Auto slide
+setInterval(function() {
+  moveSlide(1);
+}, 8000);
 </script>
 
 {% schema %}

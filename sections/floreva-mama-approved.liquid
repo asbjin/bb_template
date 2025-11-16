@@ -33,80 +33,74 @@
   height: 80px;
 }
 
-/* ANIMATION visible sur tout le SVG */
-.wave-top svg {
-  animation: wave-top-slide 8s ease-in-out infinite;
-}
+/* RETIRER les animations du SVG - on les met sur chaque path */
 
-.wave-bottom svg {
-  animation: wave-bottom-slide 10s ease-in-out infinite;
-}
-
-
-/* couches de vagues */
+/* couches de vagues avec animations INDIVIDUELLES qui se croisent */
 .wave-layer {
   transform-origin: center;
 }
 
-/* 1 : vague vert foncé, un peu plus basse */
+/* 1 : vague vert foncé - bouge LENTEMENT vers la GAUCHE */
 .wave-layer-1 {
-  fill: #06b6d4;               /* vert/bleu plus foncé */
+  fill: #06b6d4;
   opacity: 1;
   transform: translateY(18px);
+  animation: wave-move-left-slow 12s ease-in-out infinite;
 }
 
-/* 2 : vague vert moyen, un peu au-dessus */
+/* 2 : vague vert moyen - bouge RAPIDEMENT vers la DROITE */
 .wave-layer-2 {
-  fill: #10b981;               /* vert moyen */
+  fill: #10b981;
   opacity: 0.95;
   transform: translateY(12px);
+  animation: wave-move-right-fast 7s ease-in-out infinite;
 }
 
-/* 3 : nouvelle vague vert très clair, encore plus haut */
+/* 3 : vague vert clair - bouge MOYENNEMENT vers la GAUCHE */
 .wave-layer-4 {
-  fill: #6ee7b7;               /* vert très clair */
+  fill: #6ee7b7;
   opacity: 0.8;
   transform: translateY(6px);
+  animation: wave-move-left-medium 9s ease-in-out infinite;
 }
 
-/* 4 : vague blanche qui délimite la section (tout en haut) */
+/* 4 : vague blanche - bouge LENTEMENT vers la DROITE */
 .wave-layer-3 {
-  fill: #ffffff;               /* blanc pur pour la frontière */
+  fill: #ffffff;
   opacity: 1;
   transform: translateY(0);
+  animation: wave-move-right-slow 14s ease-in-out infinite;
 }
 
-/* animations douces (parallaxe) */
-@keyframes wave-move-1 {
-  0%   { transform: translateX(0); }
-  50%  { transform: translateX(-20px); }
-  100% { transform: translateX(0); }
+/* ANIMATIONS QUI SE CROISENT */
+
+/* Gauche lent (grande amplitude) */
+@keyframes wave-move-left-slow {
+  0%   { transform: translateX(0) translateY(18px); }
+  50%  { transform: translateX(-85px) translateY(18px); }
+  100% { transform: translateX(0) translateY(18px); }
 }
 
-@keyframes wave-move-2 {
-  0%   { transform: translateX(0); }
-  50%  { transform: translateX(15px); }
-  100% { transform: translateX(0); }
+/* Droite rapide (petite amplitude) */
+@keyframes wave-move-right-fast {
+  0%   { transform: translateX(0) translateY(12px); }
+  50%  { transform: translateX(60px) translateY(12px); }
+  100% { transform: translateX(0) translateY(12px); }
 }
 
-@keyframes wave-move-3 {
-  0%   { transform: translateX(0); }
-  50%  { transform: translateX(-30px); }
-  100% { transform: translateX(0); }
+/* Gauche moyen (amplitude moyenne) */
+@keyframes wave-move-left-medium {
+  0%   { transform: translateX(0) translateY(6px); }
+  50%  { transform: translateX(-120px) translateY(6px); }
+  100% { transform: translateX(0) translateY(6px); }
 }
 
-@keyframes wave-top-slide {
-  0%   { transform: translateX(0); }
-  50%  { transform: translateX(-120px); }
-  100% { transform: translateX(0); }
+/* Droite lent (grande amplitude) */
+@keyframes wave-move-right-slow {
+  0%   { transform: translateX(0) translateY(0); }
+  50%  { transform: translateX(100px) translateY(0); }
+  100% { transform: translateX(0) translateY(0); }
 }
-
-@keyframes wave-bottom-slide {
-  0%   { transform: translateX(-80px); }
-  50%  { transform: translateX(80px); }
-  100% { transform: translateX(-80px); }
-}
-
 
 .mama-container {
   max-width: 1200px;
@@ -188,7 +182,6 @@
   pointer-events: none;
 }
 
-/* Bouton play/pause au centre */
 .vid-btn-wrapper {
   position: absolute;
   top: 50%;
@@ -203,7 +196,6 @@
   opacity: 0;
   pointer-events: none;
 }
-
 
 .vid-btn {
   width: 80px;
@@ -228,15 +220,13 @@
   transform: scale(0.95);
 }
 
-/* Icône PLAY en texte ▶ */
 .play-icon {
   font-size: 32px;
   color: #fff;
   line-height: 1;
-  transform: translateX(2px); /* léger décalage vers la droite */
+  transform: translateX(2px);
 }
 
-/* Icone PAUSE (||) */
 .pause-symbol {
   display: none;
   gap: 6px;
@@ -249,7 +239,6 @@
   border-radius: 2px;
 }
 
-/* Quand la vidéo joue, on cache PLAY et on montre PAUSE */
 .vid-box.vid-playing .play-icon {
   display: none;
 }
@@ -258,7 +247,6 @@
   display: flex;
 }
 
-/* Boutons de slide gauche/droite */
 .arrow-btn {
   position: absolute;
   top: 50%;
@@ -277,7 +265,6 @@
   justify-content: center;
 }
 
-/* caractère flèche à l'intérieur du rond */
 .arrow-char {
   font-size: 26px;
   line-height: 1;
@@ -321,7 +308,6 @@
   transform: scale(1.3);
 }
 
-/* Mobile */
 @media (max-width: 768px) {
   .mama-title {
     font-size: 32px;

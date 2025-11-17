@@ -4,10 +4,10 @@
   background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
   padding: 120px 20px 100px;
   overflow: hidden;
-  isolation: isolate; /* Crée un nouveau contexte de stacking */
+  isolation: isolate;
 }
 
-/* ========= WAVES TOP & BOTTOM - VERSION CORRIGÉE ========= */
+/* ========= WAVES TOP & BOTTOM - VERSION DYNAMIQUE ========= */
 .wave-top,
 .wave-bottom {
   position: absolute;
@@ -16,96 +16,99 @@
   overflow: hidden;
   line-height: 0;
   z-index: 2;
-  pointer-events: none; /* Évite les interférences avec les interactions */
+  pointer-events: none;
 }
 
 .wave-top {
-  top: -2px; /* Compense le gap naturel */
+  top: -2px;
 }
 
 .wave-bottom {
-  bottom: -2px; /* Compense le gap naturel */
+  bottom: -2px;
   transform: rotate(180deg);
 }
 
 .wave-top svg,
 .wave-bottom svg {
   display: block;
-  width: calc(100% + 4px); /* Légèrement plus large pour éviter gaps */
-  height: 120px; /* Hauteur augmentée pour plus de fluidité */
-  margin-left: -2px; /* Centre et évite le trait gauche */
+  width: calc(100% + 4px);
+  height: 120px;
+  margin-left: -2px;
   margin-right: -2px;
-  vertical-align: middle; /* Assure l'alignement */
+  vertical-align: middle;
 }
 
-/* Couches de vagues avec animations fluides */
+/* Couches de vagues avec mouvements OPPOSÉS pour effet de croisement */
 .wave-layer {
   transform-origin: center center;
-  will-change: transform; /* Optimisation GPU */
+  will-change: transform;
 }
 
-/* Vague 1 : vert cyan foncé (fond) */
+/* Vague 1 : cyan foncé - SE DÉPLACE VERS LA DROITE */
 .wave-layer-1 {
   fill: #06b6d4;
   opacity: 1;
-  animation: wave-move-1 18s ease-in-out infinite;
+  animation: wave-right-1 10s ease-in-out infinite;
 }
 
-/* Vague 2 : vert émeraude moyen */
+/* Vague 2 : vert émeraude - SE DÉPLACE VERS LA GAUCHE (opposé à vague 1) */
 .wave-layer-2 {
   fill: #10b981;
   opacity: 0.95;
-  animation: wave-move-2 22s ease-in-out infinite;
+  animation: wave-left-2 8s ease-in-out infinite;
 }
 
-/* Vague 3 : vert clair */
+/* Vague 3 : vert clair - SE DÉPLACE VERS LA DROITE (plus lent) */
 .wave-layer-4 {
   fill: #6ee7b7;
   opacity: 0.85;
-  animation: wave-move-4 26s ease-in-out infinite;
+  animation: wave-right-3 12s ease-in-out infinite;
+  animation-delay: -2s; /* Commence décalée */
 }
 
-/* Vague 4 : blanche (délimitation section) */
+/* Vague 4 : blanche - SE DÉPLACE VERS LA GAUCHE (délimitation) */
 .wave-layer-3 {
   fill: #ffffff;
   opacity: 1;
-  animation: wave-move-3 30s ease-in-out infinite;
+  animation: wave-left-4 9s ease-in-out infinite;
+  animation-delay: -1s; /* Commence décalée */
 }
 
-/* Animations fluides et subtiles */
-@keyframes wave-move-1 {
+/* ANIMATIONS VERS LA DROITE (rapides) */
+@keyframes wave-right-1 {
   0%, 100% { 
     transform: translateX(0) translateY(0) scaleX(1); 
   }
   50% { 
-    transform: translateX(-50px) translateY(2px) scaleX(1.02); 
+    transform: translateX(80px) translateY(3px) scaleX(1.03); 
   }
 }
 
-@keyframes wave-move-2 {
+@keyframes wave-right-3 {
+  0%, 100% { 
+    transform: translateX(40px) translateY(0) scaleX(1); 
+  }
+  50% { 
+    transform: translateX(-60px) translateY(2px) scaleX(1.025); 
+  }
+}
+
+/* ANIMATIONS VERS LA GAUCHE (opposées, pour effet croisement) */
+@keyframes wave-left-2 {
+  0%, 100% { 
+    transform: translateX(0) translateY(0) scaleX(1); 
+  }
+  50% { 
+    transform: translateX(-90px) translateY(2px) scaleX(1.04); 
+  }
+}
+
+@keyframes wave-left-4 {
   0%, 100% { 
     transform: translateX(-30px) translateY(0) scaleX(1); 
   }
   50% { 
-    transform: translateX(30px) translateY(1px) scaleX(1.01); 
-  }
-}
-
-@keyframes wave-move-4 {
-  0%, 100% { 
-    transform: translateX(20px) translateY(0) scaleX(1); 
-  }
-  50% { 
-    transform: translateX(-40px) translateY(1px) scaleX(1.015); 
-  }
-}
-
-@keyframes wave-move-3 {
-  0%, 100% { 
-    transform: translateX(0) translateY(0) scaleX(1); 
-  }
-  50% { 
-    transform: translateX(30px) translateY(0.5px) scaleX(1.01); 
+    transform: translateX(70px) translateY(1px) scaleX(1.02); 
   }
 }
 
@@ -189,7 +192,6 @@
   pointer-events: none;
 }
 
-/* Bouton play/pause au centre */
 .vid-btn-wrapper {
   position: absolute;
   top: 50%;
@@ -228,7 +230,6 @@
   transform: scale(0.95);
 }
 
-/* Icône PLAY en texte ▶ */
 .play-icon {
   font-size: 32px;
   color: #fff;
@@ -236,7 +237,6 @@
   transform: translateX(2px);
 }
 
-/* Icone PAUSE (||) */
 .pause-symbol {
   display: none;
   gap: 6px;
@@ -257,7 +257,6 @@
   display: flex;
 }
 
-/* Boutons de slide gauche/droite */
 .arrow-btn {
   position: absolute;
   top: 50%;
@@ -319,7 +318,6 @@
   transform: scale(1.3);
 }
 
-/* Mobile responsive */
 @media (max-width: 768px) {
   .floreva-mama-section {
     padding: 100px 20px 80px;
@@ -358,25 +356,25 @@
 
   .wave-top svg,
   .wave-bottom svg {
-    height: 80px; /* Vagues plus petites sur mobile */
+    height: 80px;
   }
 }
 </style>
 
 <section class="floreva-mama-section">
-  <!-- Vagues du haut -->
+  <!-- Vagues du haut avec effet de croisement -->
   <div class="wave-top">
     <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-      <!-- Vague 1 : cyan foncé -->
+      <!-- Vague 1 : cyan (va à droite) -->
       <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,72-5.65,126-29.94,181.09-44.79,84.3-22.75,169.55-28.11,252.8-11.86,65.14,12.88,128.71,39.25,193.86,52.16,66.25,13.2,136.54,11,198.25-8.16,32.88-10.29,63.58-26.89,93-44.84V0Z"
             class="wave-layer wave-layer-1"></path>
-      <!-- Vague 2 : vert émeraude -->
+      <!-- Vague 2 : vert émeraude (va à gauche - croise la 1) -->
       <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,72-5.65,126-29.94,181.09-44.79,84.3-22.75,169.55-28.11,252.8-11.86,65.14,12.88,128.71,39.25,193.86,52.16,66.25,13.2,136.54,11,198.25-8.16,32.88-10.29,63.58-26.89,93-44.84V0Z"
             class="wave-layer wave-layer-2"></path>
-      <!-- Vague 3 : vert clair -->
+      <!-- Vague 3 : vert clair (va à droite) -->
       <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,72-5.65,126-29.94,181.09-44.79,84.3-22.75,169.55-28.11,252.8-11.86,65.14,12.88,128.71,39.25,193.86,52.16,66.25,13.2,136.54,11,198.25-8.16,32.88-10.29,63.58-26.89,93-44.84V0Z"
             class="wave-layer wave-layer-4"></path>
-      <!-- Vague 4 : blanche (délimitation) -->
+      <!-- Vague 4 : blanche (va à gauche - croise les autres) -->
       <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,72-5.65,126-29.94,181.09-44.79,84.3-22.75,169.55-28.11,252.8-11.86,65.14,12.88,128.71,39.25,193.86,52.16,66.25,13.2,136.54,11,198.25-8.16,32.88-10.29,63.58-26.89,93-44.84V0Z"
             class="wave-layer wave-layer-3"></path>
     </svg>
@@ -386,7 +384,6 @@
     <h2 class="mama-title">{{ section.settings.title }}</h2>
 
     <div class="carousel-outer">
-      <!-- Flèche gauche -->
       <button class="arrow-btn btn-prev" type="button" aria-label="Vidéo précédente">
         <span class="arrow-char">&#10094;</span>
       </button>
@@ -401,10 +398,10 @@
                 <source src="{{ section.settings.video_1 }}" type="video/mp4">
               </video>
               {% if section.settings.thumbnail_1 != blank %}
-              <img src="{{ section.settings.thumbnail_1 | image_url: width: 500 }}" class="vid-thumb" alt="Témoignage vidéo">
+              <img src="{{ section.settings.thumbnail_1 | image_url: width: 500 }}" class="vid-thumb" alt="Témoignage">
               {% endif %}
               <div class="vid-btn-wrapper">
-                <button class="vid-btn" type="button" aria-label="Lire la vidéo">
+                <button class="vid-btn" type="button" aria-label="Lire">
                   <span class="play-icon">&#9654;</span>
                   <div class="pause-symbol">
                     <span></span><span></span>
@@ -422,10 +419,10 @@
                 <source src="{{ section.settings.video_2 }}" type="video/mp4">
               </video>
               {% if section.settings.thumbnail_2 != blank %}
-              <img src="{{ section.settings.thumbnail_2 | image_url: width: 500 }}" class="vid-thumb" alt="Témoignage vidéo">
+              <img src="{{ section.settings.thumbnail_2 | image_url: width: 500 }}" class="vid-thumb" alt="Témoignage">
               {% endif %}
               <div class="vid-btn-wrapper">
-                <button class="vid-btn" type="button" aria-label="Lire la vidéo">
+                <button class="vid-btn" type="button" aria-label="Lire">
                   <span class="play-icon">&#9654;</span>
                   <div class="pause-symbol">
                     <span></span><span></span>
@@ -443,10 +440,10 @@
                 <source src="{{ section.settings.video_3 }}" type="video/mp4">
               </video>
               {% if section.settings.thumbnail_3 != blank %}
-              <img src="{{ section.settings.thumbnail_3 | image_url: width: 500 }}" class="vid-thumb" alt="Témoignage vidéo">
+              <img src="{{ section.settings.thumbnail_3 | image_url: width: 500 }}" class="vid-thumb" alt="Témoignage">
               {% endif %}
               <div class="vid-btn-wrapper">
-                <button class="vid-btn" type="button" aria-label="Lire la vidéo">
+                <button class="vid-btn" type="button" aria-label="Lire">
                   <span class="play-icon">&#9654;</span>
                   <div class="pause-symbol">
                     <span></span><span></span>
@@ -464,10 +461,10 @@
                 <source src="{{ section.settings.video_4 }}" type="video/mp4">
               </video>
               {% if section.settings.thumbnail_4 != blank %}
-              <img src="{{ section.settings.thumbnail_4 | image_url: width: 500 }}" class="vid-thumb" alt="Témoignage vidéo">
+              <img src="{{ section.settings.thumbnail_4 | image_url: width: 500 }}" class="vid-thumb" alt="Témoignage">
               {% endif %}
               <div class="vid-btn-wrapper">
-                <button class="vid-btn" type="button" aria-label="Lire la vidéo">
+                <button class="vid-btn" type="button" aria-label="Lire">
                   <span class="play-icon">&#9654;</span>
                   <div class="pause-symbol">
                     <span></span><span></span>
@@ -485,10 +482,10 @@
                 <source src="{{ section.settings.video_5 }}" type="video/mp4">
               </video>
               {% if section.settings.thumbnail_5 != blank %}
-              <img src="{{ section.settings.thumbnail_5 | image_url: width: 500 }}" class="vid-thumb" alt="Témoignage vidéo">
+              <img src="{{ section.settings.thumbnail_5 | image_url: width: 500 }}" class="vid-thumb" alt="Témoignage">
               {% endif %}
               <div class="vid-btn-wrapper">
-                <button class="vid-btn" type="button" aria-label="Lire la vidéo">
+                <button class="vid-btn" type="button" aria-label="Lire">
                   <span class="play-icon">&#9654;</span>
                   <div class="pause-symbol">
                     <span></span><span></span>
@@ -502,7 +499,6 @@
         </div>
       </div>
 
-      <!-- Flèche droite -->
       <button class="arrow-btn btn-next" type="button" aria-label="Vidéo suivante">
         <span class="arrow-char">&#10095;</span>
       </button>
@@ -511,7 +507,7 @@
     </div>
   </div>
 
-  <!-- Vagues du bas (inversées) -->
+  <!-- Vagues du bas (inversées, même effet de croisement) -->
   <div class="wave-bottom">
     <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
       <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,72-5.65,126-29.94,181.09-44.79,84.3-22.75,169.55-28.11,252.8-11.86,65.14,12.88,128.71,39.25,193.86,52.16,66.25,13.2,136.54,11,198.25-8.16,32.88-10.29,63.58-26.89,93-44.84V0Z"
@@ -541,13 +537,12 @@
     var current = 0;
     var total = allSlides.length;
 
-    // Créer les dots
     for (var i = 0; i < total; i++) {
       var dot = document.createElement('button');
       dot.className = 'slide-dot' + (i === 0 ? ' dot-active' : '');
       dot.type = 'button';
       dot.setAttribute('data-index', i);
-      dot.setAttribute('aria-label', 'Aller à la vidéo ' + (i + 1));
+      dot.setAttribute('aria-label', 'Vidéo ' + (i + 1));
       dot.onclick = function() {
         jumpTo(parseInt(this.getAttribute('data-index')));
       };
@@ -584,7 +579,6 @@
     if (btnPrev) btnPrev.onclick = goPrev;
     if (btnNext) btnNext.onclick = goNext;
 
-    // Arrêter toutes les vidéos
     function stopAll() {
       var allVidBoxes = document.querySelectorAll('.vid-box');
       for (var i = 0; i < allVidBoxes.length; i++) {
@@ -608,7 +602,6 @@
       }
     }
 
-    // Gestion play/pause avec disparition du bouton
     var vidBoxes = document.querySelectorAll('.vid-box');
     for (var i = 0; i < vidBoxes.length; i++) {
       (function(box) {
@@ -663,12 +656,10 @@
       })(vidBoxes[i]);
     }
 
-    // Auto-slide
     if (total > 1) {
       setInterval(goNext, 8000);
     }
 
-    // Swipe mobile
     var viewport = document.querySelector('.carousel-viewport');
     if (viewport && total > 1) {
       var startX = 0;

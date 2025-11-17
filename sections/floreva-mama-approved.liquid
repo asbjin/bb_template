@@ -2,11 +2,12 @@
 .floreva-mama-section {
   position: relative;
   background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
-  padding: 100px 20px 80px;
+  padding: 120px 20px 100px;
   overflow: hidden;
+  isolation: isolate; /* Crée un nouveau contexte de stacking */
 }
 
-/* ========= WAVES TOP & BOTTOM ========= */
+/* ========= WAVES TOP & BOTTOM - VERSION CORRIGÉE ========= */
 .wave-top,
 .wave-bottom {
   position: absolute;
@@ -14,106 +15,105 @@
   width: 100%;
   overflow: hidden;
   line-height: 0;
+  z-index: 2;
+  pointer-events: none; /* Évite les interférences avec les interactions */
 }
 
 .wave-top {
-  top: 0;
+  top: -2px; /* Compense le gap naturel */
 }
 
 .wave-bottom {
-  bottom: 0;
+  bottom: -2px; /* Compense le gap naturel */
   transform: rotate(180deg);
 }
 
 .wave-top svg,
 .wave-bottom svg {
   display: block;
-  position: relative;
-  width: calc(150% + 1.3px);
-  height: 80px;
+  width: calc(100% + 4px); /* Légèrement plus large pour éviter gaps */
+  height: 120px; /* Hauteur augmentée pour plus de fluidité */
+  margin-left: -2px; /* Centre et évite le trait gauche */
+  margin-right: -2px;
+  vertical-align: middle; /* Assure l'alignement */
 }
 
-/* ANIMATION visible sur tout le SVG */
-.wave-top svg,
-.wave-bottom svg {
-  display: block;
-  position: relative;
-  width: calc(150% + 1.3px);
-  height: 80px;
-  animation: none; /* important : plus d'animation globale */
-}
-
-
-
-/* couches de vagues */
+/* Couches de vagues avec animations fluides */
 .wave-layer {
-  transform-origin: center;
+  transform-origin: center center;
+  will-change: transform; /* Optimisation GPU */
 }
 
-/* 1 : vague du bas, vert foncé */
+/* Vague 1 : vert cyan foncé (fond) */
 .wave-layer-1 {
   fill: #06b6d4;
   opacity: 1;
-  transform-origin: center;
-  animation: wave-move-1 16s ease-in-out infinite;
+  animation: wave-move-1 18s ease-in-out infinite;
 }
 
-/* 2 : vague vert moyen, un peu plus haute */
+/* Vague 2 : vert émeraude moyen */
 .wave-layer-2 {
   fill: #10b981;
   opacity: 0.95;
-  transform-origin: center;
-  animation: wave-move-2 20s ease-in-out infinite;
+  animation: wave-move-2 22s ease-in-out infinite;
 }
 
-/* 3 : vague vert très clair (celle que tu voulais ajouter) */
+/* Vague 3 : vert clair */
 .wave-layer-4 {
   fill: #6ee7b7;
-  opacity: 0.8;
-  transform-origin: center;
-  animation: wave-move-4 24s ease-in-out infinite;
+  opacity: 0.85;
+  animation: wave-move-4 26s ease-in-out infinite;
 }
 
-/* 4 : vague BLANCHE qui délimite la section */
+/* Vague 4 : blanche (délimitation section) */
 .wave-layer-3 {
   fill: #ffffff;
   opacity: 1;
-  transform-origin: center;
-  animation: wave-move-3 28s ease-in-out infinite;
+  animation: wave-move-3 30s ease-in-out infinite;
 }
 
-
+/* Animations fluides et subtiles */
 @keyframes wave-move-1 {
-  0%   { transform: translateX(0)    translateY(22px); }
-  50%  { transform: translateX(-70px) translateY(24px); }
-  100% { transform: translateX(0)    translateY(22px); }
+  0%, 100% { 
+    transform: translateX(0) translateY(0) scaleX(1); 
+  }
+  50% { 
+    transform: translateX(-50px) translateY(2px) scaleX(1.02); 
+  }
 }
 
 @keyframes wave-move-2 {
-  0%   { transform: translateX(-40px) translateY(16px); }
-  50%  { transform: translateX(40px)  translateY(18px); }
-  100% { transform: translateX(-40px) translateY(16px); }
+  0%, 100% { 
+    transform: translateX(-30px) translateY(0) scaleX(1); 
+  }
+  50% { 
+    transform: translateX(30px) translateY(1px) scaleX(1.01); 
+  }
 }
 
 @keyframes wave-move-4 {
-  0%   { transform: translateX(30px)  translateY(10px); }
-  50%  { transform: translateX(-60px) translateY(12px); }
-  100% { transform: translateX(30px)  translateY(10px); }
+  0%, 100% { 
+    transform: translateX(20px) translateY(0) scaleX(1); 
+  }
+  50% { 
+    transform: translateX(-40px) translateY(1px) scaleX(1.015); 
+  }
 }
 
 @keyframes wave-move-3 {
-  0%   { transform: translateX(0)     translateY(0); }
-  50%  { transform: translateX(40px)  translateY(1px); }
-  100% { transform: translateX(0)     translateY(0); }
+  0%, 100% { 
+    transform: translateX(0) translateY(0) scaleX(1); 
+  }
+  50% { 
+    transform: translateX(30px) translateY(0.5px) scaleX(1.01); 
+  }
 }
-
-
 
 .mama-container {
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
-  z-index: 1;
+  z-index: 3;
 }
 
 .mama-title {
@@ -205,7 +205,6 @@
   pointer-events: none;
 }
 
-
 .vid-btn {
   width: 80px;
   height: 80px;
@@ -234,7 +233,7 @@
   font-size: 32px;
   color: #fff;
   line-height: 1;
-  transform: translateX(2px); /* léger décalage vers la droite */
+  transform: translateX(2px);
 }
 
 /* Icone PAUSE (||) */
@@ -250,7 +249,6 @@
   border-radius: 2px;
 }
 
-/* Quand la vidéo joue, on cache PLAY et on montre PAUSE */
 .vid-box.vid-playing .play-icon {
   display: none;
 }
@@ -278,7 +276,6 @@
   justify-content: center;
 }
 
-/* caractère flèche à l'intérieur du rond */
 .arrow-char {
   font-size: 26px;
   line-height: 1;
@@ -322,10 +319,15 @@
   transform: scale(1.3);
 }
 
-/* Mobile */
+/* Mobile responsive */
 @media (max-width: 768px) {
+  .floreva-mama-section {
+    padding: 100px 20px 80px;
+  }
+
   .mama-title {
     font-size: 32px;
+    margin-bottom: 40px;
   }
 
   .single-slide {
@@ -340,9 +342,6 @@
   .arrow-btn {
     width: 40px;
     height: 40px;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
   }
 
   .arrow-char {
@@ -356,35 +355,39 @@
   .arrow-btn.btn-next {
     right: 10px;
   }
+
+  .wave-top svg,
+  .wave-bottom svg {
+    height: 80px; /* Vagues plus petites sur mobile */
+  }
 }
 </style>
 
 <section class="floreva-mama-section">
+  <!-- Vagues du haut -->
   <div class="wave-top">
-  <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-    <!-- 1 : vague vert foncé -->
-    <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28C230,68.64,284,44.35,339.09,29.5,423.39,6.75,508.64,1.39,591.89,17.64c65.14,12.88,128.71,39.25,193.86,52.16,66.25,13.2,136.54,11,198.25-8.16,32.88-10.29,63.58-26.89,93-44.84V0Z"
-          class="wave-layer wave-layer-1"></path>
-    <!-- 2 : vague vert moyen -->
-    <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28C230,68.64,284,44.35,339.09,29.5,423.39,6.75,508.64,1.39,591.89,17.64c65.14,12.88,128.71,39.25,193.86,52.16,66.25,13.2,136.54,11,198.25-8.16,32.88-10.29,63.58-26.89,93-44.84V0Z"
-          class="wave-layer wave-layer-2"></path>
-    <!-- 3 : nouvelle vague vert très clair -->
-    <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28C230,68.64,284,44.35,339.09,29.5,423.39,6.75,508.64,1.39,591.89,17.64c65.14,12.88,128.71,39.25,193.86,52.16,66.25,13.2,136.54,11,198.25-8.16,32.88-10.29,63.58-26.89,93-44.84V0Z"
-          class="wave-layer wave-layer-4"></path>
-    <!-- 4 : la vague BLANCHE qui délimite la section -->
-    <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28C230,68.64,284,44.35,339.09,29.5,423.39,6.75,508.64,1.39,591.89,17.64c65.14,12.88,128.71,39.25,193.86,52.16,66.25,13.2,136.54,11,198.25-8.16,32.88-10.29,63.58-26.89,93-44.84V0Z"
-          class="wave-layer wave-layer-3"></path>
-  </svg>
-</div>
-
-
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <!-- Vague 1 : cyan foncé -->
+      <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,72-5.65,126-29.94,181.09-44.79,84.3-22.75,169.55-28.11,252.8-11.86,65.14,12.88,128.71,39.25,193.86,52.16,66.25,13.2,136.54,11,198.25-8.16,32.88-10.29,63.58-26.89,93-44.84V0Z"
+            class="wave-layer wave-layer-1"></path>
+      <!-- Vague 2 : vert émeraude -->
+      <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,72-5.65,126-29.94,181.09-44.79,84.3-22.75,169.55-28.11,252.8-11.86,65.14,12.88,128.71,39.25,193.86,52.16,66.25,13.2,136.54,11,198.25-8.16,32.88-10.29,63.58-26.89,93-44.84V0Z"
+            class="wave-layer wave-layer-2"></path>
+      <!-- Vague 3 : vert clair -->
+      <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,72-5.65,126-29.94,181.09-44.79,84.3-22.75,169.55-28.11,252.8-11.86,65.14,12.88,128.71,39.25,193.86,52.16,66.25,13.2,136.54,11,198.25-8.16,32.88-10.29,63.58-26.89,93-44.84V0Z"
+            class="wave-layer wave-layer-4"></path>
+      <!-- Vague 4 : blanche (délimitation) -->
+      <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,72-5.65,126-29.94,181.09-44.79,84.3-22.75,169.55-28.11,252.8-11.86,65.14,12.88,128.71,39.25,193.86,52.16,66.25,13.2,136.54,11,198.25-8.16,32.88-10.29,63.58-26.89,93-44.84V0Z"
+            class="wave-layer wave-layer-3"></path>
+    </svg>
+  </div>
 
   <div class="mama-container">
     <h2 class="mama-title">{{ section.settings.title }}</h2>
 
     <div class="carousel-outer">
-      <!-- flèche gauche -->
-      <button class="arrow-btn btn-prev" type="button">
+      <!-- Flèche gauche -->
+      <button class="arrow-btn btn-prev" type="button" aria-label="Vidéo précédente">
         <span class="arrow-char">&#10094;</span>
       </button>
 
@@ -398,10 +401,10 @@
                 <source src="{{ section.settings.video_1 }}" type="video/mp4">
               </video>
               {% if section.settings.thumbnail_1 != blank %}
-              <img src="{{ section.settings.thumbnail_1 | image_url: width: 500 }}" class="vid-thumb" alt="">
+              <img src="{{ section.settings.thumbnail_1 | image_url: width: 500 }}" class="vid-thumb" alt="Témoignage vidéo">
               {% endif %}
               <div class="vid-btn-wrapper">
-                <button class="vid-btn" type="button">
+                <button class="vid-btn" type="button" aria-label="Lire la vidéo">
                   <span class="play-icon">&#9654;</span>
                   <div class="pause-symbol">
                     <span></span><span></span>
@@ -419,10 +422,10 @@
                 <source src="{{ section.settings.video_2 }}" type="video/mp4">
               </video>
               {% if section.settings.thumbnail_2 != blank %}
-              <img src="{{ section.settings.thumbnail_2 | image_url: width: 500 }}" class="vid-thumb" alt="">
+              <img src="{{ section.settings.thumbnail_2 | image_url: width: 500 }}" class="vid-thumb" alt="Témoignage vidéo">
               {% endif %}
               <div class="vid-btn-wrapper">
-                <button class="vid-btn" type="button">
+                <button class="vid-btn" type="button" aria-label="Lire la vidéo">
                   <span class="play-icon">&#9654;</span>
                   <div class="pause-symbol">
                     <span></span><span></span>
@@ -440,10 +443,10 @@
                 <source src="{{ section.settings.video_3 }}" type="video/mp4">
               </video>
               {% if section.settings.thumbnail_3 != blank %}
-              <img src="{{ section.settings.thumbnail_3 | image_url: width: 500 }}" class="vid-thumb" alt="">
+              <img src="{{ section.settings.thumbnail_3 | image_url: width: 500 }}" class="vid-thumb" alt="Témoignage vidéo">
               {% endif %}
               <div class="vid-btn-wrapper">
-                <button class="vid-btn" type="button">
+                <button class="vid-btn" type="button" aria-label="Lire la vidéo">
                   <span class="play-icon">&#9654;</span>
                   <div class="pause-symbol">
                     <span></span><span></span>
@@ -461,10 +464,10 @@
                 <source src="{{ section.settings.video_4 }}" type="video/mp4">
               </video>
               {% if section.settings.thumbnail_4 != blank %}
-              <img src="{{ section.settings.thumbnail_4 | image_url: width: 500 }}" class="vid-thumb" alt="">
+              <img src="{{ section.settings.thumbnail_4 | image_url: width: 500 }}" class="vid-thumb" alt="Témoignage vidéo">
               {% endif %}
               <div class="vid-btn-wrapper">
-                <button class="vid-btn" type="button">
+                <button class="vid-btn" type="button" aria-label="Lire la vidéo">
                   <span class="play-icon">&#9654;</span>
                   <div class="pause-symbol">
                     <span></span><span></span>
@@ -482,10 +485,10 @@
                 <source src="{{ section.settings.video_5 }}" type="video/mp4">
               </video>
               {% if section.settings.thumbnail_5 != blank %}
-              <img src="{{ section.settings.thumbnail_5 | image_url: width: 500 }}" class="vid-thumb" alt="">
+              <img src="{{ section.settings.thumbnail_5 | image_url: width: 500 }}" class="vid-thumb" alt="Témoignage vidéo">
               {% endif %}
               <div class="vid-btn-wrapper">
-                <button class="vid-btn" type="button">
+                <button class="vid-btn" type="button" aria-label="Lire la vidéo">
                   <span class="play-icon">&#9654;</span>
                   <div class="pause-symbol">
                     <span></span><span></span>
@@ -499,8 +502,8 @@
         </div>
       </div>
 
-      <!-- flèche droite -->
-      <button class="arrow-btn btn-next" type="button">
+      <!-- Flèche droite -->
+      <button class="arrow-btn btn-next" type="button" aria-label="Vidéo suivante">
         <span class="arrow-char">&#10095;</span>
       </button>
 
@@ -508,19 +511,19 @@
     </div>
   </div>
 
+  <!-- Vagues du bas (inversées) -->
   <div class="wave-bottom">
-  <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-    <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28C230,68.64,284,44.35,339.09,29.5,423.39,6.75,508.64,1.39,591.89,17.64c65.14,12.88,128.71,39.25,193.86,52.16,66.25,13.2,136.54,11,198.25-8.16,32.88-10.29,63.58-26.89,93-44.84V0Z"
-          class="wave-layer wave-layer-1"></path>
-    <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28C230,68.64,284,44.35,339.09,29.5,423.39,6.75,508.64,1.39,591.89,17.64c65.14,12.88,128.71,39.25,193.86,52.16,66.25,13.2,136.54,11,198.25-8.16,32.88-10.29,63.58-26.89,93-44.84V0Z"
-          class="wave-layer wave-layer-2"></path>
-    <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28C230,68.64,284,44.35,339.09,29.5,423.39,6.75,508.64,1.39,591.89,17.64c65.14,12.88,128.71,39.25,193.86,52.16,66.25,13.2,136.54,11,198.25-8.16,32.88-10.29,63.58-26.89,93-44.84V0Z"
-          class="wave-layer wave-layer-4"></path>
-    <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28C230,68.64,284,44.35,339.09,29.5,423.39,6.75,508.64,1.39,591.89,17.64c65.14,12.88,128.71,39.25,193.86,52.16,66.25,13.2,136.54,11,198.25-8.16,32.88-10.29,63.58-26.89,93-44.84V0Z"
-          class="wave-layer wave-layer-3"></path>
-  </svg>
-</div>
-
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,72-5.65,126-29.94,181.09-44.79,84.3-22.75,169.55-28.11,252.8-11.86,65.14,12.88,128.71,39.25,193.86,52.16,66.25,13.2,136.54,11,198.25-8.16,32.88-10.29,63.58-26.89,93-44.84V0Z"
+            class="wave-layer wave-layer-1"></path>
+      <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,72-5.65,126-29.94,181.09-44.79,84.3-22.75,169.55-28.11,252.8-11.86,65.14,12.88,128.71,39.25,193.86,52.16,66.25,13.2,136.54,11,198.25-8.16,32.88-10.29,63.58-26.89,93-44.84V0Z"
+            class="wave-layer wave-layer-2"></path>
+      <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,72-5.65,126-29.94,181.09-44.79,84.3-22.75,169.55-28.11,252.8-11.86,65.14,12.88,128.71,39.25,193.86,52.16,66.25,13.2,136.54,11,198.25-8.16,32.88-10.29,63.58-26.89,93-44.84V0Z"
+            class="wave-layer wave-layer-4"></path>
+      <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,72-5.65,126-29.94,181.09-44.79,84.3-22.75,169.55-28.11,252.8-11.86,65.14,12.88,128.71,39.25,193.86,52.16,66.25,13.2,136.54,11,198.25-8.16,32.88-10.29,63.58-26.89,93-44.84V0Z"
+            class="wave-layer wave-layer-3"></path>
+    </svg>
+  </div>
 
 </section>
 
@@ -532,19 +535,19 @@
     var btnPrev = document.querySelector('.btn-prev');
     var btnNext = document.querySelector('.btn-next');
     var dotsBox = document.getElementById('dots');
-    var viewport = document.querySelector('.carousel-viewport');
 
     if (!wrapper || !allSlides.length) return;
 
     var current = 0;
     var total = allSlides.length;
 
-    // Dots
+    // Créer les dots
     for (var i = 0; i < total; i++) {
       var dot = document.createElement('button');
       dot.className = 'slide-dot' + (i === 0 ? ' dot-active' : '');
       dot.type = 'button';
       dot.setAttribute('data-index', i);
+      dot.setAttribute('aria-label', 'Aller à la vidéo ' + (i + 1));
       dot.onclick = function() {
         jumpTo(parseInt(this.getAttribute('data-index')));
       };
@@ -581,7 +584,7 @@
     if (btnPrev) btnPrev.onclick = goPrev;
     if (btnNext) btnNext.onclick = goNext;
 
-    // Stop all videos + remettre les boutons visibles
+    // Arrêter toutes les vidéos
     function stopAll() {
       var allVidBoxes = document.querySelectorAll('.vid-box');
       for (var i = 0; i < allVidBoxes.length; i++) {
@@ -605,7 +608,7 @@
       }
     }
 
-    // Play / pause avec disparition du bouton après 1,5s
+    // Gestion play/pause avec disparition du bouton
     var vidBoxes = document.querySelectorAll('.vid-box');
     for (var i = 0; i < vidBoxes.length; i++) {
       (function(box) {
@@ -624,13 +627,11 @@
             if (!vid.paused) {
               wrapperBtn.classList.add('btn-hidden');
             }
-          }, 1500); // 1,5 seconde après le play
+          }, 1500);
         }
 
         btn.onclick = function() {
           if (vid.paused) {
-            // On (re)montre le bouton au moment du clic,
-            // puis on le fait disparaître après 1,5s
             wrapperBtn.classList.remove('btn-hidden');
             stopAll();
             box.classList.add('vid-playing');
@@ -668,6 +669,7 @@
     }
 
     // Swipe mobile
+    var viewport = document.querySelector('.carousel-viewport');
     if (viewport && total > 1) {
       var startX = 0;
       var isDragging = false;
@@ -703,25 +705,71 @@
 })();
 </script>
 
-
 {% schema %}
 {
   "name": "Floreva Mama Approved",
   "settings": [
-    { "type": "text", "id": "title", "label": "Titolo", "default": "APPROVATO DALLE MAMME!" },
-    { "type": "text", "id": "video_1", "label": "Video 1 URL" },
-    { "type": "image_picker", "id": "thumbnail_1", "label": "Miniatura 1" },
-    { "type": "text", "id": "video_2", "label": "Video 2 URL" },
-    { "type": "image_picker", "id": "thumbnail_2", "label": "Miniatura 2" },
-    { "type": "text", "id": "video_3", "label": "Video 3 URL" },
-    { "type": "image_picker", "id": "thumbnail_3", "label": "Miniatura 3" },
-    { "type": "text", "id": "video_4", "label": "Video 4 URL" },
-    { "type": "image_picker", "id": "thumbnail_4", "label": "Miniatura 4" },
-    { "type": "text", "id": "video_5", "label": "Video 5 URL" },
-    { "type": "image_picker", "id": "thumbnail_5", "label": "Miniatura 5" }
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titolo",
+      "default": "APPROVATO DALLE MAMME!"
+    },
+    {
+      "type": "text",
+      "id": "video_1",
+      "label": "Video 1 URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "thumbnail_1",
+      "label": "Miniatura 1"
+    },
+    {
+      "type": "text",
+      "id": "video_2",
+      "label": "Video 2 URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "thumbnail_2",
+      "label": "Miniatura 2"
+    },
+    {
+      "type": "text",
+      "id": "video_3",
+      "label": "Video 3 URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "thumbnail_3",
+      "label": "Miniatura 3"
+    },
+    {
+      "type": "text",
+      "id": "video_4",
+      "label": "Video 4 URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "thumbnail_4",
+      "label": "Miniatura 4"
+    },
+    {
+      "type": "text",
+      "id": "video_5",
+      "label": "Video 5 URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "thumbnail_5",
+      "label": "Miniatura 5"
+    }
   ],
   "presets": [
-    { "name": "Floreva Mama Approved" }
+    {
+      "name": "Floreva Mama Approved"
+    }
   ]
 }
 {% endschema %}

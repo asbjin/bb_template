@@ -1,13 +1,13 @@
 <style>
 .floreva-mama-section {
   position: relative;
-  background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
+  background: linear-gradient(135deg, #a7f3d0 0%, #67e8f9 100%);
   padding: 120px 20px 100px;
   overflow: hidden;
   isolation: isolate;
 }
 
-/* ========= WAVES TOP & BOTTOM - VERSION DYNAMIQUE ========= */
+/* ========= VAGUES DOUCES ET STATIQUES ========= */
 .wave-top,
 .wave-bottom {
   position: absolute;
@@ -31,84 +31,82 @@
 .wave-top svg,
 .wave-bottom svg {
   display: block;
-  width: calc(100% + 4px);
+  width: 100%;
   height: 120px;
-  margin-left: -2px;
-  margin-right: -2px;
   vertical-align: middle;
 }
 
-/* Couches de vagues avec mouvements OPPOSÉS pour effet de croisement */
+/* Vagues avec mouvement vertical doux et subtil */
 .wave-layer {
   transform-origin: center center;
   will-change: transform;
 }
 
-/* Vague 1 : cyan foncé - SE DÉPLACE VERS LA DROITE */
+/* Vague 1 : vert menthe très clair (fond) */
 .wave-layer-1 {
-  fill: #06b6d4;
-  opacity: 1;
-  animation: wave-right-1 10s ease-in-out infinite;
+  fill: #d1fae5;
+  opacity: 0.6;
+  animation: gentle-wave-1 8s ease-in-out infinite;
 }
 
-/* Vague 2 : vert émeraude - SE DÉPLACE VERS LA GAUCHE (opposé à vague 1) */
+/* Vague 2 : cyan pastel */
 .wave-layer-2 {
-  fill: #10b981;
-  opacity: 0.95;
-  animation: wave-left-2 8s ease-in-out infinite;
+  fill: #a5f3fc;
+  opacity: 0.7;
+  animation: gentle-wave-2 10s ease-in-out infinite;
+  animation-delay: -2s;
 }
 
-/* Vague 3 : vert clair - SE DÉPLACE VERS LA DROITE (plus lent) */
-.wave-layer-4 {
-  fill: #6ee7b7;
-  opacity: 0.85;
-  animation: wave-right-3 12s ease-in-out infinite;
-  animation-delay: -2s; /* Commence décalée */
-}
-
-/* Vague 4 : blanche - SE DÉPLACE VERS LA GAUCHE (délimitation) */
+/* Vague 3 : bleu ciel doux */
 .wave-layer-3 {
+  fill: #bae6fd;
+  opacity: 0.8;
+  animation: gentle-wave-3 12s ease-in-out infinite;
+  animation-delay: -4s;
+}
+
+/* Vague 4 : blanc pur (délimitation) */
+.wave-layer-4 {
   fill: #ffffff;
   opacity: 1;
-  animation: wave-left-4 9s ease-in-out infinite;
-  animation-delay: -1s; /* Commence décalée */
+  animation: gentle-wave-4 14s ease-in-out infinite;
+  animation-delay: -1s;
 }
 
-/* ANIMATIONS VERS LA DROITE (rapides) */
-@keyframes wave-right-1 {
+/* Animations verticales douces - MOUVEMENT HAUT/BAS SUBTIL */
+@keyframes gentle-wave-1 {
   0%, 100% { 
-    transform: translateX(0) translateY(0) scaleX(1); 
+    transform: translateY(0px) scaleY(1);
   }
   50% { 
-    transform: translateX(80px) translateY(3px) scaleX(1.03); 
-  }
-}
-
-@keyframes wave-right-3 {
-  0%, 100% { 
-    transform: translateX(40px) translateY(0) scaleX(1); 
-  }
-  50% { 
-    transform: translateX(-60px) translateY(2px) scaleX(1.025); 
+    transform: translateY(-8px) scaleY(1.02);
   }
 }
 
-/* ANIMATIONS VERS LA GAUCHE (opposées, pour effet croisement) */
-@keyframes wave-left-2 {
+@keyframes gentle-wave-2 {
   0%, 100% { 
-    transform: translateX(0) translateY(0) scaleX(1); 
+    transform: translateY(0px) scaleY(1);
   }
   50% { 
-    transform: translateX(-90px) translateY(2px) scaleX(1.04); 
+    transform: translateY(-6px) scaleY(1.015);
   }
 }
 
-@keyframes wave-left-4 {
+@keyframes gentle-wave-3 {
   0%, 100% { 
-    transform: translateX(-30px) translateY(0) scaleX(1); 
+    transform: translateY(0px) scaleY(1);
   }
   50% { 
-    transform: translateX(70px) translateY(1px) scaleX(1.02); 
+    transform: translateY(-10px) scaleY(1.025);
+  }
+}
+
+@keyframes gentle-wave-4 {
+  0%, 100% { 
+    transform: translateY(0px) scaleY(1);
+  }
+  50% { 
+    transform: translateY(-5px) scaleY(1.01);
   }
 }
 
@@ -120,15 +118,15 @@
 }
 
 .mama-title {
-  font-family: Georgia, serif;
+  font-family: 'Quicksand', 'Nunito', 'Poppins', sans-serif;
   font-size: 48px;
-  font-weight: 900;
+  font-weight: 800;
   color: white;
   text-align: center;
   margin-bottom: 50px;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  letter-spacing: 3px;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
 .carousel-outer {
@@ -140,6 +138,7 @@
 .carousel-viewport {
   overflow: hidden;
   position: relative;
+  border-radius: 24px;
 }
 
 .carousel-slides-wrapper {
@@ -162,11 +161,12 @@
   position: relative;
   width: 280px;
   height: 500px;
-  border-radius: 16px;
+  border-radius: 20px;
   overflow: hidden;
   background: #000;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
   flex-shrink: 0;
+  border: 3px solid rgba(255, 255, 255, 0.3);
 }
 
 .vid-box video {
@@ -210,7 +210,7 @@
 .vid-btn {
   width: 80px;
   height: 80px;
-  background: rgba(16, 185, 129, 0.95);
+  background: linear-gradient(135deg, #a7f3d0 0%, #67e8f9 100%);
   border: none;
   border-radius: 50%;
   cursor: pointer;
@@ -218,12 +218,12 @@
   align-items: center;
   justify-content: center;
   transition: all 0.3s;
-  box-shadow: 0 4px 16px rgba(16, 185, 129, 0.5);
+  box-shadow: 0 6px 20px rgba(103, 232, 249, 0.4);
 }
 
 .vid-btn:hover {
-  background: #10b981;
-  transform: scale(1.05);
+  transform: scale(1.1);
+  box-shadow: 0 8px 30px rgba(103, 232, 249, 0.6);
 }
 
 .vid-btn:active {
@@ -235,6 +235,7 @@
   color: #fff;
   line-height: 1;
   transform: translateX(2px);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
 
 .pause-symbol {
@@ -247,6 +248,7 @@
   height: 26px;
   background: white;
   border-radius: 2px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
 
 .vid-box.vid-playing .play-icon {
@@ -261,52 +263,53 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.95);
   border: none;
-  width: 50px;
-  height: 50px;
+  width: 55px;
+  height: 55px;
   border-radius: 50%;
   cursor: pointer;
   z-index: 10;
   transition: all 0.3s;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .arrow-char {
-  font-size: 26px;
+  font-size: 28px;
   line-height: 1;
-  color: #1a1a1a;
+  color: #67e8f9;
   font-weight: 700;
 }
 
 .arrow-btn:hover {
   background: white;
-  transform: translateY(-50%) scale(1.1);
+  transform: translateY(-50%) scale(1.15);
+  box-shadow: 0 6px 24px rgba(103, 232, 249, 0.3);
 }
 
 .arrow-btn.btn-prev {
-  left: -60px;
+  left: -70px;
 }
 
 .arrow-btn.btn-next {
-  right: -60px;
+  right: -70px;
 }
 
 .dots-wrapper {
   display: flex;
   justify-content: center;
-  gap: 10px;
-  margin-top: 30px;
+  gap: 12px;
+  margin-top: 35px;
 }
 
 .slide-dot {
-  width: 12px;
-  height: 12px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.5);
   cursor: pointer;
   border: none;
   padding: 0;
@@ -315,7 +318,8 @@
 
 .slide-dot.dot-active {
   background: white;
-  transform: scale(1.3);
+  transform: scale(1.4);
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.5);
 }
 
 @media (max-width: 768px) {
@@ -326,6 +330,7 @@
   .mama-title {
     font-size: 32px;
     margin-bottom: 40px;
+    letter-spacing: 2px;
   }
 
   .single-slide {
@@ -335,15 +340,16 @@
   .vid-box {
     width: 90%;
     max-width: 350px;
+    border-width: 2px;
   }
 
   .arrow-btn {
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
   }
 
   .arrow-char {
-    font-size: 22px;
+    font-size: 24px;
   }
 
   .arrow-btn.btn-prev {
@@ -362,21 +368,21 @@
 </style>
 
 <section class="floreva-mama-section">
-  <!-- Vagues du haut avec effet de croisement -->
+  <!-- Vagues douces du haut -->
   <div class="wave-top">
     <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-      <!-- Vague 1 : cyan (va à droite) -->
+      <!-- Vague 1 : vert menthe très clair -->
       <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,72-5.65,126-29.94,181.09-44.79,84.3-22.75,169.55-28.11,252.8-11.86,65.14,12.88,128.71,39.25,193.86,52.16,66.25,13.2,136.54,11,198.25-8.16,32.88-10.29,63.58-26.89,93-44.84V0Z"
             class="wave-layer wave-layer-1"></path>
-      <!-- Vague 2 : vert émeraude (va à gauche - croise la 1) -->
+      <!-- Vague 2 : cyan pastel -->
       <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,72-5.65,126-29.94,181.09-44.79,84.3-22.75,169.55-28.11,252.8-11.86,65.14,12.88,128.71,39.25,193.86,52.16,66.25,13.2,136.54,11,198.25-8.16,32.88-10.29,63.58-26.89,93-44.84V0Z"
             class="wave-layer wave-layer-2"></path>
-      <!-- Vague 3 : vert clair (va à droite) -->
-      <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,72-5.65,126-29.94,181.09-44.79,84.3-22.75,169.55-28.11,252.8-11.86,65.14,12.88,128.71,39.25,193.86,52.16,66.25,13.2,136.54,11,198.25-8.16,32.88-10.29,63.58-26.89,93-44.84V0Z"
-            class="wave-layer wave-layer-4"></path>
-      <!-- Vague 4 : blanche (va à gauche - croise les autres) -->
+      <!-- Vague 3 : bleu ciel doux -->
       <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,72-5.65,126-29.94,181.09-44.79,84.3-22.75,169.55-28.11,252.8-11.86,65.14,12.88,128.71,39.25,193.86,52.16,66.25,13.2,136.54,11,198.25-8.16,32.88-10.29,63.58-26.89,93-44.84V0Z"
             class="wave-layer wave-layer-3"></path>
+      <!-- Vague 4 : blanche pure -->
+      <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,72-5.65,126-29.94,181.09-44.79,84.3-22.75,169.55-28.11,252.8-11.86,65.14,12.88,128.71,39.25,193.86,52.16,66.25,13.2,136.54,11,198.25-8.16,32.88-10.29,63.58-26.89,93-44.84V0Z"
+            class="wave-layer wave-layer-4"></path>
     </svg>
   </div>
 
@@ -385,7 +391,7 @@
 
     <div class="carousel-outer">
       <button class="arrow-btn btn-prev" type="button" aria-label="Vidéo précédente">
-        <span class="arrow-char">&#10094;</span>
+        <span class="arrow-char">❮</span>
       </button>
 
       <div class="carousel-viewport">
@@ -402,7 +408,7 @@
               {% endif %}
               <div class="vid-btn-wrapper">
                 <button class="vid-btn" type="button" aria-label="Lire">
-                  <span class="play-icon">&#9654;</span>
+                  <span class="play-icon">▶</span>
                   <div class="pause-symbol">
                     <span></span><span></span>
                   </div>
@@ -423,7 +429,7 @@
               {% endif %}
               <div class="vid-btn-wrapper">
                 <button class="vid-btn" type="button" aria-label="Lire">
-                  <span class="play-icon">&#9654;</span>
+                  <span class="play-icon">▶</span>
                   <div class="pause-symbol">
                     <span></span><span></span>
                   </div>
@@ -444,7 +450,7 @@
               {% endif %}
               <div class="vid-btn-wrapper">
                 <button class="vid-btn" type="button" aria-label="Lire">
-                  <span class="play-icon">&#9654;</span>
+                  <span class="play-icon">▶</span>
                   <div class="pause-symbol">
                     <span></span><span></span>
                   </div>
@@ -465,7 +471,7 @@
               {% endif %}
               <div class="vid-btn-wrapper">
                 <button class="vid-btn" type="button" aria-label="Lire">
-                  <span class="play-icon">&#9654;</span>
+                  <span class="play-icon">▶</span>
                   <div class="pause-symbol">
                     <span></span><span></span>
                   </div>
@@ -486,7 +492,7 @@
               {% endif %}
               <div class="vid-btn-wrapper">
                 <button class="vid-btn" type="button" aria-label="Lire">
-                  <span class="play-icon">&#9654;</span>
+                  <span class="play-icon">▶</span>
                   <div class="pause-symbol">
                     <span></span><span></span>
                   </div>
@@ -500,14 +506,14 @@
       </div>
 
       <button class="arrow-btn btn-next" type="button" aria-label="Vidéo suivante">
-        <span class="arrow-char">&#10095;</span>
+        <span class="arrow-char">❯</span>
       </button>
 
       <div class="dots-wrapper" id="dots"></div>
     </div>
   </div>
 
-  <!-- Vagues du bas (inversées, même effet de croisement) -->
+  <!-- Vagues douces du bas -->
   <div class="wave-bottom">
     <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
       <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,72-5.65,126-29.94,181.09-44.79,84.3-22.75,169.55-28.11,252.8-11.86,65.14,12.88,128.71,39.25,193.86,52.16,66.25,13.2,136.54,11,198.25-8.16,32.88-10.29,63.58-26.89,93-44.84V0Z"
@@ -515,9 +521,9 @@
       <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,72-5.65,126-29.94,181.09-44.79,84.3-22.75,169.55-28.11,252.8-11.86,65.14,12.88,128.71,39.25,193.86,52.16,66.25,13.2,136.54,11,198.25-8.16,32.88-10.29,63.58-26.89,93-44.84V0Z"
             class="wave-layer wave-layer-2"></path>
       <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,72-5.65,126-29.94,181.09-44.79,84.3-22.75,169.55-28.11,252.8-11.86,65.14,12.88,128.71,39.25,193.86,52.16,66.25,13.2,136.54,11,198.25-8.16,32.88-10.29,63.58-26.89,93-44.84V0Z"
-            class="wave-layer wave-layer-4"></path>
-      <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,72-5.65,126-29.94,181.09-44.79,84.3-22.75,169.55-28.11,252.8-11.86,65.14,12.88,128.71,39.25,193.86,52.16,66.25,13.2,136.54,11,198.25-8.16,32.88-10.29,63.58-26.89,93-44.84V0Z"
             class="wave-layer wave-layer-3"></path>
+      <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,72-5.65,126-29.94,181.09-44.79,84.3-22.75,169.55-28.11,252.8-11.86,65.14,12.88,128.71,39.25,193.86,52.16,66.25,13.2,136.54,11,198.25-8.16,32.88-10.29,63.58-26.89,93-44.84V0Z"
+            class="wave-layer wave-layer-4"></path>
     </svg>
   </div>
 

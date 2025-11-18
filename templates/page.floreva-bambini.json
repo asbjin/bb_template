@@ -318,6 +318,27 @@
         "media_shadow": false
       }
     },
+    "sp_image_standalone_BnPKJH": {
+      "type": "sp-image-standalone",
+      "name": "🚀SP - Image Standalone",
+      "settings": {
+        "background_color": "linear-gradient(164deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 100%)",
+        "max_width": 1000,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0,
+        "image": "shopify://shop_images/ChatGPT_Image_18_nov._2025_00_59_06.png",
+        "media_aspect_ratio": "auto",
+        "desktop_image_width": 1100,
+        "mobile_image": "shopify://shop_images/ChatGPT_Image_18_nov._2025_00_59_06.png",
+        "mobile_media_aspect_ratio": "auto",
+        "mobile_image_width": 800,
+        "link": "",
+        "media_radius": 0,
+        "media_shadow": false
+      }
+    },
     "sp_review_callout_pWLn4C": {
       "type": "sp-review-callout",
       "disabled": true,
@@ -360,6 +381,7 @@
     "floreva_mama_approved_7Cpwqr",
     "sp_image_standalone_6yGjMx",
     "sp_image_standalone_XW7tae",
+    "sp_image_standalone_BnPKJH",
     "sp_review_callout_pWLn4C"
   ]
 }

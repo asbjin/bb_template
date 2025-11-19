@@ -489,6 +489,25 @@
         "lazy": true
       }
     },
+    "sp_image_standalone_MHhtaD": {
+      "type": "sp-image-standalone",
+      "name": "🚀SP - Image Standalone",
+      "settings": {
+        "background_color": "linear-gradient(164deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1))",
+        "max_width": 1000,
+        "padding_top": 25,
+        "padding_bottom": 25,
+        "padding_left": 10,
+        "padding_right": 10,
+        "media_aspect_ratio": "16 / 9",
+        "desktop_image_width": 1100,
+        "mobile_media_aspect_ratio": "16 / 9",
+        "mobile_image_width": 800,
+        "link": "",
+        "media_radius": 5,
+        "media_shadow": true
+      }
+    },
     "sp_review_callout_pWLn4C": {
       "type": "sp-review-callout",
       "disabled": true,
@@ -534,6 +553,7 @@
     "sp_image_standalone_BnPKJH",
     "sp_headline_with_p1_PVkkfk",
     "ss_slider_2_C8LBxf",
+    "sp_image_standalone_MHhtaD",
     "sp_review_callout_pWLn4C"
   ]
 }

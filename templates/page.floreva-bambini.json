@@ -53,7 +53,7 @@
         "slide_dreKXz": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_16_nov._2025_17_19_54.png",
+            "image": "shopify://shop_images/ChatGPT_Image_19_nov._2025_01_57_57.png",
             "title": "",
             "button": "",
             "url": ""
@@ -76,9 +76,9 @@
         "card_radius": 0,
         "card_border_thickness": 0,
         "card_shadow": false,
-        "card_ratio": "portrait",
-        "card_ratio_mobile": "portrait",
-        "card_overlay": 0.3,
+        "card_ratio": "square",
+        "card_ratio_mobile": "square",
+        "card_overlay": 0,
         "content_horizontal_position": "center",
         "content_horizontal_position_mobile": "center",
         "content_vertical_position": "end",

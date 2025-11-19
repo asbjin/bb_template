@@ -395,8 +395,17 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/ChatGPT_Image_19_nov._2025_01_57_57.png",
-            "title": "New Slide",
-            "button": "Learn more",
+            "title": "",
+            "button": "",
+            "url": ""
+          }
+        },
+        "slide_6JNrrL": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_19_nov._2025_02_12_35.png",
+            "title": "",
+            "button": "",
             "url": ""
           }
         }
@@ -405,7 +414,8 @@
         "slide_4F4cnG",
         "slide_7Tfkfy",
         "slide_4XBU9X",
-        "slide_iyypBW"
+        "slide_iyypBW",
+        "slide_6JNrrL"
       ],
       "name": "SS - Slider #2",
       "settings": {

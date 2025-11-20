@@ -607,7 +607,7 @@
         "comparison_c8HKxg": {
           "type": "comparison",
           "settings": {
-            "label": "Product Feature",
+            "label": "Stop Voglie di Zucchero",
             "product_support": true,
             "competitor_support": false
           }
@@ -615,7 +615,7 @@
         "comparison_qTGGCW": {
           "type": "comparison",
           "settings": {
-            "label": "Product Feature",
+            "label": "Rinforza Immunità",
             "product_support": true,
             "competitor_support": false
           }
@@ -623,7 +623,23 @@
         "comparison_cge6ef": {
           "type": "comparison",
           "settings": {
-            "label": "Product Feature",
+            "label": "Salute Intestinale",
+            "product_support": true,
+            "competitor_support": false
+          }
+        },
+        "comparison_pChEkA": {
+          "type": "comparison",
+          "settings": {
+            "label": "Sicuro per Bambini",
+            "product_support": true,
+            "competitor_support": false
+          }
+        },
+        "comparison_KTNeaP": {
+          "type": "comparison",
+          "settings": {
+            "label": "100% Naturale",
             "product_support": true,
             "competitor_support": false
           }
@@ -632,50 +648,52 @@
       "block_order": [
         "comparison_c8HKxg",
         "comparison_qTGGCW",
-        "comparison_cge6ef"
+        "comparison_cge6ef",
+        "comparison_pChEkA",
+        "comparison_KTNeaP"
       ],
       "name": "🚀SP - Comparison Grid",
       "settings": {
-        "override_fonts": false,
+        "override_fonts": true,
         "headline_font": "poppins_n4",
         "text_font": "poppins_n4",
         "text_size": 15,
-        "mobile_text_size": 15,
+        "mobile_text_size": 14,
         "text_line_height": "inherit",
-        "headline_size": 40,
-        "mobile_headline_size": 40,
+        "headline_size": 28,
+        "mobile_headline_size": 24,
         "headline_line_height": "inherit",
-        "text_color": "#111",
-        "link_color": "#005bd3",
+        "text_color": "#2c4a42",
+        "link_color": "#10b981",
         "show_on_device": "all",
-        "section_background_color": "linear-gradient(319deg, rgba(226, 236, 253, 1) 13%, rgba(234, 253, 246, 1) 85%)",
-        "section_padding_top_bottom": 25,
-        "mobile_section_padding_top_bottom": 25,
-        "section_padding_left_right": 25,
-        "mobile_section_padding_left_right": 25,
+        "section_background_color": "",
+        "section_padding_top_bottom": 40,
+        "mobile_section_padding_top_bottom": 35,
+        "section_padding_left_right": 20,
+        "mobile_section_padding_left_right": 15,
         "container_background_color": "",
-        "container_max_width": 1000,
-        "container_padding_top_bottom": 10,
-        "mobile_container_padding_top_bottom": 10,
-        "container_padding_left_right": 10,
-        "mobile_container_padding_left_right": 10,
+        "container_max_width": 900,
+        "container_padding_top_bottom": 25,
+        "mobile_container_padding_top_bottom": 20,
+        "container_padding_left_right": 20,
+        "mobile_container_padding_left_right": 15,
         "element_spacing": 15,
-        "container_radius": 0,
-        "container_shadow": false,
+        "container_radius": 16,
+        "container_shadow": true,
         "container_border_size": 0,
-        "container_border_color": "#888",
+        "container_border_color": "#cccccc",
         "text_alignment": "center",
         "mobile_text_alignment": "center",
-        "headline": "<strong>Sample headline</strong>",
-        "content": "This is the placeholder text for the description",
-        "headline_spacing": 15,
-        "highlight_background": "#F3F9FE",
-        "border_color": "#CCCCCC",
-        "check_color": "#00B05A",
-        "x_color": "#D61F1F",
-        "cell_padding": 5,
-        "product_title": "Our Product",
-        "competitor_title": "Competitor Product"
+        "headline": "<strong>Perché Scegliere Floreva Scudiva?</strong>",
+        "content": "La scelta naturale per il benessere intestinale della tua famiglia",
+        "headline_spacing": 20,
+        "highlight_background": "#d1fae5",
+        "border_color": "#e5e7eb",
+        "check_color": "#10b981",
+        "x_color": "#ef4444",
+        "cell_padding": 10,
+        "product_title": "Floreva Scudiva",
+        "competitor_title": "Altri Prodotti"
       }
     },
     "sp_review_callout_pWLn4C": {

@@ -299,8 +299,8 @@
         "image_CDKBfn": {
           "type": "image",
           "settings": {
-            "feature_title": "Free Shipping",
-            "feature_text": "Order today, receive tomorrow",
+            "feature_title": "Consegna gratuita",
+            "feature_text": "Spedizione in 24 ore",
             "feature_url": "",
             "hide_image": false
           }
@@ -308,8 +308,8 @@
         "image_itUqLw": {
           "type": "image",
           "settings": {
-            "feature_title": "Price-match guarantee",
-            "feature_text": "Safe money when ordering with us",
+            "feature_title": "Prezzo Garantito",
+            "feature_text": "Risparmi sempre quando ordini",
             "feature_url": "",
             "hide_image": false
           }
@@ -317,8 +317,8 @@
         "image_3VNRxU": {
           "type": "image",
           "settings": {
-            "feature_title": "Hassle-free exchange",
-            "feature_text": "Receive a slip for exchanges",
+            "feature_title": "Cambio Facile",
+            "feature_text": "Ricevi subito un tagliando per i cambi",
             "feature_url": "",
             "hide_image": false
           }

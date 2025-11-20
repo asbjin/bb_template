@@ -601,6 +601,83 @@
         "padding_bottom": 0
       }
     },
+    "sp_comparison_grid_rLjf9w": {
+      "type": "sp-comparison-grid",
+      "blocks": {
+        "comparison_c8HKxg": {
+          "type": "comparison",
+          "settings": {
+            "label": "Product Feature",
+            "product_support": true,
+            "competitor_support": false
+          }
+        },
+        "comparison_qTGGCW": {
+          "type": "comparison",
+          "settings": {
+            "label": "Product Feature",
+            "product_support": true,
+            "competitor_support": false
+          }
+        },
+        "comparison_cge6ef": {
+          "type": "comparison",
+          "settings": {
+            "label": "Product Feature",
+            "product_support": true,
+            "competitor_support": false
+          }
+        }
+      },
+      "block_order": [
+        "comparison_c8HKxg",
+        "comparison_qTGGCW",
+        "comparison_cge6ef"
+      ],
+      "name": "🚀SP - Comparison Grid",
+      "settings": {
+        "override_fonts": false,
+        "headline_font": "poppins_n4",
+        "text_font": "poppins_n4",
+        "text_size": 15,
+        "mobile_text_size": 15,
+        "text_line_height": "inherit",
+        "headline_size": 40,
+        "mobile_headline_size": 40,
+        "headline_line_height": "inherit",
+        "text_color": "#111",
+        "link_color": "#005bd3",
+        "show_on_device": "all",
+        "section_background_color": "linear-gradient(319deg, rgba(226, 236, 253, 1) 13%, rgba(234, 253, 246, 1) 85%)",
+        "section_padding_top_bottom": 25,
+        "mobile_section_padding_top_bottom": 25,
+        "section_padding_left_right": 25,
+        "mobile_section_padding_left_right": 25,
+        "container_background_color": "",
+        "container_max_width": 1000,
+        "container_padding_top_bottom": 10,
+        "mobile_container_padding_top_bottom": 10,
+        "container_padding_left_right": 10,
+        "mobile_container_padding_left_right": 10,
+        "element_spacing": 15,
+        "container_radius": 0,
+        "container_shadow": false,
+        "container_border_size": 0,
+        "container_border_color": "#888",
+        "text_alignment": "center",
+        "mobile_text_alignment": "center",
+        "headline": "<strong>Sample headline</strong>",
+        "content": "This is the placeholder text for the description",
+        "headline_spacing": 15,
+        "highlight_background": "#F3F9FE",
+        "border_color": "#CCCCCC",
+        "check_color": "#00B05A",
+        "x_color": "#D61F1F",
+        "cell_padding": 5,
+        "product_title": "Our Product",
+        "competitor_title": "Competitor Product"
+      }
+    },
     "sp_review_callout_pWLn4C": {
       "type": "sp-review-callout",
       "disabled": true,
@@ -651,6 +728,7 @@
     "custom_liquid_9ATctD",
     "sp_image_standalone_BaT9tT",
     "custom_liquid_ffBFT9",
+    "sp_comparison_grid_rLjf9w",
     "sp_review_callout_pWLn4C"
   ]
 }

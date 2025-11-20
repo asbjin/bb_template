@@ -673,6 +673,105 @@
         "media_shadow": true
       }
     },
+    "ss_glow_testimonial_remnqR": {
+      "type": "ss-glow-testimonial",
+      "blocks": {
+        "image_3xANUH": {
+          "type": "Image",
+          "settings": {
+            "review_icon": "shopify://shop_images/review1bis.png",
+            "review_text": "\"Mio figlio dorme finalmente tutta la notte!\" - Maria R.",
+            "review_rating": 5
+          }
+        },
+        "image_6Bidpj": {
+          "type": "Image",
+          "settings": {
+            "review_icon": "shopify://shop_images/review2bis.png",
+            "review_text": "\"Più energia e meno capricci in 2 settimane!\" - Luca T.",
+            "review_rating": 4
+          }
+        },
+        "image_gjtQfW": {
+          "type": "Image",
+          "settings": {
+            "review_icon": "shopify://shop_images/review3bis.png",
+            "review_text": "\"Soluzione naturale che funziona davvero!\" - Sofia M.",
+            "review_rating": 4
+          }
+        },
+        "image_QHRdDe": {
+          "type": "Image",
+          "settings": {
+            "review_icon": "shopify://shop_images/review4bis.png",
+            "review_text": "\"Digestione migliorata, bambini più felici!\" - Giuseppe D.",
+            "review_rating": 5
+          }
+        },
+        "image_Bacpkr": {
+          "type": "Image",
+          "settings": {
+            "review_icon": "shopify://shop_images/review5bis.png",
+            "review_text": "\"Risultati sorprendenti in poco tempo!\" - Elena P.",
+            "review_rating": 4
+          }
+        },
+        "image_yxYprU": {
+          "type": "Image",
+          "settings": {
+            "review_icon": "shopify://shop_images/review6bis.png",
+            "review_text": "\"I miei figli dormono meglio e hanno più energia!\" - Anna C.",
+            "review_rating": 4
+          }
+        },
+        "image_c6HCU8": {
+          "type": "Image",
+          "settings": {
+            "review_icon": "shopify://shop_images/review7bis.png",
+            "review_text": "\"Efficace, naturale e sicuro per i bambini!\" - Marco B.",
+            "review_rating": 4
+          }
+        },
+        "image_WXQgiK": {
+          "type": "Image",
+          "settings": {
+            "review_icon": "shopify://shop_images/review8.png",
+            "review_text": "\"Niente più problemi intestinali!\" - Chiara L.",
+            "review_rating": 5
+          }
+        }
+      },
+      "block_order": [
+        "image_3xANUH",
+        "image_6Bidpj",
+        "image_gjtQfW",
+        "image_QHRdDe",
+        "image_Bacpkr",
+        "image_yxYprU",
+        "image_c6HCU8",
+        "image_WXQgiK"
+      ],
+      "name": "SS - Glow Testimonial",
+      "settings": {
+        "animation_time": 30,
+        "loop_amount": 2,
+        "header_before_gradient": "I nostri clienti",
+        "header_gradient": "adorano",
+        "header": "il prodotto",
+        "header_color": "#2c4a42",
+        "header_font_size": 40,
+        "header_mob_font_size": 28,
+        "review_font_size": 16,
+        "review_font_color": "#334155",
+        "gradient_color_1": "#10b981",
+        "gradient_color_2": "#06b6d4",
+        "gradient_color_3": "#10b981",
+        "blur_color": "#e8f5e9",
+        "background-color": "#ffffff",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
     "custom_liquid_ffBFT9": {
       "type": "custom-liquid",
       "name": "t:sections.custom-liquid.presets.name",
@@ -828,6 +927,7 @@
     "sp_image_standalone_MHhtaD",
     "custom_liquid_9ATctD",
     "sp_image_standalone_BaT9tT",
+    "ss_glow_testimonial_remnqR",
     "custom_liquid_ffBFT9",
     "sp_comparison_grid_rLjf9w",
     "sp_review_callout_pWLn4C"

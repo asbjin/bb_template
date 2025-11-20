@@ -76,13 +76,23 @@
             "button": "",
             "url": ""
           }
+        },
+        "slide_BLYYrK": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_20_nov._2025_02_42_45.png",
+            "title": "",
+            "button": "",
+            "url": ""
+          }
         }
       },
       "block_order": [
         "slide_dreKXz",
         "slide_CB3CKN",
         "slide_pcVg8t",
-        "slide_KBetdV"
+        "slide_KBetdV",
+        "slide_BLYYrK"
       ],
       "name": "SS - Slider #2",
       "settings": {

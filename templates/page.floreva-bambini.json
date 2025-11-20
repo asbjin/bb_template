@@ -708,6 +708,14 @@
             "review_rating": 5
           }
         },
+        "image_c6HCU8": {
+          "type": "Image",
+          "settings": {
+            "review_icon": "shopify://shop_images/review7bis.png",
+            "review_text": "\"Efficace, naturale e sicuro per i bambini!\" - Marco B.",
+            "review_rating": 4
+          }
+        },
         "image_Bacpkr": {
           "type": "Image",
           "settings": {
@@ -721,14 +729,6 @@
           "settings": {
             "review_icon": "shopify://shop_images/review6bis.png",
             "review_text": "\"I miei figli dormono meglio e hanno più energia!\" - Anna C.",
-            "review_rating": 4
-          }
-        },
-        "image_c6HCU8": {
-          "type": "Image",
-          "settings": {
-            "review_icon": "shopify://shop_images/review7bis.png",
-            "review_text": "\"Efficace, naturale e sicuro per i bambini!\" - Marco B.",
             "review_rating": 4
           }
         },
@@ -746,9 +746,9 @@
         "image_6Bidpj",
         "image_gjtQfW",
         "image_QHRdDe",
+        "image_c6HCU8",
         "image_Bacpkr",
         "image_yxYprU",
-        "image_c6HCU8",
         "image_WXQgiK"
       ],
       "name": "SS - Glow Testimonial",

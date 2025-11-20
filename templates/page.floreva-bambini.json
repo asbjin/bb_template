@@ -404,6 +404,15 @@
     "ss_slider_2_C8LBxf": {
       "type": "ss-slider-2",
       "blocks": {
+        "slide_6JNrrL": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_19_nov._2025_02_12_35.png",
+            "title": "",
+            "button": "",
+            "url": ""
+          }
+        },
         "slide_4F4cnG": {
           "type": "slide",
           "settings": {
@@ -439,23 +448,14 @@
             "button": "",
             "url": ""
           }
-        },
-        "slide_6JNrrL": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_19_nov._2025_02_12_35.png",
-            "title": "",
-            "button": "",
-            "url": ""
-          }
         }
       },
       "block_order": [
+        "slide_6JNrrL",
         "slide_4F4cnG",
         "slide_4XBU9X",
         "slide_7Tfkfy",
-        "slide_iyypBW",
-        "slide_6JNrrL"
+        "slide_iyypBW"
       ],
       "name": "SS - Slider #2",
       "settings": {

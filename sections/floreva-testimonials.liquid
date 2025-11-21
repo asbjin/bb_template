@@ -152,20 +152,6 @@
     flex-direction: column;
   }
 
-  .floreva-testimonials__card-stars {
-    display: flex;
-    gap: 2px;
-    margin-bottom: 25px;
-    justify-content: center;
-  }
-
-  .floreva-testimonials__card-star {
-    width: 28px;
-    height: 28px;
-    background-color: #00b67a;
-    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-  }
-
   .floreva-testimonials__card-title {
     font-size: 26px;
     font-weight: 700;
@@ -331,11 +317,6 @@
     <div class="floreva-testimonials__carousel" id="floreva-carousel">
       {% for block in section.blocks %}
         <div class="floreva-testimonials__card" {{ block.shopify_attributes }}>
-          <div class="floreva-testimonials__card-stars">
-            {% for i in (1..5) %}
-              <div class="floreva-testimonials__card-star"></div>
-            {% endfor %}
-          </div>
           <h3 class="floreva-testimonials__card-title">{{ block.settings.title }}</h3>
           <p class="floreva-testimonials__card-content">{{ block.settings.content }}</p>
           <p class="floreva-testimonials__card-author">{{ block.settings.author }}</p>

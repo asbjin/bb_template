@@ -354,7 +354,7 @@
         "feature_text_mt": 2,
         "feature_icon_size": 26,
         "feature_icon_size_mobile": 22,
-        "feature_bg": "#FFFFFF",
+        "feature_bg": "#ffffff",
         "feature_border_color": "rgba(0,0,0,0)",
         "feature_shadow_color": "#000000",
         "feature_heading_color": "#2c4a42",
@@ -385,6 +385,29 @@
         "padding_bottom": 0
       }
     },
+    "ss_wave_2_8iDtRX": {
+      "type": "ss-wave-2",
+      "name": "SS - Wave #2",
+      "settings": {
+        "wave_height": 60,
+        "wave_height_mobile": 40,
+        "wave_animation": true,
+        "wave_rotate": false,
+        "wave_color": "#121212",
+        "background_color": "#FFFFFF",
+        "background_gradient": "",
+        "border_color": "#000000",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_horizontal": 0,
+        "padding_horizontal_mobile": 0,
+        "full_width": true,
+        "content_width": 120,
+        "border_thickness": 0
+      }
+    },
     "floreva_mama_approved_7Cpwqr": {
       "type": "floreva-mama-approved",
       "name": "Floreva Mama Approved",
@@ -396,6 +419,29 @@
         "video_3": "https://cdn.shopify.com/videos/c/o/v/c2b793a9d6994449b1c4c3fa6febc5b6.mp4",
         "video_4": "",
         "video_5": ""
+      }
+    },
+    "ss_wave_2_nYYppe": {
+      "type": "ss-wave-2",
+      "name": "SS - Wave #2",
+      "settings": {
+        "wave_height": 60,
+        "wave_height_mobile": 40,
+        "wave_animation": true,
+        "wave_rotate": true,
+        "wave_color": "#121212",
+        "background_color": "#FFFFFF",
+        "background_gradient": "",
+        "border_color": "#000000",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_horizontal": 0,
+        "padding_horizontal_mobile": 0,
+        "full_width": true,
+        "content_width": 120,
+        "border_thickness": 0
       }
     },
     "sp_image_standalone_6yGjMx": {
@@ -917,7 +963,9 @@
     "sp_payment_icons_nBGbt4",
     "ss_feature_1_4qgiRr",
     "custom_liquid_YQYBiE",
+    "ss_wave_2_8iDtRX",
     "floreva_mama_approved_7Cpwqr",
+    "ss_wave_2_nYYppe",
     "sp_image_standalone_6yGjMx",
     "sp_image_standalone_XW7tae",
     "sp_image_standalone_BnPKJH",

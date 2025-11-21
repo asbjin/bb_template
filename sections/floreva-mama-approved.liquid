@@ -2,7 +2,7 @@
 .floreva-mama-section {
   position: relative;
   background: linear-gradient(135deg, #6ee7b7 0%, #10b981 100%);
-  padding: 120px 20px 100px;
+  padding: 60px 20px 70px;
   overflow: hidden;
   isolation: isolate;
 }
@@ -25,20 +25,20 @@
   animation: float-bubble linear infinite;
 }
 
-/* Tailles variées */
+/* Tailles réduites pour mobile */
 .bubble-small {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
 }
 
 .bubble-medium {
-  width: 70px;
-  height: 70px;
+  width: 50px;
+  height: 50px;
 }
 
 .bubble-large {
-  width: 120px;
-  height: 120px;
+  width: 80px;
+  height: 80px;
 }
 
 /* Styles de bulles avec dégradés doux */
@@ -89,7 +89,7 @@
 .star {
   position: absolute;
   color: rgba(255, 255, 255, 0.9);
-  font-size: 24px;
+  font-size: 18px;
   animation: twinkle ease-in-out infinite;
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
 }
@@ -114,7 +114,7 @@
   height: 100%;
   z-index: 0;
   pointer-events: none;
-  opacity: 0.15;
+  opacity: 0.1;
 }
 
 .shape-circle {
@@ -125,16 +125,16 @@
 }
 
 .shape-1 {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   top: 10%;
   left: 5%;
   animation-duration: 8s;
 }
 
 .shape-2 {
-  width: 150px;
-  height: 150px;
+  width: 120px;
+  height: 120px;
   top: 60%;
   right: 8%;
   animation-duration: 10s;
@@ -142,8 +142,8 @@
 }
 
 .shape-3 {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   bottom: 15%;
   left: 12%;
   animation-duration: 12s;
@@ -153,11 +153,11 @@
 @keyframes pulse-shape {
   0%, 100% {
     transform: scale(1);
-    opacity: 0.1;
+    opacity: 0.08;
   }
   50% {
     transform: scale(1.2);
-    opacity: 0.2;
+    opacity: 0.15;
   }
 }
 
@@ -174,7 +174,7 @@
   font-weight: 800;
   color: white;
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
   text-transform: uppercase;
   letter-spacing: 3px;
   text-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
@@ -353,7 +353,7 @@
   display: flex;
   justify-content: center;
   gap: 12px;
-  margin-top: 35px;
+  margin-top: 30px;
 }
 
 .slide-dot {
@@ -375,13 +375,14 @@
 
 @media (max-width: 768px) {
   .floreva-mama-section {
-    padding: 100px 20px 80px;
+    padding: 50px 15px 60px;
   }
 
   .mama-title {
-    font-size: 32px;
-    margin-bottom: 40px;
-    letter-spacing: 2px;
+    font-size: 28px;
+    margin-bottom: 30px;
+    letter-spacing: 1.5px;
+    line-height: 1.2;
   }
 
   .single-slide {
@@ -389,26 +390,112 @@
   }
 
   .vid-box {
-    width: 90%;
-    max-width: 350px;
+    width: 100%;
+    max-width: 320px;
+    height: 570px;
     border-width: 2px;
   }
 
+  .vid-btn {
+    width: 70px;
+    height: 70px;
+  }
+
+  .play-icon {
+    font-size: 28px;
+  }
+
   .arrow-btn {
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
   }
 
   .arrow-char {
-    font-size: 24px;
+    font-size: 20px;
   }
 
   .arrow-btn.btn-prev {
-    left: 10px;
+    left: 5px;
   }
 
   .arrow-btn.btn-next {
-    right: 10px;
+    right: 5px;
+  }
+
+  .dots-wrapper {
+    margin-top: 25px;
+    gap: 10px;
+  }
+
+  .slide-dot {
+    width: 12px;
+    height: 12px;
+  }
+
+  /* Bulles réduites pour mobile */
+  .bubble-small {
+    width: 25px;
+    height: 25px;
+  }
+
+  .bubble-medium {
+    width: 40px;
+    height: 40px;
+  }
+
+  .bubble-large {
+    width: 60px;
+    height: 60px;
+  }
+
+  /* Étoiles plus petites sur mobile */
+  .star {
+    font-size: 14px;
+  }
+
+  /* Formes décoratives réduites */
+  .shape-1 {
+    width: 100px;
+    height: 100px;
+  }
+
+  .shape-2 {
+    width: 80px;
+    height: 80px;
+  }
+
+  .shape-3 {
+    width: 60px;
+    height: 60px;
+  }
+
+  .decorative-shapes {
+    opacity: 0.08;
+  }
+}
+
+@media (max-width: 480px) {
+  .floreva-mama-section {
+    padding: 40px 12px 50px;
+  }
+
+  .mama-title {
+    font-size: 24px;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+  }
+
+  .vid-box {
+    max-width: 280px;
+    height: 500px;
+  }
+
+  .carousel-viewport {
+    border-radius: 18px;
+  }
+
+  .vid-box {
+    border-radius: 16px;
   }
 }
 </style>
@@ -558,22 +645,26 @@
 
 <script>
 (function() {
-  // Créer les bulles flottantes
+  // Créer les bulles flottantes (réduit pour mobile)
   function createBubbles() {
     var container = document.getElementById('bubbles-container');
     if (!container) return;
 
     var sizes = ['bubble-small', 'bubble-medium', 'bubble-large'];
     var styles = ['bubble-style-1', 'bubble-style-2', 'bubble-style-3'];
+    
+    // Réduire le nombre de bulles sur mobile
+    var isMobile = window.innerWidth < 768;
+    var bubbleCount = isMobile ? 10 : 15;
 
-    for (var i = 0; i < 15; i++) {
+    for (var i = 0; i < bubbleCount; i++) {
       var bubble = document.createElement('div');
       bubble.className = 'bubble ' + sizes[Math.floor(Math.random() * sizes.length)] + ' ' + styles[Math.floor(Math.random() * styles.length)];
       
       var leftPos = Math.random() * 100;
       var duration = 8 + Math.random() * 8;
       var delay = Math.random() * 8;
-      var drift = (Math.random() - 0.5) * 200;
+      var drift = (Math.random() - 0.5) * (isMobile ? 100 : 200);
       
       bubble.style.left = leftPos + '%';
       bubble.style.animationDuration = duration + 's';
@@ -584,14 +675,18 @@
     }
   }
 
-  // Créer les étoiles scintillantes
+  // Créer les étoiles scintillantes (réduit pour mobile)
   function createStars() {
     var container = document.getElementById('stars-container');
     if (!container) return;
 
     var starSymbols = ['✨', '⭐', '💫', '🌟'];
+    
+    // Réduire le nombre d'étoiles sur mobile
+    var isMobile = window.innerWidth < 768;
+    var starCount = isMobile ? 8 : 12;
 
-    for (var i = 0; i < 12; i++) {
+    for (var i = 0; i < starCount; i++) {
       var star = document.createElement('div');
       star.className = 'star';
       star.textContent = starSymbols[Math.floor(Math.random() * starSymbols.length)];

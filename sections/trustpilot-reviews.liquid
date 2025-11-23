@@ -15,8 +15,8 @@
         <div class="trustpilot-stars trustpilot-stars-header" aria-hidden="true">
           {% for i in (1..5) %}
             <span class="trustpilot-star-wrapper trustpilot-star-wrapper-large">
-              <svg class="trustpilot-star-icon" viewBox="0 0 251 240" role="img" focusable="false">
-                <path d="M125.5 186.563L49.366 224.91l14.592-84.917L.5 77.91l85.33-12.393L125.5.5l39.67 65.017L250.5 77.91l-63.458 62.083 14.592 84.917z"/>
+              <svg class="trustpilot-star-icon" viewBox="0 0 20 19" role="img" focusable="false">
+                <path d="M10 0l2.39 7.09h7.46l-6.03 4.38 2.3 7.08L10 14.17l-6.12 4.38 2.3-7.08L0 7.09h7.46z"/>
               </svg>
             </span>
           {% endfor %}
@@ -33,8 +33,8 @@
                 {% assign stars = block.settings.stars | default: 5 %}
                 {% for i in (1..stars) %}
                   <span class="trustpilot-star-wrapper trustpilot-star-wrapper-medium">
-                    <svg class="trustpilot-star-icon" viewBox="0 0 251 240" role="img" focusable="false">
-                      <path d="M125.5 186.563L49.366 224.91l14.592-84.917L.5 77.91l85.33-12.393L125.5.5l39.67 65.017L250.5 77.91l-63.458 62.083 14.592 84.917z"/>
+                    <svg class="trustpilot-star-icon" viewBox="0 0 20 19" role="img" focusable="false">
+                      <path d="M10 0l2.39 7.09h7.46l-6.03 4.38 2.3 7.08L10 14.17l-6.12 4.38 2.3-7.08L0 7.09h7.46z"/>
                     </svg>
                   </span>
                 {% endfor %}
@@ -138,6 +138,7 @@
   .trustpilot-reviews-{{ section.id }} .trustpilot-stars {
     display: flex;
     align-items: center;
+    gap: 2px;
   }
 
   .trustpilot-reviews-{{ section.id }} .trustpilot-stars-review {
@@ -150,31 +151,22 @@
     align-items: center;
     justify-content: center;
     background-color: var(--trustpilot-green);
+    border-radius: 0;
   }
 
   .trustpilot-reviews-{{ section.id }} .trustpilot-stars-header .trustpilot-star-wrapper-large {
     width: 28px;
     height: 28px;
-    margin-right: 4px;
-  }
-
-  .trustpilot-reviews-{{ section.id }} .trustpilot-stars-header .trustpilot-star-wrapper-large:last-child {
-    margin-right: 0;
   }
 
   .trustpilot-reviews-{{ section.id }} .trustpilot-stars-review .trustpilot-star-wrapper-medium {
     width: 24px;
     height: 24px;
-    margin-right: 4px;
-  }
-
-  .trustpilot-reviews-{{ section.id }} .trustpilot-stars-review .trustpilot-star-wrapper-medium:last-child {
-    margin-right: 0;
   }
 
   .trustpilot-reviews-{{ section.id }} .trustpilot-star-icon {
-    width: 65%;
-    height: 65%;
+    width: 75%;
+    height: 75%;
     display: block;
     color: #ffffff;
     fill: currentColor;

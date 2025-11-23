@@ -19,8 +19,8 @@
         <div class="trustpilot-stars trustpilot-stars-header" aria-hidden="true">
           {% for i in (1..5) %}
             <span class="trustpilot-star-wrapper trustpilot-star-wrapper-large">
-              <svg class="trustpilot-star-icon" viewBox="0 0 24 24" role="img" focusable="false">
-                <path d="M12 .8l3.09 6.27 6.92 1.01-5 4.87 1.18 6.87L12 17.77l-6.19 3.25L7 12.95l-5-4.87 6.92-1.01z" />
+              <svg class="trustpilot-star-icon" viewBox="0 0 251 240" role="img" focusable="false">
+                <path d="M125.5 186.563L49.366 224.91l14.592-84.917L.5 77.91l85.33-12.393L125.5.5l39.67 65.017L250.5 77.91l-63.458 62.083 14.592 84.917z"/>
               </svg>
             </span>
           {% endfor %}
@@ -37,8 +37,8 @@
                 {% assign stars = block.settings.stars | default: 5 %}
                 {% for i in (1..stars) %}
                   <span class="trustpilot-star-wrapper trustpilot-star-wrapper-medium">
-                    <svg class="trustpilot-star-icon" viewBox="0 0 24 24" role="img" focusable="false">
-                      <path d="M12 .8l3.09 6.27 6.92 1.01-5 4.87 1.18 6.87L12 17.77l-6.19 3.25L7 12.95l-5-4.87 6.92-1.01z" />
+                    <svg class="trustpilot-star-icon" viewBox="0 0 251 240" role="img" focusable="false">
+                      <path d="M125.5 186.563L49.366 224.91l14.592-84.917L.5 77.91l85.33-12.393L125.5.5l39.67 65.017L250.5 77.91l-63.458 62.083 14.592 84.917z"/>
                     </svg>
                   </span>
                 {% endfor %}
@@ -122,11 +122,12 @@
 
   .trustpilot-reviews-{{ section.id }} .trustpilot-title {
     margin: 0 0 15px;
-    font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     font-weight: 900;
     font-size: 48px;
     line-height: 1.1;
     color: #2D2D2D;
+    letter-spacing: -0.02em;
   }
 
   .trustpilot-reviews-{{ section.id }} .trustpilot-rating-row {
@@ -134,7 +135,7 @@
     align-items: center;
     justify-content: center;
     gap: 8px;
-    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   }
 
   .trustpilot-reviews-{{ section.id }} .trustpilot-rating-label {
@@ -153,12 +154,16 @@
     align-items: center;
   }
 
+  .trustpilot-reviews-{{ section.id }} .trustpilot-stars-review {
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
   .trustpilot-reviews-{{ section.id }} .trustpilot-star-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: var(--trustpilot-green);
-    border-radius: 3px;
   }
 
   .trustpilot-reviews-{{ section.id }} .trustpilot-stars-header .trustpilot-star-wrapper-large {
@@ -182,8 +187,8 @@
   }
 
   .trustpilot-reviews-{{ section.id }} .trustpilot-star-icon {
-    width: 70%;
-    height: 70%;
+    width: 65%;
+    height: 65%;
     display: block;
     color: #ffffff;
     fill: currentColor;
@@ -215,8 +220,8 @@
   }
 
   .trustpilot-reviews-{{ section.id }} .trustpilot-review-title {
-    margin: 20px 0 25px;
-    font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    margin: 0 0 25px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     font-weight: 700;
     font-size: 24px;
     line-height: 1.4;
@@ -224,7 +229,7 @@
   }
 
   .trustpilot-reviews-{{ section.id }} .trustpilot-review-body {
-    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     font-size: 16px;
     line-height: 1.7;
     color: var(--text-medium);
@@ -245,7 +250,7 @@
 
   .trustpilot-reviews-{{ section.id }} .trustpilot-review-author {
     margin-top: 30px;
-    font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     font-weight: 700;
     font-size: 18px;
     color: #2D2D2D;
@@ -491,7 +496,7 @@
           "type": "textarea",
           "id": "content",
           "label": "Review content",
-          "default": "I was genuinely concerned about my 5-year-old daughter. She was constantly bloated, low-energy, and more irritable than usual. Nothing we tried made a real difference. She just didn’t seem like herself anymore.\n\nAfter learning about the benefits of Nature's Fix ParaGuard, I decided to give it a try… and I'm so glad I did. Within just a couple of weeks, I noticed a major shift. Her bloating went down, her energy came back, and even her mood improved dramatically.\n\nHer teachers even asked me what changed. They said she was more focused, calm, and engaged at school.\n\nAs a mom, there’s no better feeling than seeing your child healthy and happy again. ParaGuard is now part of our daily routine. It’s made a world of difference, and I wouldn’t go without it."
+          "default": "I was genuinely concerned about my 5-year-old daughter. She was constantly bloated, low-energy, and more irritable than usual. Nothing we tried made a real difference. She just didn't seem like herself anymore.\n\nAfter learning about the benefits of Nature's Fix ParaGuard, I decided to give it a try… and I'm so glad I did. Within just a couple of weeks, I noticed a major shift. Her bloating went down, her energy came back, and even her mood improved dramatically.\n\nHer teachers even asked me what changed. They said she was more focused, calm, and engaged at school.\n\nAs a mom, there's no better feeling than seeing your child healthy and happy again. ParaGuard is now part of our daily routine. It's made a world of difference, and I wouldn't go without it."
         },
         {
           "type": "text",

@@ -1,454 +1,524 @@
 {% comment %}
-  Floreva Testimonials Section
-  Mobile: Carousel avec navigation
-  Desktop: 3 colonnes par ligne
+  File: sections/trustpilot-reviews.liquid
 {% endcomment %}
+
+<section class="trustpilot-reviews-section trustpilot-reviews-{{ section.id }}">
+  <div class="trustpilot-reviews-container">
+    <header class="trustpilot-header">
+      <h2 class="trustpilot-title">
+        {{ section.settings.section_title | default: 'Trustpilot reviews' }}
+      </h2>
+
+      <div class="trustpilot-rating-row">
+        <span class="trustpilot-rating-label">
+          {{ section.settings.rating_label | default: 'Excellent' }}
+        </span>
+        <span class="trustpilot-rating-score">
+          {{ section.settings.rating_score | default: '4.9 / 5' }}
+        </span>
+        <div class="trustpilot-stars trustpilot-stars-header" aria-hidden="true">
+          {% for i in (1..5) %}
+            <span class="trustpilot-star-wrapper trustpilot-star-wrapper-large">
+              <svg class="trustpilot-star-icon" viewBox="0 0 24 24" role="img" focusable="false">
+                <path d="M12 .8l3.09 6.27 6.92 1.01-5 4.87 1.18 6.87L12 17.77l-6.19 3.25L7 12.95l-5-4.87 6.92-1.01z" />
+              </svg>
+            </span>
+          {% endfor %}
+        </div>
+      </div>
+    </header>
+
+    <div class="trustpilot-slider" data-section-id="{{ section.id }}">
+      <div class="trustpilot-slider-track">
+        {% for block in section.blocks %}
+          <div class="trustpilot-slide" data-index="{{ forloop.index0 }}" {{ block.shopify_attributes }}>
+            <article class="trustpilot-review-card">
+              <div class="trustpilot-stars trustpilot-stars-review" aria-hidden="true">
+                {% assign stars = block.settings.stars | default: 5 %}
+                {% for i in (1..stars) %}
+                  <span class="trustpilot-star-wrapper trustpilot-star-wrapper-medium">
+                    <svg class="trustpilot-star-icon" viewBox="0 0 24 24" role="img" focusable="false">
+                      <path d="M12 .8l3.09 6.27 6.92 1.01-5 4.87 1.18 6.87L12 17.77l-6.19 3.25L7 12.95l-5-4.87 6.92-1.01z" />
+                    </svg>
+                  </span>
+                {% endfor %}
+              </div>
+
+              {% if block.settings.title != blank %}
+                <h3 class="trustpilot-review-title">
+                  {{ block.settings.title }}
+                </h3>
+              {% endif %}
+
+              {% if block.settings.content != blank %}
+                <div class="trustpilot-review-body">
+                  {{ block.settings.content | newline_to_br }}
+                </div>
+              {% endif %}
+
+              {% if block.settings.author != blank %}
+                <div class="trustpilot-review-author">
+                  {{ block.settings.author }}
+                </div>
+              {% endif %}
+            </article>
+          </div>
+        {% endfor %}
+      </div>
+
+      {% if section.blocks.size > 0 %}
+        <div class="trustpilot-slider-nav">
+          <button class="trustpilot-arrow trustpilot-arrow-prev" type="button" aria-label="Previous review">
+            ◄
+          </button>
+
+          <div class="trustpilot-dots">
+            {% for block in section.blocks %}
+              <button
+                class="trustpilot-dot{% if forloop.first %} is-active{% endif %}"
+                type="button"
+                data-index="{{ forloop.index0 }}"
+                aria-label="Go to review {{ forloop.index }}">
+              </button>
+            {% endfor %}
+          </div>
+
+          <button class="trustpilot-arrow trustpilot-arrow-next" type="button" aria-label="Next review">
+            ►
+          </button>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<style>
+  :root {
+    --trustpilot-green: {{ section.settings.star_color | default: '#00B67A' }};
+    --text-dark: #1C1C1C;
+    --text-medium: #4A4A4A;
+    --text-light: #6B6B6B;
+    --bg-section: #FAFAF8;
+    --bg-card: #FFFFFF;
+    --border-light: #E5E5E5;
+    --dot-inactive: #D9D9D9;
+  }
+
+  .trustpilot-reviews-{{ section.id }} {
+    padding: 80px 16px;
+    background-color: {{ section.settings.background_color | default: '#FAFAF8' }};
+    box-sizing: border-box;
+  }
+
+  .trustpilot-reviews-{{ section.id }} .trustpilot-reviews-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .trustpilot-reviews-{{ section.id }} .trustpilot-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .trustpilot-reviews-{{ section.id }} .trustpilot-title {
+    margin: 0 0 15px;
+    font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 1.1;
+    color: #2D2D2D;
+  }
+
+  .trustpilot-reviews-{{ section.id }} .trustpilot-rating-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  .trustpilot-reviews-{{ section.id }} .trustpilot-rating-label {
+    font-size: 18px;
+    color: var(--text-light);
+  }
+
+  .trustpilot-reviews-{{ section.id }} .trustpilot-rating-score {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1C1C1C;
+  }
+
+  .trustpilot-reviews-{{ section.id }} .trustpilot-stars {
+    display: flex;
+    align-items: center;
+  }
+
+  .trustpilot-reviews-{{ section.id }} .trustpilot-star-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--trustpilot-green);
+    border-radius: 3px;
+  }
+
+  .trustpilot-reviews-{{ section.id }} .trustpilot-stars-header .trustpilot-star-wrapper-large {
+    width: 28px;
+    height: 28px;
+    margin-right: 4px;
+  }
+
+  .trustpilot-reviews-{{ section.id }} .trustpilot-stars-header .trustpilot-star-wrapper-large:last-child {
+    margin-right: 0;
+  }
+
+  .trustpilot-reviews-{{ section.id }} .trustpilot-stars-review .trustpilot-star-wrapper-medium {
+    width: 24px;
+    height: 24px;
+    margin-right: 4px;
+  }
+
+  .trustpilot-reviews-{{ section.id }} .trustpilot-stars-review .trustpilot-star-wrapper-medium:last-child {
+    margin-right: 0;
+  }
+
+  .trustpilot-reviews-{{ section.id }} .trustpilot-star-icon {
+    width: 70%;
+    height: 70%;
+    display: block;
+    color: #ffffff;
+    fill: currentColor;
+  }
+
+  .trustpilot-reviews-{{ section.id }} .trustpilot-slider {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .trustpilot-reviews-{{ section.id }} .trustpilot-slider-track {
+    display: flex;
+    transition: transform 0.5s ease;
+    will-change: transform;
+  }
+
+  .trustpilot-reviews-{{ section.id }} .trustpilot-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .trustpilot-reviews-{{ section.id }} .trustpilot-review-card {
+    background-color: var(--bg-card);
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  .trustpilot-reviews-{{ section.id }} .trustpilot-review-title {
+    margin: 20px 0 25px;
+    font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.4;
+    color: var(--text-dark);
+  }
+
+  .trustpilot-reviews-{{ section.id }} .trustpilot-review-body {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-medium);
+  }
+
+  .trustpilot-reviews-{{ section.id }} .trustpilot-review-body p {
+    margin: 0 0 20px;
+  }
+
+  .trustpilot-reviews-{{ section.id }} .trustpilot-review-body p:last-child {
+    margin-bottom: 0;
+  }
+
+  .trustpilot-reviews-{{ section.id }} .trustpilot-review-body strong {
+    font-weight: 700;
+    color: var(--text-dark);
+  }
+
+  .trustpilot-reviews-{{ section.id }} .trustpilot-review-author {
+    margin-top: 30px;
+    font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: #2D2D2D;
+  }
+
+  .trustpilot-reviews-{{ section.id }} .trustpilot-slider-nav {
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+  }
+
+  .trustpilot-reviews-{{ section.id }} .trustpilot-arrow {
+    background: transparent;
+    border: none;
+    padding: 0 4px;
+    font-size: 32px;
+    line-height: 1;
+    color: #B0B0B0;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.2s ease;
+  }
+
+  .trustpilot-reviews-{{ section.id }} .trustpilot-arrow:hover {
+    color: #2D2D2D;
+    transform: translateY(-1px);
+  }
+
+  .trustpilot-reviews-{{ section.id }} .trustpilot-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .trustpilot-reviews-{{ section.id }} .trustpilot-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--dot-inactive);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .trustpilot-reviews-{{ section.id }} .trustpilot-dot.is-active {
+    background-color: #2D2D2D;
+    transform: scale(1.15);
+  }
+
+  @media (max-width: 767px) {
+    .trustpilot-reviews-{{ section.id }} {
+      padding: 50px 16px;
+    }
+
+    .trustpilot-reviews-{{ section.id }} .trustpilot-title {
+      font-size: 32px;
+    }
+
+    .trustpilot-reviews-{{ section.id }} .trustpilot-review-card {
+      padding: 25px;
+    }
+
+    .trustpilot-reviews-{{ section.id }} .trustpilot-review-title {
+      font-size: 20px;
+    }
+
+    .trustpilot-reviews-{{ section.id }} .trustpilot-stars-header .trustpilot-star-wrapper-large {
+      width: 24px;
+      height: 24px;
+    }
+
+    .trustpilot-reviews-{{ section.id }} .trustpilot-stars-review .trustpilot-star-wrapper-medium {
+      width: 20px;
+      height: 20px;
+    }
+  }
+</style>
+
+<script>
+  (function() {
+    var sectionSelector = '.trustpilot-reviews-{{ section.id }}';
+    var sectionEl = document.querySelector(sectionSelector);
+    if (!sectionEl) return;
+
+    var track = sectionEl.querySelector('.trustpilot-slider-track');
+    var slides = sectionEl.querySelectorAll('.trustpilot-slide');
+    var prevBtn = sectionEl.querySelector('.trustpilot-arrow-prev');
+    var nextBtn = sectionEl.querySelector('.trustpilot-arrow-next');
+    var dots = sectionEl.querySelectorAll('.trustpilot-dot');
+
+    if (!slides.length) return;
+
+    var currentIndex = 0;
+    var autoplay = {{ section.settings.autoplay | default: false | json }};
+    var autoplaySpeed = {{ section.settings.autoplay_speed | default: 5000 | json }};
+    var autoplayTimer = null;
+
+    function goToSlide(index) {
+      currentIndex = (index + slides.length) % slides.length;
+      var offset = -100 * currentIndex;
+      track.style.transform = 'translateX(' + offset + '%)';
+
+      if (dots && dots.length) {
+        dots.forEach(function(dot, dotIndex) {
+          if (dotIndex === currentIndex) {
+            dot.classList.add('is-active');
+          } else {
+            dot.classList.remove('is-active');
+          }
+        });
+      }
+    }
+
+    function nextSlide() {
+      goToSlide(currentIndex + 1);
+    }
+
+    function prevSlide() {
+      goToSlide(currentIndex - 1);
+    }
+
+    function startAutoplay() {
+      if (!autoplay || slides.length < 2) return;
+      stopAutoplay();
+      autoplayTimer = setInterval(nextSlide, autoplaySpeed);
+    }
+
+    function stopAutoplay() {
+      if (autoplayTimer) {
+        clearInterval(autoplayTimer);
+        autoplayTimer = null;
+      }
+    }
+
+    function resetAutoplay() {
+      if (!autoplay) return;
+      startAutoplay();
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function() {
+        nextSlide();
+        resetAutoplay();
+      });
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', function() {
+        prevSlide();
+        resetAutoplay();
+      });
+    }
+
+    if (dots && dots.length) {
+      dots.forEach(function(dot) {
+        dot.addEventListener('click', function() {
+          var idx = parseInt(this.getAttribute('data-index'), 10) || 0;
+          goToSlide(idx);
+          resetAutoplay();
+        });
+      });
+    }
+
+    goToSlide(0);
+    startAutoplay();
+  })();
+</script>
 
 {% schema %}
 {
-  "name": "Floreva Testimonianze",
+  "name": "Trustpilot reviews",
   "settings": [
     {
       "type": "text",
       "id": "section_title",
-      "label": "Titolo sezione",
+      "label": "Section title",
       "default": "Trustpilot reviews"
     },
     {
       "type": "text",
-      "id": "rating_text",
-      "label": "Testo rating",
+      "id": "rating_label",
+      "label": "Rating label",
       "default": "Excellent"
     },
     {
       "type": "text",
       "id": "rating_score",
-      "label": "Punteggio",
+      "label": "Rating score",
       "default": "4.9 / 5"
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Autoplay",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "autoplay_speed",
+      "label": "Autoplay speed (ms)",
+      "min": 3000,
+      "max": 8000,
+      "step": 500,
+      "default": 5000
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#FAFAF8"
+    },
+    {
+      "type": "color",
+      "id": "star_color",
+      "label": "Star color",
+      "default": "#00B67A"
     }
   ],
   "blocks": [
     {
-      "type": "testimonial",
-      "name": "Testimonianza",
+      "type": "review",
+      "name": "Review",
       "settings": [
+        {
+          "type": "range",
+          "id": "stars",
+          "label": "Stars",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        },
         {
           "type": "text",
           "id": "title",
-          "label": "Titolo",
-          "default": "Finalmente... qualcosa che ha aiutato!"
+          "label": "Review title",
+          "default": "Finally… Something That Helped My Daughter Feel Like Herself Again!"
         },
         {
           "type": "textarea",
           "id": "content",
-          "label": "Contenuto testimonianza"
+          "label": "Review content",
+          "default": "I was genuinely concerned about my 5-year-old daughter. She was constantly bloated, low-energy, and more irritable than usual. Nothing we tried made a real difference. She just didn’t seem like herself anymore.\n\nAfter learning about the benefits of Nature's Fix ParaGuard, I decided to give it a try… and I'm so glad I did. Within just a couple of weeks, I noticed a major shift. Her bloating went down, her energy came back, and even her mood improved dramatically.\n\nHer teachers even asked me what changed. They said she was more focused, calm, and engaged at school.\n\nAs a mom, there’s no better feeling than seeing your child healthy and happy again. ParaGuard is now part of our daily routine. It’s made a world of difference, and I wouldn’t go without it."
         },
         {
           "type": "text",
           "id": "author",
-          "label": "Nome autore",
-          "default": "Maria R."
+          "label": "Author name",
+          "default": "Jessica J."
         }
       ]
     }
   ],
+  "max_blocks": 6,
   "presets": [
     {
-      "name": "Floreva Testimonianze",
+      "name": "Trustpilot reviews",
+      "category": "Testimonials",
       "blocks": [
         {
-          "type": "testimonial"
+          "type": "review"
         },
         {
-          "type": "testimonial"
+          "type": "review"
         },
         {
-          "type": "testimonial"
+          "type": "review"
         }
       ]
     }
   ]
 }
 {% endschema %}
-
-<style>
-  .floreva-testimonials {
-    padding: 60px 20px;
-    background-color: #ffffff;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  }
-
-  .floreva-testimonials__header {
-    text-align: center;
-    margin-bottom: 50px;
-  }
-
-  .floreva-testimonials__title {
-    font-size: 48px;
-    font-weight: 900;
-    color: #191919;
-    margin-bottom: 15px;
-    letter-spacing: -1px;
-  }
-
-  .floreva-testimonials__rating {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    font-size: 22px;
-    color: #191919;
-  }
-
-  .floreva-testimonials__rating-text {
-    font-weight: 400;
-  }
-
-  .floreva-testimonials__rating-score {
-    font-weight: 700;
-  }
-
-  .floreva-testimonials__stars {
-    display: flex;
-    gap: 2px;
-  }
-
-  .floreva-testimonials__star {
-    width: 26px;
-    height: 26px;
-    background-color: #00b67a;
-    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-  }
-
-  .floreva-testimonials__container {
-    max-width: 1400px;
-    margin: 0 auto;
-    position: relative;
-  }
-
-  /* Mobile: Carousel */
-  .floreva-testimonials__carousel {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 20px;
-    padding: 0 20px 30px;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
-
-  .floreva-testimonials__carousel::-webkit-scrollbar {
-    display: none;
-  }
-
-  .floreva-testimonials__card {
-    flex: 0 0 85%;
-    scroll-snap-align: center;
-    background: #f5f5f5;
-    border-radius: 20px;
-    padding: 40px 30px;
-    box-shadow: none;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .floreva-testimonials__card-title {
-    font-size: 26px;
-    font-weight: 700;
-    color: #191919;
-    margin-bottom: 30px;
-    text-align: center;
-    line-height: 1.2;
-  }
-
-  .floreva-testimonials__card-content {
-    font-size: 17px;
-    line-height: 1.6;
-    color: #191919;
-    margin-bottom: 0;
-    flex-grow: 1;
-    text-align: center;
-  }
-
-  .floreva-testimonials__card-author {
-    font-size: 19px;
-    font-weight: 600;
-    color: #191919;
-    text-align: center;
-    margin-top: 30px;
-  }
-
-  /* Navigation dots mobile */
-  .floreva-testimonials__nav {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 20px;
-  }
-
-  .floreva-testimonials__dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: #d0d0d0;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    padding: 0;
-  }
-
-  .floreva-testimonials__dot.active {
-    background-color: #191919;
-    width: 12px;
-    height: 12px;
-  }
-
-  /* Arrows mobile */
-  .floreva-testimonials__arrows {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    margin-top: 20px;
-  }
-
-  .floreva-testimonials__arrow {
-    width: 45px;
-    height: 45px;
-    border: none;
-    background-color: #e8e8e8;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-size: 20px;
-    color: #666;
-  }
-
-  .floreva-testimonials__arrow:hover {
-    background-color: #00b67a;
-    color: white;
-  }
-
-  .floreva-testimonials__arrow:disabled {
-    opacity: 0.3;
-    cursor: not-allowed;
-  }
-
-  /* Desktop: Grid 3 columns */
-  @media (min-width: 768px) {
-    .floreva-testimonials {
-      padding: 80px 40px;
-    }
-
-    .floreva-testimonials__carousel {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
-      overflow: visible;
-      padding: 0;
-    }
-
-    .floreva-testimonials__card {
-      flex: none;
-      scroll-snap-align: none;
-    }
-
-    .floreva-testimonials__nav,
-    .floreva-testimonials__arrows {
-      display: none;
-    }
-
-    .floreva-testimonials__title {
-      font-size: 56px;
-    }
-  }
-
-  /* Scroll button fixe */
-  .floreva-testimonials__scroll-top {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 55px;
-    height: 55px;
-    background: linear-gradient(135deg, #00b67a 0%, #00d68f 100%);
-    border: none;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    box-shadow: 0 4px 15px rgba(0, 182, 122, 0.4);
-    transition: all 0.3s ease;
-    z-index: 1000;
-  }
-
-  .floreva-testimonials__scroll-top:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0, 182, 122, 0.5);
-  }
-
-  .floreva-testimonials__scroll-icon {
-    width: 0;
-    height: 0;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-bottom: 12px solid white;
-  }
-</style>
-
-<div class="floreva-testimonials">
-  <div class="floreva-testimonials__header">
-    <h2 class="floreva-testimonials__title">{{ section.settings.section_title }}</h2>
-    <div class="floreva-testimonials__rating">
-      <span class="floreva-testimonials__rating-text">{{ section.settings.rating_text }}</span>
-      <span class="floreva-testimonials__rating-score">{{ section.settings.rating_score }}</span>
-      <div class="floreva-testimonials__stars">
-        {% for i in (1..5) %}
-          <div class="floreva-testimonials__star"></div>
-        {% endfor %}
-      </div>
-    </div>
-  </div>
-
-  <div class="floreva-testimonials__container">
-    <div class="floreva-testimonials__carousel" id="floreva-carousel">
-      {% for block in section.blocks %}
-        <div class="floreva-testimonials__card" {{ block.shopify_attributes }}>
-          <h3 class="floreva-testimonials__card-title">{{ block.settings.title }}</h3>
-          <p class="floreva-testimonials__card-content">{{ block.settings.content }}</p>
-          <p class="floreva-testimonials__card-author">{{ block.settings.author }}</p>
-        </div>
-      {% endfor %}
-    </div>
-
-    <!-- Navigation dots (mobile only) -->
-    <div class="floreva-testimonials__nav" id="floreva-dots"></div>
-
-    <!-- Arrows (mobile only) -->
-    <div class="floreva-testimonials__arrows">
-      <button class="floreva-testimonials__arrow floreva-testimonials__arrow--prev" id="floreva-prev">
-        ‹
-      </button>
-      <button class="floreva-testimonials__arrow floreva-testimonials__arrow--next" id="floreva-next">
-        ›
-      </button>
-    </div>
-  </div>
-
-  <!-- Scroll to top button -->
-  <button class="floreva-testimonials__scroll-top" id="floreva-scroll-top" style="display: none;">
-    <div class="floreva-testimonials__scroll-icon"></div>
-  </button>
-</div>
-
-<script>
-  (function() {
-    const carousel = document.getElementById('floreva-carousel');
-    const dotsContainer = document.getElementById('floreva-dots');
-    const prevBtn = document.getElementById('floreva-prev');
-    const nextBtn = document.getElementById('floreva-next');
-    const scrollTopBtn = document.getElementById('floreva-scroll-top');
-    const cards = carousel.querySelectorAll('.floreva-testimonials__card');
-    
-    let currentIndex = 0;
-
-    // Create dots
-    function createDots() {
-      if (window.innerWidth >= 768) return;
-      
-      dotsContainer.innerHTML = '';
-      cards.forEach((_, index) => {
-        const dot = document.createElement('button');
-        dot.classList.add('floreva-testimonials__dot');
-        if (index === 0) dot.classList.add('active');
-        dot.addEventListener('click', () => scrollToCard(index));
-        dotsContainer.appendChild(dot);
-      });
-    }
-
-    // Scroll to specific card
-    function scrollToCard(index) {
-      currentIndex = index;
-      const cardWidth = cards[0].offsetWidth;
-      const gap = 20;
-      carousel.scrollTo({
-        left: (cardWidth + gap) * index,
-        behavior: 'smooth'
-      });
-      updateDots();
-      updateArrows();
-    }
-
-    // Update active dot
-    function updateDots() {
-      const dots = dotsContainer.querySelectorAll('.floreva-testimonials__dot');
-      dots.forEach((dot, index) => {
-        dot.classList.toggle('active', index === currentIndex);
-      });
-    }
-
-    // Update arrows state
-    function updateArrows() {
-      prevBtn.disabled = currentIndex === 0;
-      nextBtn.disabled = currentIndex === cards.length - 1;
-    }
-
-    // Previous card
-    prevBtn.addEventListener('click', () => {
-      if (currentIndex > 0) {
-        scrollToCard(currentIndex - 1);
-      }
-    });
-
-    // Next card
-    nextBtn.addEventListener('click', () => {
-      if (currentIndex < cards.length - 1) {
-        scrollToCard(currentIndex + 1);
-      }
-    });
-
-    // Detect scroll position
-    carousel.addEventListener('scroll', () => {
-      if (window.innerWidth >= 768) return;
-      
-      const cardWidth = cards[0].offsetWidth;
-      const gap = 20;
-      const scrollPosition = carousel.scrollLeft;
-      const newIndex = Math.round(scrollPosition / (cardWidth + gap));
-      
-      if (newIndex !== currentIndex) {
-        currentIndex = newIndex;
-        updateDots();
-        updateArrows();
-      }
-    });
-
-    // Scroll to top functionality
-    window.addEventListener('scroll', () => {
-      if (window.pageYOffset > 300) {
-        scrollTopBtn.style.display = 'flex';
-      } else {
-        scrollTopBtn.style.display = 'none';
-      }
-    });
-
-    scrollTopBtn.addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    });
-
-    // Initialize
-    createDots();
-    updateArrows();
-
-    // Reinitialize on resize
-    window.addEventListener('resize', () => {
-      createDots();
-    });
-  })();
-</script>

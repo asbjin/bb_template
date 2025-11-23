@@ -961,13 +961,13 @@
       ],
       "name": "Trustpilot reviews",
       "settings": {
-        "section_title": "Trustpilot reviews",
+        "section_title": "",
         "rating_label": "Excellent",
         "rating_score": "4.9 / 5",
         "autoplay": false,
         "autoplay_speed": 5000,
-        "background_color": "#FAFAF8",
-        "star_color": "#00B67A"
+        "background_color": "#fafaf8",
+        "star_color": "#00b67a"
       }
     }
   },

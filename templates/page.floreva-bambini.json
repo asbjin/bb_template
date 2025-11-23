@@ -930,8 +930,8 @@
           "type": "review",
           "settings": {
             "stars": 5,
-            "title": "Finally… Something That Helped My Daughter Feel Like Herself Again!",
-            "content": "I was genuinely concerned about my 5-year-old daughter. She was constantly bloated, low-energy, and more irritable than usual. Nothing we tried made a real difference. She just didn’t seem like herself anymore.\n\nAfter learning about the benefits of Nature's Fix ParaGuard, I decided to give it a try… and I'm so glad I did. Within just a couple of weeks, I noticed a major shift. Her bloating went down, her energy came back, and even her mood improved dramatically.\n\nHer teachers even asked me what changed. They said she was more focused, calm, and engaged at school.\n\nAs a mom, there’s no better feeling than seeing your child healthy and happy again. ParaGuard is now part of our daily routine. It’s made a world of difference, and I wouldn’t go without it.",
+            "title": "Finalmente... qualcosa che haaiutato mia figlia a sentirsi di nuovose stessa!",
+            "content": "Ero sinceramente preoccupata per mia figlia di 7 anni. Era costantemente gonfia, priva di energie e più irritabile del solito. Niente di ciò che provavamo sembrava funzionare. Non\nsembrava più se stessa.\n\nDopo aver scoperto i benefici di Nature's Fix ParaGuard, ho deciso di provarlo... e sono davvero felice di averlo fatto. Nel giro di un paio di settimane, ho notato un cambiamento significativo. Il gonfiore è diminuito, ha ritrovato le energie e anche il suo umore è migliorato notevolmente.\n\nI suoi insegnanti mi hanno persino chiesto cosa fosse cambiato. Hanno detto che a scuola era più concentrata, calma e partecipe.\n\nCome mamma, non c'è sensazione più bella che vedere tuo figlio di nuovo sano e felice. ParaGuard fa ormai parte della nostra routine quotidiana. Ha cambiato completamente le cose e non potrei più farne a meno.",
             "author": "Jessica J."
           }
         },
@@ -961,7 +961,6 @@
       ],
       "name": "Trustpilot reviews",
       "settings": {
-        "section_title": "",
         "rating_label": "Excellent",
         "rating_score": "4.9 / 5",
         "autoplay": false,

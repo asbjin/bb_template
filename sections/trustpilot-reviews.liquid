@@ -5,10 +5,6 @@
 <section class="trustpilot-reviews-section trustpilot-reviews-{{ section.id }}">
   <div class="trustpilot-reviews-container">
     <header class="trustpilot-header">
-      <h2 class="trustpilot-title">
-        {{ section.settings.section_title | default: 'Trustpilot reviews' }}
-      </h2>
-
       <div class="trustpilot-rating-row">
         <span class="trustpilot-rating-label">
           {{ section.settings.rating_label | default: 'Excellent' }}
@@ -118,16 +114,6 @@
   .trustpilot-reviews-{{ section.id }} .trustpilot-header {
     text-align: center;
     margin-bottom: 40px;
-  }
-
-  .trustpilot-reviews-{{ section.id }} .trustpilot-title {
-    margin: 0 0 15px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    font-weight: 900;
-    font-size: 48px;
-    line-height: 1.1;
-    color: #2D2D2D;
-    letter-spacing: -0.02em;
   }
 
   .trustpilot-reviews-{{ section.id }} .trustpilot-rating-row {
@@ -308,10 +294,6 @@
       padding: 50px 16px;
     }
 
-    .trustpilot-reviews-{{ section.id }} .trustpilot-title {
-      font-size: 32px;
-    }
-
     .trustpilot-reviews-{{ section.id }} .trustpilot-review-card {
       padding: 25px;
     }
@@ -426,12 +408,6 @@
 {
   "name": "Trustpilot reviews",
   "settings": [
-    {
-      "type": "text",
-      "id": "section_title",
-      "label": "Section title",
-      "default": "Trustpilot reviews"
-    },
     {
       "type": "text",
       "id": "rating_label",

@@ -179,12 +179,18 @@
   .trustpilot-reviews-{{ section.id }} .trustpilot-slider {
     position: relative;
     overflow: hidden;
+    touch-action: pan-y;
+    user-select: none;
   }
 
   .trustpilot-reviews-{{ section.id }} .trustpilot-slider-track {
     display: flex;
     transition: transform 0.5s ease;
     will-change: transform;
+  }
+
+  .trustpilot-reviews-{{ section.id }} .trustpilot-slider-track.is-dragging {
+    transition: none;
   }
 
   .trustpilot-reviews-{{ section.id }} .trustpilot-slide {
@@ -326,6 +332,7 @@
     var sectionEl = document.querySelector(sectionSelector);
     if (!sectionEl) return;
 
+    var slider = sectionEl.querySelector('.trustpilot-slider');
     var track = sectionEl.querySelector('.trustpilot-slider-track');
     var slides = sectionEl.querySelectorAll('.trustpilot-slide');
     var prevBtn = sectionEl.querySelector('.trustpilot-arrow-prev');
@@ -338,6 +345,15 @@
     var autoplay = {{ section.settings.autoplay | default: false | json }};
     var autoplaySpeed = {{ section.settings.autoplay_speed | default: 5000 | json }};
     var autoplayTimer = null;
+
+    // Touch/Swipe variables
+    var touchStartX = 0;
+    var touchEndX = 0;
+    var touchStartY = 0;
+    var touchEndY = 0;
+    var isDragging = false;
+    var startTranslate = 0;
+    var currentTranslate = 0;
 
     function goToSlide(index) {
       currentIndex = (index + slides.length) % slides.length;
@@ -381,6 +397,57 @@
       startAutoplay();
     }
 
+    // Touch handlers
+    function handleTouchStart(e) {
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+      isDragging = true;
+      startTranslate = -currentIndex * 100;
+      track.classList.add('is-dragging');
+      stopAutoplay();
+    }
+
+    function handleTouchMove(e) {
+      if (!isDragging) return;
+      
+      touchEndX = e.touches[0].clientX;
+      touchEndY = e.touches[0].clientY;
+      
+      var deltaX = touchEndX - touchStartX;
+      var deltaY = touchEndY - touchStartY;
+      
+      // Only handle horizontal swipe if horizontal movement is greater than vertical
+      if (Math.abs(deltaX) > Math.abs(deltaY)) {
+        e.preventDefault();
+        var movePercent = (deltaX / slider.offsetWidth) * 100;
+        currentTranslate = startTranslate + movePercent;
+        track.style.transform = 'translateX(' + currentTranslate + '%)';
+      }
+    }
+
+    function handleTouchEnd() {
+      if (!isDragging) return;
+      
+      isDragging = false;
+      track.classList.remove('is-dragging');
+      
+      var deltaX = touchEndX - touchStartX;
+      var threshold = slider.offsetWidth * 0.2; // 20% of width
+      
+      if (Math.abs(deltaX) > threshold) {
+        if (deltaX > 0) {
+          prevSlide();
+        } else {
+          nextSlide();
+        }
+      } else {
+        goToSlide(currentIndex);
+      }
+      
+      resetAutoplay();
+    }
+
+    // Button handlers
     if (nextBtn) {
       nextBtn.addEventListener('click', function() {
         nextSlide();
@@ -395,6 +462,7 @@
       });
     }
 
+    // Dot handlers
     if (dots && dots.length) {
       dots.forEach(function(dot) {
         dot.addEventListener('click', function() {
@@ -404,6 +472,12 @@
         });
       });
     }
+
+    // Touch event listeners
+    slider.addEventListener('touchstart', handleTouchStart, { passive: false });
+    slider.addEventListener('touchmove', handleTouchMove, { passive: false });
+    slider.addEventListener('touchend', handleTouchEnd);
+    slider.addEventListener('touchcancel', handleTouchEnd);
 
     goToSlide(0);
     startAutoplay();

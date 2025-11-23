@@ -65,7 +65,9 @@
       {% if section.blocks.size > 0 %}
         <div class="trustpilot-slider-nav">
           <button class="trustpilot-arrow trustpilot-arrow-prev" type="button" aria-label="Previous review">
-            ◄
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
           </button>
 
           <div class="trustpilot-dots">
@@ -80,7 +82,9 @@
           </div>
 
           <button class="trustpilot-arrow trustpilot-arrow-next" type="button" aria-label="Next review">
-            ►
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
           </button>
         </div>
       {% endif %}
@@ -239,23 +243,28 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 24px;
+    gap: 20px;
   }
 
   .trustpilot-reviews-{{ section.id }} .trustpilot-arrow {
     background: transparent;
     border: none;
-    padding: 0 4px;
-    font-size: 32px;
-    line-height: 1;
-    color: #B0B0B0;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9CA3AF;
     cursor: pointer;
-    transition: color 0.3s ease, transform 0.2s ease;
+    transition: color 0.3s ease;
+  }
+
+  .trustpilot-reviews-{{ section.id }} .trustpilot-arrow svg {
+    width: 24px;
+    height: 24px;
   }
 
   .trustpilot-reviews-{{ section.id }} .trustpilot-arrow:hover {
-    color: #2D2D2D;
-    transform: translateY(-1px);
+    color: #4B5563;
   }
 
   .trustpilot-reviews-{{ section.id }} .trustpilot-dots {
@@ -300,6 +309,11 @@
     }
 
     .trustpilot-reviews-{{ section.id }} .trustpilot-stars-review .trustpilot-star-wrapper-medium {
+      width: 20px;
+      height: 20px;
+    }
+
+    .trustpilot-reviews-{{ section.id }} .trustpilot-arrow svg {
       width: 20px;
       height: 20px;
     }

@@ -389,7 +389,6 @@
     },
     "ss_wave_2_8iDtRX": {
       "type": "ss-wave-2",
-      "disabled": true,
       "name": "SS - Wave #2",
       "settings": {
         "wave_height": 60,
@@ -413,11 +412,10 @@
     },
     "floreva_mama_approved_7Cpwqr": {
       "type": "floreva-mama-approved",
-      "disabled": true,
       "name": "Floreva Mama Approved",
       "settings": {
         "title": "APPROVATO DALLE MAMME!",
-        "video_1": "",
+        "video_1": "https://cdn.shopify.com/videos/c/o/v/7018769566f242c38febaffe1784c990.mp4",
         "video_2": "https://cdn.shopify.com/videos/c/o/v/3c058e9bdee14269bffbdcbdca38b4be.mp4",
         "video_3": "https://cdn.shopify.com/videos/c/o/v/c2b793a9d6994449b1c4c3fa6febc5b6.mp4",
         "video_4": "",
@@ -426,7 +424,6 @@
     },
     "ss_wave_2_nYYppe": {
       "type": "ss-wave-2",
-      "disabled": true,
       "name": "SS - Wave #2",
       "settings": {
         "wave_height": 60,

@@ -490,8 +490,8 @@
         "image_xVR6xb": {
           "type": "image",
           "settings": {
-            "feature_title": "Consegna gratuita",
-            "feature_text": "Spedizione in 24 ore",
+            "feature_title": "Livraison gratuite",
+            "feature_text": "Expédition sous 24 heures",
             "feature_url": "",
             "hide_image": false
           }
@@ -499,8 +499,8 @@
         "image_TdfDx9": {
           "type": "image",
           "settings": {
-            "feature_title": "Prezzo Garantito",
-            "feature_text": "Risparmi sempre quando ordini",
+            "feature_title": "Prix garanti",
+            "feature_text": "Vous économisez à chaque commande",
             "feature_url": "",
             "hide_image": false
           }
@@ -508,8 +508,8 @@
         "image_gqUiKV": {
           "type": "image",
           "settings": {
-            "feature_title": "Cambio Facile",
-            "feature_text": "Ricevi subito un tagliando per i cambi",
+            "feature_title": "Retour facile",
+            "feature_text": "Support réactif pour échange ou retour",
             "feature_url": "",
             "hide_image": false
           }

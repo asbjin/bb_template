@@ -1,7 +1,7 @@
 {% comment %}
-  Floreva — Sezione Premium: "Coaching con Specialista"
-  Requisiti: SOLO bundle 150 giorni, coaching 100% via messaggi (no call/video).
-  Mobile-first, stile premium con accenti dorati. Nessuna FAQ qui: usa la sezione FAQ del tema.
+  Floreva — Section Premium : "Coaching avec Spécialiste"
+  Prérequis : UNIQUEMENT bundle 150 jours, coaching 100% par messages (pas d'appel/vidéo).
+  Mobile-first, style premium avec accents dorés. Pas de FAQ ici : utilisez la section FAQ du thème.
 {% endcomment %}
 <section class="flv-coach" style="--green: {{ section.settings.color_primary }}; --gold: {{ section.settings.color_gold }}; --ink:#111; --bg:#fff;">
   <div class="flv-wrap">
@@ -9,9 +9,9 @@
     <!-- HERO -->
     <header class="flv-hero">
       <div class="flv-badges">
-        <span class="flv-chip flv-chip--gold">IN OMAGGIO 3 mesi</span>
-        <span class="flv-chip">SOLO bundle 150 giorni</span>
-        <span class="flv-chip">100% via messaggi</span>
+        <span class="flv-chip flv-chip--gold">OFFERT 3 mois</span>
+        <span class="flv-chip">UNIQUEMENT bundle 150 jours</span>
+        <span class="flv-chip">100% par messages</span>
       </div>
 
       {% assign fallback_url = 'Kaching-Bundles-ChatGPT_Image_15_oct._2025_23_52_00.png' | file_url %}
@@ -35,20 +35,20 @@
           </a>
         {% endif %}
       </div>
-      <p class="flv-note">Niente chiamate o video: supporto rapido, discreto e quando ti serve.</p>
+      <p class="flv-note">Pas d'appels ni de vidéos : un accompagnement rapide, discret et quand vous en avez besoin.</p>
     </header>
 
     <!-- USP -->
     <section class="flv-block flv-points">
       <h3 class="flv-h3">{{ section.settings.usp_title }}</h3>
       <ul class="flv-list">
-        <li>💬 <strong>Sempre a portata di mano:</strong> scrivici quando vuoi — niente orari rigidi.</li>
-        <li>🧭 <strong>Consigli personalizzati:</strong> routine, basi alimentari e stile di vita in base al tuo profilo.</li>
-        <li>📈 <strong>Focus risultati:</strong> mini-check regolari per ottimizzare abitudini e progressi.</li>
+        <li>💬 <strong>Toujours à portée de main :</strong> écrivez-nous quand vous voulez — pas d'horaires fixes.</li>
+        <li>🧭 <strong>Conseils personnalisés :</strong> routine, bases alimentaires et mode de vie adaptés à votre profil.</li>
+        <li>📈 <strong>Focus résultats :</strong> mini-bilans réguliers pour optimiser vos habitudes et vos progrès.</li>
       </ul>
     </section>
 
-    <!-- STEPPEr interattivo (CSS-only) -->
+    <!-- STEPPER interactif (CSS-only) -->
     <section class="flv-block flv-steps">
       <h3 class="flv-h3">{{ section.settings.steps_title }}</h3>
 
@@ -57,7 +57,7 @@
         <input type="radio" name="flv-step" id="flv-s2">
         <input type="radio" name="flv-step" id="flv-s3">
 
-        <div class="flv-step-tabs" aria-label="Progresso">
+        <div class="flv-step-tabs" aria-label="Progression">
           <label for="flv-s1">1</label>
           <label for="flv-s2">2</label>
           <label for="flv-s3">3</label>
@@ -66,26 +66,26 @@
 
         <div class="flv-step-panels">
           <article class="flv-panel">
-            <h4>Acquista il bundle 150 giorni</h4>
-            <p>Il coaching in omaggio è riservato <strong>solo</strong> al pack 150 giorni.</p>
+            <h4>Achetez le bundle 150 jours</h4>
+            <p>Le coaching offert est réservé <strong>uniquement</strong> au pack 150 jours.</p>
             {% if section.settings.bundle_url != blank %}
-              <a href="{{ section.settings.bundle_url }}" class="flv-link">Vai al bundle</a>
+              <a href="{{ section.settings.bundle_url }}" class="flv-link">Voir le bundle</a>
             {% endif %}
           </article>
           <article class="flv-panel">
-            <h4>Avvio coaching: e-mail di istruzioni + chat</h4>
-            <p>Obiettivi, diario iniziale e piano di partenza personalizzato — direttamente in messaggistica.</p>
-            <p class="flv-hint">Ti invieremo un’e-mail con i dettagli su come contattare il nostro servizio di coaching.</p>
+            <h4>Démarrage du coaching : e-mail d'instructions + chat</h4>
+            <p>Objectifs, journal initial et plan de départ personnalisé — directement par messagerie.</p>
+            <p class="flv-hint">Nous vous enverrons un e-mail avec les détails pour contacter notre service de coaching.</p>
           </article>
           <article class="flv-panel">
-            <h4>Follow-up per 3 mesi</h4>
-            <p>Messaggi illimitati (5g/7) + <strong>2 check mensili</strong> in chat per ottimizzare dosi, abitudini e progressi.</p>
+            <h4>Suivi pendant 3 mois</h4>
+            <p>Messages illimités (5j/7) + <strong>2 bilans mensuels</strong> en chat pour optimiser doses, habitudes et progrès.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- COSA È INCLUSO -->
+    <!-- CE QUI EST INCLUS -->
     <section class="flv-block flv-includes">
       <h3 class="flv-h3">{{ section.settings.includes_title }}</h3>
       <div class="flv-grid flv-grid--2">
@@ -109,28 +109,28 @@
       <div class="flv-road">
         <div class="flv-stage">
           <div class="flv-badge">1</div>
-          <h5>Mese 1 — Reset & Routine</h5>
-          <p>Kick-off, routine base, idratazione, timing pasti, gestione gonfiore.</p>
+          <h5>Mois 1 — Reset & Routine</h5>
+          <p>Lancement, routine de base, hydratation, timing des repas, gestion des ballonnements.</p>
         </div>
         <div class="flv-stage">
           <div class="flv-badge">2</div>
-          <h5>Mese 2 — Ottimizzazione</h5>
-          <p>Adattamento dosi, focus pelle/acne, combinazioni alimentari e lifestyle.</p>
+          <h5>Mois 2 — Optimisation</h5>
+          <p>Ajustement des doses, focus peau/acné, combinaisons alimentaires et lifestyle.</p>
         </div>
         <div class="flv-stage">
           <div class="flv-badge">3</div>
-          <h5>Mese 3 — Consolidamento</h5>
-          <p>Stabilizzazione abitudini, piano di mantenimento, checklist finale.</p>
+          <h5>Mois 3 — Consolidation</h5>
+          <p>Stabilisation des habitudes, plan de maintien, checklist finale.</p>
         </div>
       </div>
     </section>
 
-    <!-- OFFERTA / CTA -->
+    <!-- OFFRE / CTA -->
     <section class="flv-offer">
       <div class="flv-offer-inner">
-        <p class="flv-offer-kicker">IN OMAGGIO per 3 mesi</p>
-        <h3 class="flv-h3">Coaching con Specialista — valore {{ section.settings.value_anchor }}</h3>
-        <p class="flv-p">Riservato esclusivamente al <strong>bundle 150 giorni</strong>. Posti limitati ogni mese per garantire qualità del supporto.</p>
+        <p class="flv-offer-kicker">OFFERT pendant 3 mois</p>
+        <h3 class="flv-h3">Coaching avec Spécialiste — valeur {{ section.settings.value_anchor }}</h3>
+        <p class="flv-p">Réservé exclusivement au <strong>bundle 150 jours</strong>. Places limitées chaque mois pour garantir la qualité de l'accompagnement.</p>
         <div class="flv-cta">
           {% if section.settings.bundle_url != blank %}
             <a class="flv-btn flv-btn--solid" href="{{ section.settings.bundle_url }}">{{ section.settings.cta_bundle }}</a>
@@ -140,10 +140,10 @@
           {% endif %}
         </div>
       </div>
-      <p class="flv-legal">Il coaching non sostituisce il parere medico.</p>
+      <p class="flv-legal">Le coaching ne remplace pas un avis médical.</p>
     </section>
 
-    <!-- Nessuna FAQ qui: usa la sezione FAQ del tema -->
+    <!-- Pas de FAQ ici : utilisez la section FAQ du thème -->
   </div>
 
   <style>
@@ -208,7 +208,7 @@
     .flv-stage{position:relative;background:#fff;border:1px solid #EEE;border-radius:14px;padding:12px 12px 12px 48px;box-shadow:0 8px 24px rgba(0,0,0,.04)}
     .flv-badge{position:absolute;left:10px;top:10px;width:28px;height:28px;border-radius:50%;background:var(--gold);color:#1A1A1A;font-weight:800;display:grid;place-items:center}
 
-    /* Offerta */
+    /* Offre */
     .flv-offer{margin-top:24px}
     .flv-offer-inner{border-radius:18px;padding:16px;background:linear-gradient(180deg, rgba(215,169,75,.18), rgba(215,169,75,.06));border:1px solid rgba(215,169,75,.45)}
     .flv-offer-kicker{font-weight:800;letter-spacing:.2px;color:#1A1A1A;margin:0 0 4px}
@@ -229,39 +229,39 @@
 {
   "name": "Coaching",
   "settings": [
-    { "type": "color", "id": "color_primary", "label": "Colore primario (verde)", "default": "#007E40" },
-    { "type": "color", "id": "color_gold", "label": "Accento dorato", "default": "#D7A94B" },
-    { "type": "image_picker", "id": "hero_icon", "label": "Icona hero (PNG/SVG trasparente)" },
+    { "type": "color", "id": "color_primary", "label": "Couleur primaire (vert)", "default": "#007E40" },
+    { "type": "color", "id": "color_gold", "label": "Accent doré", "default": "#D7A94B" },
+    { "type": "image_picker", "id": "hero_icon", "label": "Icône hero (PNG/SVG transparent)" },
 
-    { "type": "text", "id": "title", "label": "Titolo", "default": "Coaching con Specialista — IN OMAGGIO per 3 mesi" },
-    { "type": "textarea", "id": "subtitle", "label": "Sottotitolo", "default": "Accompagnamento 100% via messaggi su pelle/acne, digestione ed energia per massimizzare i risultati con Floreva." },
+    { "type": "text", "id": "title", "label": "Titre", "default": "Coaching avec Spécialiste — OFFERT pendant 3 mois" },
+    { "type": "textarea", "id": "subtitle", "label": "Sous-titre", "default": "Accompagnement 100% par messages sur la peau/acné, la digestion et l'énergie pour maximiser vos résultats avec Floreva." },
 
-    { "type": "url", "id": "bundle_url", "label": "Link pagina bundle 150 giorni" },
-    { "type": "text", "id": "cta_bundle", "label": "Testo CTA bundle", "default": "Attiva il bundle 150 giorni" },
+    { "type": "url", "id": "bundle_url", "label": "Lien page bundle 150 jours" },
+    { "type": "text", "id": "cta_bundle", "label": "Texte CTA bundle", "default": "Activer le bundle 150 jours" },
 
-    { "type": "url", "id": "whatsapp_url", "label": "Link WhatsApp (wa.me/...)" },
-    { "type": "text", "id": "cta_whatsapp", "label": "Testo CTA WhatsApp", "default": "Scrivici su WhatsApp" },
+    { "type": "url", "id": "whatsapp_url", "label": "Lien WhatsApp (wa.me/...)" },
+    { "type": "text", "id": "cta_whatsapp", "label": "Texte CTA WhatsApp", "default": "Écrivez-nous sur WhatsApp" },
 
-    { "type": "text", "id": "usp_title", "label": "Titolo sezione Perché è diverso", "default": "Perché è diverso" },
-    { "type": "text", "id": "steps_title", "label": "Titolo sezione Come funziona", "default": "Come funziona" },
-    { "type": "text", "id": "includes_title", "label": "Titolo sezione Cosa è incluso", "default": "Cosa è incluso (3 mesi)" },
-    { "type": "text", "id": "roadmap_title", "label": "Titolo sezione Roadmap", "default": "Roadmap dei 3 mesi" },
+    { "type": "text", "id": "usp_title", "label": "Titre section Pourquoi c'est différent", "default": "Pourquoi c'est différent" },
+    { "type": "text", "id": "steps_title", "label": "Titre section Comment ça marche", "default": "Comment ça marche" },
+    { "type": "text", "id": "includes_title", "label": "Titre section Ce qui est inclus", "default": "Ce qui est inclus (3 mois)" },
+    { "type": "text", "id": "roadmap_title", "label": "Titre section Roadmap", "default": "Roadmap des 3 mois" },
 
-    { "type": "text", "id": "value_anchor", "label": "Valore ancorato (es. €149)", "default": "€149" },
-    { "type": "text", "id": "max_width", "label": "Larghezza massima contenitore", "default": "760px" }
+    { "type": "text", "id": "value_anchor", "label": "Valeur ancrée (ex. 149€)", "default": "149€" },
+    { "type": "text", "id": "max_width", "label": "Largeur maximale conteneur", "default": "760px" }
   ],
   "blocks": [
     {
       "type": "service",
-      "name": "Servizio incluso",
+      "name": "Service inclus",
       "settings": [
-        { "type": "image_picker", "id": "icon", "label": "Icona" },
-        { "type": "text", "id": "heading", "label": "Titolo", "default": "Check-up iniziale in chat (20–30’)" },
-        { "type": "textarea", "id": "text", "label": "Testo", "default": "Obiettivi, diario iniziale, piano di partenza personalizzato." }
+        { "type": "image_picker", "id": "icon", "label": "Icône" },
+        { "type": "text", "id": "heading", "label": "Titre", "default": "Bilan initial en chat (20–30')" },
+        { "type": "textarea", "id": "text", "label": "Texte", "default": "Objectifs, journal initial, plan de départ personnalisé." }
       ]
     }
   ],
   "max_blocks": 12,
-  "presets": [{ "name": "Coaching con Specialista (Premium)" }]
+  "presets": [{ "name": "Coaching avec Spécialiste (Premium)" }]
 }
 {% endschema %}

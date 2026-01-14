@@ -614,6 +614,7 @@
         "chronologie_QCk7gy",
         "chronologie_mFzT9i"
       ],
+      "disabled": true,
       "custom_css": [
         "@media (min-width: 1024px) {[class*=\"steps-image-desktop-\"], [class*=\"steps-images-desktop-stack-\"] {display: none !important; } [class*=\"steps-body-\"] {display: block !important; gap: 0 !important; } [class*=\"steps-wrapper-\"] {width: 100% !important; }}"
       ],
@@ -654,7 +655,7 @@
         "heading_VxAmQm": {
           "type": "heading",
           "settings": {
-            "heading_text": "OLIO DI ORIGANO",
+            "heading_text": "HUILE D'ORIGAN",
             "heading_tag": "h2"
           }
         },
@@ -667,7 +668,7 @@
         "text_7YRFjw": {
           "type": "text",
           "settings": {
-            "section_text": "<p>Un potente estratto concentrato in carvacrolo, noto per combattere i microbi nocivi e rafforzare le difese dell'organismo.</p>"
+            "section_text": "<p>Un extrait puissant concentré en carvacrol, connu pour combattre les microbes nuisibles et renforcer les défenses de l'organisme.</p>"
           }
         }
       },
@@ -704,7 +705,7 @@
         "heading_mfmtdb": {
           "type": "heading",
           "settings": {
-            "heading_text": "OLIO DI NIGELLA",
+            "heading_text": "HUILE DE NIGELLE",
             "heading_tag": "h2"
           }
         },
@@ -717,7 +718,7 @@
         "text_GBqWV4": {
           "type": "text",
           "settings": {
-            "section_text": "<p>Un prezioso olio curativo utilizzato da generazioni, apprezzato per la sua forza e la sua capacità di migliorare il benessere, la resilienza e la vitalità.</p>"
+            "section_text": "<p>Une huile curative précieuse utilisée depuis des générations, appréciée pour sa puissance et sa capacité à améliorer le bien-être, la résilience et la vitalité.</p>"
           }
         }
       },

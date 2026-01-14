@@ -748,7 +748,7 @@
         "table_row_VLXcj7": {
           "type": "table_row",
           "settings": {
-            "row_heading": "Formula 2 in 1",
+            "row_heading": "Formule 2 en 1",
             "first_column": "",
             "first_column_icon": "check",
             "second_column": "",
@@ -762,7 +762,7 @@
         "table_row_MCMpbN": {
           "type": "table_row",
           "settings": {
-            "row_heading": "capsula gastroresistente",
+            "row_heading": "capsule gastro-résistante",
             "first_column": "",
             "first_column_icon": "check",
             "second_column": "",
@@ -776,7 +776,7 @@
         "table_row_TbY44P": {
           "type": "table_row",
           "settings": {
-            "row_heading": "Senza OGM né additivi",
+            "row_heading": "Sans OGM ni additifs",
             "first_column": "",
             "first_column_icon": "check",
             "second_column": "",
@@ -790,7 +790,7 @@
         "table_row_7rFhYj": {
           "type": "table_row",
           "settings": {
-            "row_heading": "Approvato dal corpo medico",
+            "row_heading": "Approuvé par le corps médical",
             "first_column": "",
             "first_column_icon": "check",
             "second_column": "",
@@ -814,13 +814,13 @@
         "body_gap_mobile": 32,
         "content_horizontal_align": "start",
         "content_horizontal_align_mobile": "center",
-        "heading": "<p><strong>Perché scegliere Origella ?</strong></p>",
+        "heading": "<p><strong>Pourquoi choisir Floreva ?</strong></p>",
         "heading_custom": false,
         "heading_font": "josefin_sans_n4",
         "heading_size": 52,
         "heading_size_mobile": 32,
         "heading_height": 150,
-        "text": "<p>A differenza dei farmaci o di altri trattamenti tradizionali, la nostra formula è naturale al 100% e brevettata.</p>",
+        "text": "<p>Contrairement aux médicaments ou autres traitements traditionnels, notre formule est 100 % naturelle et brevetée.</p>",
         "text_custom": false,
         "text_font": "josefin_sans_n4",
         "text_size": 18,
@@ -866,7 +866,7 @@
         "table_heading_image_size": 100,
         "table_heading_image_size_mobile": 80,
         "first_heading": "Floreva",
-        "second_heading": "Altre marche",
+        "second_heading": "Autres marques",
         "third_heading": "",
         "four_heading": "",
         "table_heading_custom": false,

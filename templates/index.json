@@ -990,13 +990,24 @@
             "text": "Livraison un peu lente, mais produit de qualité. Je prends 1 capsule par jour depuis 1 mois, ma digestion s'est nettement améliorée",
             "date": "Il y a 5 jours"
           }
+        },
+        "review_4QtC3F": {
+          "type": "review",
+          "settings": {
+            "author": "Valérie T.",
+            "verified": true,
+            "rating": 4,
+            "text": "Bon produit, j'ai vu une amélioration au bout de 10 jours environ. Le goût est un peu fort si on croque la capsule par erreur mais sinon rien à dire.",
+            "date": "Il y a 1 semaine"
+          }
         }
       },
       "block_order": [
         "review_qJJwri",
         "review_HwNqtN",
         "review_FLnDFn",
-        "review_XXebDd"
+        "review_XXebDd",
+        "review_4QtC3F"
       ],
       "name": "Avis Clients",
       "settings": {

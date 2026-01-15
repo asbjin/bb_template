@@ -206,6 +206,7 @@
         },
         "slide_TdLdTq": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/WhatsApp_Image_2025-10-27_a_01.16.59_735af645.jpg",
             "title": "",
@@ -215,6 +216,7 @@
         },
         "slide_67ekjQ": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/WhatsApp_Image_2025-10-27_a_01.31.03_f42c050f.jpg",
             "title": "",

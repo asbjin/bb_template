@@ -950,41 +950,45 @@
         "review_qJJwri": {
           "type": "review",
           "settings": {
-            "author": "Concetta G.",
+            "image": "shopify://shop_images/VQ6cIaD2w2y_mid_40588beb-555c-43f7-a789-327833b3348f.jpg",
+            "author": "Sophie M.",
             "verified": true,
             "rating": 5,
-            "text": "Je n'ai pas encore fini de les prendre mais je sens déjà la différence !",
-            "date": "Il y a 3 jours"
+            "text": "Ça fait 3 semaines que je prends Floreva et honnêtement je ne pensais pas voir des résultats aussi vite. Fini les ballonnements après les repas ! Je recommande à 100%.",
+            "date": "Il y a 2 jours"
           }
         },
         "review_HwNqtN": {
           "type": "review",
           "settings": {
-            "author": "Michela B.",
+            "image": "shopify://shop_images/ChatGPT_Image_19_oct._2025_12_57_39_2da4ddcc-4fa7-47d4-8030-1ef6ad8d0552.png",
+            "author": "Nathalie B.",
             "verified": true,
             "rating": 5,
-            "text": "Les capsules d'huile d'origan sont un excellent produit, les bienfaits se font sentir dès la première semaine d'utilisation.",
+            "text": "J'étais sceptique au début mais ma naturopathe me l'a conseillé. Après 2 semaines mon ventre est beaucoup moins gonflé. Je rachèterai sans hésiter.",
             "date": "Il y a 3 jours"
           }
         },
         "review_FLnDFn": {
           "type": "review",
           "settings": {
-            "author": "Sophie M.",
+            "image": "shopify://shop_images/VYDxt6Uvn4P_f5bd4771-d25b-47b7-8f68-fef3a0e028ee.jpg",
+            "author": "Caroline D.",
             "verified": true,
             "rating": 5,
-            "text": "Fini les ballonnements ! Je me sens tellement mieux depuis que j'utilise Floreva.",
+            "text": "Enfin un produit qui fonctionne vraiment !! J'ai tout essayé avant (probiotiques, charbon, etc.) et c'est le seul qui m'a soulagée. Merci Floreva 🙏",
             "date": "Il y a 3 jours"
           }
         },
         "review_XXebDd": {
           "type": "review",
           "settings": {
+            "image": "shopify://shop_images/Qi1tR68UCic.jpg",
             "author": "Laura D.",
             "verified": true,
             "rating": 5,
-            "text": "Produit de qualité, livraison rapide. Je recommande !",
-            "date": "Il y a 3 jours"
+            "text": "Livraison un peu lente, mais produit de qualité. Je prends 1 capsule par jour depuis 1 mois, ma digestion s'est nettement améliorée",
+            "date": "Il y a 5 jours"
           }
         }
       },

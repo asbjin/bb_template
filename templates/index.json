@@ -1000,6 +1000,27 @@
             "text": "Bon produit, j'ai vu une amélioration au bout de 10 jours environ. Le goût est un peu fort si on croque la capsule par erreur mais sinon rien à dire.",
             "date": "Il y a 1 semaine"
           }
+        },
+        "review_D3LYFw": {
+          "type": "review",
+          "settings": {
+            "author": "Marie-Claire L.",
+            "verified": true,
+            "rating": 5,
+            "text": "Je souffrais de ballonnements chroniques depuis des années. Mon médecin ne trouvait rien. Une amie m'a parlé de Floreva et franchement ça a changé ma vie. Je me sens légère après les repas maintenant.",
+            "date": "Il y a 1 semaine"
+          }
+        },
+        "review_7GLqYq": {
+          "type": "review",
+          "settings": {
+            "image": "shopify://shop_images/WhatsApp_Image_2025-10-27_a_00.34.32_7694462c.jpg",
+            "author": "Émilie P.",
+            "verified": true,
+            "rating": 5,
+            "text": "Top ! Transit régulé en moins de 2 semaines. J'ai même l'impression d'avoir plus d'énergie.",
+            "date": "Il y a 2 semaines"
+          }
         }
       },
       "block_order": [
@@ -1007,7 +1028,9 @@
         "review_HwNqtN",
         "review_FLnDFn",
         "review_XXebDd",
-        "review_4QtC3F"
+        "review_4QtC3F",
+        "review_D3LYFw",
+        "review_7GLqYq"
       ],
       "name": "Avis Clients",
       "settings": {

@@ -996,9 +996,9 @@
       ],
       "name": "Avis Clients",
       "settings": {
-        "color_primary": "#2D4A3E",
-        "color_stars": "#2D9B6A",
-        "color_bg": "#F9F7F3",
+        "color_primary": "#2d4a3e",
+        "color_stars": "#2d9b6a",
+        "color_bg": "#ffffff",
         "average_rating": "4.7",
         "total_reviews": "782",
         "reviews_label": "avis vérifiés",

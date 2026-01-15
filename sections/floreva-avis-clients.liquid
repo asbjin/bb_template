@@ -1,0 +1,653 @@
+{% comment %}
+  Floreva — Section Premium : Avis Clients
+  Design type Pinterest/Masonry avec photos, notes et commentaires
+  100% configurable via l'éditeur Shopify
+{% endcomment %}
+
+<section class="flv-reviews" style="--forest: {{ section.settings.color_primary }}; --gold: {{ section.settings.color_stars }}; --cream: {{ section.settings.color_bg }};">
+  <div class="flv-reviews-wrap">
+
+    <!-- EN-TÊTE -->
+    <header class="flv-reviews-header">
+      <div class="flv-reviews-rating-box">
+        <div class="flv-reviews-stars-big">
+          {% for i in (1..5) %}
+            <svg class="flv-star flv-star--filled" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          {% endfor %}
+        </div>
+        <div class="flv-reviews-score">
+          <span class="flv-reviews-number">{{ section.settings.average_rating }}</span>
+          <svg class="flv-reviews-dropdown" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+      </div>
+      
+      <div class="flv-reviews-count">
+        <span class="flv-reviews-count-number">{{ section.settings.total_reviews }}</span>
+        <span class="flv-reviews-count-label">{{ section.settings.reviews_label }}</span>
+      </div>
+
+      {% if section.settings.subtitle != blank %}
+        <p class="flv-reviews-subtitle">{{ section.settings.subtitle }}</p>
+      {% endif %}
+    </header>
+
+    <!-- GRILLE D'AVIS -->
+    <div class="flv-reviews-grid">
+      {% for block in section.blocks %}
+        {% if block.type == 'review' %}
+          <article class="flv-review-card" {{ block.shopify_attributes }}>
+            
+            {% if block.settings.image != blank %}
+              <div class="flv-review-image">
+                <img 
+                  src="{{ block.settings.image | image_url: width: 600 }}" 
+                  alt="Avis de {{ block.settings.author }}"
+                  loading="lazy"
+                  width="300"
+                  height="300"
+                >
+              </div>
+            {% endif %}
+
+            <div class="flv-review-content">
+              <div class="flv-review-author-row">
+                <span class="flv-review-author">{{ block.settings.author }}</span>
+                {% if block.settings.verified %}
+                  <span class="flv-review-verified">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+                    Vérifié
+                  </span>
+                {% endif %}
+              </div>
+
+              <div class="flv-review-stars">
+                {% assign rating = block.settings.rating | default: 5 %}
+                {% for i in (1..5) %}
+                  {% if i <= rating %}
+                    <svg class="flv-star flv-star--filled" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  {% else %}
+                    <svg class="flv-star flv-star--empty" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  {% endif %}
+                {% endfor %}
+              </div>
+
+              {% if block.settings.text != blank %}
+                <p class="flv-review-text">{{ block.settings.text }}</p>
+              {% endif %}
+
+              {% if block.settings.date != blank %}
+                <span class="flv-review-date">{{ block.settings.date }}</span>
+              {% endif %}
+            </div>
+          </article>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <!-- BOUTON VOIR PLUS -->
+    {% if section.settings.show_more_btn and section.settings.more_btn_url != blank %}
+      <div class="flv-reviews-more">
+        <a href="{{ section.settings.more_btn_url }}" class="flv-reviews-btn">
+          {{ section.settings.more_btn_text }}
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    {% endif %}
+
+  </div>
+
+  <style>
+    /* ========================================
+       FLOREVA REVIEWS — MOBILE FIRST PREMIUM
+       ======================================== */
+    
+    .flv-reviews {
+      background: var(--cream);
+      padding: 50px 0;
+      font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    .flv-reviews-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    /* EN-TÊTE */
+    .flv-reviews-header {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .flv-reviews-rating-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: #fff;
+      padding: 12px 20px;
+      border-radius: 50px;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.06);
+      margin-bottom: 16px;
+    }
+
+    .flv-reviews-stars-big {
+      display: flex;
+      gap: 2px;
+    }
+
+    .flv-reviews-stars-big .flv-star {
+      width: 22px;
+      height: 22px;
+    }
+
+    .flv-reviews-score {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .flv-reviews-number {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #1a1a1a;
+    }
+
+    .flv-reviews-dropdown {
+      width: 18px;
+      height: 18px;
+      color: #999;
+    }
+
+    .flv-reviews-count {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .flv-reviews-count-number {
+      background: var(--forest);
+      color: #fff;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .flv-reviews-count-label {
+      color: #666;
+      font-size: 0.95rem;
+    }
+
+    .flv-reviews-subtitle {
+      font-size: 1rem;
+      color: #888;
+      margin: 0;
+      font-style: italic;
+    }
+
+    /* ÉTOILES */
+    .flv-star {
+      width: 16px;
+      height: 16px;
+    }
+
+    .flv-star--filled {
+      fill: var(--gold);
+    }
+
+    .flv-star--empty {
+      fill: #ddd;
+    }
+
+    /* GRILLE MASONRY */
+    .flv-reviews-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    /* CARTE AVIS */
+    .flv-review-card {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .flv-review-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 35px rgba(0,0,0,0.1);
+    }
+
+    .flv-review-image {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      background: #f5f5f5;
+    }
+
+    .flv-review-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .flv-review-card:hover .flv-review-image img {
+      transform: scale(1.03);
+    }
+
+    .flv-review-content {
+      padding: 18px;
+    }
+
+    .flv-review-author-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+    }
+
+    .flv-review-author {
+      font-weight: 700;
+      font-size: 1rem;
+      color: #1a1a1a;
+    }
+
+    .flv-review-verified {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.75rem;
+      color: var(--forest);
+      background: rgba(45, 74, 62, 0.08);
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-weight: 500;
+    }
+
+    .flv-review-verified svg {
+      width: 12px;
+      height: 12px;
+    }
+
+    .flv-review-stars {
+      display: flex;
+      gap: 2px;
+      margin-bottom: 12px;
+    }
+
+    .flv-review-text {
+      font-size: 0.95rem;
+      color: #444;
+      line-height: 1.6;
+      margin: 0 0 10px;
+    }
+
+    .flv-review-date {
+      font-size: 0.8rem;
+      color: #aaa;
+    }
+
+    /* BOUTON VOIR PLUS */
+    .flv-reviews-more {
+      text-align: center;
+      margin-top: 35px;
+    }
+
+    .flv-reviews-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--forest);
+      color: #fff;
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 15px rgba(45, 74, 62, 0.25);
+    }
+
+    .flv-reviews-btn:hover {
+      background: #1A2F26;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(45, 74, 62, 0.35);
+    }
+
+    .flv-reviews-btn svg {
+      width: 18px;
+      height: 18px;
+      transition: transform 0.25s ease;
+    }
+
+    .flv-reviews-btn:hover svg {
+      transform: translateX(4px);
+    }
+
+    /* ========================================
+       TABLETTE — 2 COLONNES
+       ======================================== */
+    @media (min-width: 540px) {
+      .flv-reviews-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+    }
+
+    /* ========================================
+       DESKTOP — MASONRY EFFECT
+       ======================================== */
+    @media (min-width: 900px) {
+      .flv-reviews {
+        padding: 80px 0;
+      }
+
+      .flv-reviews-wrap {
+        padding: 0 40px;
+      }
+
+      .flv-reviews-header {
+        margin-bottom: 50px;
+      }
+
+      .flv-reviews-rating-box {
+        padding: 14px 28px;
+        margin-bottom: 20px;
+      }
+
+      .flv-reviews-stars-big .flv-star {
+        width: 26px;
+        height: 26px;
+      }
+
+      .flv-reviews-number {
+        font-size: 1.5rem;
+      }
+
+      .flv-reviews-count-number {
+        padding: 8px 18px;
+        font-size: 1rem;
+      }
+
+      .flv-reviews-count-label {
+        font-size: 1.05rem;
+      }
+
+      .flv-reviews-subtitle {
+        font-size: 1.1rem;
+      }
+
+      .flv-reviews-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+
+      /* Effet Masonry avec nth-child */
+      .flv-review-card:nth-child(3n+2) {
+        transform: translateY(30px);
+      }
+
+      .flv-review-card:nth-child(3n+2):hover {
+        transform: translateY(26px);
+      }
+
+      .flv-review-content {
+        padding: 22px;
+      }
+
+      .flv-review-author {
+        font-size: 1.05rem;
+      }
+
+      .flv-review-text {
+        font-size: 1rem;
+      }
+
+      .flv-reviews-more {
+        margin-top: 60px;
+      }
+
+      .flv-reviews-btn {
+        padding: 16px 35px;
+        font-size: 1rem;
+      }
+    }
+
+    /* ========================================
+       GRAND ÉCRAN — 4 COLONNES
+       ======================================== */
+    @media (min-width: 1200px) {
+      .flv-reviews-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .flv-review-card:nth-child(4n+2),
+      .flv-review-card:nth-child(4n+4) {
+        transform: translateY(40px);
+      }
+
+      .flv-review-card:nth-child(4n+2):hover,
+      .flv-review-card:nth-child(4n+4):hover {
+        transform: translateY(36px);
+      }
+
+      .flv-review-card:nth-child(3n+2) {
+        transform: none;
+      }
+
+      .flv-review-card:nth-child(3n+2):hover {
+        transform: translateY(-4px);
+      }
+    }
+
+    /* ========================================
+       ANIMATIONS D'ENTRÉE
+       ======================================== */
+    @keyframes flvFadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .flv-review-card {
+      animation: flvFadeInUp 0.5s ease forwards;
+      opacity: 0;
+    }
+
+    .flv-review-card:nth-child(1) { animation-delay: 0.1s; }
+    .flv-review-card:nth-child(2) { animation-delay: 0.15s; }
+    .flv-review-card:nth-child(3) { animation-delay: 0.2s; }
+    .flv-review-card:nth-child(4) { animation-delay: 0.25s; }
+    .flv-review-card:nth-child(5) { animation-delay: 0.3s; }
+    .flv-review-card:nth-child(6) { animation-delay: 0.35s; }
+    .flv-review-card:nth-child(7) { animation-delay: 0.4s; }
+    .flv-review-card:nth-child(8) { animation-delay: 0.45s; }
+    .flv-review-card:nth-child(9) { animation-delay: 0.5s; }
+    .flv-review-card:nth-child(10) { animation-delay: 0.55s; }
+    .flv-review-card:nth-child(11) { animation-delay: 0.6s; }
+    .flv-review-card:nth-child(12) { animation-delay: 0.65s; }
+
+  </style>
+</section>
+
+{% schema %}
+{
+  "name": "Avis Clients",
+  "tag": "section",
+  "class": "section-flv-reviews",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Apparence"
+    },
+    {
+      "type": "color",
+      "id": "color_primary",
+      "label": "Couleur primaire",
+      "default": "#2D4A3E"
+    },
+    {
+      "type": "color",
+      "id": "color_stars",
+      "label": "Couleur des étoiles",
+      "default": "#2D9B6A"
+    },
+    {
+      "type": "color",
+      "id": "color_bg",
+      "label": "Couleur de fond",
+      "default": "#F9F7F3"
+    },
+    {
+      "type": "header",
+      "content": "En-tête"
+    },
+    {
+      "type": "text",
+      "id": "average_rating",
+      "label": "Note moyenne",
+      "default": "4.7"
+    },
+    {
+      "type": "text",
+      "id": "total_reviews",
+      "label": "Nombre total d'avis",
+      "default": "782"
+    },
+    {
+      "type": "text",
+      "id": "reviews_label",
+      "label": "Texte après le nombre",
+      "default": "avis vérifiés"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Sous-titre (optionnel)",
+      "default": "Ce que nos clientes disent de Floreva"
+    },
+    {
+      "type": "header",
+      "content": "Bouton Voir plus"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_more_btn",
+      "label": "Afficher le bouton",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "more_btn_text",
+      "label": "Texte du bouton",
+      "default": "Voir tous les avis"
+    },
+    {
+      "type": "url",
+      "id": "more_btn_url",
+      "label": "Lien du bouton"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Avis",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Photo (optionnel)"
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Nom de l'auteur",
+          "default": "Marie L."
+        },
+        {
+          "type": "checkbox",
+          "id": "verified",
+          "label": "Badge Vérifié",
+          "default": true
+        },
+        {
+          "type": "range",
+          "id": "rating",
+          "label": "Note (étoiles)",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Texte de l'avis",
+          "default": "Un produit incroyable ! Je recommande à 100%."
+        },
+        {
+          "type": "text",
+          "id": "date",
+          "label": "Date (optionnel)",
+          "default": "Il y a 3 jours"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Avis Clients",
+      "blocks": [
+        {
+          "type": "review",
+          "settings": {
+            "author": "Concetta G.",
+            "verified": true,
+            "rating": 5,
+            "text": "Je n'ai pas encore fini de les prendre mais je sens déjà la différence !"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "author": "Michela B.",
+            "verified": true,
+            "rating": 5,
+            "text": "Les capsules d'huile d'origan sont un excellent produit, les bienfaits se font sentir dès la première semaine d'utilisation."
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "author": "Sophie M.",
+            "verified": true,
+            "rating": 5,
+            "text": "Fini les ballonnements ! Je me sens tellement mieux depuis que j'utilise Floreva."
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "author": "Laura D.",
+            "verified": true,
+            "rating": 5,
+            "text": "Produit de qualité, livraison rapide. Je recommande !"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

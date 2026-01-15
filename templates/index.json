@@ -1021,6 +1021,27 @@
             "text": "Top ! Transit régulé en moins de 2 semaines. J'ai même l'impression d'avoir plus d'énergie.",
             "date": "Il y a 2 semaines"
           }
+        },
+        "review_HQ4VcY": {
+          "type": "review",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_19_oct._2025_14_43_56_d0005626-02af-484a-bb84-fecbab69cd6f.png",
+            "author": "Sandrine F.",
+            "verified": true,
+            "rating": 4,
+            "text": "3ème commande pour moi. Je ne peux plus m'en passer, mon ventre me dit merci tous les jours 😊",
+            "date": "Il y a 2 semaines"
+          }
+        },
+        "review_xi8FDn": {
+          "type": "review",
+          "settings": {
+            "author": "Christine A.",
+            "verified": true,
+            "rating": 4,
+            "text": "Efficace sur les ballonnements. J'enlève une étoile car le prix est un peu élevé mais la qualité est là",
+            "date": "Il y a 2 semaines"
+          }
         }
       },
       "block_order": [
@@ -1030,7 +1051,9 @@
         "review_XXebDd",
         "review_4QtC3F",
         "review_D3LYFw",
-        "review_7GLqYq"
+        "review_7GLqYq",
+        "review_HQ4VcY",
+        "review_xi8FDn"
       ],
       "name": "Avis Clients",
       "settings": {

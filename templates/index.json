@@ -944,6 +944,70 @@
         "padding_bottom": 0
       }
     },
+    "floreva_avis_clients_Rq44Pb": {
+      "type": "floreva-avis-clients",
+      "blocks": {
+        "review_qJJwri": {
+          "type": "review",
+          "settings": {
+            "author": "Concetta G.",
+            "verified": true,
+            "rating": 5,
+            "text": "Je n'ai pas encore fini de les prendre mais je sens déjà la différence !",
+            "date": "Il y a 3 jours"
+          }
+        },
+        "review_HwNqtN": {
+          "type": "review",
+          "settings": {
+            "author": "Michela B.",
+            "verified": true,
+            "rating": 5,
+            "text": "Les capsules d'huile d'origan sont un excellent produit, les bienfaits se font sentir dès la première semaine d'utilisation.",
+            "date": "Il y a 3 jours"
+          }
+        },
+        "review_FLnDFn": {
+          "type": "review",
+          "settings": {
+            "author": "Sophie M.",
+            "verified": true,
+            "rating": 5,
+            "text": "Fini les ballonnements ! Je me sens tellement mieux depuis que j'utilise Floreva.",
+            "date": "Il y a 3 jours"
+          }
+        },
+        "review_XXebDd": {
+          "type": "review",
+          "settings": {
+            "author": "Laura D.",
+            "verified": true,
+            "rating": 5,
+            "text": "Produit de qualité, livraison rapide. Je recommande !",
+            "date": "Il y a 3 jours"
+          }
+        }
+      },
+      "block_order": [
+        "review_qJJwri",
+        "review_HwNqtN",
+        "review_FLnDFn",
+        "review_XXebDd"
+      ],
+      "name": "Avis Clients",
+      "settings": {
+        "color_primary": "#2D4A3E",
+        "color_stars": "#2D9B6A",
+        "color_bg": "#F9F7F3",
+        "average_rating": "4.7",
+        "total_reviews": "782",
+        "reviews_label": "avis vérifiés",
+        "subtitle": "Ce que nos clientes disent de Floreva",
+        "show_more_btn": true,
+        "more_btn_text": "Voir tous les avis",
+        "more_btn_url": ""
+      }
+    },
     "1760108312671951de": {
       "type": "apps",
       "blocks": {
@@ -963,6 +1027,7 @@
       "block_order": [
         "loox_reviews_loox_agg_section_enXr6y"
       ],
+      "disabled": true,
       "settings": {
         "include_margins": true
       }
@@ -984,6 +1049,7 @@
     "sp_hero_charlotte_rdBQf4",
     "ss_comparison_table_6_pVYEmz",
     "custom_liquid_ajx7q4",
+    "floreva_avis_clients_Rq44Pb",
     "1760108312671951de"
   ]
 }

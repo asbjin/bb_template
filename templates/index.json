@@ -81,6 +81,7 @@
         },
         "slide_qPVFNX": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/review1_2fed3186-be50-4070-a4f8-745da78a51f5.png",
             "rating": 4,
@@ -108,6 +109,7 @@
         },
         "slide_pAmTkH": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/ChatGPT_Image_26_oct._2025_11_27_40.png",
             "rating": 5,

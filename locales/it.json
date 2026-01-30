@@ -550,6 +550,9 @@
     "checkout": {
       "general": {
         "page_title": "Pagamento"
+      },
+      "shop_policies": {
+        "terms_and_policies": "Termini e condizioni e politiche"
       }
     }
   }
